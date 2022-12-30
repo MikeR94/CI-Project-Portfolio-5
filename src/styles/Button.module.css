@@ -1,0 +1,15 @@
+.Button {
+  font-size: 0.8rem;
+  align-self: center;
+  border-color: transparent;
+  padding: 8px 10px;
+  width: 130px;
+  background-color: #cbae71;
+  color: #ffffff;
+}
+
+.Button:hover {
+  border-color: transparent;
+  cursor: pointer;
+  background-color: rgb(16, 187, 121) !important;
+}
