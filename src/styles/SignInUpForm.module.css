@@ -33,6 +33,14 @@
   color: #cbae71;
 }
 
+.Alert {
+  background-color: #222837 !important;
+  color: red !important;
+  border-color: #222837;
+  padding: 2px;
+  margin-bottom: 0px;
+}
+
 .Link {
   text-decoration: none;
   text-align: center;
