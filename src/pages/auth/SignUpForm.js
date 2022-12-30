@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
-
-import { Form, Button, Col, Row, Container } from "react-bootstrap";
+import axios from "axios";
+import { Form, Button, Col, Row, Container, Alert } from "react-bootstrap";
 
 const SignUpForm = () => {
   const [signUpData, setSignUpData] = useState({
@@ -21,13 +21,27 @@ const SignUpForm = () => {
     });
   };
 
+  const [errors, setErrors] = useState({});
+
+  const history = useHistory();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await axios.post("/dj-rest-auth/registration/", signUpData);
+      history.push("/signin");
+    } catch (err) {
+      setErrors(err.response?.data);
+    }
+  };
+
   return (
     <Row className={styles.Row}>
       <Col md={6}>
         <Container className={`${styles.ContentBackground} p-4 `}>
           <h1 className={styles.Header}>Sign Up</h1>
 
-          <Form onSubmit="">
+          <Form onSubmit={handleSubmit}>
             <Form.Group controlId="username">
               <Form.Label className="d-none">Username</Form.Label>
               <Form.Control
@@ -39,6 +53,11 @@ const SignUpForm = () => {
                 onChange={handleChange}
               />
             </Form.Group>
+            {errors.username?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
 
             <Form.Group controlId="password1">
               <Form.Label className="d-none">Password</Form.Label>
