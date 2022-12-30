@@ -14,6 +14,13 @@ const SignUpForm = () => {
 
   const { username, password1, password2 } = signUpData;
 
+  const handleChange = (event) => {
+    setSignUpData({
+      ...signUpData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
   return (
     <Row className={styles.Row}>
       <Col md={6}>
@@ -29,7 +36,7 @@ const SignUpForm = () => {
                 placeholder="Username"
                 name="username"
                 value={username}
-                onChange=""
+                onChange={handleChange}
               />
             </Form.Group>
 
@@ -41,7 +48,7 @@ const SignUpForm = () => {
                 placeholder="Password"
                 name="password1"
                 value={password1}
-                onChange=""
+                onChange={handleChange}
               />
             </Form.Group>
 
@@ -53,7 +60,7 @@ const SignUpForm = () => {
                 placeholder="Confirm Password"
                 name="password2"
                 value={password2}
-                onChange=""
+                onChange={handleChange}
               />
             </Form.Group>
 
