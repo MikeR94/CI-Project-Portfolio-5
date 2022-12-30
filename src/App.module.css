@@ -1,0 +1,40 @@
+.App {
+  font-family: "DM Sans", sans-serif;
+  background-color: #070a14;
+  min-height: 100vh;
+}
+
+/* html {
+  background-color: #070a14;
+  color: white;
+} */
+
+.Title {
+  background-color: #070a14;
+  color: white;
+  text-align: center;
+}
+
+html {
+  overflow: auto;
+  overflow: overlay;
+  background-color: #070a14;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* scrollbar */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+*::-webkit-scrollbar-thumb {
+  background: #888;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
