@@ -4,32 +4,39 @@
   min-height: 100vh;
 }
 
-.Title {
-  background-color: #070a14;
-  color: white;
-  text-align: center;
-}
-
-html {
-  overflow: auto;
-  overflow: overlay;
-  background-color: #070a14;
+.Main {
+  padding-top: 81px;
 }
 
 * {
   box-sizing: border-box;
+  color: white;
 }
 
-/* scrollbar */
-*::-webkit-scrollbar {
-  width: 5px;
+a {
+  color: #ffffff;
+  transition: ease-in-out 0.3s;
+  text-decoration: none;
 }
-*::-webkit-scrollbar-track {
-  background: #f1f1f1;
+
+a:hover {
+  text-decoration: none;
+  color: #cbae71;
 }
-*::-webkit-scrollbar-thumb {
-  background: #888;
+
+a:hover i {
+  color: #cbae71;
+  transition: ease-in-out 0.3s;
 }
-*::-webkit-scrollbar-thumb:hover {
-  background: #555;
+
+i {
+  color: #ffffff;
+  font-size: 1.6rem;
+  padding: 7px;
+  vertical-align: middle;
+}
+
+i:hover {
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
 }
