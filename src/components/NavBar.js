@@ -1,8 +1,10 @@
 import React from "react";
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
+import test_avatar from "../assets/test_avatar.jpg";
+import Avatar from "../components/Avatar";
 
 const NavBar = () => {
   return (
@@ -38,6 +40,14 @@ const NavBar = () => {
             >
               <i className="fas fa-user-plus"></i>Sign up
             </NavLink>
+            <NavDropdown
+              title={<Avatar src={test_avatar} height={50}></Avatar>}
+              id="nav-dropdown"
+            >
+              <NavDropdown.Item eventKey={4.1}>Home</NavDropdown.Item>
+              <NavDropdown.Item eventKey={4.2}>Profile</NavDropdown.Item>
+              <NavDropdown.Item eventKey={4.3}>Log Out</NavDropdown.Item>
+            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>
