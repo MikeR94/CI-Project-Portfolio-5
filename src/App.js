@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import SignUpForm from "./pages/auth/SignUpForm";
 import "./api/axiosDefaults";
 import SignInForm from "./pages/auth/SignInForm";
+import ChampionSelect from "./pages/champion/ChampionSelect";
 
 function App() {
   return (
@@ -12,7 +13,11 @@ function App() {
       <NavBar />
       <Container className={styles.Main}>
         <Switch>
-          <Route exact path="/" render={() => <h1>Home page</h1>} />
+          <Route
+            exact
+            path="/"
+            render={() => <ChampionSelect></ChampionSelect>}
+          />
           <Route
             exact
             path="/signin"
