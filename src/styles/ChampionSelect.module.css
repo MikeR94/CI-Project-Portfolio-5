@@ -1,0 +1,10 @@
+.RoleIconSection {
+  margin-top: 50px;
+  text-align: center;
+}
+
+@media all and (max-width: 600px) {
+  .RoleIconSection {
+    margin-top: 150px;
+  }
+}
