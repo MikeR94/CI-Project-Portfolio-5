@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 import test_avatar from "../assets/test_avatar.jpg";
 import Avatar from "../components/Avatar";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
+import SearchBar from "./SearchBar";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -57,15 +58,7 @@ const NavBar = () => {
             <img src={logo} alt="logo" height="45" />
           </Navbar.Brand>
         </NavLink>
-        <div class="form-outline">
-          <input
-            type="search"
-            id="form1"
-            class="form-control"
-            placeholder="Search for a champion"
-            aria-label="Search"
-          />
-        </div>
+        <SearchBar></SearchBar>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto text-left"></Nav>
