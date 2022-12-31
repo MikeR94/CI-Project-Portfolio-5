@@ -1,12 +1,13 @@
 import React from "react";
+import styles from "../styles/SearchBar.module.css";
 
 const SearchBar = () => {
   return (
-    <div class="form-outline">
+    <div className={`form-inline ${styles.SearchBar}`}>
       <input
         type="search"
         id="form1"
-        class="form-control"
+        className="form-control"
         placeholder="Search for a champion"
         aria-label="Search"
       />

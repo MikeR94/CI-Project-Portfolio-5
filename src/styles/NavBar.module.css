@@ -1,7 +1,6 @@
 .NavBar {
   background-color: #070a14;
   display: flex;
-  justify-content: space-evenly !important;
 }
 
 .NavLink {
@@ -18,5 +17,56 @@
 
 .Container {
   display: flex;
-  justify-content: space-evenly;
+  width: 100%;
+  height: 50px;
+}
+
+.Row {
+  align-items: center;
+  width: 100%;
+  margin: 0;
+}
+
+.Block {
+  height: 50px;
+}
+
+.Left {
+  width: 22%;
+  order: 1;
+  text-align: start;
+  margin-top: 20px;
+}
+
+.Center {
+  width: 56%;
+  order: 2;
+  margin-top: 30px;
+}
+
+.Right {
+  width: 22%;
+  order: 3;
+  text-align: end;
+  margin-top: 20px;
+}
+
+@media all and (max-width: 600px) {
+  .Container {
+    flex-wrap: wrap;
+    height: 100px;
+  }
+  .Center {
+    width: 100%;
+    order: 3;
+    margin-top: 50px;
+  }
+
+  .Left {
+    width: 20%;
+  }
+  .Right {
+    width: 80%;
+    order: 2;
+  }
 }
