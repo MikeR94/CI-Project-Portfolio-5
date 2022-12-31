@@ -6,6 +6,8 @@ import JungleIcon from "../../assets/jungle.png";
 import TopIcon from "../../assets/top.png";
 import MiddleIcon from "../../assets/middle.png";
 import styles from "../../styles/ChampionSelect.module.css";
+import ChampionCard from "../../components/ChampionCard";
+import AatroxImage from "../../assets/Aatrox.jpg";
 
 const ChampionSelect = () => {
   const RoleIcons = (
@@ -17,7 +19,14 @@ const ChampionSelect = () => {
       <RoleIcon src={MiddleIcon} height={50}></RoleIcon>
     </>
   );
-  return <div className={styles.RoleIconSection}>{RoleIcons}</div>;
+  return (
+    <div className={styles.RoleIconSection}>
+      <div>
+        {RoleIcons}
+        <ChampionCard imgsrc={AatroxImage} champName="Aatrox"></ChampionCard>
+      </div>
+    </div>
+  );
 };
 
 export default ChampionSelect;

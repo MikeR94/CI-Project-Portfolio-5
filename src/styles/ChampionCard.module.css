@@ -1,0 +1,18 @@
+.ChampionName {
+  color: white;
+}
+
+.ChampionCard {
+  background-color: #cbae71;
+  border: none;
+  width: 200px;
+  height: 230px;
+}
+
+.ChampionImage {
+  height: 100%;
+}
+
+.ChampionCardBody {
+  padding: 10px;
+}
