@@ -51,19 +51,16 @@ const NavBar = () => {
     </>
   );
   return (
-    <Navbar className={styles.NavBar} expand="md" fixed="top">
-      <Container>
+    <Navbar className={`${styles.NavBar} d-flex`} expand="md" fixed="top">
+      <Container className={styles.Container}>
         <NavLink to="/">
           <Navbar.Brand>
             <img src={logo} alt="logo" height="45" />
           </Navbar.Brand>
         </NavLink>
-        <SearchBar></SearchBar>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto text-left"></Nav>
-          {currentUser ? loggedInMenu : loggedOutMenu}
-        </Navbar.Collapse>
+        <SearchBar className=""></SearchBar>
+        <Nav className="text-left"></Nav>
+        {currentUser ? loggedInMenu : loggedOutMenu}
       </Container>
     </Navbar>
   );

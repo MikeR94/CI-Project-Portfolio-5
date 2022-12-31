@@ -1,5 +1,7 @@
 .NavBar {
   background-color: #070a14;
+  display: flex;
+  justify-content: space-evenly !important;
 }
 
 .NavLink {
@@ -12,4 +14,9 @@
 
 .Active a {
   color: #cbae71;
+}
+
+.Container {
+  display: flex;
+  justify-content: space-evenly;
 }
