@@ -57,6 +57,15 @@ const NavBar = () => {
             <img src={logo} alt="logo" height="45" />
           </Navbar.Brand>
         </NavLink>
+        <div class="form-outline">
+          <input
+            type="search"
+            id="form1"
+            class="form-control"
+            placeholder="Search for a champion"
+            aria-label="Search"
+          />
+        </div>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto text-left"></Nav>
