@@ -1,14 +1,14 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
 import test_avatar from "../assets/test_avatar.jpg";
 import Avatar from "../components/Avatar";
-import { CurrentUserContext } from "../App";
+import { useCurrentUser } from "../contexts/CurrentUserContext";
 
 const NavBar = () => {
-  const currentUser = useContext(CurrentUserContext);
+  const currentUser = useCurrentUser();
   const loggedInMenu = (
     <>
       <NavDropdown
