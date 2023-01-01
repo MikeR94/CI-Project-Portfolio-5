@@ -7,14 +7,6 @@ import TopIcon from "../../assets/top.png";
 import MiddleIcon from "../../assets/middle.png";
 import styles from "../../styles/ChampionSelect.module.css";
 import ChampionCard from "../../components/ChampionCard";
-import AatroxImage from "../../assets/Aatrox.jpg";
-import AhriImage from "../../assets/Ahri.jpg";
-import AkaliImage from "../../assets/Akali.jpg";
-import AkshanImage from "../../assets/Akshan.jpg";
-import AlistairImage from "../../assets/Alistair.jpg";
-import AmumuImage from "../../assets/Amumu.jpg";
-import AniviaImage from "../../assets/Anivia.jpg";
-import AnnieImage from "../../assets/Annie.jpg";
 import { Container, Row, Col } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
 
@@ -26,7 +18,7 @@ const ChampionSelect = () => {
     const fetchChampions = async () => {
       try {
         const { data } = await axiosReq.get("/champions/");
-        setChampions(data.results);
+        setChampions(data);
         setHasLoaded(true);
       } catch (err) {
         console.log(err);
@@ -54,42 +46,19 @@ const ChampionSelect = () => {
       <Container className="mt-5">
         <Row className={styles.Row}>
           <Col>
-            <ChampionCard
-              imgsrc={AatroxImage}
-              champName="Aatrox"
-            ></ChampionCard>
-          </Col>
-          <Col>
-            <ChampionCard imgsrc={AhriImage} champName="Ahri"></ChampionCard>
-          </Col>
-          <Col>
-            <ChampionCard imgsrc={AkaliImage} champName="Akali"></ChampionCard>
-          </Col>
-          <Col>
-            <ChampionCard
-              imgsrc={AkshanImage}
-              champName="Akshan"
-            ></ChampionCard>
-          </Col>
-        </Row>
-        <Row className={styles.Row}>
-          <Col>
-            <ChampionCard
-              imgsrc={AlistairImage}
-              champName="Alistair"
-            ></ChampionCard>
-          </Col>
-          <Col>
-            <ChampionCard imgsrc={AmumuImage} champName="Amumu"></ChampionCard>
-          </Col>
-          <Col>
-            <ChampionCard
-              imgsrc={AniviaImage}
-              champName="Anivia"
-            ></ChampionCard>
-          </Col>
-          <Col>
-            <ChampionCard imgsrc={AnnieImage} champName="Annie"></ChampionCard>
+            {hasLoaded ? (
+              <>
+                {champions.results.length ? (
+                  champions.results.map((champions) => (
+                    <ChampionCard key={champions.id} {...champions} />
+                  ))
+                ) : (
+                  <h1>Test 1</h1>
+                )}
+              </>
+            ) : (
+              <h1>Test 2</h1>
+            )}
           </Col>
         </Row>
       </Container>
