@@ -3,7 +3,6 @@ import { Navbar, Container, NavDropdown } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
 import { Link, NavLink, useHistory } from "react-router-dom";
-import test_avatar from "../assets/test_avatar.jpg";
 import Avatar from "../components/Avatar";
 import {
   useCurrentUser,
