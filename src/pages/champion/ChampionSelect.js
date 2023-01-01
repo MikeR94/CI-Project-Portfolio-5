@@ -49,7 +49,7 @@ const ChampionSelect = () => {
             <>
               {champions.results.length ? (
                 champions.results.map((champions) => (
-                  <ChampionCard key={champions.id} {...champions} />
+                  <ChampionCard key={champions.name} {...champions} />
                 ))
               ) : (
                 <h1>Test 1</h1>
