@@ -1,20 +1,27 @@
 import React, { useEffect, useState } from "react";
+import { Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
+import styles from "../../styles/ChampionPage.module.css";
 
 const ChampionPage = () => {
   const { id } = useParams();
-  const [champData, setChampData] = useState({ name: "", alias: "" });
-  const { name, alias } = champData;
+  const [champData, setChampData] = useState({
+    name: "",
+    alias: "",
+    champ_image: "",
+  });
+  const { name, alias, champ_image } = champData;
 
   useEffect(() => {
     const fetchChampion = async () => {
       try {
         const { data } = await axiosReq.get(`/champions/${id}`);
-        const { name, alias } = data;
+        const { name, alias, champ_image } = data;
         setChampData(() => ({
           name: name,
           alias: alias,
+          champ_image: champ_image,
         }));
       } catch (err) {
         console.log(err);
@@ -28,9 +35,11 @@ const ChampionPage = () => {
 
   return (
     <div>
-      <h1>Champion Page</h1>
-      {name}
-      {alias}
+      <Container className="md">
+        <img src={champ_image} className={`${styles.ChampImage}`}></img>
+        {name}
+        {alias}
+      </Container>
     </div>
   );
 };
