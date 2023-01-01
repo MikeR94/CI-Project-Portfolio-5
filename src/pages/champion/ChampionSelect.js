@@ -7,7 +7,7 @@ import TopIcon from "../../assets/top.png";
 import MiddleIcon from "../../assets/middle.png";
 import styles from "../../styles/ChampionSelect.module.css";
 import ChampionCard from "../../components/ChampionCard";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
 
 const ChampionSelect = () => {

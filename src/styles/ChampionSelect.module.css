@@ -3,10 +3,6 @@
   text-align: center;
 }
 
-.Row {
-  margin-top: 30px;
-}
-
 .Grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
