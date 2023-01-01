@@ -44,8 +44,8 @@ const ChampionSelect = () => {
     <div className={styles.RoleIconSection}>
       <div>{RoleIcons}</div>
       <Container className="mt-5">
-        <Row className={styles.Row}>
-          <Col>
+        <Row className={`${styles.Row}`}>
+          <Col className="col-5 d-flex justify-content-evenly">
             {hasLoaded ? (
               <>
                 {champions.results.length ? (
