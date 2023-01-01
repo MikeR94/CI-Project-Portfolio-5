@@ -28,6 +28,11 @@ function App() {
             path="/signup"
             render={() => <SignUpForm></SignUpForm>}
           />
+          <Route
+            exact
+            path="/profile"
+            render={() => <h1>This is the profile page</h1>}
+          />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>

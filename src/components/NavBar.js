@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, Container, Nav, NavDropdown, Row } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import test_avatar from "../assets/test_avatar.jpg";
 import Avatar from "../components/Avatar";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
@@ -17,9 +17,15 @@ const NavBar = () => {
         id="nav-dropdown"
       >
         {currentUser?.username}
-        <NavDropdown.Item eventKey={4.1}>Home</NavDropdown.Item>
-        <NavDropdown.Item eventKey={4.2}>Profile</NavDropdown.Item>
-        <NavDropdown.Item eventKey={4.3}>Log Out</NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/">
+          Home
+        </NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/profile">
+          Profile
+        </NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/">
+          Log out
+        </NavDropdown.Item>
       </NavDropdown>
     </>
   );
