@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Container, Nav, NavDropdown, Row } from "react-bootstrap";
+import { Navbar, Container, NavDropdown } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
 import { Link, NavLink } from "react-router-dom";
@@ -10,6 +10,7 @@ import SearchBar from "./SearchBar";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
+
   const loggedInMenu = (
     <>
       <NavDropdown
@@ -29,6 +30,7 @@ const NavBar = () => {
       </NavDropdown>
     </>
   );
+
   const loggedOutMenu = (
     <>
       {" "}
@@ -48,6 +50,7 @@ const NavBar = () => {
       </NavLink>
     </>
   );
+
   return (
     <Navbar expand="md" fixed="top">
       <Container className={styles.Container}>
