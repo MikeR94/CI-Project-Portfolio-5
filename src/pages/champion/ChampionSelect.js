@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import RoleIcon from "../../components/RoleIcon";
 import SupportIcon from "../../assets/support.png";
 import AdcIcon from "../../assets/adc.png";
@@ -16,8 +16,29 @@ import AmumuImage from "../../assets/Amumu.jpg";
 import AniviaImage from "../../assets/Anivia.jpg";
 import AnnieImage from "../../assets/Annie.jpg";
 import { Container, Row, Col } from "react-bootstrap";
+import { axiosReq } from "../../api/axiosDefaults";
 
 const ChampionSelect = () => {
+  const [champions, setChampions] = useState({ results: [] });
+  const [hasLoaded, setHasLoaded] = useState(false);
+
+  useEffect(() => {
+    const fetchChampions = async () => {
+      try {
+        const { data } = await axiosReq.get("/champions/");
+        setChampions(data.results);
+        setHasLoaded(true);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    setHasLoaded(false);
+    fetchChampions();
+  }, []);
+
+  console.log(champions);
+
   const RoleIcons = (
     <>
       <RoleIcon src={SupportIcon} height={50}></RoleIcon>
