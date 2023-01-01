@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, Container, NavDropdown } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import test_avatar from "../assets/test_avatar.jpg";
 import Avatar from "../components/Avatar";
 import {
@@ -16,10 +16,13 @@ const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
+  const history = useHistory();
+
   const handleSignOut = async () => {
     try {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
+      history.push("/signout");
     } catch (err) {
       console.log(err);
     }

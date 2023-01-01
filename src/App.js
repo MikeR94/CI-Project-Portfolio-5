@@ -33,6 +33,11 @@ function App() {
             path="/profile"
             render={() => <h1>This is the profile page</h1>}
           />
+          <Route
+            exact
+            path="/signout"
+            render={() => <h1>You have successfully signed out</h1>}
+          />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>
