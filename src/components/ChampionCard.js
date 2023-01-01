@@ -4,7 +4,7 @@ import styles from "../styles/ChampionCard.module.css";
 import { Link } from "react-router-dom";
 
 const ChampionCard = (props) => {
-  const { champ_image, name } = props;
+  const { champ_image, name, id } = props;
   return (
     <Card className={styles.ChampionCard}>
       <Card.Img
@@ -13,7 +13,7 @@ const ChampionCard = (props) => {
         src={champ_image}
       />
       <Card.Body className={styles.ChampionCardBody}>
-        <Link to={`/champion/${name}`}>
+        <Link to={`/champion/${id}`}>
           <Card.Title className={styles.ChampionName}>{name}</Card.Title>
         </Link>
       </Card.Body>

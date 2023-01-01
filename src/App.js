@@ -31,7 +31,7 @@ function App() {
           />
           <Route
             exact
-            path="/champion/:name"
+            path="/champion/:id"
             render={() => <ChampionPage></ChampionPage>}
           />
           <Route
