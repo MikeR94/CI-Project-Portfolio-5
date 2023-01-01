@@ -31,7 +31,7 @@ const NavBar = () => {
   const loggedInMenu = (
     <>
       <NavDropdown
-        title={<Avatar src={test_avatar} height={50}></Avatar>}
+        title={<Avatar src={currentUser?.profile_avatar} height={50}></Avatar>}
         id="nav-dropdown"
       >
         {currentUser?.username}
