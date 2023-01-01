@@ -44,23 +44,21 @@ const ChampionSelect = () => {
     <div className={styles.RoleIconSection}>
       <div>{RoleIcons}</div>
       <Container className="mt-5">
-        <Row className={`${styles.Row}`}>
-          <Col className="col-5 d-flex justify-content-evenly">
-            {hasLoaded ? (
-              <>
-                {champions.results.length ? (
-                  champions.results.map((champions) => (
-                    <ChampionCard key={champions.id} {...champions} />
-                  ))
-                ) : (
-                  <h1>Test 1</h1>
-                )}
-              </>
-            ) : (
-              <h1>Test 2</h1>
-            )}
-          </Col>
-        </Row>
+        <div className={`${styles.Grid}`}>
+          {hasLoaded ? (
+            <>
+              {champions.results.length ? (
+                champions.results.map((champions) => (
+                  <ChampionCard key={champions.id} {...champions} />
+                ))
+              ) : (
+                <h1>Test 1</h1>
+              )}
+            </>
+          ) : (
+            <h1>Loading...</h1>
+          )}
+        </div>
       </Container>
     </div>
   );
