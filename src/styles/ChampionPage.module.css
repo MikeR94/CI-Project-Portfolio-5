@@ -1,32 +1,41 @@
-.ChampImage {
+.Image {
   padding-top: 50px;
   padding-left: 200px;
-  padding-bottom: 200px;
+  padding-bottom: 80px;
   padding-right: 200px;
   width: 100%;
   height: auto;
 }
 
+.Name {
+  justify-content: center;
+  font-size: 30px;
+}
+
+.Alias {
+  justify-content: center;
+}
+
 @media all and (max-width: 1400px) {
-  .ChampImage {
+  .Image {
     padding-top: 50px;
     padding-left: 150px;
-    padding-bottom: 150px;
+    padding-bottom: 50px;
     padding-right: 150px;
   }
 }
 
 @media all and (max-width: 1300px) {
-  .ChampImage {
+  .Image {
     padding-top: 50px;
     padding-left: 150px;
-    padding-bottom: 150px;
+    padding-bottom: 50px;
     padding-right: 150px;
   }
 }
 
 @media all and (max-width: 991px) {
-  .ChampImage {
+  .Image {
     padding-top: 50px;
     padding-left: 50px;
     padding-bottom: 50px;
@@ -34,7 +43,7 @@
   }
 }
 @media all and (max-width: 600px) {
-  .ChampImage {
+  .Image {
     margin-top: 150px;
   }
 }

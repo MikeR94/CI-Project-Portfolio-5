@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import styles from "../../styles/ChampionPage.module.css";
@@ -36,9 +36,11 @@ const ChampionPage = () => {
   return (
     <div>
       <Container className="md">
-        <img src={champ_image} className={`${styles.ChampImage}`}></img>
-        {name}
-        {alias}
+        <Row>
+          <img src={champ_image} className={`${styles.Image}`}></img>
+        </Row>
+        <Row className={styles.Name}>{name}</Row>
+        <Row className={styles.Alias}>{alias}</Row>
       </Container>
     </div>
   );
