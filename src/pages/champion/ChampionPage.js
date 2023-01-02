@@ -218,7 +218,7 @@ const ChampionPage = () => {
             overlay={<Tooltip>{ability_2_description}</Tooltip>}
           >
             <img
-              src={ability_1_image}
+              src={ability_2_image}
               className={`${styles.AbilityImage}`}
               alt={`${ability_1}`}
             ></img>
