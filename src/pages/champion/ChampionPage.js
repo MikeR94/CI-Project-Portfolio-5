@@ -10,6 +10,8 @@ import MageIcon from "../../assets/class_icons/mage.webp";
 import MarksmanIcon from "../../assets/class_icons/marksman.webp";
 import SlayerIcon from "../../assets/class_icons/slayer.webp";
 import SpecialistIcon from "../../assets/class_icons/specialist.webp";
+import RangeIcon from "../../assets/range_icons/ranged.png";
+import MeleeIcon from "../../assets/range_icons/melee.png";
 
 const ChampionPage = () => {
   const { id } = useParams();
@@ -135,6 +137,14 @@ const ChampionPage = () => {
     classImage = TankIcon;
   }
 
+  let rangeImage = "";
+
+  if (range === "melee") {
+    rangeImage = MeleeIcon;
+  } else if (range === "ranged") {
+    rangeImage = RangeIcon;
+  }
+
   return (
     <div>
       <Container className="md">
@@ -224,11 +234,12 @@ const ChampionPage = () => {
         <Row className="text-center">
           <Col>
             <div>Class</div>
-            <img alt="test" src={classImage}></img>
+            <img alt="class" src={classImage}></img>
             <div className="text-capitalize">{champ_class}</div>
           </Col>
           <Col>
             <div>Range</div>
+            <img alt="range" src={rangeImage}></img>
             <div className="text-capitalize">{range}</div>
           </Col>
           <Col>Ability</Col>
