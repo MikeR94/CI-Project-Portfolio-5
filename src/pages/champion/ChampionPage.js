@@ -135,6 +135,8 @@ const ChampionPage = () => {
             className={`${styles.AbilityImage}`}
             alt={`${ability_1}`}
           ></img>
+          <div className={styles.AbilityType}>Ability 1</div>
+          <div className={styles.AbilityName}>{ability_1}</div>
         </Row>
         <Row className="justify-content-center">
           <img
@@ -142,6 +144,8 @@ const ChampionPage = () => {
             className={`${styles.AbilityImage}`}
             alt={`${ability_2}`}
           ></img>
+          <div className={styles.AbilityType}>Ability 2</div>
+          <div className={styles.AbilityName}>{ability_2}</div>
         </Row>
         <Row className="justify-content-center">
           <img
@@ -149,6 +153,8 @@ const ChampionPage = () => {
             className={`${styles.AbilityImage}`}
             alt={`${ability_3}`}
           ></img>
+          <div className={styles.AbilityType}>Ability 3</div>
+          <div className={styles.AbilityName}>{ability_3}</div>
         </Row>
         <Row className="justify-content-center">
           <img
@@ -156,6 +162,8 @@ const ChampionPage = () => {
             className={`${styles.AbilityImage}`}
             alt={`${ultimate_ability}`}
           ></img>
+          <div className={styles.AbilityType}>Ultimate</div>
+          <div className={styles.AbilityName}>{ultimate_ability}</div>
         </Row>
       </Container>
     </div>
