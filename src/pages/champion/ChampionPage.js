@@ -126,6 +126,8 @@ const ChampionPage = () => {
             className={`${styles.AbilityImage}`}
             alt={`${passive_ability}`}
           ></img>
+          <div className={styles.AbilityType}>Passive</div>
+          <div className={styles.AbilityName}>{passive_ability}</div>
         </Row>
         <Row className="justify-content-center">
           <img
