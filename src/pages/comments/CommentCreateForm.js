@@ -8,7 +8,7 @@ import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 
 function CommentCreateForm(props) {
-  const { setChampData, setCommentData, profile_avatar, champion } = props;
+  const { setCommentData, profile_avatar, champion } = props;
   const [comment, setComment] = useState("");
 
   const handleChange = (event) => {
@@ -25,14 +25,6 @@ function CommentCreateForm(props) {
       setCommentData((prevComments) => ({
         ...prevComments,
         results: [data, ...prevComments.results],
-      }));
-      setChampData((prevChamp) => ({
-        results: [
-          {
-            ...prevChamp.results[0],
-            comments_count: prevChamp.results[0].comments_count + 1,
-          },
-        ],
       }));
       setComment("");
     } catch (err) {

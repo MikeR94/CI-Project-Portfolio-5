@@ -316,6 +316,7 @@ const ChampionPage = () => {
             profile_id={currentUser.profile_id}
             profile_avatar={profile_avatar}
             champion={id}
+            setCommentData={setCommentData}
           />
         ) : commentData.results.length ? (
           "Comments"
@@ -323,7 +324,11 @@ const ChampionPage = () => {
         {commentData.results.length ? (
           <InfiniteScroll
             children={commentData.results.map((comment) => (
-              <Comment key={comment.id} {...comment} />
+              <Comment
+                key={comment.id}
+                {...comment}
+                setCommentData={setCommentData}
+              />
             ))}
             dataLength={commentData.results.length}
             loader="Loading..."
