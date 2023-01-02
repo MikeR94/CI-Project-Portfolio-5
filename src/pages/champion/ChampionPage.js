@@ -3,6 +3,13 @@ import { Col, Container, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import styles from "../../styles/ChampionPage.module.css";
+import FighterIcon from "../../assets/class_icons/fighter.webp";
+import TankIcon from "../../assets/class_icons/tank.webp";
+import ControllerIcon from "../../assets/class_icons/controller.webp";
+import MageIcon from "../../assets/class_icons/mage.webp";
+import MarksmanIcon from "../../assets/class_icons/marksman.webp";
+import SlayerIcon from "../../assets/class_icons/slayer.webp";
+import SpecialistIcon from "../../assets/class_icons/specialist.webp";
 
 const ChampionPage = () => {
   const { id } = useParams();
@@ -103,9 +110,26 @@ const ChampionPage = () => {
         console.log(err);
       }
     };
-
     fetchChampion();
   }, [id]);
+
+  let classImage = "";
+
+  if (champ_class === "controller") {
+    classImage = ControllerIcon;
+  } else if (champ_class === "fighter") {
+    classImage = FighterIcon;
+  } else if (champ_class === "mage") {
+    classImage = MageIcon;
+  } else if (champ_class === "marksman") {
+    classImage = MarksmanIcon;
+  } else if (champ_class === "slayer") {
+    classImage = SlayerIcon;
+  } else if (champ_class === "specialist") {
+    classImage = SpecialistIcon;
+  } else if (champ_class === "tank") {
+    classImage = TankIcon;
+  }
 
   return (
     <div>
@@ -194,7 +218,9 @@ const ChampionPage = () => {
         </Row>
         <hr></hr>
         <Row className="text-center">
-          <Col>Class</Col>
+          <Col>
+            <img alt="test" src={classImage}></img>
+          </Col>
           <Col>Range</Col>
           <Col>Ability</Col>
         </Row>
