@@ -57,6 +57,18 @@
   margin-bottom: 30px;
 }
 
+.UpVoteText {
+  justify-content: center;
+}
+
+.UpVoteIcon {
+  text-align: center;
+}
+
+.UpVoteIcon i {
+  font-size: 120px;
+}
+
 @media all and (max-width: 1400px) {
   .Image {
     padding-top: 50px;
