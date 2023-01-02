@@ -177,9 +177,9 @@ const ChampionPage = () => {
         </Row>
         <Row className={styles.Name}>{name}</Row>
         <Row className={styles.Alias}>{alias}</Row>
-        <hr></hr>
+        <hr className="mt-5 mb-5"></hr>
         <Row>{lore}</Row>
-        <hr></hr>
+        <hr className="mt-5 mb-5"></hr>
         <Row className="justify-content-center">
           <OverlayTrigger
             placement="bottom"
@@ -250,7 +250,7 @@ const ChampionPage = () => {
           <div className={styles.AbilityType}>Ultimate</div>
           <div className={styles.AbilityName}>{ultimate_ability}</div>
         </Row>
-        <hr></hr>
+        <hr className="mt-5 mb-5"></hr>
         <Row className="text-center">
           <Col>
             <div>Class</div>
