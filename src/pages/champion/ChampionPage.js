@@ -12,6 +12,9 @@ import SlayerIcon from "../../assets/class_icons/slayer.webp";
 import SpecialistIcon from "../../assets/class_icons/specialist.webp";
 import RangeIcon from "../../assets/range_icons/ranged.png";
 import MeleeIcon from "../../assets/range_icons/melee.png";
+import LowDifficultyIcon from "../../assets/difficulty_icons/low.webp";
+import ModerateDifficultyIcon from "../../assets/difficulty_icons/moderate.webp";
+import HighDifficultyIcon from "../../assets/difficulty_icons/high.webp";
 
 const ChampionPage = () => {
   const { id } = useParams();
