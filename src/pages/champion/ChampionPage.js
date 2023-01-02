@@ -290,6 +290,7 @@ const ChampionPage = () => {
               <i class="fa fa-angle-up"></i>
             </div>
           </Col>
+          <hr className="mt-5 mb-5"></hr>
         </Row>
       </Container>
     </div>
