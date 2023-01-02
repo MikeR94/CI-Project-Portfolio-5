@@ -34,6 +34,7 @@ const ChampionPage = () => {
     ultimate_ability_description: "",
     ultimate_ability_image: "",
     champ_class: "",
+    range: "",
   });
   const {
     name,
@@ -56,6 +57,7 @@ const ChampionPage = () => {
     ultimate_ability_description,
     ultimate_ability_image,
     champ_class,
+    range,
   } = champData;
 
   useEffect(() => {
@@ -83,6 +85,7 @@ const ChampionPage = () => {
           ultimate_ability_description,
           ultimate_ability_image,
           champ_class,
+          range,
         } = data;
         setChampData(() => ({
           name: name,
@@ -105,6 +108,7 @@ const ChampionPage = () => {
           ultimate_ability_description: ultimate_ability_description,
           ultimate_ability_image: ultimate_ability_image,
           champ_class: champ_class,
+          range: range,
         }));
       } catch (err) {
         console.log(err);
@@ -223,7 +227,10 @@ const ChampionPage = () => {
             <img alt="test" src={classImage}></img>
             <div className="text-capitalize">{champ_class}</div>
           </Col>
-          <Col>Range</Col>
+          <Col>
+            <div>Range</div>
+            <div className="text-capitalize">{range}</div>
+          </Col>
           <Col>Ability</Col>
         </Row>
       </Container>
