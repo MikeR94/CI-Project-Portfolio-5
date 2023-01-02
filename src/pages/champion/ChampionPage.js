@@ -249,7 +249,7 @@ const ChampionPage = () => {
             ></img>
             <div className="text-capitalize">{range}</div>
           </Col>
-          <Col>Ability</Col>
+          <Col>Difficulty</Col>
         </Row>
       </Container>
     </div>
