@@ -19,11 +19,13 @@ import Comment from "../comments/Comment";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
+import CommentCreateForm from "../comments/CommentCreateForm";
 
 const ChampionPage = () => {
   const { id } = useParams();
   const [commentData, setCommentData] = useState({ results: [] });
   const currentUser = useCurrentUser();
+  const profile_avatar = currentUser?.profile_avatar;
   const [champData, setChampData] = useState({
     name: "",
     alias: "",
@@ -309,6 +311,15 @@ const ChampionPage = () => {
           </Col>
           <hr className="mt-5 mb-5"></hr>
         </Row>
+        {currentUser ? (
+          <CommentCreateForm
+            profile_id={currentUser.profile_id}
+            profile_avatar={profile_avatar}
+            champion={id}
+          />
+        ) : commentData.results.length ? (
+          "Comments"
+        ) : null}
         {commentData.results.length ? (
           <InfiniteScroll
             children={commentData.results.map((comment) => (
