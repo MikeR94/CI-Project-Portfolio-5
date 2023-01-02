@@ -219,7 +219,9 @@ const ChampionPage = () => {
         <hr></hr>
         <Row className="text-center">
           <Col>
+            <div>Class</div>
             <img alt="test" src={classImage}></img>
+            <div className="text-capitalize">{champ_class}</div>
           </Col>
           <Col>Range</Col>
           <Col>Ability</Col>
