@@ -155,6 +155,16 @@ const ChampionPage = () => {
     isMelee = false;
   }
 
+  let difficultyImage = "";
+
+  if (difficulty === "low") {
+    difficultyImage = LowDifficultyIcon;
+  } else if (difficulty === "moderate") {
+    difficultyImage = ModerateDifficultyIcon;
+  } else if (difficulty === "high") {
+    difficultyImage = HighDifficultyIcon;
+  }
+
   return (
     <div>
       <Container className="md">
@@ -256,7 +266,15 @@ const ChampionPage = () => {
             ></img>
             <div className="text-capitalize">{range}</div>
           </Col>
-          <Col>Difficulty</Col>
+          <Col>
+            <div>Difficulty</div>
+            <img
+              alt="difficulty"
+              src={difficultyImage}
+              className={styles.DifficultyIcon}
+            ></img>
+            <div className="text-capitalize">{difficulty}</div>
+          </Col>
         </Row>
       </Container>
     </div>
