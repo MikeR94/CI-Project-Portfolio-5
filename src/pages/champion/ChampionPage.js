@@ -10,18 +10,20 @@ const ChampionPage = () => {
     name: "",
     alias: "",
     champ_image: "",
+    lore: "",
   });
-  const { name, alias, champ_image } = champData;
+  const { name, alias, champ_image, lore } = champData;
 
   useEffect(() => {
     const fetchChampion = async () => {
       try {
         const { data } = await axiosReq.get(`/champions/${id}`);
-        const { name, alias, champ_image } = data;
+        const { name, alias, champ_image, lore } = data;
         setChampData(() => ({
           name: name,
           alias: alias,
           champ_image: champ_image,
+          lore: lore,
         }));
       } catch (err) {
         console.log(err);
@@ -45,7 +47,8 @@ const ChampionPage = () => {
         </Row>
         <Row className={styles.Name}>{name}</Row>
         <Row className={styles.Alias}>{alias}</Row>
-        <br></br>
+        <hr></hr>
+        <Row>{lore}</Row>
       </Container>
     </div>
   );
