@@ -45,6 +45,11 @@
   margin-top: 10px;
 }
 
+.DifficultyIcon {
+  margin-top: 50px;
+  margin-bottom: 41px;
+}
+
 @media all and (max-width: 1400px) {
   .Image {
     padding-top: 50px;
