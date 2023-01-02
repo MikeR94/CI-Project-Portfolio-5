@@ -276,6 +276,12 @@ const ChampionPage = () => {
             <div className="text-capitalize">{difficulty}</div>
           </Col>
         </Row>
+        <hr className="mt-5 mb-5"></hr>
+        <Row className={styles.UpVoteTitle}>Up Vote</Row>
+        <Row>
+          Do you like this champion? Make sure you up-vote it by clicking the
+          arrow if you do!
+        </Row>
       </Container>
     </div>
   );
