@@ -126,22 +126,22 @@ const ChampionPage = () => {
     fetchChampion();
   }, [id]);
 
-  let classImage = "";
+  let classIcon = "";
 
   if (champ_class === "controller") {
-    classImage = ControllerIcon;
+    classIcon = ControllerIcon;
   } else if (champ_class === "fighter") {
-    classImage = FighterIcon;
+    classIcon = FighterIcon;
   } else if (champ_class === "mage") {
-    classImage = MageIcon;
+    classIcon = MageIcon;
   } else if (champ_class === "marksman") {
-    classImage = MarksmanIcon;
+    classIcon = MarksmanIcon;
   } else if (champ_class === "slayer") {
-    classImage = SlayerIcon;
+    classIcon = SlayerIcon;
   } else if (champ_class === "specialist") {
-    classImage = SpecialistIcon;
+    classIcon = SpecialistIcon;
   } else if (champ_class === "tank") {
-    classImage = TankIcon;
+    classIcon = TankIcon;
   }
 
   let rangeImage = "";
@@ -254,13 +254,13 @@ const ChampionPage = () => {
         <Row className="text-center">
           <Col>
             <div>Class</div>
-            <img alt="class" src={classImage}></img>
+            <img alt="class icon" src={classIcon}></img>
             <div className="text-capitalize">{champ_class}</div>
           </Col>
           <Col>
             <div>Range</div>
             <img
-              alt="range"
+              alt="range icon"
               src={rangeImage}
               className={isMelee ? styles.MeleeIcon : styles.RangeIcon}
             ></img>
@@ -269,7 +269,7 @@ const ChampionPage = () => {
           <Col>
             <div>Difficulty</div>
             <img
-              alt="difficulty"
+              alt="difficulty icon"
               src={difficultyImage}
               className={styles.DifficultyIcon}
             ></img>
