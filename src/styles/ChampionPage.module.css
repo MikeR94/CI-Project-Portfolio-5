@@ -67,6 +67,7 @@
 
 .UpVoteIcon i {
   font-size: 120px;
+  color: #cbae71;
 }
 
 @media all and (max-width: 1400px) {
