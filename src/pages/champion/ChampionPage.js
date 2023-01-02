@@ -41,6 +41,7 @@ const ChampionPage = () => {
     champ_class: "",
     range: "",
     difficulty: "",
+    upvotes_count: 0,
   });
   const {
     name,
@@ -65,6 +66,7 @@ const ChampionPage = () => {
     champ_class,
     range,
     difficulty,
+    upvotes_count,
   } = champData;
 
   useEffect(() => {
@@ -94,6 +96,7 @@ const ChampionPage = () => {
           champ_class,
           range,
           difficulty,
+          upvotes_count,
         } = data;
         setChampData(() => ({
           name: name,
@@ -118,6 +121,7 @@ const ChampionPage = () => {
           champ_class: champ_class,
           range: range,
           difficulty: difficulty,
+          upvotes_count: upvotes_count,
         }));
       } catch (err) {
         console.log(err);
@@ -289,6 +293,7 @@ const ChampionPage = () => {
             <div className={styles.UpVoteIcon}>
               <i class="fa fa-angle-up"></i>
             </div>
+            <div className="text-center">{upvotes_count}</div>
           </Col>
           <hr className="mt-5 mb-5"></hr>
         </Row>
