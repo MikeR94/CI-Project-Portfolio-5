@@ -18,6 +18,7 @@ import HighDifficultyIcon from "../../assets/difficulty_icons/high.webp";
 
 const ChampionPage = () => {
   const { id } = useParams();
+  const [commentData, setCommentData] = useState({ results: [] });
   const [champData, setChampData] = useState({
     name: "",
     alias: "",
@@ -72,7 +73,10 @@ const ChampionPage = () => {
   useEffect(() => {
     const fetchChampion = async () => {
       try {
-        const { data } = await axiosReq.get(`/champions/${id}`);
+        const [{ data: champion }, { data: comment }] = await Promise.all([
+          axiosReq.get(`/champions/${id}`),
+          axiosReq.get(`/comments/?champion=${id}`),
+        ]);
         const {
           name,
           alias,
@@ -97,7 +101,8 @@ const ChampionPage = () => {
           range,
           difficulty,
           upvotes_count,
-        } = data;
+        } = champion;
+        setCommentData(comment);
         setChampData(() => ({
           name: name,
           alias: alias,
@@ -129,6 +134,8 @@ const ChampionPage = () => {
     };
     fetchChampion();
   }, [id]);
+
+  console.log(commentData);
 
   let classIcon = "";
 
