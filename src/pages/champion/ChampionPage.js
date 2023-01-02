@@ -133,38 +133,58 @@ const ChampionPage = () => {
           <div className={styles.AbilityName}>{passive_ability}</div>
         </Row>
         <Row className="justify-content-center">
-          <img
-            src={ability_1_image}
-            className={`${styles.AbilityImage}`}
-            alt={`${ability_1}`}
-          ></img>
+          <OverlayTrigger
+            placement="bottom"
+            overlay={<Tooltip>{ability_1_description}</Tooltip>}
+          >
+            <img
+              src={ability_1_image}
+              className={`${styles.AbilityImage}`}
+              alt={`${ability_1}`}
+            ></img>
+          </OverlayTrigger>
           <div className={styles.AbilityType}>Ability 1</div>
           <div className={styles.AbilityName}>{ability_1}</div>
         </Row>
         <Row className="justify-content-center">
-          <img
-            src={ability_2_image}
-            className={`${styles.AbilityImage}`}
-            alt={`${ability_2}`}
-          ></img>
+          <OverlayTrigger
+            placement="bottom"
+            overlay={<Tooltip>{ability_2_description}</Tooltip>}
+          >
+            <img
+              src={ability_1_image}
+              className={`${styles.AbilityImage}`}
+              alt={`${ability_1}`}
+            ></img>
+          </OverlayTrigger>
           <div className={styles.AbilityType}>Ability 2</div>
           <div className={styles.AbilityName}>{ability_2}</div>
         </Row>
         <Row className="justify-content-center">
-          <img
-            src={ability_3_image}
-            className={`${styles.AbilityImage}`}
-            alt={`${ability_3}`}
-          ></img>
+          <OverlayTrigger
+            placement="bottom"
+            overlay={<Tooltip>{ability_3_description}</Tooltip>}
+          >
+            <img
+              src={ability_3_image}
+              className={`${styles.AbilityImage}`}
+              alt={`${ability_3}`}
+            ></img>
+          </OverlayTrigger>
           <div className={styles.AbilityType}>Ability 3</div>
           <div className={styles.AbilityName}>{ability_3}</div>
         </Row>
         <Row className="justify-content-center">
-          <img
-            src={ultimate_ability_image}
-            className={`${styles.AbilityImage}`}
-            alt={`${ultimate_ability}`}
-          ></img>
+          <OverlayTrigger
+            placement="bottom"
+            overlay={<Tooltip>{ultimate_ability_description}</Tooltip>}
+          >
+            <img
+              src={ultimate_ability_image}
+              className={`${styles.AbilityImage}`}
+              alt={`${ultimate_ability}`}
+            ></img>
+          </OverlayTrigger>
           <div className={styles.AbilityType}>Ultimate</div>
           <div className={styles.AbilityName}>{ultimate_ability}</div>
         </Row>
