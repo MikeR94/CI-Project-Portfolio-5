@@ -33,6 +33,18 @@
   text-align: center;
 }
 
+.RangeIcon {
+  width: 70px;
+  height: 60%;
+  margin-top: 10px;
+}
+
+.MeleeIcon {
+  width: 150px;
+  height: 60%;
+  margin-top: 10px;
+}
+
 @media all and (max-width: 1400px) {
   .Image {
     padding-top: 50px;

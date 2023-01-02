@@ -138,11 +138,14 @@ const ChampionPage = () => {
   }
 
   let rangeImage = "";
+  let isMelee = false;
 
   if (range === "melee") {
     rangeImage = MeleeIcon;
+    isMelee = true;
   } else if (range === "ranged") {
     rangeImage = RangeIcon;
+    isMelee = false;
   }
 
   return (
@@ -239,7 +242,11 @@ const ChampionPage = () => {
           </Col>
           <Col>
             <div>Range</div>
-            <img alt="range" src={rangeImage}></img>
+            <img
+              alt="range"
+              src={rangeImage}
+              className={isMelee ? styles.MeleeIcon : styles.RangeIcon}
+            ></img>
             <div className="text-capitalize">{range}</div>
           </Col>
           <Col>Ability</Col>
