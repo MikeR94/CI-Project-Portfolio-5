@@ -189,9 +189,11 @@ const ChampionPage = () => {
           <div className={styles.AbilityName}>{ultimate_ability}</div>
         </Row>
         <hr></hr>
-        <div>Class</div>
-        <div>Range</div>
-        <div>Ability</div>
+        <Row className="text-center">
+          <Col>Class</Col>
+          <Col>Range</Col>
+          <Col>Ability</Col>
+        </Row>
       </Container>
     </div>
   );
