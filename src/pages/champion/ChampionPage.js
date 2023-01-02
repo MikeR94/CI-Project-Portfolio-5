@@ -29,7 +29,7 @@ const ChampionPage = () => {
     };
 
     fetchChampion();
-  }, []);
+  }, [id]);
 
   console.log(name);
 
@@ -37,10 +37,15 @@ const ChampionPage = () => {
     <div>
       <Container className="md">
         <Row>
-          <img src={champ_image} className={`${styles.Image}`}></img>
+          <img
+            src={champ_image}
+            className={`${styles.Image}`}
+            alt={`${name}`}
+          ></img>
         </Row>
         <Row className={styles.Name}>{name}</Row>
         <Row className={styles.Alias}>{alias}</Row>
+        <br></br>
       </Container>
     </div>
   );
