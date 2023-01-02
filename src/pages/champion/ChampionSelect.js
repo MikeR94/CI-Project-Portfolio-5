@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import RoleIcon from "../../components/RoleIcon";
-import SupportIcon from "../../assets/support.png";
-import AdcIcon from "../../assets/adc.png";
-import JungleIcon from "../../assets/jungle.png";
-import TopIcon from "../../assets/top.png";
-import MiddleIcon from "../../assets/middle.png";
+import SupportIcon from "../../assets/role_icons/support.png";
+import AdcIcon from "../../assets/role_icons/adc.png";
+import JungleIcon from "../../assets/role_icons/jungle.png";
+import TopIcon from "../../assets/role_icons/top.png";
+import MiddleIcon from "../../assets/role_icons/middle.png";
 import styles from "../../styles/ChampionSelect.module.css";
 import ChampionCard from "../../components/ChampionCard";
 import { Container } from "react-bootstrap";
