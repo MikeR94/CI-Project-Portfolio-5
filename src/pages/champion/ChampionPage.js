@@ -120,35 +120,35 @@ const ChampionPage = () => {
         <hr></hr>
         <Row>{lore}</Row>
         <hr></hr>
-        <Row>
+        <Row className="justify-content-center">
           <img
             src={passive_ability_image}
             className={`${styles.AbilityImage}`}
             alt={`${passive_ability}`}
           ></img>
         </Row>
-        <Row>
+        <Row className="justify-content-center">
           <img
             src={ability_1_image}
             className={`${styles.AbilityImage}`}
             alt={`${ability_1}`}
           ></img>
         </Row>
-        <Row>
+        <Row className="justify-content-center">
           <img
             src={ability_2_image}
             className={`${styles.AbilityImage}`}
             alt={`${ability_2}`}
           ></img>
         </Row>
-        <Row>
+        <Row className="justify-content-center">
           <img
             src={ability_3_image}
             className={`${styles.AbilityImage}`}
             alt={`${ability_3}`}
           ></img>
         </Row>
-        <Row>
+        <Row className="justify-content-center">
           <img
             src={ultimate_ability_image}
             className={`${styles.AbilityImage}`}
