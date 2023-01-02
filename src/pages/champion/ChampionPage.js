@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -15,10 +15,15 @@ import MeleeIcon from "../../assets/range_icons/melee.png";
 import LowDifficultyIcon from "../../assets/difficulty_icons/low.webp";
 import ModerateDifficultyIcon from "../../assets/difficulty_icons/moderate.webp";
 import HighDifficultyIcon from "../../assets/difficulty_icons/high.webp";
+import Comment from "../comments/Comment";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
 
 const ChampionPage = () => {
   const { id } = useParams();
   const [commentData, setCommentData] = useState({ results: [] });
+  const currentUser = useCurrentUser();
   const [champData, setChampData] = useState({
     name: "",
     alias: "",
@@ -304,6 +309,21 @@ const ChampionPage = () => {
           </Col>
           <hr className="mt-5 mb-5"></hr>
         </Row>
+        {commentData.results.length ? (
+          <InfiniteScroll
+            children={commentData.results.map((comment) => (
+              <Comment key={comment.id} {...comment} />
+            ))}
+            dataLength={commentData.results.length}
+            loader="Loading..."
+            hasMore={!!commentData.next}
+            next={() => fetchMoreData(commentData, setCommentData)}
+          />
+        ) : currentUser ? (
+          <span>No comments yet, be the first to comment!</span>
+        ) : (
+          <span>No comments, sign up and be the first to comment!</span>
+        )}
       </Container>
     </div>
   );
