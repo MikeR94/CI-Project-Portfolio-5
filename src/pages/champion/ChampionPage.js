@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import React, { useEffect, useRef, useState } from "react";
+import { Col, Container, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import styles from "../../styles/ChampionPage.module.css";
@@ -103,8 +103,6 @@ const ChampionPage = () => {
     fetchChampion();
   }, [id]);
 
-  console.log(name);
-
   return (
     <div>
       <Container className="md">
@@ -121,11 +119,16 @@ const ChampionPage = () => {
         <Row>{lore}</Row>
         <hr></hr>
         <Row className="justify-content-center">
-          <img
-            src={passive_ability_image}
-            className={`${styles.AbilityImage}`}
-            alt={`${passive_ability}`}
-          ></img>
+          <OverlayTrigger
+            placement="bottom"
+            overlay={<Tooltip>{passive_ability_description}</Tooltip>}
+          >
+            <img
+              src={passive_ability_image}
+              className={`${styles.AbilityImage}`}
+              alt={`${passive_ability}`}
+            ></img>
+          </OverlayTrigger>
           <div className={styles.AbilityType}>Passive</div>
           <div className={styles.AbilityName}>{passive_ability}</div>
         </Row>
@@ -165,6 +168,10 @@ const ChampionPage = () => {
           <div className={styles.AbilityType}>Ultimate</div>
           <div className={styles.AbilityName}>{ultimate_ability}</div>
         </Row>
+        <hr></hr>
+        <div>Class</div>
+        <div>Range</div>
+        <div>Ability</div>
       </Container>
     </div>
   );
