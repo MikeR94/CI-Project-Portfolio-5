@@ -7,6 +7,7 @@ import "./api/axiosDefaults";
 import SignInForm from "./pages/auth/SignInForm";
 import ChampionSelect from "./pages/champion/ChampionSelect";
 import ChampionPage from "./pages/champion/ChampionPage";
+import ChampionCreate from "./pages/champion/ChampionCreate";
 
 function App() {
   return (
@@ -33,6 +34,11 @@ function App() {
             exact
             path="/champion/:id"
             render={() => <ChampionPage></ChampionPage>}
+          />
+          <Route
+            exact
+            path="/create"
+            render={() => <ChampionCreate></ChampionCreate>}
           />
           <Route
             exact
