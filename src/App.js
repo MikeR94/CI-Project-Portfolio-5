@@ -1,15 +1,18 @@
 import styles from "./App.module.css";
 import NavBar from "./components/NavBar";
 import Container from "react-bootstrap/Container";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import SignUpForm from "./pages/auth/SignUpForm";
 import "./api/axiosDefaults";
 import SignInForm from "./pages/auth/SignInForm";
 import ChampionSelect from "./pages/champion/ChampionSelect";
 import ChampionPage from "./pages/champion/ChampionPage";
 import ChampionCreate from "./pages/champion/ChampionCreate";
+import { useCurrentUser } from "./contexts/CurrentUserContext";
 
 function App() {
+  const currentUser = useCurrentUser();
+  const is_staff = currentUser?.is_staff;
   return (
     <div className={styles.App}>
       <NavBar />
@@ -35,11 +38,15 @@ function App() {
             path="/champion/:id"
             render={() => <ChampionPage></ChampionPage>}
           />
-          <Route
-            exact
-            path="/create"
-            render={() => <ChampionCreate></ChampionCreate>}
-          />
+          {is_staff ? (
+            <Route
+              exact
+              path="/create"
+              render={() => <ChampionCreate></ChampionCreate>}
+            />
+          ) : (
+            <Redirect to="/"></Redirect>
+          )}
           <Route
             exact
             path="/profile"
