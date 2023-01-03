@@ -354,13 +354,23 @@ const ChampionPage = () => {
           <Col lg={4}>
             <div className={styles.UpVoteIcon}>
               {is_owner && upvotes_id ? (
-                <span onClick={handleDownVote}>
-                  <i class="fa fa-angle-down"></i>
-                </span>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={<Tooltip>Click to down vote this champion</Tooltip>}
+                >
+                  <span onClick={handleDownVote}>
+                    <i class="fa fa-angle-down"></i>
+                  </span>
+                </OverlayTrigger>
               ) : (
-                <span onClick={handleUpVote}>
-                  <i class="fa fa-angle-up"></i>
-                </span>
+                <OverlayTrigger
+                  placement="top"
+                  overlay={<Tooltip>Click to up vote this champion</Tooltip>}
+                >
+                  <span onClick={handleUpVote}>
+                    <i class="fa fa-angle-up"></i>
+                  </span>
+                </OverlayTrigger>
               )}
             </div>
             <div className="text-center">{upvotes_count}</div>
