@@ -377,6 +377,7 @@ const ChampionPage = () => {
           </Col>
           <hr className="mt-5 mb-5"></hr>
         </Row>
+        <Row className={styles.CommentTitle}>Have Your Say</Row>
         {currentUser ? (
           <CommentCreateForm
             profile_id={currentUser.profile_id}
