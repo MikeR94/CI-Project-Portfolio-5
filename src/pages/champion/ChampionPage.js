@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import { axiosReq } from "../../api/axiosDefaults";
+import { axiosReq, axiosRes } from "../../api/axiosDefaults";
 import styles from "../../styles/ChampionPage.module.css";
 import FighterIcon from "../../assets/class_icons/fighter.webp";
 import TankIcon from "../../assets/class_icons/tank.webp";
@@ -26,31 +26,7 @@ const ChampionPage = () => {
   const [commentData, setCommentData] = useState({ results: [] });
   const currentUser = useCurrentUser();
   const profile_avatar = currentUser?.profile_avatar;
-  const [champData, setChampData] = useState({
-    name: "",
-    alias: "",
-    champ_image: "",
-    lore: "",
-    passive_ability: "",
-    passive_ability_description: "",
-    passive_ability_image: "",
-    ability_1: "",
-    ability_1_description: "",
-    ability_1_image: "",
-    ability_2: "",
-    ability_2_description: "",
-    ability_2_image: "",
-    ability_3: "",
-    ability_3_description: "",
-    ability_3_image: "",
-    ultimate_ability: "",
-    ultimate_ability_description: "",
-    ultimate_ability_image: "",
-    champ_class: "",
-    range: "",
-    difficulty: "",
-    upvotes_count: 0,
-  });
+  const [champData, setChampData] = useState({ results: [] });
   const {
     name,
     alias,
@@ -183,6 +159,39 @@ const ChampionPage = () => {
     difficultyImage = HighDifficultyIcon;
   }
 
+  const handleUpVote = async () => {
+    try {
+      await axiosRes.post("/upvotes/", { champion: id });
+      setChampData(() => ({
+        name: name,
+        alias: alias,
+        champ_image: champ_image,
+        lore: lore,
+        passive_ability: passive_ability,
+        passive_ability_description: passive_ability_description,
+        passive_ability_image: passive_ability_image,
+        ability_1: ability_1,
+        ability_1_description: ability_1_description,
+        ability_1_image: ability_1_image,
+        ability_2: ability_2,
+        ability_2_description: ability_2_description,
+        ability_2_image: ability_2_image,
+        ability_3: ability_3,
+        ability_3_description: ability_3_description,
+        ability_3_image: ability_3_image,
+        ultimate_ability: ultimate_ability,
+        ultimate_ability_description: ultimate_ability_description,
+        ultimate_ability_image: ultimate_ability_image,
+        champ_class: champ_class,
+        range: range,
+        difficulty: difficulty,
+        upvotes_count: upvotes_count + 1,
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div>
       <Container className="md">
@@ -305,7 +314,9 @@ const ChampionPage = () => {
           </Col>
           <Col lg={4}>
             <div className={styles.UpVoteIcon}>
-              <i class="fa fa-angle-up"></i>
+              <span onClick={handleUpVote}>
+                <i class="fa fa-angle-up"></i>
+              </span>
             </div>
             <div className="text-center">{upvotes_count}</div>
           </Col>
