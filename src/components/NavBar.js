@@ -74,7 +74,7 @@ const NavBar = () => {
   );
 
   return (
-    <Navbar expand="md" fixed="top">
+    <Navbar className={styles.NavBar} expand="md" fixed="top">
       <Container className={styles.Container}>
         <div className={`${styles.Block} ${styles.Left}`}>
           <NavLink to="/">

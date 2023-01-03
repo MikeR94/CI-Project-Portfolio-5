@@ -1,6 +1,7 @@
 .NavBar {
   background-color: #070a14;
   display: flex;
+  height: 80px;
 }
 
 .NavLink {
@@ -18,7 +19,8 @@
 .Container {
   display: flex;
   width: 100%;
-  height: 50px;
+  height: 150px;
+  background-color: #070a14;
 }
 
 .Row {
@@ -29,6 +31,7 @@
 
 .Block {
   height: 50px;
+  background-color: #070a14;
 }
 
 .Left {
@@ -36,12 +39,14 @@
   order: 1;
   text-align: start;
   margin-top: 20px;
+  background-color: #070a14;
 }
 
 .Center {
   width: 56%;
   order: 2;
   margin-top: 30px;
+  background-color: #070a14;
 }
 
 .Right {
@@ -49,12 +54,12 @@
   order: 3;
   text-align: end;
   margin-top: 20px;
+  background-color: #070a14;
 }
 
 @media all and (max-width: 600px) {
   .Container {
     flex-wrap: wrap;
-    height: 100px;
   }
   .Center {
     width: 100%;
