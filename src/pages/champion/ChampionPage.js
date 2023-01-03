@@ -326,8 +326,8 @@ const ChampionPage = () => {
             children={commentData.results.map((comment) => (
               <Comment
                 key={comment.id}
-                {...comment}
                 setCommentData={setCommentData}
+                {...comment}
               />
             ))}
             dataLength={commentData.results.length}
