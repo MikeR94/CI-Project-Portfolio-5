@@ -55,6 +55,8 @@ const ChampionPage = () => {
     upvotes_id,
   } = champData;
 
+  console.log(currentUser);
+
   useEffect(() => {
     const fetchChampion = async () => {
       try {

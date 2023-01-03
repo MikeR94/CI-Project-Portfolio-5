@@ -15,6 +15,8 @@ const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
+  const is_staff = currentUser?.is_staff;
+
   const history = useHistory();
 
   const handleSignOut = async () => {
@@ -40,6 +42,11 @@ const NavBar = () => {
         <NavDropdown.Item as={Link} to="/profile">
           Profile
         </NavDropdown.Item>
+        {is_staff ? (
+          <NavDropdown.Item as={Link} to="/create">
+            Create
+          </NavDropdown.Item>
+        ) : null}
         <NavDropdown.Item
           as={Link}
           to="/"
