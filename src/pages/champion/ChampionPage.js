@@ -361,7 +361,7 @@ const ChampionPage = () => {
                   overlay={<Tooltip>Click to down vote this champion</Tooltip>}
                 >
                   <span onClick={handleDownVote}>
-                    <i class="fa fa-angle-down"></i>
+                    <i className="fa fa-angle-down"></i>
                   </span>
                 </OverlayTrigger>
               ) : (
@@ -370,7 +370,7 @@ const ChampionPage = () => {
                   overlay={<Tooltip>Click to up vote this champion</Tooltip>}
                 >
                   <span onClick={handleUpVote}>
-                    <i class="fa fa-angle-up"></i>
+                    <i className="fa fa-angle-up"></i>
                   </span>
                 </OverlayTrigger>
               )}
