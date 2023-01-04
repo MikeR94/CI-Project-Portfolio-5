@@ -282,7 +282,9 @@ function ChampionCreate() {
                   Please select a role
                 </option>
                 {roleOptions.map((option) => (
-                  <option value={option.value}>{option.label}</option>
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
                 ))}
               </Form.Control>
             </Form.Group>
@@ -298,7 +300,9 @@ function ChampionCreate() {
                   Please select a class
                 </option>
                 {champClassOptions.map((option) => (
-                  <option value={option.value}>{option.label}</option>
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
                 ))}
               </Form.Control>
             </Form.Group>
@@ -310,7 +314,9 @@ function ChampionCreate() {
                   Please select the range
                 </option>
                 {rangeOptions.map((option) => (
-                  <option value={option.value}>{option.label}</option>
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
                 ))}
               </Form.Control>
             </Form.Group>
@@ -326,7 +332,9 @@ function ChampionCreate() {
                   Please select a difficulty
                 </option>
                 {difficultyOptions.map((option) => (
-                  <option value={option.value}>{option.label}</option>
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
                 ))}
               </Form.Control>
             </Form.Group>
