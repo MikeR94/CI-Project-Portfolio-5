@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { axiosReq, axiosRes } from "../../api/axiosDefaults";
 import styles from "../../styles/ChampionPage.module.css";
 import FighterIcon from "../../assets/class_icons/fighter.webp";
@@ -26,6 +26,7 @@ const ChampionPage = () => {
   const [commentData, setCommentData] = useState({ results: [] });
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username;
+  const history = useHistory();
   const profile_avatar = currentUser?.profile_avatar;
   const [champData, setChampData] = useState({ results: [] });
   const {
@@ -117,6 +118,7 @@ const ChampionPage = () => {
         }));
       } catch (err) {
         console.log(err);
+        history.push("/");
       }
     };
     fetchChampion();
