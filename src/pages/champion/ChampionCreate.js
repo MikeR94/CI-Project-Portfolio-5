@@ -11,9 +11,53 @@ function ChampionCreate() {
     name: "",
     alias: "",
     champ_image: "",
+    lore: "",
+    role: "",
+    champ_class: "",
+    range: "",
+    difficulty: "",
+    passive_ability: "",
+    passive_ability_description: "",
+    passive_ability_image: "",
+    ability_1: "",
+    ability_1_description: "",
+    ability_1_image: "",
+    ability_2: "",
+    ability_2_description: "",
+    ability_2_image: "",
+    ability_3: "",
+    ability_3_description: "",
+    ability_3_image: "",
+    ultimate: "",
+    ultimate_description: "",
+    ultimate_image: "",
   });
 
-  const { name, alias, champ_image } = champData;
+  const {
+    name,
+    alias,
+    champ_image,
+    lore,
+    role,
+    champ_class,
+    range,
+    difficulty,
+    passive_ability,
+    passive_ability_description,
+    passive_ability_image,
+    ability_1,
+    ability_1_description,
+    ability_1_image,
+    ability_2,
+    ability_2_description,
+    ability_2_image,
+    ability_3,
+    ability_3_description,
+    ability_3_image,
+    ultimate,
+    ultimate_description,
+    ultimate_image,
+  } = champData;
 
   const imageInput = useRef(null);
 
@@ -27,9 +71,19 @@ function ChampionCreate() {
   const handleChangeImage = (event) => {
     if (event.target.files.length) {
       URL.revokeObjectURL(champ_image);
+      URL.revokeObjectURL(passive_ability_image);
+      URL.revokeObjectURL(ability_1_image);
+      URL.revokeObjectURL(ability_2_image);
+      URL.revokeObjectURL(ability_3_image);
+      URL.revokeObjectURL(ultimate_image);
       setChampData({
         ...champData,
         champ_image: URL.createObjectURL(event.target.files[0]),
+        passive_ability_image: URL.createObjectURL(event.target.files[0]),
+        ability_1_image: URL.createObjectURL(event.target.files[0]),
+        ability_2_image: URL.createObjectURL(event.target.files[0]),
+        ability_3_image: URL.createObjectURL(event.target.files[0]),
+        ultimate_image: URL.createObjectURL(event.target.files[0]),
       });
     }
   };
@@ -69,8 +123,8 @@ function ChampionCreate() {
             <Form.Group>
               <Form.Label className="d-flex">Champ Image</Form.Label>
               <Form.File
-                htmlFor="champ-image"
-                id="champ-image"
+                htmlFor="champ_image"
+                id="champ_image"
                 accept="image/*"
                 ref={imageInput}
                 onChange={handleChangeImage}
@@ -84,7 +138,7 @@ function ChampionCreate() {
                 type="text"
                 placeholder="Champion Lore"
                 name="lore"
-                value=""
+                value={lore}
                 onChange={handleChange}
               />
             </Form.Group>
@@ -97,7 +151,7 @@ function ChampionCreate() {
                 type="text"
                 placeholder="Champion Role"
                 name="role"
-                value=""
+                value={role}
                 onChange={handleChange}
               />
             </Form.Group>
@@ -110,7 +164,7 @@ function ChampionCreate() {
                 type="text"
                 placeholder="Champion Class"
                 name="champ_class"
-                value=""
+                value={champ_class}
                 onChange={handleChange}
               />
             </Form.Group>
@@ -123,7 +177,7 @@ function ChampionCreate() {
                 type="text"
                 placeholder="Champion Range"
                 name="range"
-                value=""
+                value={range}
                 onChange={handleChange}
               />
             </Form.Group>
@@ -136,7 +190,7 @@ function ChampionCreate() {
                 type="text"
                 placeholder="Champion Difficulty"
                 name="difficulty"
-                value=""
+                value={difficulty}
                 onChange={handleChange}
               />
             </Form.Group>
@@ -148,7 +202,7 @@ function ChampionCreate() {
                 type="text"
                 placeholder="Champion Passive"
                 name="passive_ability"
-                value=""
+                value={passive_ability}
                 onChange={handleChange}
               />
             </Form.Group>
@@ -160,7 +214,7 @@ function ChampionCreate() {
                 type="text"
                 placeholder="Champion Passive Description"
                 name="passive_description"
-                value=""
+                value={passive_ability_description}
                 onChange={handleChange}
               />
             </Form.Group>
@@ -169,8 +223,8 @@ function ChampionCreate() {
             <Form.Group>
               <Form.Label className="d-flex">Passive Image</Form.Label>
               <Form.File
-                htmlFor="passive-image"
-                id="passive-image"
+                htmlFor="passive_ability_image"
+                id="passive_ability_image"
                 accept="image/*"
                 ref={imageInput}
                 onChange={handleChangeImage}
@@ -184,7 +238,7 @@ function ChampionCreate() {
                 type="text"
                 placeholder="Champion Ability 1"
                 name="ability_1_ability"
-                value=""
+                value={ability_1}
                 onChange={handleChange}
               />
             </Form.Group>
@@ -196,21 +250,20 @@ function ChampionCreate() {
                 type="text"
                 placeholder="Champion Ability 1 Description"
                 name="ability_1_description"
-                value=""
+                value={ability_1_description}
                 onChange={handleChange}
               />
             </Form.Group>
 
             {/* Image field */}
             <Form.Group controlId="ability_1_image">
-              <Form.Label className="d-none">Ability 1 Image</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Champion Ability 1 Image"
-                name="ability_1_image"
-                value=""
-                onChange={handleChange}
+              <Form.Label className="d-flex">Ability 1 Image</Form.Label>
+              <Form.File
+                htmlFor="ability_1_image"
+                id="ability_1_image"
+                accept="image/*"
+                ref={imageInput}
+                onChange={handleChangeImage}
               />
             </Form.Group>
 
@@ -221,7 +274,7 @@ function ChampionCreate() {
                 type="text"
                 placeholder="Champion Ability 2"
                 name="ability_2_ability"
-                value=""
+                value={ability_2}
                 onChange={handleChange}
               />
             </Form.Group>
@@ -233,21 +286,20 @@ function ChampionCreate() {
                 type="text"
                 placeholder="Champion Ability 2 Description"
                 name="ability_2_description"
-                value=""
+                value={ability_2_description}
                 onChange={handleChange}
               />
             </Form.Group>
 
             {/* Image field */}
             <Form.Group controlId="ability_2_image">
-              <Form.Label className="d-none">Ability 2 Image</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Champion Ability 2 Image"
-                name="ability_2_image"
-                value=""
-                onChange={handleChange}
+              <Form.Label className="d-flex">Ability 2 Image</Form.Label>
+              <Form.File
+                htmlFor="ability_2_image"
+                id="ability_2_image"
+                accept="image/*"
+                ref={imageInput}
+                onChange={handleChangeImage}
               />
             </Form.Group>
 
@@ -258,7 +310,7 @@ function ChampionCreate() {
                 type="text"
                 placeholder="Champion Ability 3"
                 name="ability_3_ability"
-                value=""
+                value={ability_3}
                 onChange={handleChange}
               />
             </Form.Group>
@@ -270,32 +322,31 @@ function ChampionCreate() {
                 type="text"
                 placeholder="Champion Ability 3 Description"
                 name="ability_3_description"
-                value=""
+                value={ability_3_description}
                 onChange={handleChange}
               />
             </Form.Group>
 
             {/* Image field */}
             <Form.Group controlId="ability_3_image">
-              <Form.Label className="d-none">Ability 3 Image</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Champion Ability 3 Image"
-                name="ability_3_image"
-                value=""
-                onChange={handleChange}
+              <Form.Label className="d-flex">Ability 3 Image</Form.Label>
+              <Form.File
+                htmlFor="ability_3_image"
+                id="ability_3_image"
+                accept="image/*"
+                ref={imageInput}
+                onChange={handleChangeImage}
               />
             </Form.Group>
 
-            <Form.Group controlId="ultimate_ability">
+            <Form.Group controlId="ultimate">
               <Form.Label className="d-none">Ultimate</Form.Label>
               <Form.Control
                 className={styles.Input}
                 type="text"
                 placeholder="Champion Ultimate"
-                name="ultimate_ability"
-                value=""
+                name="ultimate"
+                value={ultimate}
                 onChange={handleChange}
               />
             </Form.Group>
@@ -307,21 +358,20 @@ function ChampionCreate() {
                 type="text"
                 placeholder="Champion Ultimate Description"
                 name="ultimate_description"
-                value=""
+                value={ultimate_description}
                 onChange={handleChange}
               />
             </Form.Group>
 
             {/* Image field */}
             <Form.Group controlId="ultimate_image">
-              <Form.Label className="d-none">Ultimate Image</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Champion Ultimate Image"
-                name="ultimate_image"
-                value=""
-                onChange={handleChange}
+              <Form.Label className="d-flex">Ultimate Image</Form.Label>
+              <Form.File
+                htmlFor="ultimate_image"
+                id="ultimate_image"
+                accept="image/*"
+                ref={imageInput}
+                onChange={handleChangeImage}
               />
             </Form.Group>
 
