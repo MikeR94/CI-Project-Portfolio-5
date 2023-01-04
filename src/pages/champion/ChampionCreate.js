@@ -195,17 +195,18 @@ function ChampionCreate() {
               />
             </Form.Group>
 
-            {/* Option menu */}
-            <Form.Group controlId="role">
-              <Form.Label className="d-none">Role</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Champion Role"
-                name="role"
-                value={role}
-                onChange={handleChange}
-              />
+            <Form.Group>
+              <Form.Label className="d-none">Select Role</Form.Label>
+              <Form.Control as="select" name="role" onChange={handleChange}>
+                <option value="" disabled selected>
+                  Please select a role
+                </option>
+                <option value="support">Support</option>
+                <option value="bottom">ADC</option>
+                <option value="jungle">Jungle</option>
+                <option value="mid">Middle</option>
+                <option value="top">Top</option>
+              </Form.Control>
             </Form.Group>
 
             {/* Option menu */}
