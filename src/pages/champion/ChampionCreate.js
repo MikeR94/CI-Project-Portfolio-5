@@ -287,43 +287,48 @@ function ChampionCreate() {
               </Form.Control>
             </Form.Group>
 
-            {/* Option menu */}
-            <Form.Group controlId="champ_class">
-              <Form.Label className="d-none">Class</Form.Label>
+            <Form.Group>
+              <Form.Label className="d-none">Select Champ Class</Form.Label>
               <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Champion Class"
+                as="select"
                 name="champ_class"
-                value={champ_class}
                 onChange={handleChange}
-              />
+              >
+                <option value="" disabled selected>
+                  Please select a class
+                </option>
+                {champClassOptions.map((option) => (
+                  <option value={option.value}>{option.label}</option>
+                ))}
+              </Form.Control>
             </Form.Group>
 
-            {/* Option menu */}
-            <Form.Group controlId="range">
-              <Form.Label className="d-none">Range</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Champion Range"
-                name="range"
-                value={range}
-                onChange={handleChange}
-              />
+            <Form.Group>
+              <Form.Label className="d-none">Select Range</Form.Label>
+              <Form.Control as="select" name="range" onChange={handleChange}>
+                <option value="" disabled selected>
+                  Please select the range
+                </option>
+                {rangeOptions.map((option) => (
+                  <option value={option.value}>{option.label}</option>
+                ))}
+              </Form.Control>
             </Form.Group>
 
-            {/* Option menu */}
-            <Form.Group controlId="difficulty">
+            <Form.Group>
               <Form.Label className="d-none">Difficulty</Form.Label>
               <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Champion Difficulty"
+                as="select"
                 name="difficulty"
-                value={difficulty}
                 onChange={handleChange}
-              />
+              >
+                <option value="" disabled selected>
+                  Please select a difficulty
+                </option>
+                {difficultyOptions.map((option) => (
+                  <option value={option.value}>{option.label}</option>
+                ))}
+              </Form.Control>
             </Form.Group>
 
             <Form.Group controlId="passive_ability">
@@ -350,7 +355,6 @@ function ChampionCreate() {
               />
             </Form.Group>
 
-            {/* Image field */}
             <Form.Group>
               <Form.Label className="d-flex">Passive Image</Form.Label>
               <Form.File
@@ -386,7 +390,6 @@ function ChampionCreate() {
               />
             </Form.Group>
 
-            {/* Image field */}
             <Form.Group controlId="ability_1_image">
               <Form.Label className="d-flex">Ability 1 Image</Form.Label>
               <Form.File
@@ -422,7 +425,6 @@ function ChampionCreate() {
               />
             </Form.Group>
 
-            {/* Image field */}
             <Form.Group controlId="ability_2_image">
               <Form.Label className="d-flex">Ability 2 Image</Form.Label>
               <Form.File
@@ -458,7 +460,6 @@ function ChampionCreate() {
               />
             </Form.Group>
 
-            {/* Image field */}
             <Form.Group controlId="ability_3_image">
               <Form.Label className="d-flex">Ability 3 Image</Form.Label>
               <Form.File
@@ -494,7 +495,6 @@ function ChampionCreate() {
               />
             </Form.Group>
 
-            {/* Image field */}
             <Form.Group controlId="ultimate_image">
               <Form.Label className="d-flex">Ultimate Image</Form.Label>
               <Form.File
