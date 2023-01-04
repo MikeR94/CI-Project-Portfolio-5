@@ -9,6 +9,7 @@ import ChampionSelect from "./pages/champion/ChampionSelect";
 import ChampionPage from "./pages/champion/ChampionPage";
 import ChampionCreate from "./pages/champion/ChampionCreate";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
+import ChampionEdit from "./pages/champion/ChampionEdit";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -37,6 +38,20 @@ function App() {
             exact
             path="/champion/:id"
             render={() => <ChampionPage></ChampionPage>}
+          />
+          {is_staff ? (
+            <Route
+              exact
+              path="/create"
+              render={() => <ChampionCreate></ChampionCreate>}
+            />
+          ) : (
+            <Redirect to="/"></Redirect>
+          )}
+          <Route
+            exact
+            path="/champion/:id/edit"
+            render={() => <ChampionEdit></ChampionEdit>}
           />
           {is_staff ? (
             <Route
