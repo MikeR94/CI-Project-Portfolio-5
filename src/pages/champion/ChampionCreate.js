@@ -4,9 +4,11 @@ import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Form, Button, Col, Row, Container } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
+import { useHistory } from "react-router-dom";
 
 function ChampionCreate() {
   useRedirect("loggedOut");
+  const history = useHistory();
 
   const [champData, setChampData] = useState({
     name: "",
@@ -138,6 +140,7 @@ function ChampionCreate() {
 
     try {
       await axiosReq.post("/champions/create/", formData);
+      history.push("/");
     } catch (error) {
       console.log(error);
     }
