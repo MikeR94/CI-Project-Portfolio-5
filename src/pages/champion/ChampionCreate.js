@@ -1,11 +1,10 @@
 import React from "react";
+import { useRedirect } from "../../hooks/useRedirect";
 
-const ChampionCreate = () => {
-  return (
-    <div>
-      <h1 className="mt-5">This is the champion create page</h1>
-    </div>
-  );
-};
+function ChampionCreate() {
+  useRedirect("loggedOut");
+
+  return <div className="mt-5">This is the champion create page</div>;
+}
 
 export default ChampionCreate;
