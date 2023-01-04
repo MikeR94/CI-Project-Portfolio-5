@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { useRedirect } from "../../hooks/useRedirect";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -6,6 +6,33 @@ import { Form, Button, Col, Row, Container } from "react-bootstrap";
 
 function ChampionCreate() {
   useRedirect("loggedOut");
+
+  const [champData, setChampData] = useState({
+    name: "",
+    alias: "",
+    champ_image: "",
+  });
+
+  const { name, alias, champ_image } = champData;
+
+  const imageInput = useRef(null);
+
+  const handleChange = (event) => {
+    setChampData({
+      ...champData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleChangeImage = (event) => {
+    if (event.target.files.length) {
+      URL.revokeObjectURL(champ_image);
+      setChampData({
+        ...champData,
+        champ_image: URL.createObjectURL(event.target.files[0]),
+      });
+    }
+  };
 
   return (
     <Row className={styles.Row}>
@@ -22,8 +49,8 @@ function ChampionCreate() {
                 type="text"
                 placeholder="Champion Name"
                 name="name"
-                value=""
-                onChange=""
+                value={name}
+                onChange={handleChange}
               />
             </Form.Group>
 
@@ -34,23 +61,20 @@ function ChampionCreate() {
                 type="text"
                 placeholder="Champion Alias"
                 name="alias"
-                value=""
-                onChange=""
+                value={alias}
+                onChange={handleChange}
               />
             </Form.Group>
 
-            {/* Image field */}
-            <Form.Group controlId="champ-image">
+            <Form.File
+              id="champ_image"
+              accept="image/*"
+              onChange={handleChangeImage}
+              ref={imageInput}
+            >
               <Form.Label className="d-none">Champion Image</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Champion Image"
-                name="champ-image"
-                value=""
-                onChange=""
-              />
-            </Form.Group>
+            </Form.File>
+            {/* Image field */}
 
             <Form.Group controlId="lore">
               <Form.Label className="d-none">Lore</Form.Label>
