@@ -66,15 +66,16 @@ function ChampionCreate() {
               />
             </Form.Group>
 
-            <Form.File
-              id="champ_image"
-              accept="image/*"
-              onChange={handleChangeImage}
-              ref={imageInput}
-            >
-              <Form.Label className="d-none">Champion Image</Form.Label>
-            </Form.File>
-            {/* Image field */}
+            <Form.Group>
+              <Form.Label className="d-flex">Champ Image</Form.Label>
+              <Form.File
+                htmlFor="champ-image"
+                id="champ-image"
+                accept="image/*"
+                ref={imageInput}
+                onChange={handleChangeImage}
+              />
+            </Form.Group>
 
             <Form.Group controlId="lore">
               <Form.Label className="d-none">Lore</Form.Label>
@@ -84,7 +85,7 @@ function ChampionCreate() {
                 placeholder="Champion Lore"
                 name="lore"
                 value=""
-                onChange=""
+                onChange={handleChange}
               />
             </Form.Group>
 
@@ -97,7 +98,7 @@ function ChampionCreate() {
                 placeholder="Champion Role"
                 name="role"
                 value=""
-                onChange=""
+                onChange={handleChange}
               />
             </Form.Group>
 
@@ -110,7 +111,7 @@ function ChampionCreate() {
                 placeholder="Champion Class"
                 name="champ_class"
                 value=""
-                onChange=""
+                onChange={handleChange}
               />
             </Form.Group>
 
@@ -123,7 +124,7 @@ function ChampionCreate() {
                 placeholder="Champion Range"
                 name="range"
                 value=""
-                onChange=""
+                onChange={handleChange}
               />
             </Form.Group>
 
@@ -136,7 +137,7 @@ function ChampionCreate() {
                 placeholder="Champion Difficulty"
                 name="difficulty"
                 value=""
-                onChange=""
+                onChange={handleChange}
               />
             </Form.Group>
 
@@ -148,7 +149,7 @@ function ChampionCreate() {
                 placeholder="Champion Passive"
                 name="passive_ability"
                 value=""
-                onChange=""
+                onChange={handleChange}
               />
             </Form.Group>
 
@@ -160,20 +161,19 @@ function ChampionCreate() {
                 placeholder="Champion Passive Description"
                 name="passive_description"
                 value=""
-                onChange=""
+                onChange={handleChange}
               />
             </Form.Group>
 
             {/* Image field */}
-            <Form.Group controlId="passive_image">
-              <Form.Label className="d-none">Passive Image</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Champion Passive Image"
-                name="passive_image"
-                value=""
-                onChange=""
+            <Form.Group>
+              <Form.Label className="d-flex">Passive Image</Form.Label>
+              <Form.File
+                htmlFor="passive-image"
+                id="passive-image"
+                accept="image/*"
+                ref={imageInput}
+                onChange={handleChangeImage}
               />
             </Form.Group>
 
@@ -185,7 +185,7 @@ function ChampionCreate() {
                 placeholder="Champion Ability 1"
                 name="ability_1_ability"
                 value=""
-                onChange=""
+                onChange={handleChange}
               />
             </Form.Group>
 
@@ -197,7 +197,7 @@ function ChampionCreate() {
                 placeholder="Champion Ability 1 Description"
                 name="ability_1_description"
                 value=""
-                onChange=""
+                onChange={handleChange}
               />
             </Form.Group>
 
@@ -210,7 +210,7 @@ function ChampionCreate() {
                 placeholder="Champion Ability 1 Image"
                 name="ability_1_image"
                 value=""
-                onChange=""
+                onChange={handleChange}
               />
             </Form.Group>
 
@@ -222,7 +222,7 @@ function ChampionCreate() {
                 placeholder="Champion Ability 2"
                 name="ability_2_ability"
                 value=""
-                onChange=""
+                onChange={handleChange}
               />
             </Form.Group>
 
@@ -234,7 +234,7 @@ function ChampionCreate() {
                 placeholder="Champion Ability 2 Description"
                 name="ability_2_description"
                 value=""
-                onChange=""
+                onChange={handleChange}
               />
             </Form.Group>
 
@@ -247,7 +247,7 @@ function ChampionCreate() {
                 placeholder="Champion Ability 2 Image"
                 name="ability_2_image"
                 value=""
-                onChange=""
+                onChange={handleChange}
               />
             </Form.Group>
 
@@ -259,7 +259,7 @@ function ChampionCreate() {
                 placeholder="Champion Ability 3"
                 name="ability_3_ability"
                 value=""
-                onChange=""
+                onChange={handleChange}
               />
             </Form.Group>
 
@@ -271,7 +271,7 @@ function ChampionCreate() {
                 placeholder="Champion Ability 3 Description"
                 name="ability_3_description"
                 value=""
-                onChange=""
+                onChange={handleChange}
               />
             </Form.Group>
 
@@ -284,7 +284,7 @@ function ChampionCreate() {
                 placeholder="Champion Ability 3 Image"
                 name="ability_3_image"
                 value=""
-                onChange=""
+                onChange={handleChange}
               />
             </Form.Group>
 
@@ -296,7 +296,7 @@ function ChampionCreate() {
                 placeholder="Champion Ultimate"
                 name="ultimate_ability"
                 value=""
-                onChange=""
+                onChange={handleChange}
               />
             </Form.Group>
 
@@ -308,7 +308,7 @@ function ChampionCreate() {
                 placeholder="Champion Ultimate Description"
                 name="ultimate_description"
                 value=""
-                onChange=""
+                onChange={handleChange}
               />
             </Form.Group>
 
@@ -321,7 +321,7 @@ function ChampionCreate() {
                 placeholder="Champion Ultimate Image"
                 name="ultimate_image"
                 value=""
-                onChange=""
+                onChange={handleChange}
               />
             </Form.Group>
 

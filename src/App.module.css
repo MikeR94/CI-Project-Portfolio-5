@@ -4,10 +4,6 @@
   min-height: 100vh;
 }
 
-input[type="file"] {
-  display: none;
-}
-
 .Main {
   padding-top: 81px;
 }
