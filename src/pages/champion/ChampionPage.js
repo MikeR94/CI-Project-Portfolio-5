@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
+import {
+  Button,
+  Col,
+  Container,
+  OverlayTrigger,
+  Row,
+  Tooltip,
+} from "react-bootstrap";
 import { useHistory, useParams } from "react-router-dom";
 import { axiosReq, axiosRes } from "../../api/axiosDefaults";
 import styles from "../../styles/ChampionPage.module.css";
@@ -20,6 +27,8 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import CommentCreateForm from "../comments/CommentCreateForm";
+import btnStyles from "../../styles/Button.module.css";
+import { Link } from "react-router-dom";
 
 const ChampionPage = () => {
   const { id } = useParams();
@@ -245,6 +254,9 @@ const ChampionPage = () => {
         </Row>
         <Row className={styles.Name}>{name}</Row>
         <Row className={styles.Alias}>{alias}</Row>
+        <Link to={`/champion/${id}/edit`}>
+          <Button className={`${btnStyles.Button}`}>Edit</Button>
+        </Link>
         <hr className="mt-5 mb-5"></hr>
         <Row>{lore}</Row>
         <hr className="mt-5 mb-5"></hr>
