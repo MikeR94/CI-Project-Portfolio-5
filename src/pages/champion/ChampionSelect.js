@@ -29,8 +29,6 @@ const ChampionSelect = () => {
     fetchChampions();
   }, []);
 
-  console.log(champions);
-
   const RoleIcons = (
     <>
       <RoleIcon src={SupportIcon} height={50}></RoleIcon>
