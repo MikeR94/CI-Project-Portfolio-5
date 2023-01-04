@@ -60,7 +60,12 @@ function ChampionCreate() {
     ultimate_image,
   } = champData;
 
-  const imageInput = useRef(null);
+  const champImageInput = useRef(null);
+  const passiveImageInput = useRef(null);
+  const ability1ImageInput = useRef(null);
+  const ability2ImageInput = useRef(null);
+  const ability3ImageInput = useRef(null);
+  const ultimateImageInput = useRef(null);
 
   const handleChange = (event) => {
     setChampData({
@@ -95,7 +100,7 @@ function ChampionCreate() {
 
     formData.append("name", name);
     formData.append("alias", alias);
-    formData.append("champ_image", imageInput.current.files[0]);
+    formData.append("champ_image", champImageInput.current.files[0]);
     formData.append("lore", lore);
     formData.append("role", role);
     formData.append("champ_class", champ_class);
@@ -104,26 +109,29 @@ function ChampionCreate() {
 
     formData.append("passive_ability", passive_ability);
     formData.append("passive_ability_description", passive_ability_description);
-    formData.append("passive_ability_image", imageInput.current.files[1]);
+    formData.append(
+      "passive_ability_image",
+      passiveImageInput.current.files[0]
+    );
 
     formData.append("ability_1", ability_1);
     formData.append("ability_1_description", ability_1_description);
-    formData.append("ability_1_image", imageInput.current.files[2]);
+    formData.append("ability_1_image", ability1ImageInput.current.files[0]);
 
     formData.append("ability_2", ability_2);
     formData.append("ability_2_description", ability_2_description);
-    formData.append("ability_2_image", imageInput.current.files[3]);
+    formData.append("ability_2_image", ability2ImageInput.current.files[0]);
 
     formData.append("ability_3", ability_3);
     formData.append("ability_3_description", ability_3_description);
-    formData.append("ability_3_image", imageInput.current.files[4]);
+    formData.append("ability_3_image", ability3ImageInput.current.files[0]);
 
     formData.append("ultimate_ability", ultimate_ability);
     formData.append(
       "ultimate_ability_description",
       ultimate_ability_description
     );
-    formData.append("ultimate_image", imageInput.current.files[5]);
+    formData.append("ultimate_image", ultimateImageInput.current.files[0]);
 
     try {
       const { data } = await axiosReq.post("/champions/create/", formData);
@@ -170,7 +178,7 @@ function ChampionCreate() {
                 htmlFor="champ_image"
                 id="champ_image"
                 accept="image/*"
-                ref={imageInput}
+                ref={champImageInput}
                 onChange={handleChangeImage}
               />
             </Form.Group>
@@ -270,7 +278,7 @@ function ChampionCreate() {
                 htmlFor="passive_ability_image"
                 id="passive_ability_image"
                 accept="image/*"
-                ref={imageInput}
+                ref={passiveImageInput}
                 onChange={handleChangeImage}
               />
             </Form.Group>
@@ -306,7 +314,7 @@ function ChampionCreate() {
                 htmlFor="ability_1_image"
                 id="ability_1_image"
                 accept="image/*"
-                ref={imageInput}
+                ref={ability1ImageInput}
                 onChange={handleChangeImage}
               />
             </Form.Group>
@@ -342,7 +350,7 @@ function ChampionCreate() {
                 htmlFor="ability_2_image"
                 id="ability_2_image"
                 accept="image/*"
-                ref={imageInput}
+                ref={ability2ImageInput}
                 onChange={handleChangeImage}
               />
             </Form.Group>
@@ -378,7 +386,7 @@ function ChampionCreate() {
                 htmlFor="ability_3_image"
                 id="ability_3_image"
                 accept="image/*"
-                ref={imageInput}
+                ref={ability3ImageInput}
                 onChange={handleChangeImage}
               />
             </Form.Group>
@@ -414,7 +422,7 @@ function ChampionCreate() {
                 htmlFor="ultimate_image"
                 id="ultimate_image"
                 accept="image/*"
-                ref={imageInput}
+                ref={ultimateImageInput}
                 onChange={handleChangeImage}
               />
             </Form.Group>
