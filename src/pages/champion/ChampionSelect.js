@@ -20,8 +20,8 @@ const ChampionSelect = () => {
         const { data } = await axiosReq.get("/champions/");
         setChampions(data);
         setHasLoaded(true);
-      } catch (err) {
-        console.log(err);
+      } catch (error) {
+        console.log(error);
       }
     };
 

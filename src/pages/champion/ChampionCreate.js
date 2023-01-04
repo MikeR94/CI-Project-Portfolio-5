@@ -135,8 +135,8 @@ function ChampionCreate() {
 
     try {
       await axiosReq.post("/champions/create/", formData);
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.log(error);
     }
   };
 

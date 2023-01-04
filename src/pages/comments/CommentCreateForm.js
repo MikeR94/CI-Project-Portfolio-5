@@ -25,8 +25,8 @@ function CommentCreateForm(props) {
         results: [data, ...prevComments.results],
       }));
       setComment("");
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.log(error);
     }
   };
 

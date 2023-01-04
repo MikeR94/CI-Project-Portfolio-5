@@ -116,8 +116,8 @@ const ChampionPage = () => {
           upvotes_count: upvotes_count,
           upvotes_id: upvotes_id,
         }));
-      } catch (err) {
-        console.log(err);
+      } catch (error) {
+        console.log(error);
         history.push("/");
       }
     };
@@ -154,8 +154,8 @@ const ChampionPage = () => {
         upvotes_id: upvotes_id,
       }));
       window.location.reload();
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -189,8 +189,8 @@ const ChampionPage = () => {
         upvotes_id: upvotes_id,
       }));
       window.location.reload();
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.log(error);
     }
   };
 
