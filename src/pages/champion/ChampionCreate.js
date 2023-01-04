@@ -3,6 +3,7 @@ import { useRedirect } from "../../hooks/useRedirect";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Form, Button, Col, Row, Container } from "react-bootstrap";
+import { axiosReq } from "../../api/axiosDefaults";
 
 function ChampionCreate() {
   useRedirect("loggedOut");
@@ -28,8 +29,8 @@ function ChampionCreate() {
     ability_3: "",
     ability_3_description: "",
     ability_3_image: "",
-    ultimate: "",
-    ultimate_description: "",
+    ultimate_ability: "",
+    ultimate_ability_description: "",
     ultimate_image: "",
   });
 
@@ -54,8 +55,8 @@ function ChampionCreate() {
     ability_3,
     ability_3_description,
     ability_3_image,
-    ultimate,
-    ultimate_description,
+    ultimate_ability,
+    ultimate_ability_description,
     ultimate_image,
   } = champData;
 
@@ -88,6 +89,49 @@ function ChampionCreate() {
     }
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+
+    formData.append("name", name);
+    formData.append("alias", alias);
+    formData.append("champ_image", imageInput.current.files[0]);
+    formData.append("lore", lore);
+    formData.append("role", role);
+    formData.append("champ_class", champ_class);
+    formData.append("range", range);
+    formData.append("difficulty", difficulty);
+
+    formData.append("passive_ability", passive_ability);
+    formData.append("passive_ability_description", passive_ability_description);
+    formData.append("passive_ability_image", imageInput.current.files[1]);
+
+    formData.append("ability_1", ability_1);
+    formData.append("ability_1_description", ability_1_description);
+    formData.append("ability_1_image", imageInput.current.files[2]);
+
+    formData.append("ability_2", ability_2);
+    formData.append("ability_2_description", ability_2_description);
+    formData.append("ability_2_image", imageInput.current.files[3]);
+
+    formData.append("ability_3", ability_3);
+    formData.append("ability_3_description", ability_3_description);
+    formData.append("ability_3_image", imageInput.current.files[4]);
+
+    formData.append("ultimate_ability", ultimate_ability);
+    formData.append(
+      "ultimate_ability_description",
+      ultimate_ability_description
+    );
+    formData.append("ultimate_image", imageInput.current.files[5]);
+
+    try {
+      const { data } = await axiosReq.post("/champions/create/", formData);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <Row className={styles.Row}>
       <Col md={6}>
@@ -95,7 +139,7 @@ function ChampionCreate() {
           <h1 className={styles.Header}>Create a champion</h1>
           <hr></hr>
 
-          <Form onSubmit="">
+          <Form onSubmit={handleSubmit}>
             <Form.Group controlId="name">
               <Form.Label className="d-none">Name</Form.Label>
               <Form.Control
@@ -207,13 +251,13 @@ function ChampionCreate() {
               />
             </Form.Group>
 
-            <Form.Group controlId="passive_description">
+            <Form.Group controlId="passive_ability_description">
               <Form.Label className="d-none">Passive Description</Form.Label>
               <Form.Control
                 className={styles.Input}
                 type="text"
                 placeholder="Champion Passive Description"
-                name="passive_description"
+                name="passive_ability_description"
                 value={passive_ability_description}
                 onChange={handleChange}
               />
@@ -231,13 +275,13 @@ function ChampionCreate() {
               />
             </Form.Group>
 
-            <Form.Group controlId="ability_1_ability">
+            <Form.Group controlId="ability_1">
               <Form.Label className="d-none">Ability 1</Form.Label>
               <Form.Control
                 className={styles.Input}
                 type="text"
                 placeholder="Champion Ability 1"
-                name="ability_1_ability"
+                name="ability_1"
                 value={ability_1}
                 onChange={handleChange}
               />
@@ -267,13 +311,13 @@ function ChampionCreate() {
               />
             </Form.Group>
 
-            <Form.Group controlId="ability_2_ability">
+            <Form.Group controlId="ability_2">
               <Form.Label className="d-none">Ability 2</Form.Label>
               <Form.Control
                 className={styles.Input}
                 type="text"
                 placeholder="Champion Ability 2"
-                name="ability_2_ability"
+                name="ability_2"
                 value={ability_2}
                 onChange={handleChange}
               />
@@ -303,13 +347,13 @@ function ChampionCreate() {
               />
             </Form.Group>
 
-            <Form.Group controlId="ability_3_ability">
+            <Form.Group controlId="ability_3">
               <Form.Label className="d-none">Ability 3</Form.Label>
               <Form.Control
                 className={styles.Input}
                 type="text"
                 placeholder="Champion Ability 3"
-                name="ability_3_ability"
+                name="ability_3"
                 value={ability_3}
                 onChange={handleChange}
               />
@@ -339,26 +383,26 @@ function ChampionCreate() {
               />
             </Form.Group>
 
-            <Form.Group controlId="ultimate">
+            <Form.Group controlId="ultimate_ability">
               <Form.Label className="d-none">Ultimate</Form.Label>
               <Form.Control
                 className={styles.Input}
                 type="text"
                 placeholder="Champion Ultimate"
-                name="ultimate"
-                value={ultimate}
+                name="ultimate_ability"
+                value={ultimate_ability}
                 onChange={handleChange}
               />
             </Form.Group>
 
-            <Form.Group controlId="ultimate_description">
+            <Form.Group controlId="ultimate_ability_description">
               <Form.Label className="d-none">Ultimate Description</Form.Label>
               <Form.Control
                 className={styles.Input}
                 type="text"
                 placeholder="Champion Ultimate Description"
-                name="ultimate_description"
-                value={ultimate_description}
+                name="ultimate_ability_description"
+                value={ultimate_ability_description}
                 onChange={handleChange}
               />
             </Form.Group>
