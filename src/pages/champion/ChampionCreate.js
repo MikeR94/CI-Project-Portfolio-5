@@ -134,7 +134,7 @@ function ChampionCreate() {
     formData.append("ultimate_image", ultimateImageInput.current.files[0]);
 
     try {
-      const { data } = await axiosReq.post("/champions/create/", formData);
+      await axiosReq.post("/champions/create/", formData);
     } catch (err) {
       console.log(err);
     }
