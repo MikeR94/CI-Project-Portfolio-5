@@ -140,6 +140,29 @@ function ChampionCreate() {
     }
   };
 
+  const roleOptions = [
+    {
+      label: "Middle",
+      value: "mid",
+    },
+    {
+      label: "Top",
+      value: "top",
+    },
+    {
+      label: "Jungle",
+      value: "jungle",
+    },
+    {
+      label: "ADC",
+      value: "bottom",
+    },
+    {
+      label: "Support",
+      value: "support",
+    },
+  ];
+
   return (
     <Row className={styles.Row}>
       <Col md={6}>
@@ -201,11 +224,9 @@ function ChampionCreate() {
                 <option value="" disabled selected>
                   Please select a role
                 </option>
-                <option value="support">Support</option>
-                <option value="bottom">ADC</option>
-                <option value="jungle">Jungle</option>
-                <option value="mid">Middle</option>
-                <option value="top">Top</option>
+                {roleOptions.map((option) => (
+                  <option value={option.value}>{option.label}</option>
+                ))}
               </Form.Control>
             </Form.Group>
 
