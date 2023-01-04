@@ -163,6 +163,63 @@ function ChampionCreate() {
     },
   ];
 
+  const champClassOptions = [
+    {
+      label: "Controller",
+      value: "controller",
+    },
+    {
+      label: "Fighter",
+      value: "fighter",
+    },
+    {
+      label: "Mage",
+      value: "mage",
+    },
+    {
+      label: "Marksman",
+      value: "marksman",
+    },
+    {
+      label: "Slayer",
+      value: "slayer",
+    },
+    {
+      label: "Tank",
+      value: "tank",
+    },
+    {
+      label: "Specialist",
+      value: "specialist",
+    },
+  ];
+
+  const rangeOptions = [
+    {
+      label: "Melee",
+      value: "melee",
+    },
+    {
+      label: "Ranged",
+      value: "ranged",
+    },
+  ];
+
+  const difficultyOptions = [
+    {
+      label: "Low",
+      value: "low",
+    },
+    {
+      label: "Moderate",
+      value: "moderate",
+    },
+    {
+      label: "High",
+      value: "high",
+    },
+  ];
+
   return (
     <Row className={styles.Row}>
       <Col md={6}>
