@@ -277,8 +277,13 @@ function ChampionCreate() {
 
             <Form.Group>
               <Form.Label className="d-none">Select Role</Form.Label>
-              <Form.Control as="select" name="role" onChange={handleChange}>
-                <option value="" disabled selected>
+              <Form.Control
+                as="select"
+                name="role"
+                onChange={handleChange}
+                defaultValue={"default"}
+              >
+                <option value="default" disabled>
                   Please select a role
                 </option>
                 {roleOptions.map((option) => (
@@ -295,8 +300,9 @@ function ChampionCreate() {
                 as="select"
                 name="champ_class"
                 onChange={handleChange}
+                defaultValue={"default"}
               >
-                <option value="" disabled selected>
+                <option value="default" disabled>
                   Please select a class
                 </option>
                 {champClassOptions.map((option) => (
@@ -309,8 +315,13 @@ function ChampionCreate() {
 
             <Form.Group>
               <Form.Label className="d-none">Select Range</Form.Label>
-              <Form.Control as="select" name="range" onChange={handleChange}>
-                <option value="" disabled selected>
+              <Form.Control
+                as="select"
+                name="range"
+                onChange={handleChange}
+                defaultValue={"default"}
+              >
+                <option value="default" disabled>
                   Please select the range
                 </option>
                 {rangeOptions.map((option) => (
@@ -327,8 +338,9 @@ function ChampionCreate() {
                 as="select"
                 name="difficulty"
                 onChange={handleChange}
+                defaultValue={"default"}
               >
-                <option value="" disabled selected>
+                <option value="default" disabled>
                   Please select a difficulty
                 </option>
                 {difficultyOptions.map((option) => (
