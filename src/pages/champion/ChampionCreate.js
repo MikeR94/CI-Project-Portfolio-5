@@ -31,7 +31,7 @@ function ChampionCreate() {
     ability_3_image: "",
     ultimate_ability: "",
     ultimate_ability_description: "",
-    ultimate_image: "",
+    ultimate_ability_image: "",
   });
 
   const {
@@ -57,7 +57,7 @@ function ChampionCreate() {
     ability_3_image,
     ultimate_ability,
     ultimate_ability_description,
-    ultimate_image,
+    ultimate_ability_image,
   } = champData;
 
   const champImageInput = useRef(null);
@@ -81,7 +81,7 @@ function ChampionCreate() {
       URL.revokeObjectURL(ability_1_image);
       URL.revokeObjectURL(ability_2_image);
       URL.revokeObjectURL(ability_3_image);
-      URL.revokeObjectURL(ultimate_image);
+      URL.revokeObjectURL(ultimate_ability_image);
       setChampData({
         ...champData,
         champ_image: URL.createObjectURL(event.target.files[0]),
@@ -89,7 +89,7 @@ function ChampionCreate() {
         ability_1_image: URL.createObjectURL(event.target.files[0]),
         ability_2_image: URL.createObjectURL(event.target.files[0]),
         ability_3_image: URL.createObjectURL(event.target.files[0]),
-        ultimate_image: URL.createObjectURL(event.target.files[0]),
+        ultimate_ability_image: URL.createObjectURL(event.target.files[0]),
       });
     }
   };
@@ -131,7 +131,10 @@ function ChampionCreate() {
       "ultimate_ability_description",
       ultimate_ability_description
     );
-    formData.append("ultimate_image", ultimateImageInput.current.files[0]);
+    formData.append(
+      "ultimate_ability_image",
+      ultimateImageInput.current.files[0]
+    );
 
     try {
       await axiosReq.post("/champions/create/", formData);
@@ -515,11 +518,11 @@ function ChampionCreate() {
               />
             </Form.Group>
 
-            <Form.Group controlId="ultimate_image">
+            <Form.Group controlId="ultimate_ability_image">
               <Form.Label className="d-flex">Ultimate Image</Form.Label>
               <Form.File
-                htmlFor="ultimate_image"
-                id="ultimate_image"
+                htmlFor="ultimate_ability_image"
+                id="ultimate_ability_image"
                 accept="image/*"
                 ref={ultimateImageInput}
                 onChange={handleChangeImage}
