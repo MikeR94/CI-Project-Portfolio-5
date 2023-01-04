@@ -122,7 +122,7 @@ const ChampionPage = () => {
       }
     };
     fetchChampion();
-  }, [id]);
+  }, [id, history]);
 
   const handleUpVote = async () => {
     try {
