@@ -90,7 +90,6 @@ function ChampionEdit() {
     if (event.target.id === imageRef.champ_image) {
       if (event.target.files.length) {
         URL.revokeObjectURL(champ_image);
-        console.log(event.target.files);
         setChampData({
           ...champData,
           champ_image: URL.createObjectURL(event.target.files[0]),
@@ -101,7 +100,6 @@ function ChampionEdit() {
     if (event.target.id === imageRef.passive_ability_image) {
       if (event.target.files.length) {
         URL.revokeObjectURL(passive_ability_image);
-        console.log(event.target.files);
         setChampData({
           ...champData,
           passive_ability_image: URL.createObjectURL(event.target.files[0]),
@@ -112,7 +110,6 @@ function ChampionEdit() {
     if (event.target.id === imageRef.ability_1_image) {
       if (event.target.files.length) {
         URL.revokeObjectURL(ability_1_image);
-        console.log(event.target.files);
         setChampData({
           ...champData,
           ability_1_image: URL.createObjectURL(event.target.files[0]),
@@ -123,7 +120,6 @@ function ChampionEdit() {
     if (event.target.id === imageRef.ability_2_image) {
       if (event.target.files.length) {
         URL.revokeObjectURL(ability_2_image);
-        console.log(event.target.files);
         setChampData({
           ...champData,
           ability_2_image: URL.createObjectURL(event.target.files[0]),
@@ -134,7 +130,6 @@ function ChampionEdit() {
     if (event.target.id === imageRef.ability_3_image) {
       if (event.target.files.length) {
         URL.revokeObjectURL(ability_3_image);
-        console.log(event.target.files);
         setChampData({
           ...champData,
           ability_3_image: URL.createObjectURL(event.target.files[0]),
@@ -145,7 +140,6 @@ function ChampionEdit() {
     if (event.target.id === imageRef.ultimate_ability_image) {
       if (event.target.files.length) {
         URL.revokeObjectURL(ultimate_ability_image);
-        console.log(event.target.files);
         setChampData({
           ...champData,
           ultimate_ability_image: URL.createObjectURL(event.target.files[0]),
