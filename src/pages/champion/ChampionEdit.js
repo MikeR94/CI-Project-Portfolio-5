@@ -78,22 +78,79 @@ function ChampionEdit() {
   };
 
   const handleChangeImage = (event) => {
-    if (event.target.files.length) {
-      URL.revokeObjectURL(champ_image);
-      URL.revokeObjectURL(passive_ability_image);
-      URL.revokeObjectURL(ability_1_image);
-      URL.revokeObjectURL(ability_2_image);
-      URL.revokeObjectURL(ability_3_image);
-      URL.revokeObjectURL(ultimate_ability_image);
-      setChampData({
-        ...champData,
-        champ_image: URL.createObjectURL(event.target.files[0]),
-        passive_ability_image: URL.createObjectURL(event.target.files[0]),
-        ability_1_image: URL.createObjectURL(event.target.files[0]),
-        ability_2_image: URL.createObjectURL(event.target.files[0]),
-        ability_3_image: URL.createObjectURL(event.target.files[0]),
-        ultimate_ability_image: URL.createObjectURL(event.target.files[0]),
-      });
+    const imageRef = {
+      champ_image: "champ_image",
+      passive_ability_image: "passive_ability_image",
+      ability_1_image: "ability_1_image",
+      ability_2_image: "ability_1_image",
+      ability_3_image: "ability_1_image",
+      ultimate_ability_image: "ultimate_ability_image",
+    };
+
+    if (event.target.id === imageRef.champ_image) {
+      if (event.target.files.length) {
+        URL.revokeObjectURL(champ_image);
+        console.log(event.target.files);
+        setChampData({
+          ...champData,
+          champ_image: URL.createObjectURL(event.target.files[0]),
+        });
+      }
+    }
+
+    if (event.target.id === imageRef.passive_ability_image) {
+      if (event.target.files.length) {
+        URL.revokeObjectURL(passive_ability_image);
+        console.log(event.target.files);
+        setChampData({
+          ...champData,
+          passive_ability_image: URL.createObjectURL(event.target.files[0]),
+        });
+      }
+    }
+
+    if (event.target.id === imageRef.ability_1_image) {
+      if (event.target.files.length) {
+        URL.revokeObjectURL(ability_1_image);
+        console.log(event.target.files);
+        setChampData({
+          ...champData,
+          ability_1_image: URL.createObjectURL(event.target.files[0]),
+        });
+      }
+    }
+
+    if (event.target.id === imageRef.ability_2_image) {
+      if (event.target.files.length) {
+        URL.revokeObjectURL(ability_2_image);
+        console.log(event.target.files);
+        setChampData({
+          ...champData,
+          ability_2_image: URL.createObjectURL(event.target.files[0]),
+        });
+      }
+    }
+
+    if (event.target.id === imageRef.ability_3_image) {
+      if (event.target.files.length) {
+        URL.revokeObjectURL(ability_3_image);
+        console.log(event.target.files);
+        setChampData({
+          ...champData,
+          ability_3_image: URL.createObjectURL(event.target.files[0]),
+        });
+      }
+    }
+
+    if (event.target.id === imageRef.ultimate_ability_image) {
+      if (event.target.files.length) {
+        URL.revokeObjectURL(ultimate_ability_image);
+        console.log(event.target.files);
+        setChampData({
+          ...champData,
+          ultimate_ability_image: URL.createObjectURL(event.target.files[0]),
+        });
+      }
     }
   };
 
@@ -108,12 +165,12 @@ function ChampionEdit() {
     let ultimateBlob = await fetch(ultimate_ability_image).then((r) =>
       r.blob()
     );
-    formData.append("champ_image", champBlob, "image.jpg");
-    formData.append("passive_ability_image", passiveBlob, "image.jpg");
-    formData.append("ability_1_image", ability1Blob, "image.jpg");
-    formData.append("ability_2_image", ability2Blob, "image.jpg");
-    formData.append("ability_3_image", ability3Blob, "image.jpg");
-    formData.append("ultimate_ability_image", ultimateBlob, "image.jpg");
+    formData.append("champ_image", champBlob, "image1.jpg");
+    formData.append("passive_ability_image", passiveBlob, "image2.jpg");
+    formData.append("ability_1_image", ability1Blob, "image3.jpg");
+    formData.append("ability_2_image", ability2Blob, "image4.jpg");
+    formData.append("ability_3_image", ability3Blob, "image5.jpg");
+    formData.append("ultimate_ability_image", ultimateBlob, "image6.jpg");
     for (const data in champData) {
       formData.append(`${data}`, champData[data]);
     }
