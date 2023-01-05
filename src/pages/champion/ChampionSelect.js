@@ -29,13 +29,41 @@ const ChampionSelect = () => {
     fetchChampions();
   }, []);
 
+  const getTopChampsFilter = async () => {
+    try {
+      const { data } = await axiosReq.get("/champions/?role=top");
+      setChampions(data);
+      setHasLoaded(true);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getMidChampsFilter = async () => {
+    try {
+      const { data } = await axiosReq.get("/champions/?role=mid");
+      setChampions(data);
+      setHasLoaded(true);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const RoleIcons = (
     <>
       <RoleIcon src={SupportIcon} height={50}></RoleIcon>
       <RoleIcon src={AdcIcon} height={50}></RoleIcon>
       <RoleIcon src={JungleIcon} height={50}></RoleIcon>
-      <RoleIcon src={TopIcon} height={50}></RoleIcon>
-      <RoleIcon src={MiddleIcon} height={50}></RoleIcon>
+      <RoleIcon
+        src={TopIcon}
+        onClick={getTopChampsFilter}
+        height={50}
+      ></RoleIcon>
+      <RoleIcon
+        src={MiddleIcon}
+        onClick={getMidChampsFilter}
+        height={50}
+      ></RoleIcon>
     </>
   );
   return (
@@ -50,7 +78,7 @@ const ChampionSelect = () => {
                   <ChampionCard key={champions.id} {...champions} />
                 ))
               ) : (
-                <h1>Test 1</h1>
+                <h1>No champions found...</h1>
               )}
             </>
           ) : (
