@@ -34,9 +34,7 @@ const ChampionSelect = () => {
       const { data } = await axiosReq.get("/champions/?role=top");
       setChampions(data);
       setHasLoaded(true);
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   const getMidChampsFilter = async () => {
@@ -44,9 +42,7 @@ const ChampionSelect = () => {
       const { data } = await axiosReq.get("/champions/?role=mid");
       setChampions(data);
       setHasLoaded(true);
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   const getJungleChampsFilter = async () => {
@@ -54,9 +50,7 @@ const ChampionSelect = () => {
       const { data } = await axiosReq.get("/champions/?role=jungle");
       setChampions(data);
       setHasLoaded(true);
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   const getAdcChampsFilter = async () => {
@@ -64,9 +58,7 @@ const ChampionSelect = () => {
       const { data } = await axiosReq.get("/champions/?role=adc");
       setChampions(data);
       setHasLoaded(true);
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   const getSupportChampsFilter = async () => {
@@ -74,9 +66,7 @@ const ChampionSelect = () => {
       const { data } = await axiosReq.get("/champions/?role=support");
       setChampions(data);
       setHasLoaded(true);
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   const RoleIcons = (
