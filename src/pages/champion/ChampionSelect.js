@@ -49,11 +49,53 @@ const ChampionSelect = () => {
     }
   };
 
+  const getJungleChampsFilter = async () => {
+    try {
+      const { data } = await axiosReq.get("/champions/?role=jungle");
+      setChampions(data);
+      setHasLoaded(true);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getAdcChampsFilter = async () => {
+    try {
+      const { data } = await axiosReq.get("/champions/?role=adc");
+      setChampions(data);
+      setHasLoaded(true);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getSupportChampsFilter = async () => {
+    try {
+      const { data } = await axiosReq.get("/champions/?role=support");
+      setChampions(data);
+      setHasLoaded(true);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const RoleIcons = (
     <>
-      <RoleIcon src={SupportIcon} height={50}></RoleIcon>
-      <RoleIcon src={AdcIcon} height={50}></RoleIcon>
-      <RoleIcon src={JungleIcon} height={50}></RoleIcon>
+      <RoleIcon
+        src={SupportIcon}
+        onClick={getSupportChampsFilter}
+        height={50}
+      ></RoleIcon>
+      <RoleIcon
+        src={AdcIcon}
+        onClick={getAdcChampsFilter}
+        height={50}
+      ></RoleIcon>
+      <RoleIcon
+        src={JungleIcon}
+        onClick={getJungleChampsFilter}
+        height={50}
+      ></RoleIcon>
       <RoleIcon
         src={TopIcon}
         onClick={getTopChampsFilter}
