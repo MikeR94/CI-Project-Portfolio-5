@@ -13,6 +13,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 const ChampionSelect = () => {
   const [champions, setChampions] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
+  const [filterSelected, setFilterSelected] = useState(false);
 
   useEffect(() => {
     const fetchChampions = async () => {
@@ -20,6 +21,7 @@ const ChampionSelect = () => {
         const { data } = await axiosReq.get("/champions/");
         setChampions(data);
         setHasLoaded(true);
+        setFilterSelected(false);
       } catch (error) {
         console.log(error);
       }
@@ -30,43 +32,73 @@ const ChampionSelect = () => {
   }, []);
 
   const getTopChampsFilter = async () => {
-    try {
+    if (filterSelected) {
+      const { data } = await axiosReq.get("/champions/");
+      setChampions(data);
+      setHasLoaded(true);
+      setFilterSelected(false);
+    } else {
       const { data } = await axiosReq.get("/champions/?role=top");
       setChampions(data);
       setHasLoaded(true);
-    } catch (error) {}
+      setFilterSelected(true);
+    }
   };
 
   const getMidChampsFilter = async () => {
-    try {
+    if (filterSelected) {
+      const { data } = await axiosReq.get("/champions/");
+      setChampions(data);
+      setHasLoaded(true);
+      setFilterSelected(false);
+    } else {
       const { data } = await axiosReq.get("/champions/?role=mid");
       setChampions(data);
       setHasLoaded(true);
-    } catch (error) {}
+      setFilterSelected(true);
+    }
   };
 
   const getJungleChampsFilter = async () => {
-    try {
+    if (filterSelected) {
+      const { data } = await axiosReq.get("/champions/");
+      setChampions(data);
+      setHasLoaded(true);
+      setFilterSelected(false);
+    } else {
       const { data } = await axiosReq.get("/champions/?role=jungle");
       setChampions(data);
       setHasLoaded(true);
-    } catch (error) {}
+      setFilterSelected(true);
+    }
   };
 
   const getAdcChampsFilter = async () => {
-    try {
+    if (filterSelected) {
+      const { data } = await axiosReq.get("/champions/");
+      setChampions(data);
+      setHasLoaded(true);
+      setFilterSelected(false);
+    } else {
       const { data } = await axiosReq.get("/champions/?role=adc");
       setChampions(data);
       setHasLoaded(true);
-    } catch (error) {}
+      setFilterSelected(true);
+    }
   };
 
   const getSupportChampsFilter = async () => {
-    try {
+    if (filterSelected) {
+      const { data } = await axiosReq.get("/champions/");
+      setChampions(data);
+      setHasLoaded(true);
+      setFilterSelected(false);
+    } else {
       const { data } = await axiosReq.get("/champions/?role=support");
       setChampions(data);
       setHasLoaded(true);
-    } catch (error) {}
+      setFilterSelected(true);
+    }
   };
 
   const RoleIcons = (
