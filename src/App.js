@@ -10,6 +10,7 @@ import ChampionPage from "./pages/champion/ChampionPage";
 import ChampionCreate from "./pages/champion/ChampionCreate";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 import ChampionEdit from "./pages/champion/ChampionEdit";
+import ChampionLeaderboard from "./pages/champion/ChampionLeaderboard";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -23,6 +24,11 @@ function App() {
             exact
             path="/"
             render={() => <ChampionSelect></ChampionSelect>}
+          />
+          <Route
+            exact
+            path="/leaderboard"
+            render={() => <ChampionLeaderboard></ChampionLeaderboard>}
           />
           <Route
             exact
