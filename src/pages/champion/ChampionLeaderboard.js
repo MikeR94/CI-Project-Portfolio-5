@@ -11,6 +11,13 @@ import MiddleIcon from "../../assets/role_icons/middle.png";
 import LowDifficultyIcon from "../../assets/difficulty_icons/low.webp";
 import ModerateDifficultyIcon from "../../assets/difficulty_icons/moderate.webp";
 import HighDifficultyIcon from "../../assets/difficulty_icons/high.webp";
+import FighterIcon from "../../assets/class_icons/fighter.webp";
+import TankIcon from "../../assets/class_icons/tank.webp";
+import ControllerIcon from "../../assets/class_icons/controller.webp";
+import MageIcon from "../../assets/class_icons/mage.webp";
+import MarksmanIcon from "../../assets/class_icons/marksman.webp";
+import SlayerIcon from "../../assets/class_icons/slayer.webp";
+import SpecialistIcon from "../../assets/class_icons/specialist.webp";
 
 const ChampionLeaderboard = () => {
   const [champions, setChampions] = useState({ results: [] });
@@ -63,7 +70,23 @@ const ChampionLeaderboard = () => {
                       <Avatar src={SupportIcon}></Avatar>
                     ) : null}
                   </td>
-                  <td>{champions.champ_class}</td>
+                  <td>
+                    {champions.champ_class === "fighter" ? (
+                      <Avatar src={FighterIcon}></Avatar>
+                    ) : champions.champ_class === "tank" ? (
+                      <Avatar src={TankIcon}></Avatar>
+                    ) : champions.champ_class === "controller" ? (
+                      <Avatar src={ControllerIcon}></Avatar>
+                    ) : champions.champ_class === "mage" ? (
+                      <Avatar src={MageIcon}></Avatar>
+                    ) : champions.champ_class === "marksman" ? (
+                      <Avatar src={MarksmanIcon}></Avatar>
+                    ) : champions.champ_class === "slayer" ? (
+                      <Avatar src={SlayerIcon}></Avatar>
+                    ) : champions.champ_class === "specialist" ? (
+                      <Avatar src={SpecialistIcon}></Avatar>
+                    ) : null}
+                  </td>
                   <td>
                     {champions.difficulty === "low" ? (
                       <Avatar src={LowDifficultyIcon}></Avatar>
