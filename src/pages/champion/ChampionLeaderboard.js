@@ -3,6 +3,11 @@ import { axiosReq } from "../../api/axiosDefaults";
 import Avatar from "../../components/Avatar";
 import { Container } from "react-bootstrap";
 import styles from "../../styles/ChampionLeaderboard.module.css";
+import SupportIcon from "../../assets/role_icons/support.png";
+import AdcIcon from "../../assets/role_icons/adc.png";
+import JungleIcon from "../../assets/role_icons/jungle.png";
+import TopIcon from "../../assets/role_icons/top.png";
+import MiddleIcon from "../../assets/role_icons/middle.png";
 
 const ChampionLeaderboard = () => {
   const [champions, setChampions] = useState({ results: [] });
@@ -42,7 +47,19 @@ const ChampionLeaderboard = () => {
                     <Avatar src={champions.champ_image}></Avatar>
                   </td>
                   <td>{champions.name}</td>
-                  <td>{champions.role}</td>
+                  <td>
+                    {champions.role === "mid" ? (
+                      <Avatar src={MiddleIcon}></Avatar>
+                    ) : champions.role === "top" ? (
+                      <Avatar src={TopIcon}></Avatar>
+                    ) : champions.role === "jungle" ? (
+                      <Avatar src={JungleIcon}></Avatar>
+                    ) : champions.role === "adc" ? (
+                      <Avatar src={AdcIcon}></Avatar>
+                    ) : champions.role === "support" ? (
+                      <Avatar src={SupportIcon}></Avatar>
+                    ) : null}
+                  </td>
                   <td>{champions.champ_class}</td>
                   <td>{champions.difficulty}</td>
                   <td>{champions.upvotes_count}</td>
