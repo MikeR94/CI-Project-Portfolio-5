@@ -89,11 +89,23 @@ const ChampionLeaderboard = () => {
                   </td>
                   <td>
                     {champions.difficulty === "low" ? (
-                      <Avatar src={LowDifficultyIcon}></Avatar>
+                      <img
+                        className={styles.DifficultyIcon}
+                        alt="difficulty icon"
+                        src={LowDifficultyIcon}
+                      ></img>
                     ) : champions.difficulty === "moderate" ? (
-                      <Avatar src={ModerateDifficultyIcon}></Avatar>
+                      <img
+                        className={styles.DifficultyIcon}
+                        alt="difficulty icon"
+                        src={ModerateDifficultyIcon}
+                      ></img>
                     ) : champions.difficulty === "high" ? (
-                      <Avatar src={HighDifficultyIcon}></Avatar>
+                      <img
+                        className={styles.DifficultyIcon}
+                        alt="difficulty icon"
+                        src={HighDifficultyIcon}
+                      ></img>
                     ) : null}
                   </td>
                   <td>{champions.upvotes_count}</td>
