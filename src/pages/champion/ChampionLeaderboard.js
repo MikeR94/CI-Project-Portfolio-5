@@ -10,7 +10,7 @@ const ChampionLeaderboard = () => {
   useEffect(() => {
     const fetchChampions = async () => {
       try {
-        const { data } = await axiosReq.get(`/champions/`);
+        const { data } = await axiosReq.get(`/champions/leaderboard`);
         setChampions(data);
       } catch (error) {
         console.log(error);
