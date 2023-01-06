@@ -9,12 +9,13 @@ import styles from "../../styles/ChampionSelect.module.css";
 import ChampionCard from "../../components/ChampionCard";
 import { Container } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
+import { useSearchQueryContext } from "../../contexts/SearchQueryContext";
 
 const ChampionSelect = () => {
   const [champions, setChampions] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const [filterSelected, setFilterSelected] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
+  const { searchQuery } = useSearchQueryContext();
 
   useEffect(() => {
     const fetchChampions = async () => {
@@ -136,19 +137,7 @@ const ChampionSelect = () => {
   return (
     <div className={styles.RoleIconSection}>
       <div>{RoleIcons}</div>
-      <div className={`form-inline ${styles.SearchBar}`}>
-        <input
-          type="search"
-          id="form1"
-          className="form-control"
-          placeholder="Search for a champion"
-          aria-label="Search"
-          value={searchQuery}
-          onChange={(event) => {
-            setSearchQuery(event.target.value);
-          }}
-        />
-      </div>
+
       <Container className="mt-5">
         <div className={`${styles.Grid}`}>
           {hasLoaded ? (
