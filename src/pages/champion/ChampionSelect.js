@@ -14,11 +14,14 @@ const ChampionSelect = () => {
   const [champions, setChampions] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const [filterSelected, setFilterSelected] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const fetchChampions = async () => {
       try {
-        const { data } = await axiosReq.get("/champions/");
+        const { data } = await axiosReq.get(
+          `/champions/?search=${searchQuery}`
+        );
         setChampions(data);
         setHasLoaded(true);
         setFilterSelected(false);
@@ -29,7 +32,7 @@ const ChampionSelect = () => {
 
     setHasLoaded(false);
     fetchChampions();
-  }, []);
+  }, [searchQuery]);
 
   const getTopChampsFilter = async () => {
     if (filterSelected) {
@@ -133,6 +136,19 @@ const ChampionSelect = () => {
   return (
     <div className={styles.RoleIconSection}>
       <div>{RoleIcons}</div>
+      <div className={`form-inline ${styles.SearchBar}`}>
+        <input
+          type="search"
+          id="form1"
+          className="form-control"
+          placeholder="Search for a champion"
+          aria-label="Search"
+          value={searchQuery}
+          onChange={(event) => {
+            setSearchQuery(event.target.value);
+          }}
+        />
+      </div>
       <Container className="mt-5">
         <div className={`${styles.Grid}`}>
           {hasLoaded ? (
