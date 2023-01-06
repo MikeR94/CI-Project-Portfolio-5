@@ -4,10 +4,12 @@ import {
   useSearchQueryContext,
   useSetSearchQueryContext,
 } from "../contexts/SearchQueryContext";
+import { useHistory } from "react-router-dom";
 
 const SearchBar = () => {
   const { searchQuery } = useSearchQueryContext();
   const { setSearchQuery } = useSetSearchQueryContext();
+  const history = useHistory();
   return (
     <div className={`form-inline ${styles.SearchBar}`}>
       <input
@@ -18,6 +20,7 @@ const SearchBar = () => {
         value={searchQuery}
         onChange={(event) => {
           setSearchQuery(event.target.value);
+          history.push("/");
         }}
       />
     </div>
