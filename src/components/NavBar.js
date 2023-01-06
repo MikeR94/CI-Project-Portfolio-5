@@ -42,6 +42,9 @@ const NavBar = () => {
         <NavDropdown.Item as={Link} to="/profile">
           Profile
         </NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/leaderboard">
+          Leaderboard
+        </NavDropdown.Item>
         {is_staff ? (
           <NavDropdown.Item as={Link} to="/create">
             Create
