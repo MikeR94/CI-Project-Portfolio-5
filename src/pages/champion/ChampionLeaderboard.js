@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { axiosReq } from "../../api/axiosDefaults";
 import Avatar from "../../components/Avatar";
-import Aatrox from "../../assets/Aatrox.jpg";
-import { Card, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import styles from "../../styles/ChampionLeaderboard.module.css";
 
 const ChampionLeaderboard = () => {
   const [champions, setChampions] = useState({ results: [] });
@@ -21,19 +21,39 @@ const ChampionLeaderboard = () => {
 
   console.log(champions);
   return (
-    <Container className="mt-5 d-flex flex-wrap">
-      <Card className="d-block">
-        <Avatar src={Aatrox}></Avatar>
-        <span>Aatrox</span>
-        <span>The Darkin Blade</span>
-        <span>30</span>
-      </Card>
-      <Card className="d-block">
-        <Avatar src={Aatrox}></Avatar>
-        <span>Aatrox</span>
-        <span>The Darkin Blade</span>
-        <span>30</span>
-      </Card>
+    <Container className={styles.Container}>
+      <table className={styles.LeaderboardResults} width="100%">
+        <thead>
+          <tr>
+            <th>Avatar</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Class</th>
+            <th>Difficulty</th>
+            <th>Upvotes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <>
+            {champions.results.length ? (
+              champions.results.map((champions) => (
+                <tr>
+                  <td>
+                    <Avatar src={champions.champ_image}></Avatar>
+                  </td>
+                  <td>{champions.name}</td>
+                  <td>{champions.role}</td>
+                  <td>{champions.champ_class}</td>
+                  <td>{champions.difficulty}</td>
+                  <td>{champions.upvotes_count}</td>
+                </tr>
+              ))
+            ) : (
+              <h1>Loading....</h1>
+            )}
+          </>
+        </tbody>
+      </table>
     </Container>
   );
 };
