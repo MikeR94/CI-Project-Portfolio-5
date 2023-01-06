@@ -8,6 +8,9 @@ import AdcIcon from "../../assets/role_icons/adc.png";
 import JungleIcon from "../../assets/role_icons/jungle.png";
 import TopIcon from "../../assets/role_icons/top.png";
 import MiddleIcon from "../../assets/role_icons/middle.png";
+import LowDifficultyIcon from "../../assets/difficulty_icons/low.webp";
+import ModerateDifficultyIcon from "../../assets/difficulty_icons/moderate.webp";
+import HighDifficultyIcon from "../../assets/difficulty_icons/high.webp";
 
 const ChampionLeaderboard = () => {
   const [champions, setChampions] = useState({ results: [] });
@@ -61,7 +64,15 @@ const ChampionLeaderboard = () => {
                     ) : null}
                   </td>
                   <td>{champions.champ_class}</td>
-                  <td>{champions.difficulty}</td>
+                  <td>
+                    {champions.difficulty === "low" ? (
+                      <Avatar src={LowDifficultyIcon}></Avatar>
+                    ) : champions.difficulty === "moderate" ? (
+                      <Avatar src={ModerateDifficultyIcon}></Avatar>
+                    ) : champions.difficulty === "high" ? (
+                      <Avatar src={HighDifficultyIcon}></Avatar>
+                    ) : null}
+                  </td>
                   <td>{champions.upvotes_count}</td>
                 </tr>
               ))
