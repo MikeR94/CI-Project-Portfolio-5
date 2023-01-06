@@ -34,12 +34,12 @@ const ChampionLeaderboard = () => {
     fetchChampions();
   }, []);
 
-  console.log(champions);
   return (
     <Container className={styles.Container}>
       <table className={styles.LeaderboardResults} width="100%">
         <thead>
           <tr>
+            <th>Rank</th>
             <th>Avatar</th>
             <th>Name</th>
             <th>Role</th>
@@ -51,8 +51,9 @@ const ChampionLeaderboard = () => {
         <tbody>
           <>
             {champions.results.length ? (
-              champions.results.map((champions) => (
+              champions.results.map((champions, i) => (
                 <tr>
+                  <td>{i + 1}</td>
                   <td>
                     <Avatar src={champions.champ_image}></Avatar>
                   </td>
