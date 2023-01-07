@@ -6,7 +6,7 @@ import Leaderboard from "../../components/Leaderboard";
 const ChampionLeaderboard = () => {
   const [champions, setChampions] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [championsPerPage] = useState(1);
+  const [championsPerPage] = useState(3);
   const indexOfLastChampion = currentPage * championsPerPage;
   const indexOfFirstChampion = indexOfLastChampion - championsPerPage;
   const currentChampions = champions.slice(
@@ -18,13 +18,13 @@ const ChampionLeaderboard = () => {
   useEffect(() => {
     const fetchChampions = async () => {
       const res = await axiosReq.get("/champions/leaderboard");
-      let championsCopy = res.data.results;
+      let championsData = res.data.results;
 
-      championsCopy.map((champion, i) => {
+      championsData.map((champion, i) => {
         return (champion.rank = i + 1);
       });
 
-      setChampions(championsCopy);
+      setChampions(championsData);
     };
     fetchChampions();
   }, []);
