@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import styles from "../styles/Pagination.module.css";
 
 const Pagination = ({ championsPerPage, totalChampions, paginate }) => {
   const pageNumbers = [];
@@ -10,10 +11,13 @@ const Pagination = ({ championsPerPage, totalChampions, paginate }) => {
 
   return (
     <nav>
-      <ul className="pagination">
+      <ul className={`pagination ${styles.Ul}`}>
         {pageNumbers.map((number) => (
           <li key={number} className="page-item">
-            <Button onClick={() => paginate(number)} className="page-link">
+            <Button
+              onClick={() => paginate(number)}
+              className={`page-link ${styles.Button}`}
+            >
               {number}
             </Button>
           </li>
