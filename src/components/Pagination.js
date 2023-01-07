@@ -1,10 +1,10 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 
-const Pagination = ({ championsPerPage, totalPosts, paginate }) => {
+const Pagination = ({ championsPerPage, totalChampions, paginate }) => {
   const pageNumbers = [];
 
-  for (let i = 1; i <= Math.ceil(totalPosts / championsPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(totalChampions / championsPerPage); i++) {
     pageNumbers.push(i);
   }
 

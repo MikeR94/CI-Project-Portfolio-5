@@ -38,7 +38,7 @@ const Leaderboard = ({ champions }) => {
             {champions.length ? (
               champions.map((champions, i) => (
                 <tr key={champions.id}>
-                  <td>{i + 1}</td>
+                  <td>{Number(i) + i}</td>
                   <td>
                     <Avatar src={champions.champ_image}></Avatar>
                   </td>

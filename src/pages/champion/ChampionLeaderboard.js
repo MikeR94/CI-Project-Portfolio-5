@@ -7,9 +7,12 @@ const ChampionLeaderboard = () => {
   const [champions, setChampions] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [championsPerPage] = useState(3);
-  const indexOfLastPost = currentPage * championsPerPage;
-  const indexOfFirstPost = indexOfLastPost - championsPerPage;
-  const currentChampions = champions.slice(indexOfFirstPost, indexOfLastPost);
+  const indexOfLastChampion = currentPage * championsPerPage;
+  const indexOfFirstChampion = indexOfLastChampion - championsPerPage;
+  const currentChampions = champions.slice(
+    indexOfFirstChampion,
+    indexOfLastChampion
+  );
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   useEffect(() => {
@@ -25,7 +28,7 @@ const ChampionLeaderboard = () => {
       <Leaderboard champions={currentChampions} key={champions.id} />
       <Pagination
         championsPerPage={championsPerPage}
-        totalPosts={champions.length}
+        totalChampions={champions.length}
         paginate={paginate}
       />
     </div>
