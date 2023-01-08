@@ -67,7 +67,10 @@ const Comment = (props) => {
                   setShowEditForm={setShowEditForm}
                 />
               ) : (
-                <p>{comment}</p>
+                <div>
+                  {comment}
+                  <hr></hr>
+                </div>
               )}
             </Card.Body>
           </Col>

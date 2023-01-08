@@ -52,6 +52,7 @@ function CommentCreateForm(props) {
       >
         Submit
       </button>
+      <hr></hr>
     </Form>
   );
 }
