@@ -45,13 +45,13 @@ const Comment = (props) => {
               <div className={styles.Date}>{updated_at}</div>
               <div className={styles.Dropdown}>
                 {is_owner && !showEditForm && (
-                  <div onClick={handleDelete}>
-                    <i className="fas fa-trash-alt" />
+                  <div onClick={() => setShowEditForm(true)}>
+                    <i className={`fas fa-edit ${styles.ManageComment}`} />
                   </div>
                 )}
                 {is_owner && !showEditForm && (
-                  <div onClick={() => setShowEditForm(true)}>
-                    <i className="fas fa-edit" />
+                  <div onClick={handleDelete}>
+                    <i className={`fas fa-trash-alt ${styles.ManageComment}`} />
                   </div>
                 )}
               </div>

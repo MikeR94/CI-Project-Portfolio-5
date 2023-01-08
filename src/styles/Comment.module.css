@@ -20,3 +20,12 @@
   margin-left: auto;
   display: flex;
 }
+
+.ManageComment {
+  color: grey;
+  font-size: 20px;
+}
+
+.ManageComment:hover {
+  color: #cbae71;
+}
