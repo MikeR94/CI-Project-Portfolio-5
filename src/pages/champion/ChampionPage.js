@@ -35,6 +35,7 @@ const ChampionPage = () => {
   const [commentData, setCommentData] = useState({ results: [] });
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username;
+  const is_staff = currentUser?.is_staff;
   const history = useHistory();
   const profile_avatar = currentUser?.profile_avatar;
   const [champData, setChampData] = useState({ results: [] });
@@ -408,6 +409,7 @@ const ChampionPage = () => {
               <Comment
                 key={comment.id}
                 setCommentData={setCommentData}
+                is_staff={is_staff}
                 {...comment}
               />
             ))}

@@ -15,6 +15,7 @@ const Comment = (props) => {
     comment,
     setCommentData,
     id,
+    is_staff,
   } = props;
 
   const [showEditForm, setShowEditForm] = useState(false);
@@ -23,7 +24,7 @@ const Comment = (props) => {
 
   const handleDelete = async () => {
     try {
-      await axiosRes.delete(`/comments/${id}/`);
+      await axiosRes.delete(`/comments/delete/${id}/`);
 
       setCommentData((prevComments) => ({
         ...prevComments,
@@ -49,7 +50,7 @@ const Comment = (props) => {
                     <i className={`fas fa-edit ${styles.ManageComment}`} />
                   </div>
                 )}
-                {is_owner && !showEditForm && (
+                {is_staff && !showEditForm && (
                   <div onClick={handleDelete}>
                     <i className={`fas fa-trash-alt ${styles.ManageComment}`} />
                   </div>
