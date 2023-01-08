@@ -55,6 +55,11 @@ const Comment = (props) => {
                     <i className={`fas fa-trash-alt ${styles.ManageComment}`} />
                   </div>
                 )}
+                {is_owner && !showEditForm && !is_staff && (
+                  <div onClick={handleDelete}>
+                    <i className={`fas fa-trash-alt ${styles.ManageComment}`} />
+                  </div>
+                )}
               </div>
             </Card.Header>
             <Card.Body>
