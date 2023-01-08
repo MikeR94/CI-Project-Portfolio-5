@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/RoleIcon.module.css";
 
-const RoleIcon = ({ src, height = 45, text, onClick }) => {
+const RoleIcon = ({ src, height = 45, onClick }) => {
   const [isHovering, setIsHovering] = useState(false);
 
   const handleMouseOver = () => {
@@ -26,7 +26,6 @@ const RoleIcon = ({ src, height = 45, text, onClick }) => {
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
       ></img>
-      {text}
     </span>
   );
 };
