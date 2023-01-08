@@ -32,16 +32,16 @@ function CommentCreateForm(props) {
 
   return (
     <Form className="mt-2" onSubmit={handleSubmit}>
-      <Form.Group>
-        <InputGroup>
-          <Avatar src={profile_avatar} />
+      <Form.Group className="d-flex align-items-center">
+        <Avatar className={styles.Avatar} src={profile_avatar} />
+        <InputGroup className={styles.Input}>
           <Form.Control
             className={styles.Form}
-            placeholder="my comment..."
+            placeholder="Type your comment here, we would love to hear your opinions!"
             as="textarea"
             value={comment}
             onChange={handleChange}
-            rows={2}
+            rows={3}
           />
         </InputGroup>
       </Form.Group>
