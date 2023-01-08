@@ -8,3 +8,15 @@
   font-weight: lighter;
   color: #c1c1c5;
 }
+.Header {
+  display: flex;
+}
+
+/* .Header div:last-of-type {
+  margin-left: auto;
+} */
+
+.Dropdown {
+  margin-left: auto;
+  display: flex;
+}

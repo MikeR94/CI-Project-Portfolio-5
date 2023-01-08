@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import Media from "react-bootstrap/Media";
 import Avatar from "../../components/Avatar";
 import styles from "../../styles/Comment.module.css";
 import CommentEditForm from "./CommentEditForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
-import { MoreDropdown } from "../../components/MoreDropdown";
+import { Card, Col, Container, Row } from "react-bootstrap";
 
 const Comment = (props) => {
   const {
@@ -37,31 +36,43 @@ const Comment = (props) => {
 
   return (
     <>
-      <Media>
-        <Avatar src={profile_avatar} />
-        <Media.Body className="align-self-center ml-2">
-          <span className={styles.Owner}>{owner}</span>
-          <span className={styles.Date}>{updated_at}</span>
-          {showEditForm ? (
-            <CommentEditForm
-              id={id}
-              profile_id={profile_id}
-              comment={comment}
-              profileImage={profile_avatar}
-              setCommentData={setCommentData}
-              setShowEditForm={setShowEditForm}
-            />
-          ) : (
-            <p>{comment}</p>
-          )}
-        </Media.Body>
-        {is_owner && !showEditForm && (
-          <MoreDropdown
-            handleEdit={() => setShowEditForm(true)}
-            handleDelete={handleDelete}
-          />
-        )}
-      </Media>
+      <Container>
+        <Row className="d-flex justify-content-center">
+          <Col className="col-md-12">
+            <Card.Header className={styles.Header}>
+              <Avatar src={profile_avatar} />
+              <div className={styles.Owner}>{owner}</div>
+              <div className={styles.Date}>{updated_at}</div>
+              <div className={styles.Dropdown}>
+                {is_owner && !showEditForm && (
+                  <div onClick={handleDelete}>
+                    <i className="fas fa-trash-alt" />
+                  </div>
+                )}
+                {is_owner && !showEditForm && (
+                  <div onClick={() => setShowEditForm(true)}>
+                    <i className="fas fa-edit" />
+                  </div>
+                )}
+              </div>
+            </Card.Header>
+            <Card.Body>
+              {showEditForm ? (
+                <CommentEditForm
+                  id={id}
+                  profile_id={profile_id}
+                  comment={comment}
+                  profileImage={profile_avatar}
+                  setCommentData={setCommentData}
+                  setShowEditForm={setShowEditForm}
+                />
+              ) : (
+                <p>{comment}</p>
+              )}
+            </Card.Body>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 };
