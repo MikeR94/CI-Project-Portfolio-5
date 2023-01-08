@@ -2,10 +2,23 @@
   border: none;
   margin-left: 20px;
   margin-right: 20px;
+  background-color: #2f3547b0;
 }
 
 .ButtonContainer {
   display: flex;
   margin-right: 20px;
-  justify-content: end;
+  justify-content: flex-end;
+}
+
+.Input textarea {
+  background-color: #2f3547b0;
+  color: white;
+}
+
+.Input textarea:focus {
+  border: 2px #cbae71 solid;
+  background-color: #2f3547b0;
+  box-shadow: none;
+  color: white;
 }
