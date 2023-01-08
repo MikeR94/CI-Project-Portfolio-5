@@ -4,6 +4,8 @@ import InputGroup from "react-bootstrap/InputGroup";
 import styles from "../../styles/CommentCreateEditForm.module.css";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
+import btnStyles from "../../styles/Button.module.css";
+import { Button } from "react-bootstrap";
 
 function CommentCreateForm(props) {
   const { setCommentData, profile_avatar, champion } = props;
@@ -45,13 +47,17 @@ function CommentCreateForm(props) {
           />
         </InputGroup>
       </Form.Group>
-      <button
-        className={`${styles.Button} btn d-block ml-auto`}
-        disabled={!comment.trim()}
-        type="submit"
-      >
-        Submit
-      </button>
+      <div className={styles.ButtonContainer}>
+        <Button
+          className={`${btnStyles.Button} mt-3 `}
+          disabled={!comment.trim()}
+          type="submit"
+        >
+          {" "}
+          Submit
+        </Button>
+      </div>
+
       <hr></hr>
     </Form>
   );

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import { axiosRes } from "../../api/axiosDefaults";
 import styles from "../../styles/CommentCreateEditForm.module.css";
+import btnStyles from "../../styles/Button.module.css";
+import { Button } from "react-bootstrap";
 
 function CommentEditForm(props) {
   const { id, comment, setShowEditForm, setCommentData } = props;
@@ -40,24 +42,24 @@ function CommentEditForm(props) {
     <Form onSubmit={handleSubmit}>
       <Form.Group className="pr-1">
         <Form.Control
-          className={styles.Form}
+          className={styles.Input}
           as="textarea"
           value={formContent}
           onChange={handleChange}
-          rows={2}
+          rows={3}
         />
       </Form.Group>
-      <div className="text-right">
-        <button
-          className={styles.Button}
+      <div className="d-flex justify-content-end mt-2 ">
+        <Button
+          className={`me-2 ${btnStyles.Button}`}
           onClick={() => setShowEditForm(false)}
           type="button"
         >
           Cancel
-        </button>
-        <button className={styles.Button} type="submit">
+        </Button>
+        <Button className={btnStyles.Button} type="submit">
           Save
-        </button>
+        </Button>
       </div>
     </Form>
   );

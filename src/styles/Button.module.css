@@ -13,3 +13,8 @@
   cursor: pointer;
   background-color: rgb(16, 187, 121) !important;
 }
+
+.Button:disabled {
+  background-color: grey;
+  border: none;
+}
