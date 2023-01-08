@@ -377,10 +377,17 @@ const ChampionPage = () => {
         <Row className={styles.UpVoteTitle}>Up Vote</Row>
         <Row className="align-items-center">
           <Col lg={8}>
-            <div className={styles.UpVoteText}>
-              Do you like this champion? Make sure you up-vote it by clicking
-              the arrow if you do!
-            </div>
+            {is_owner && upvotes_id && (
+              <div className={styles.UpVoteText}>
+                Great! You have successfully upvoted for {name}!
+              </div>
+            )}
+            {!upvotes_id && (
+              <div className={styles.UpVoteText}>
+                Do you like this champion? Make sure you up-vote it by clicking
+                the arrow if you do!
+              </div>
+            )}
           </Col>
           <Col lg={4}>
             <div className={styles.UpVoteIcon}>
