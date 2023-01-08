@@ -134,6 +134,15 @@ const ChampionPage = () => {
     fetchChampion();
   }, [id, history]);
 
+  const handleDelete = async () => {
+    try {
+      await axiosRes.delete(`/champions/${id}`);
+      history.push("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const handleUpVote = async () => {
     try {
       await axiosRes.post("/upvotes/", { champion: id });
@@ -255,9 +264,16 @@ const ChampionPage = () => {
         </Row>
         <Row className={styles.Name}>{name}</Row>
         <Row className={styles.Alias}>{alias}</Row>
-        <Link to={`/champion/${id}/edit`}>
-          <Button className={`${btnStyles.Button}`}>Edit</Button>
-        </Link>
+        {is_staff && (
+          <div>
+            <Link to={`/champion/${id}/edit`}>
+              <Button className={`${btnStyles.Button}`}>Edit</Button>
+            </Link>
+            <Button onClick={handleDelete} className={`${btnStyles.Button}`}>
+              Delete
+            </Button>
+          </div>
+        )}
         <hr className="mt-5 mb-5"></hr>
         <Row>{lore}</Row>
         <hr className="mt-5 mb-5"></hr>
