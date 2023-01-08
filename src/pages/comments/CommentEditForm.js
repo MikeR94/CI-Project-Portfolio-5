@@ -62,6 +62,7 @@ function CommentEditForm(props) {
           Save
         </Button>
       </div>
+      <hr></hr>
     </Form>
   );
 }
