@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import { axiosRes } from "../../api/axiosDefaults";
 import styles from "../../styles/CommentCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { Button } from "react-bootstrap";
+import { Button, InputGroup } from "react-bootstrap";
 
 function CommentEditForm(props) {
   const { id, comment, setShowEditForm, setCommentData } = props;
@@ -41,13 +41,14 @@ function CommentEditForm(props) {
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group className="pr-1">
-        <Form.Control
-          className={styles.Input}
-          as="textarea"
-          value={formContent}
-          onChange={handleChange}
-          rows={3}
-        />
+        <InputGroup className={styles.Input}>
+          <Form.Control
+            as="textarea"
+            value={formContent}
+            onChange={handleChange}
+            rows={3}
+          />
+        </InputGroup>
       </Form.Group>
       <div className="d-flex justify-content-end mt-2 ">
         <Button

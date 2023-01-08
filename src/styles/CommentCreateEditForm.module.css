@@ -14,6 +14,7 @@
 .Input textarea {
   background-color: #2f3547b0;
   color: white;
+  border: none;
 }
 
 .Input textarea:focus {
