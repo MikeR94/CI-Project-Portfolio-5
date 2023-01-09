@@ -382,12 +382,17 @@ const ChampionPage = () => {
                 Great! You have successfully upvoted for {name}!
               </div>
             )}
-            {!upvotes_id && (
+            {!upvotes_id ? (
               <div className={styles.UpVoteText}>
                 Do you like this champion? Make sure you up-vote it by clicking
                 the arrow if you do!
               </div>
-            )}
+            ) : !is_owner ? (
+              <div className={styles.UpVoteText}>
+                Do you like this champion? Make sure you up-vote it by clicking
+                the arrow if you do!
+              </div>
+            ) : null}
           </Col>
           <Col lg={4}>
             <div className={styles.UpVoteIcon}>
