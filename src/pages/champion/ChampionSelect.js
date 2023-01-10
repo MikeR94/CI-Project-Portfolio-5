@@ -151,6 +151,7 @@ const ChampionSelect = () => {
               )}
             </>
           ) : (
+            // TODO - Add a spinner
             <h1>Loading...</h1>
           )}
         </div>

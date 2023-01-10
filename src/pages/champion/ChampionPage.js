@@ -442,6 +442,7 @@ const ChampionPage = () => {
               />
             ))}
             dataLength={commentData.results.length}
+            // TODO - Add a spinner
             loader="Loading..."
             hasMore={!!commentData.next}
             next={() => fetchMoreData(commentData, setCommentData)}
