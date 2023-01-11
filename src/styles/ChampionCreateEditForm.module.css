@@ -1,13 +1,51 @@
 .Input {
-  box-sizing: border-box;
   border-radius: 2px;
-  color: #1a1a1a;
   text-align: center;
   padding: 10px;
   margin-top: 4px;
   background-color: #2f3547b0;
-  color: white;
+  color: #cbae71;
   border: none;
+}
+
+input[type="text"]:focus {
+  border: 2px #cbae71 solid;
+  background-color: #2f3547b0;
+  box-shadow: none;
+  color: #cbae71;
+}
+
+.DropdownUnselected {
+  text-align: center;
+  padding: 10px;
+  margin-top: 4px;
+  background-color: #2f3547b0;
+  color: #cbae71;
+  border: none;
+}
+
+.DropdownSelected {
+  text-align: center;
+  padding: 10px;
+  margin-top: 4px;
+  background-color: #2f3547b0;
+  color: #6c757d;
+  border: none;
+}
+
+.DropdownUnselected:focus {
+  background-color: #2f3547b0;
+  color: #cbae71;
+}
+
+.DropdownSelected:focus {
+  background-color: #2f3547b0;
+  color: #cbae71;
+}
+
+option {
+  color: #cbae71;
+  background-color: #222837;
 }
 
 .ContentBackground {
@@ -29,32 +67,4 @@
   text-transform: uppercase;
   margin-bottom: 20px;
   color: #cbae71;
-}
-
-.Alert {
-  background-color: #222837 !important;
-  color: red !important;
-  border-color: #222837;
-  padding: 2px;
-  margin-bottom: 0px;
-}
-
-.Link {
-  text-decoration: none;
-  text-align: center;
-  display: block;
-  margin: auto;
-  padding: 10px;
-}
-
-.Link span {
-  color: #cbae71;
-}
-
-.Container {
-  padding: 30px 10px;
-}
-
-.SignInCol {
-  height: 320px;
 }

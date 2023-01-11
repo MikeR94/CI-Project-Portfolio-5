@@ -2,13 +2,25 @@ import React, { useRef, useState } from "react";
 import { useRedirect } from "../../hooks/useRedirect";
 import styles from "../../styles/ChampionCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { Form, Button, Col, Row, Container } from "react-bootstrap";
+import { Form, Button, Col, Row } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useHistory } from "react-router-dom";
 
 function ChampionCreate() {
   useRedirect("loggedOut");
   const history = useHistory();
+
+  const champImageInput = useRef(null);
+  const passiveImageInput = useRef(null);
+  const ability1ImageInput = useRef(null);
+  const ability2ImageInput = useRef(null);
+  const ability3ImageInput = useRef(null);
+  const ultimateImageInput = useRef(null);
+
+  const [rangeSelected, setRangeSelected] = useState(false);
+  const [roleSelected, setRoleSelected] = useState(false);
+  const [difficultySelected, setDifficultySelected] = useState(false);
+  const [champClassSelected, setChampClassSelected] = useState(false);
 
   const [champData, setChampData] = useState({
     name: "",
@@ -62,14 +74,37 @@ function ChampionCreate() {
     ultimate_ability_image,
   } = champData;
 
-  const champImageInput = useRef(null);
-  const passiveImageInput = useRef(null);
-  const ability1ImageInput = useRef(null);
-  const ability2ImageInput = useRef(null);
-  const ability3ImageInput = useRef(null);
-  const ultimateImageInput = useRef(null);
-
   const handleChange = (event) => {
+    console.log(event.target.value);
+    if (
+      event.target.value === "mid" ||
+      event.target.value === "top" ||
+      event.target.value === "jungle" ||
+      event.target.value === "bottom" ||
+      event.target.value === "support"
+    ) {
+      setRoleSelected(true);
+    } else if (
+      event.target.value === "low" ||
+      event.target.value === "moderate" ||
+      event.target.value === "high"
+    ) {
+      setDifficultySelected(true);
+    }
+    if (
+      event.target.value === "controller" ||
+      event.target.value === "fighter" ||
+      event.target.value === "mage" ||
+      event.target.value === "marksman" ||
+      event.target.value === "slayer" ||
+      event.target.value === "tank" ||
+      event.target.value === "specialist"
+    ) {
+      setChampClassSelected(true);
+    }
+    if (event.target.value === "melee" || event.target.value === "ranged") {
+      setRangeSelected(true);
+    }
     setChampData({
       ...champData,
       [event.target.name]: event.target.value,
@@ -401,7 +436,11 @@ function ChampionCreate() {
             name="role"
             onChange={handleChange}
             defaultValue={"default"}
-            className="mb-2"
+            className={
+              roleSelected
+                ? `${styles.DropdownUnselected}`
+                : `${styles.DropdownSelected}`
+            }
           >
             <option value="default" disabled>
               Please select a role
@@ -421,7 +460,11 @@ function ChampionCreate() {
             name="champ_class"
             onChange={handleChange}
             defaultValue={"default"}
-            className="mb-2"
+            className={
+              champClassSelected
+                ? `${styles.DropdownUnselected}`
+                : `${styles.DropdownSelected}`
+            }
           >
             <option value="default" disabled>
               Please select a class
@@ -441,7 +484,11 @@ function ChampionCreate() {
             name="range"
             onChange={handleChange}
             defaultValue={"default"}
-            className="mb-2"
+            className={
+              rangeSelected
+                ? `${styles.DropdownUnselected}`
+                : `${styles.DropdownSelected}`
+            }
           >
             <option value="default" disabled>
               Please select the range
@@ -461,7 +508,11 @@ function ChampionCreate() {
             name="difficulty"
             onChange={handleChange}
             defaultValue={"default"}
-            className="mb-2"
+            className={
+              difficultySelected
+                ? `${styles.DropdownUnselected}`
+                : `${styles.DropdownSelected}`
+            }
           >
             <option value="default" disabled>
               Please select a difficulty
