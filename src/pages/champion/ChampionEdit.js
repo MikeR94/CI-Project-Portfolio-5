@@ -83,8 +83,8 @@ function ChampionEdit() {
       champ_image: "champ_image",
       passive_ability_image: "passive_ability_image",
       ability_1_image: "ability_1_image",
-      ability_2_image: "ability_1_image",
-      ability_3_image: "ability_1_image",
+      ability_2_image: "ability_2_image",
+      ability_3_image: "ability_3_image",
       ultimate_ability_image: "ultimate_ability_image",
     };
 
