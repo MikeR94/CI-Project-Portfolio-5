@@ -11,6 +11,7 @@ import ChampionCreate from "./pages/champion/ChampionCreate";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 import ChampionEdit from "./pages/champion/ChampionEdit";
 import ChampionLeaderboard from "./pages/champion/ChampionLeaderboard";
+import ProfilePage from "./pages/profile/ProfilePage";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -27,13 +28,13 @@ function App() {
           />
           <Route
             exact
-            path="/profile"
-            render={() => <h1>This is the profile page</h1>}
+            path="/signout"
+            render={() => <h1>You have successfully signed out</h1>}
           />
           <Route
             exact
-            path="/signout"
-            render={() => <h1>You have successfully signed out</h1>}
+            path="/profile:id/"
+            render={() => <ProfilePage></ProfilePage>}
           />
           <Route
             exact

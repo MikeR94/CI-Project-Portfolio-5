@@ -39,7 +39,7 @@ const NavBar = () => {
         <NavDropdown.Item as={Link} to="/">
           Home
         </NavDropdown.Item>
-        <NavDropdown.Item as={Link} to="/profile">
+        <NavDropdown.Item as={Link} to={`/profile/${currentUser?.profile_id}/`}>
           Profile
         </NavDropdown.Item>
         <NavDropdown.Item as={Link} to="/leaderboard">
