@@ -6,11 +6,17 @@ import { Form, Button, Col, Row } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useHistory } from "react-router-dom";
 import ImagePreview from "../../components/ImagePreview";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function ChampionCreate() {
-  useRedirect("loggedOut");
+  const currentUser = useCurrentUser();
+  const is_staff = currentUser?.is_staff;
+
   const history = useHistory();
 
+  if (!is_staff) {
+    history.push("/");
+  }
   const champImageInput = useRef(null);
   const passiveImageInput = useRef(null);
   const ability1ImageInput = useRef(null);

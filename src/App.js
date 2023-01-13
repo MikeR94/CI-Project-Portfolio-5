@@ -14,8 +14,6 @@ import ChampionLeaderboard from "./pages/champion/ChampionLeaderboard";
 import ProfilePage from "./pages/profile/ProfilePage";
 
 function App() {
-  const currentUser = useCurrentUser();
-  const is_staff = currentUser?.is_staff;
   return (
     <div className={styles.App}>
       <NavBar />
@@ -56,29 +54,22 @@ function App() {
             path="/champion/:id"
             render={() => <ChampionPage></ChampionPage>}
           />
-          {is_staff ? (
-            <Route
-              exact
-              path="/create"
-              render={() => <ChampionCreate></ChampionCreate>}
-            />
-          ) : (
-            <Redirect to="/"></Redirect>
-          )}
+          <Route
+            exact
+            path="/create"
+            render={() => <ChampionCreate></ChampionCreate>}
+          />
+
           <Route
             exact
             path="/champion/:id/edit"
             render={() => <ChampionEdit></ChampionEdit>}
           />
-          {is_staff ? (
-            <Route
-              exact
-              path="/create"
-              render={() => <ChampionCreate></ChampionCreate>}
-            />
-          ) : (
-            <Redirect to="/"></Redirect>
-          )}
+          <Route
+            exact
+            path="/create"
+            render={() => <ChampionCreate></ChampionCreate>}
+          />
         </Switch>
       </Container>
     </div>
