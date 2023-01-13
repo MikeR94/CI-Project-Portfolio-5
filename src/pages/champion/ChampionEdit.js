@@ -5,6 +5,7 @@ import btnStyles from "../../styles/Button.module.css";
 import { Form, Button, Col, Row } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useHistory, useParams } from "react-router-dom";
+import ImagePreview from "../../components/ImagePreview";
 
 function ChampionEdit() {
   useRedirect("loggedOut");
@@ -558,6 +559,11 @@ function ChampionEdit() {
         <Col className="">
           <Form.Group className="">
             <Form.Label className="">Champ Image</Form.Label>
+            <ImagePreview
+              width={64}
+              height={64}
+              src={champ_image}
+            ></ImagePreview>
             <Form.File
               htmlFor="champ_image"
               id="champ_image"
@@ -570,6 +576,11 @@ function ChampionEdit() {
         <Col>
           <Form.Group>
             <Form.Label className="">Passive Image</Form.Label>
+            <ImagePreview
+              width={64}
+              height={64}
+              src={passive_ability_image}
+            ></ImagePreview>
             <Form.File
               htmlFor="passive_ability_image"
               id="passive_ability_image"
@@ -582,6 +593,11 @@ function ChampionEdit() {
         <Col>
           <Form.Group controlId="ability_1_image">
             <Form.Label className="">Ability 1 Image</Form.Label>
+            <ImagePreview
+              width={64}
+              height={64}
+              src={ability_1_image}
+            ></ImagePreview>
             <Form.File
               htmlFor="ability_1_image"
               id="ability_1_image"
@@ -597,6 +613,11 @@ function ChampionEdit() {
         <Col className="">
           <Form.Group controlId="ability_2_image">
             <Form.Label className="">Ability 2 Image</Form.Label>
+            <ImagePreview
+              width={64}
+              height={64}
+              src={ability_2_image}
+            ></ImagePreview>
             <Form.File
               htmlFor="ability_2_image"
               id="ability_2_image"
@@ -609,6 +630,11 @@ function ChampionEdit() {
         <Col>
           <Form.Group controlId="ability_3_image">
             <Form.Label className="">Ability 3 Image</Form.Label>
+            <ImagePreview
+              width={64}
+              height={64}
+              src={ability_3_image}
+            ></ImagePreview>
             <Form.File
               htmlFor="ability_3_image"
               id="ability_3_image"
@@ -621,6 +647,11 @@ function ChampionEdit() {
         <Col className="mb-4">
           <Form.Group controlId="ultimate_ability_image">
             <Form.Label className="">Ultimate Image</Form.Label>
+            <ImagePreview
+              width={64}
+              height={64}
+              src={ultimate_ability_image}
+            ></ImagePreview>
             <Form.File
               htmlFor="ultimate_ability_image"
               id="ultimate_ability_image"
