@@ -113,22 +113,73 @@ function ChampionCreate() {
   };
 
   const handleChangeImage = (event) => {
-    if (event.target.files.length) {
-      URL.revokeObjectURL(champ_image);
-      URL.revokeObjectURL(passive_ability_image);
-      URL.revokeObjectURL(ability_1_image);
-      URL.revokeObjectURL(ability_2_image);
-      URL.revokeObjectURL(ability_3_image);
-      URL.revokeObjectURL(ultimate_ability_image);
-      setChampData({
-        ...champData,
-        champ_image: URL.createObjectURL(event.target.files[0]),
-        passive_ability_image: URL.createObjectURL(event.target.files[0]),
-        ability_1_image: URL.createObjectURL(event.target.files[0]),
-        ability_2_image: URL.createObjectURL(event.target.files[0]),
-        ability_3_image: URL.createObjectURL(event.target.files[0]),
-        ultimate_ability_image: URL.createObjectURL(event.target.files[0]),
-      });
+    const imageRef = {
+      champ_image: "champ_image",
+      passive_ability_image: "passive_ability_image",
+      ability_1_image: "ability_1_image",
+      ability_2_image: "ability_2_image",
+      ability_3_image: "ability_3_image",
+      ultimate_ability_image: "ultimate_ability_image",
+    };
+
+    if (event.target.id === imageRef.champ_image) {
+      if (event.target.files.length) {
+        URL.revokeObjectURL(champ_image);
+        setChampData({
+          ...champData,
+          champ_image: URL.createObjectURL(event.target.files[0]),
+        });
+      }
+    }
+
+    if (event.target.id === imageRef.passive_ability_image) {
+      if (event.target.files.length) {
+        URL.revokeObjectURL(passive_ability_image);
+        setChampData({
+          ...champData,
+          passive_ability_image: URL.createObjectURL(event.target.files[0]),
+        });
+      }
+    }
+
+    if (event.target.id === imageRef.ability_1_image) {
+      if (event.target.files.length) {
+        URL.revokeObjectURL(ability_1_image);
+        setChampData({
+          ...champData,
+          ability_1_image: URL.createObjectURL(event.target.files[0]),
+        });
+      }
+    }
+
+    if (event.target.id === imageRef.ability_2_image) {
+      if (event.target.files.length) {
+        URL.revokeObjectURL(ability_2_image);
+        setChampData({
+          ...champData,
+          ability_2_image: URL.createObjectURL(event.target.files[0]),
+        });
+      }
+    }
+
+    if (event.target.id === imageRef.ability_3_image) {
+      if (event.target.files.length) {
+        URL.revokeObjectURL(ability_3_image);
+        setChampData({
+          ...champData,
+          ability_3_image: URL.createObjectURL(event.target.files[0]),
+        });
+      }
+    }
+
+    if (event.target.id === imageRef.ultimate_ability_image) {
+      if (event.target.files.length) {
+        URL.revokeObjectURL(ultimate_ability_image);
+        setChampData({
+          ...champData,
+          ultimate_ability_image: URL.createObjectURL(event.target.files[0]),
+        });
+      }
     }
   };
 
