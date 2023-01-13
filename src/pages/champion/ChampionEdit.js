@@ -6,11 +6,18 @@ import { Form, Button, Col, Row } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useHistory, useParams } from "react-router-dom";
 import ImagePreview from "../../components/ImagePreview";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function ChampionEdit() {
   useRedirect("loggedOut");
   const history = useHistory();
   const { id } = useParams();
+  const currentUser = useCurrentUser();
+  const is_staff = currentUser?.is_staff;
+
+  if (!is_staff) {
+    history.push("/");
+  }
 
   const [champData, setChampData] = useState({
     name: "",
