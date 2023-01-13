@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useRedirect } from "../../hooks/useRedirect";
-import styles from "../../styles/SignInUpForm.module.css";
+import styles from "../../styles/ChampionCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { Form, Button, Col, Row, Container } from "react-bootstrap";
+import { Form, Button, Col, Row } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useHistory, useParams } from "react-router-dom";
 
@@ -318,306 +318,325 @@ function ChampionEdit() {
   ];
 
   return (
-    <Row className={styles.Row}>
-      <Col md={6}>
-        <Container className={`${styles.ContentBackground} p-4 `}>
-          <h1 className={styles.Header}>Create a champion</h1>
-          <hr></hr>
+    <Form onSubmit={handleSubmit}>
+      <Row className="mt-5">
+        <h1 className={styles.Header}>Create a champion</h1>
+        <hr></hr>
+      </Row>
+      <Row className="mt-5">
+        <Col md={6} className={`${styles.ContentBackground} p-4 `}>
+          <Form.Group controlId="name">
+            <Form.Label className="d-none">Name</Form.Label>
+            <Form.Control
+              className={styles.Input}
+              type="text"
+              placeholder="Champion Name"
+              name="name"
+              value={name}
+              onChange={handleChange}
+            />
+          </Form.Group>
 
-          <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="name">
-              <Form.Label className="d-none">Name</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Champion Name"
-                name="name"
-                value={name}
-                onChange={handleChange}
-              />
-            </Form.Group>
+          <Form.Group controlId="alias">
+            <Form.Label className="d-none">Alias</Form.Label>
+            <Form.Control
+              className={styles.Input}
+              type="text"
+              placeholder="Champion Alias"
+              name="alias"
+              value={alias}
+              onChange={handleChange}
+            />
+          </Form.Group>
 
-            <Form.Group controlId="alias">
-              <Form.Label className="d-none">Alias</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Champion Alias"
-                name="alias"
-                value={alias}
-                onChange={handleChange}
-              />
-            </Form.Group>
+          <Form.Group controlId="lore">
+            <Form.Label className="d-none">Lore</Form.Label>
+            <Form.Control
+              className={styles.Input}
+              type="text"
+              placeholder="Champion Lore"
+              name="lore"
+              value={lore}
+              onChange={handleChange}
+            />
+          </Form.Group>
 
-            <Form.Group>
-              <Form.Label className="d-flex">Champ Image</Form.Label>
-              <Form.File
-                htmlFor="champ_image"
-                id="champ_image"
-                accept="image/*"
-                ref={champImageInput}
-                onChange={handleChangeImage}
-              />
-            </Form.Group>
+          <Form.Group controlId="passive_ability">
+            <Form.Label className="d-none">Passive</Form.Label>
+            <Form.Control
+              className={styles.Input}
+              type="text"
+              placeholder="Champion Passive"
+              name="passive_ability"
+              value={passive_ability}
+              onChange={handleChange}
+            />
+          </Form.Group>
 
-            <Form.Group controlId="lore">
-              <Form.Label className="d-none">Lore</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Champion Lore"
-                name="lore"
-                value={lore}
-                onChange={handleChange}
-              />
-            </Form.Group>
+          <Form.Group controlId="passive_ability_description">
+            <Form.Label className="d-none">Passive Description</Form.Label>
+            <Form.Control
+              className={styles.Input}
+              type="text"
+              placeholder="Champion Passive Description"
+              name="passive_ability_description"
+              value={passive_ability_description}
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group controlId="ability_1">
+            <Form.Label className="d-none">Ability 1</Form.Label>
+            <Form.Control
+              className={styles.Input}
+              type="text"
+              placeholder="Champion Ability 1"
+              name="ability_1"
+              value={ability_1}
+              onChange={handleChange}
+            />
+          </Form.Group>
 
-            <Form.Group>
-              <Form.Label className="d-none">Select Role</Form.Label>
-              <Form.Control
-                as="select"
-                name="role"
-                onChange={handleChange}
-                defaultValue={role}
-              >
-                {roleOptions.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </Form.Control>
-            </Form.Group>
+          <Form.Group controlId="ability_1_description">
+            <Form.Label className="d-none">Ability 1 Description</Form.Label>
+            <Form.Control
+              className={styles.Input}
+              type="text"
+              placeholder="Champion Ability 1 Description"
+              name="ability_1_description"
+              value={ability_1_description}
+              onChange={handleChange}
+            />
+          </Form.Group>
+        </Col>
 
-            <Form.Group>
-              <Form.Label className="d-none">Select Champ Class</Form.Label>
-              <Form.Control
-                as="select"
-                name="champ_class"
-                onChange={handleChange}
-                defaultValue={champ_class}
-              >
-                {champClassOptions.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </Form.Control>
-            </Form.Group>
+        <Col md={6} className={`${styles.ContentBackground} p-4 `}>
+          <Form.Group controlId="ability_2">
+            <Form.Label className="d-none">Ability 2</Form.Label>
+            <Form.Control
+              className={styles.Input}
+              type="text"
+              placeholder="Champion Ability 2"
+              name="ability_2"
+              value={ability_2}
+              onChange={handleChange}
+            />
+          </Form.Group>
 
-            <Form.Group>
-              <Form.Label className="d-none">Select Range</Form.Label>
-              <Form.Control
-                as="select"
-                name="range"
-                onChange={handleChange}
-                defaultValue={range}
-              >
-                {rangeOptions.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </Form.Control>
-            </Form.Group>
+          <Form.Group controlId="ability_2_description">
+            <Form.Label className="d-none">Ability 2 Description</Form.Label>
+            <Form.Control
+              className={styles.Input}
+              type="text"
+              placeholder="Champion Ability 2 Description"
+              name="ability_2_description"
+              value={ability_2_description}
+              onChange={handleChange}
+            />
+          </Form.Group>
 
-            <Form.Group>
-              <Form.Label className="d-none">Difficulty</Form.Label>
-              <Form.Control
-                as="select"
-                name="difficulty"
-                onChange={handleChange}
-                defaultValue={difficulty}
-              >
-                {difficultyOptions.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </Form.Control>
-            </Form.Group>
+          <Form.Group controlId="ability_3">
+            <Form.Label className="d-none">Ability 3</Form.Label>
+            <Form.Control
+              className={styles.Input}
+              type="text"
+              placeholder="Champion Ability 3"
+              name="ability_3"
+              value={ability_3}
+              onChange={handleChange}
+            />
+          </Form.Group>
 
-            <Form.Group controlId="passive_ability">
-              <Form.Label className="d-none">Passive</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Champion Passive"
-                name="passive_ability"
-                value={passive_ability}
-                onChange={handleChange}
-              />
-            </Form.Group>
+          <Form.Group controlId="ability_3_description">
+            <Form.Label className="d-none">Ability 3 Description</Form.Label>
+            <Form.Control
+              className={styles.Input}
+              type="text"
+              placeholder="Champion Ability 3 Description"
+              name="ability_3_description"
+              value={ability_3_description}
+              onChange={handleChange}
+            />
+          </Form.Group>
 
-            <Form.Group controlId="passive_ability_description">
-              <Form.Label className="d-none">Passive Description</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Champion Passive Description"
-                name="passive_ability_description"
-                value={passive_ability_description}
-                onChange={handleChange}
-              />
-            </Form.Group>
+          <Form.Group controlId="ultimate_ability">
+            <Form.Label className="d-none">Ultimate</Form.Label>
+            <Form.Control
+              className={styles.Input}
+              type="text"
+              placeholder="Champion Ultimate"
+              name="ultimate_ability"
+              value={ultimate_ability}
+              onChange={handleChange}
+            />
+          </Form.Group>
 
-            <Form.Group>
-              <Form.Label className="d-flex">Passive Image</Form.Label>
-              <Form.File
-                htmlFor="passive_ability_image"
-                id="passive_ability_image"
-                accept="image/*"
-                ref={passiveImageInput}
-                onChange={handleChangeImage}
-              />
-            </Form.Group>
+          <Form.Group controlId="ultimate_ability_description">
+            <Form.Label className="d-none">Ultimate Description</Form.Label>
+            <Form.Control
+              className={styles.Input}
+              type="text"
+              placeholder="Champion Ultimate Description"
+              name="ultimate_ability_description"
+              value={ultimate_ability_description}
+              onChange={handleChange}
+            />
+          </Form.Group>
+        </Col>
+      </Row>
 
-            <Form.Group controlId="ability_1">
-              <Form.Label className="d-none">Ability 1</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Champion Ability 1"
-                name="ability_1"
-                value={ability_1}
-                onChange={handleChange}
-              />
-            </Form.Group>
+      <Row className={`${styles.ContentBackground} p-4`}>
+        <Form.Group>
+          <Form.Label className="d-none">Select Role</Form.Label>
+          <Form.Control
+            as="select"
+            name="role"
+            onChange={handleChange}
+            defaultValue={role}
+            className={styles.DropdownUnselected}
+          >
+            {roleOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </Form.Control>
+        </Form.Group>
 
-            <Form.Group controlId="ability_1_description">
-              <Form.Label className="d-none">Ability 1 Description</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Champion Ability 1 Description"
-                name="ability_1_description"
-                value={ability_1_description}
-                onChange={handleChange}
-              />
-            </Form.Group>
+        <Form.Group>
+          <Form.Label className="d-none">Select Champ Class</Form.Label>
+          <Form.Control
+            as="select"
+            name="champ_class"
+            onChange={handleChange}
+            defaultValue={champ_class}
+            className={styles.DropdownUnselected}
+          >
+            {champClassOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </Form.Control>
+        </Form.Group>
 
-            <Form.Group controlId="ability_1_image">
-              <Form.Label className="d-flex">Ability 1 Image</Form.Label>
-              <Form.File
-                htmlFor="ability_1_image"
-                id="ability_1_image"
-                accept="image/*"
-                ref={ability1ImageInput}
-                onChange={handleChangeImage}
-              />
-            </Form.Group>
+        <Form.Group>
+          <Form.Label className="d-none">Select Range</Form.Label>
+          <Form.Control
+            as="select"
+            name="range"
+            onChange={handleChange}
+            defaultValue={range}
+            className={styles.DropdownUnselected}
+          >
+            {rangeOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </Form.Control>
+        </Form.Group>
 
-            <Form.Group controlId="ability_2">
-              <Form.Label className="d-none">Ability 2</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Champion Ability 2"
-                name="ability_2"
-                value={ability_2}
-                onChange={handleChange}
-              />
-            </Form.Group>
+        <Form.Group>
+          <Form.Label className="d-none">Difficulty</Form.Label>
+          <Form.Control
+            as="select"
+            name="difficulty"
+            onChange={handleChange}
+            defaultValue={difficulty}
+            className={styles.DropdownUnselected}
+          >
+            {difficultyOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </Form.Control>
+        </Form.Group>
+      </Row>
 
-            <Form.Group controlId="ability_2_description">
-              <Form.Label className="d-none">Ability 2 Description</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Champion Ability 2 Description"
-                name="ability_2_description"
-                value={ability_2_description}
-                onChange={handleChange}
-              />
-            </Form.Group>
+      <Row className={`${styles.ContentBackgroundImage} p-4`}>
+        <Col className="">
+          <Form.Group className="">
+            <Form.Label className="">Champ Image</Form.Label>
+            <Form.File
+              htmlFor="champ_image"
+              id="champ_image"
+              accept="image/*"
+              ref={champImageInput}
+              onChange={handleChangeImage}
+            />
+          </Form.Group>
+        </Col>
+        <Col>
+          <Form.Group>
+            <Form.Label className="">Passive Image</Form.Label>
+            <Form.File
+              htmlFor="passive_ability_image"
+              id="passive_ability_image"
+              accept="image/*"
+              ref={passiveImageInput}
+              onChange={handleChangeImage}
+            />
+          </Form.Group>
+        </Col>
+        <Col>
+          <Form.Group controlId="ability_1_image">
+            <Form.Label className="">Ability 1 Image</Form.Label>
+            <Form.File
+              htmlFor="ability_1_image"
+              id="ability_1_image"
+              accept="image/*"
+              ref={ability1ImageInput}
+              onChange={handleChangeImage}
+            />
+          </Form.Group>
+        </Col>
+      </Row>
 
-            <Form.Group controlId="ability_2_image">
-              <Form.Label className="d-flex">Ability 2 Image</Form.Label>
-              <Form.File
-                htmlFor="ability_2_image"
-                id="ability_2_image"
-                accept="image/*"
-                ref={ability2ImageInput}
-                onChange={handleChangeImage}
-              />
-            </Form.Group>
-
-            <Form.Group controlId="ability_3">
-              <Form.Label className="d-none">Ability 3</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Champion Ability 3"
-                name="ability_3"
-                value={ability_3}
-                onChange={handleChange}
-              />
-            </Form.Group>
-
-            <Form.Group controlId="ability_3_description">
-              <Form.Label className="d-none">Ability 3 Description</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Champion Ability 3 Description"
-                name="ability_3_description"
-                value={ability_3_description}
-                onChange={handleChange}
-              />
-            </Form.Group>
-
-            <Form.Group controlId="ability_3_image">
-              <Form.Label className="d-flex">Ability 3 Image</Form.Label>
-              <Form.File
-                htmlFor="ability_3_image"
-                id="ability_3_image"
-                accept="image/*"
-                ref={ability3ImageInput}
-                onChange={handleChangeImage}
-              />
-            </Form.Group>
-
-            <Form.Group controlId="ultimate_ability">
-              <Form.Label className="d-none">Ultimate</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Champion Ultimate"
-                name="ultimate_ability"
-                value={ultimate_ability}
-                onChange={handleChange}
-              />
-            </Form.Group>
-
-            <Form.Group controlId="ultimate_ability_description">
-              <Form.Label className="d-none">Ultimate Description</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Champion Ultimate Description"
-                name="ultimate_ability_description"
-                value={ultimate_ability_description}
-                onChange={handleChange}
-              />
-            </Form.Group>
-
-            <Form.Group controlId="ultimate_ability_image">
-              <Form.Label className="d-flex">Ultimate Image</Form.Label>
-              <Form.File
-                htmlFor="ultimate_ability_image"
-                id="ultimate_ability_image"
-                accept="image/*"
-                ref={ultimateImageInput}
-                onChange={handleChangeImage}
-              />
-            </Form.Group>
-
-            <Button className={`mt-4 ${btnStyles.Button}`} type="submit">
-              Create
-            </Button>
-          </Form>
-        </Container>
-      </Col>
-    </Row>
+      <Row className={`${styles.ContentBackgroundImage} p-4 mb-4`}>
+        <Col className="">
+          <Form.Group controlId="ability_2_image">
+            <Form.Label className="">Ability 2 Image</Form.Label>
+            <Form.File
+              htmlFor="ability_2_image"
+              id="ability_2_image"
+              accept="image/*"
+              ref={ability2ImageInput}
+              onChange={handleChangeImage}
+            />
+          </Form.Group>
+        </Col>
+        <Col>
+          <Form.Group controlId="ability_3_image">
+            <Form.Label className="">Ability 3 Image</Form.Label>
+            <Form.File
+              htmlFor="ability_3_image"
+              id="ability_3_image"
+              accept="image/*"
+              ref={ability3ImageInput}
+              onChange={handleChangeImage}
+            />
+          </Form.Group>
+        </Col>
+        <Col className="mb-4">
+          <Form.Group controlId="ultimate_ability_image">
+            <Form.Label className="">Ultimate Image</Form.Label>
+            <Form.File
+              htmlFor="ultimate_ability_image"
+              id="ultimate_ability_image"
+              accept="image/*"
+              ref={ultimateImageInput}
+              onChange={handleChangeImage}
+            />
+          </Form.Group>
+        </Col>
+      </Row>
+      <Row className="d-flex justify-content-center">
+        <Button className={`mt-4 ${btnStyles.Button}`} type="submit">
+          Update
+        </Button>
+      </Row>
+    </Form>
   );
 }
 
