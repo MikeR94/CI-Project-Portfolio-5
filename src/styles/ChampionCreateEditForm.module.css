@@ -15,6 +15,15 @@ input[type="text"]:focus {
   color: #cbae71;
 }
 
+input[type="file"] {
+  display: none;
+}
+
+.ImageText {
+  color: #cbae71;
+  margin-bottom: 10px;
+}
+
 .DropdownUnselected {
   text-align: center;
   padding: 10px;

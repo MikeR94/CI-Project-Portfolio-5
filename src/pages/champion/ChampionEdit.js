@@ -321,7 +321,7 @@ function ChampionEdit() {
   return (
     <Form onSubmit={handleSubmit}>
       <Row className="mt-5">
-        <h1 className={styles.Header}>Create a champion</h1>
+        <h1 className={styles.Header}>Editing champion - {name}</h1>
         <hr></hr>
       </Row>
       <Row className="mt-5">
@@ -556,109 +556,145 @@ function ChampionEdit() {
       </Row>
 
       <Row className={`${styles.ContentBackgroundImage} p-4`}>
-        <Col className="">
-          <Form.Group className="">
-            <Form.Label className="">Champ Image</Form.Label>
-            <ImagePreview
-              width={64}
-              height={64}
-              src={champ_image}
-            ></ImagePreview>
-            <Form.File
-              htmlFor="champ_image"
-              id="champ_image"
-              accept="image/*"
-              ref={champImageInput}
-              onChange={handleChangeImage}
-            />
+        <Col className="text-center">
+          <Form.Group controlId="champ_image">
+            <Row>
+              <span className={styles.ImageText}>Champion</span>
+            </Row>
+            <Form.Label>
+              <Row>
+                <ImagePreview
+                  width={64}
+                  height={64}
+                  src={champ_image}
+                ></ImagePreview>
+                <Form.File
+                  htmlFor="champ_image"
+                  id="champ_image"
+                  accept="image/*"
+                  ref={champImageInput}
+                  onChange={handleChangeImage}
+                />
+              </Row>
+            </Form.Label>
           </Form.Group>
         </Col>
-        <Col>
-          <Form.Group>
-            <Form.Label className="">Passive Image</Form.Label>
-            <ImagePreview
-              width={64}
-              height={64}
-              src={passive_ability_image}
-            ></ImagePreview>
-            <Form.File
-              htmlFor="passive_ability_image"
-              id="passive_ability_image"
-              accept="image/*"
-              ref={passiveImageInput}
-              onChange={handleChangeImage}
-            />
+        <Col className="text-center">
+          <Form.Group controlId="passive_ability_image">
+            <Row>
+              <span className={styles.ImageText}>Passive Ability</span>
+            </Row>
+            <Form.Label>
+              <Row>
+                <ImagePreview
+                  width={64}
+                  height={64}
+                  src={passive_ability_image}
+                ></ImagePreview>
+                <Form.File
+                  htmlFor="passive_ability_image"
+                  id="passive_ability_image"
+                  accept="image/*"
+                  ref={passiveImageInput}
+                  onChange={handleChangeImage}
+                />
+              </Row>
+            </Form.Label>
           </Form.Group>
         </Col>
-        <Col>
+        <Col className="text-center">
           <Form.Group controlId="ability_1_image">
-            <Form.Label className="">Ability 1 Image</Form.Label>
-            <ImagePreview
-              width={64}
-              height={64}
-              src={ability_1_image}
-            ></ImagePreview>
-            <Form.File
-              htmlFor="ability_1_image"
-              id="ability_1_image"
-              accept="image/*"
-              ref={ability1ImageInput}
-              onChange={handleChangeImage}
-            />
+            <Row>
+              <span className={styles.ImageText}>Ability 1</span>
+            </Row>
+            <Form.Label>
+              <Row>
+                <ImagePreview
+                  width={64}
+                  height={64}
+                  src={ability_1_image}
+                ></ImagePreview>
+                <Form.File
+                  htmlFor="ability_1_image"
+                  id="ability_1_image"
+                  accept="image/*"
+                  ref={ability1ImageInput}
+                  onChange={handleChangeImage}
+                />
+              </Row>
+            </Form.Label>
           </Form.Group>
         </Col>
       </Row>
 
       <Row className={`${styles.ContentBackgroundImage} p-4 mb-4`}>
-        <Col className="">
+        <Col className="text-center">
           <Form.Group controlId="ability_2_image">
-            <Form.Label className="">Ability 2 Image</Form.Label>
-            <ImagePreview
-              width={64}
-              height={64}
-              src={ability_2_image}
-            ></ImagePreview>
-            <Form.File
-              htmlFor="ability_2_image"
-              id="ability_2_image"
-              accept="image/*"
-              ref={ability2ImageInput}
-              onChange={handleChangeImage}
-            />
+            <Row>
+              <span className={styles.ImageText}>Ability 2</span>
+            </Row>
+            <Form.Label>
+              <Row>
+                <ImagePreview
+                  width={64}
+                  height={64}
+                  src={ability_2_image}
+                ></ImagePreview>
+                <Form.File
+                  htmlFor="ability_2_image"
+                  id="ability_2_image"
+                  accept="image/*"
+                  ref={ability2ImageInput}
+                  onChange={handleChangeImage}
+                />
+              </Row>
+            </Form.Label>
           </Form.Group>
         </Col>
-        <Col>
+        <Col className="text-center">
           <Form.Group controlId="ability_3_image">
-            <Form.Label className="">Ability 3 Image</Form.Label>
-            <ImagePreview
-              width={64}
-              height={64}
-              src={ability_3_image}
-            ></ImagePreview>
-            <Form.File
-              htmlFor="ability_3_image"
-              id="ability_3_image"
-              accept="image/*"
-              ref={ability3ImageInput}
-              onChange={handleChangeImage}
-            />
+            <Row>
+              <span className={styles.ImageText}>Ability 3</span>
+            </Row>
+            <Form.Label>
+              <Row>
+                <ImagePreview
+                  width={64}
+                  height={64}
+                  src={ability_3_image}
+                ></ImagePreview>
+                <Form.File
+                  htmlFor="ability_3_image"
+                  id="ability_3_image"
+                  accept="image/*"
+                  ref={ability3ImageInput}
+                  onChange={handleChangeImage}
+                />
+              </Row>
+            </Form.Label>
           </Form.Group>
         </Col>
-        <Col className="mb-4">
+        <Col className="text-center">
           <Form.Group controlId="ultimate_ability_image">
-            <Form.Label className="">Ultimate Image</Form.Label>
-            <ImagePreview
-              width={64}
-              height={64}
-              src={ultimate_ability_image}
-            ></ImagePreview>
-            <Form.File
-              htmlFor="ultimate_ability_image"
-              id="ultimate_ability_image"
-              accept="image/*"
-              ref={ultimateImageInput}
-              onChange={handleChangeImage}
-            />
+            <Row>
+              <span className={styles.ImageText}>Ultimate Ability</span>
+            </Row>
+            <Form.Label>
+              <Row>
+                <ImagePreview
+                  width={64}
+                  height={64}
+                  src={ultimate_ability_image}
+                ></ImagePreview>
+                <Form.File
+                  htmlFor="ultimate_ability_image"
+                  id="ultimate_ability_image"
+                  accept="image/*"
+                  ref={ultimateImageInput}
+                  onChange={handleChangeImage}
+                />
+              </Row>
+            </Form.Label>
           </Form.Group>
         </Col>
       </Row>
