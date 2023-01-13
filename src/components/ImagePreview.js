@@ -9,7 +9,7 @@ const ImagePreview = ({ src, height = 45, width = 45 }) => {
         src={src}
         height={height}
         width={width}
-        alt="Image Preview"
+        alt="File Preview"
       ></img>
     </span>
   );
