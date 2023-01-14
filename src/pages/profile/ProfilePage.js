@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -18,6 +18,8 @@ const ProfilePage = () => {
   });
   const { first_name, last_name, username, avatar_image, is_owner } =
     profileData;
+
+  const avatar_image_ref = useRef(null);
 
   useEffect(() => {
     const fetchProfileData = async () => {
@@ -51,6 +53,22 @@ const ProfilePage = () => {
     }
   };
 
+  const handleChangeImage = (event) => {
+    const imageRef = {
+      avatar_image: "avatar_image",
+    };
+
+    if (event.target.id === imageRef.avatar_image) {
+      if (event.target.files.length) {
+        URL.revokeObjectURL(avatar_image);
+        setProfileData({
+          ...profileData,
+          avatar_image: URL.createObjectURL(event.target.files[0]),
+        });
+      }
+    }
+  };
+
   const handleChange = (event) => {
     setProfileData({
       ...profileData,
@@ -65,9 +83,27 @@ const ProfilePage = () => {
           <h1 className={styles.Header}>Profile - {username}</h1>
           <hr></hr>
         </Row>
-        <Row className="text-center mt-5">
-          <Avatar src={avatar_image} height={170}></Avatar>
-        </Row>
+        <Form onSubmit={handleImageSubmit} className="text-center mt-5">
+          <Form.Group controlId="avatar_image">
+            <Form.Label>
+              <Row className="text-center mt-5">
+                <Avatar src={avatar_image} height={170}></Avatar>
+                <Form.File
+                  htmlFor="avatar_image"
+                  id="avatar_image"
+                  accept="image/*"
+                  ref={avatar_image_ref}
+                  onChange={handleChangeImage}
+                ></Form.File>
+              </Row>
+              <Row className="justify-content-center mt-2">
+                <Button className={`mt-4 ${btnStyles.Button}`} type="submit">
+                  Save
+                </Button>
+              </Row>
+            </Form.Label>
+          </Form.Group>
+        </Form>
         <Row className="mt-5 justify-content-center">
           <Col md={6} className={`${styles.ContentBackground} p-4 `}>
             <Form.Group>
