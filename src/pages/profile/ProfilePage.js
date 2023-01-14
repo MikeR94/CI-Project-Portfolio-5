@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Form, Row } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import Avatar from "../../components/Avatar";
 import styles from "../../styles/ProfilePage.module.css";
+import btnStyles from "../../styles/Button.module.css";
 
 const ProfilePage = () => {
   const { id } = useParams();
 
   const [profileData, setProfileData] = useState({});
+  const [disabled, setDisabled] = useState(true);
 
   useEffect(() => {
     const fetchProfileData = async () => {
@@ -43,8 +45,7 @@ const ProfilePage = () => {
                 placeholder="Username"
                 name="username"
                 value={profileData.username}
-                onChange=""
-                disabled="disabled"
+                disabled={disabled}
               />
             </Form.Group>
 
@@ -56,8 +57,7 @@ const ProfilePage = () => {
                 placeholder="First Name"
                 name="first_name"
                 value={profileData.first_name}
-                onChange=""
-                disabled="disabled"
+                disabled={disabled}
               />
             </Form.Group>
 
@@ -69,10 +69,18 @@ const ProfilePage = () => {
                 placeholder="Last Name"
                 name="last_name"
                 value={profileData.last_name}
-                onChange=""
-                disabled="disabled"
+                disabled={disabled}
               />
             </Form.Group>
+            <Button
+              className={`mt-4 ${btnStyles.Button}`}
+              onClick={(e) => {
+                e.preventDefault();
+                setDisabled(false);
+              }}
+            >
+              Edit
+            </Button>
           </Col>
         </Row>
       </Container>

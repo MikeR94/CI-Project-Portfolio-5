@@ -38,6 +38,6 @@ input[type="text"]:focus {
   padding: 10px;
   margin-top: 4px;
   background-color: #2f3547b0;
-  color: #cbae71;
   border: none;
+  color: #6c757d;
 }
