@@ -39,6 +39,18 @@ const ProfilePage = () => {
     fetchProfileData();
   }, [id, setProfileData]);
 
+  const handleImageSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+    let avatar_image_blob = await fetch(avatar_image).then((r) => r.blob());
+    formData.append("avatar_image", avatar_image_blob, "image1.jpg");
+    try {
+      await axiosReq.put(`/profiles/${id}`, formData);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const handleChange = (event) => {
     setProfileData({
       ...profileData,
