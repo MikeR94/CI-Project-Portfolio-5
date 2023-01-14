@@ -30,7 +30,7 @@ function App() {
           />
           <Route
             exact
-            path="/profile:id/"
+            path="/profile/:id"
             render={() => <ProfilePage></ProfilePage>}
           />
           <Route
