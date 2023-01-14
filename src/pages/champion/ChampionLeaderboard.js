@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import { axiosReq } from "../../api/axiosDefaults";
 import Pagination from "../../components/Pagination";
 import Leaderboard from "../../components/Leaderboard";
+import LoadingSpinner from "../../components/LoadingSpinner";
 
 const ChampionLeaderboard = () => {
+  const [hasLoaded, setHasLoaded] = useState(false);
   const [champions, setChampions] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [championsPerPage] = useState(3);
@@ -25,13 +27,18 @@ const ChampionLeaderboard = () => {
       });
 
       setChampions(championsData);
+      setHasLoaded(true);
     };
     fetchChampions();
   }, []);
 
   return (
     <div>
-      <Leaderboard champions={currentChampions} key={champions.id} />
+      {hasLoaded ? (
+        <Leaderboard champions={currentChampions} key={champions.id} />
+      ) : (
+        <LoadingSpinner></LoadingSpinner>
+      )}
       <Pagination
         championsPerPage={championsPerPage}
         totalChampions={champions.length}
