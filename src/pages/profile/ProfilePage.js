@@ -18,6 +18,7 @@ const ProfilePage = () => {
   const { id } = useParams();
   const [disabled, setDisabled] = useState(true);
   const [imageChange, setImageChange] = useState(false);
+  const [hasChanged, setHasChanged] = useState(false);
   const [profileData, setProfileData] = useState({
     first_name: "",
     last_name: "",
@@ -98,6 +99,7 @@ const ProfilePage = () => {
   };
 
   const handleChange = (event) => {
+    setHasChanged(true);
     setProfileData({
       ...profileData,
       [event.target.name]: event.target.value,
@@ -173,32 +175,38 @@ const ProfilePage = () => {
                   onChange={handleChange}
                 />
               </Form.Group>
-              <Button className={`mt-4 ${btnStyles.Button}`} type="submit">
-                Save
-              </Button>
+              <div class="d-flex justify-content-between">
+                {!disabled && is_owner && (
+                  <Button
+                    className={`mt-4 ${btnStyles.Button}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setDisabled(true);
+                    }}
+                  >
+                    Cancel
+                  </Button>
+                )}
+                {hasChanged && !disabled && (
+                  <Button className={`mt-4 ${btnStyles.Button}`} type="submit">
+                    Save
+                  </Button>
+                )}
+              </div>
             </Form>
-            {disabled && is_owner && (
-              <Button
-                className={`mt-4 ${btnStyles.Button}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setDisabled(false);
-                }}
-              >
-                Edit
-              </Button>
-            )}
-            {!disabled && is_owner && (
-              <Button
-                className={`mt-4 ${btnStyles.Button}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setDisabled(true);
-                }}
-              >
-                Cancel
-              </Button>
-            )}
+            <div>
+              {disabled && is_owner && (
+                <Button
+                  className={`mt-4 ${btnStyles.Button}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setDisabled(false);
+                  }}
+                >
+                  Edit
+                </Button>
+              )}
+            </div>
           </Col>
         </Row>
       </Container>
