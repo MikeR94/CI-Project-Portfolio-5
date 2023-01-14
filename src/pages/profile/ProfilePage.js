@@ -1,5 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import {
+  Button,
+  Col,
+  Container,
+  Form,
+  OverlayTrigger,
+  Row,
+  Tooltip,
+} from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import Avatar from "../../components/Avatar";
@@ -89,25 +97,31 @@ const ProfilePage = () => {
         </Row>
         <Form onSubmit={handleImageSubmit} className="text-center mt-5">
           <Form.Group controlId="avatar_image">
-            <Form.Label>
-              <Row className={styles.AvatarRow}>
-                <Avatar src={avatar_image} height={170}></Avatar>
-                <Form.File
-                  htmlFor="avatar_image"
-                  id="avatar_image"
-                  accept="image/*"
-                  ref={avatar_image_ref}
-                  onChange={handleChangeImage}
-                ></Form.File>
+            <OverlayTrigger
+              placement="right"
+              overlay={<Tooltip>Click to update your profile image</Tooltip>}
+            >
+              <Form.Label>
+                <div className={styles.AvatarRow}>
+                  <Avatar src={avatar_image} height={170}></Avatar>
+                </div>
+              </Form.Label>
+            </OverlayTrigger>
+            <Form.File
+              htmlFor="avatar_image"
+              id="avatar_image"
+              accept="image/*"
+              ref={avatar_image_ref}
+              onChange={handleChangeImage}
+            ></Form.File>
+
+            {imageChange && (
+              <Row className="justify-content-center mt-2">
+                <Button className={`mt-4 ${btnStyles.Button}`} type="submit">
+                  Save
+                </Button>
               </Row>
-              {imageChange && (
-                <Row className="justify-content-center mt-2">
-                  <Button className={`mt-4 ${btnStyles.Button}`} type="submit">
-                    Save
-                  </Button>
-                </Row>
-              )}
-            </Form.Label>
+            )}
           </Form.Group>
         </Form>
         <Row className="mt-5 justify-content-center">
