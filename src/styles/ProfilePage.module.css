@@ -31,3 +31,13 @@ input[type="text"]:focus {
   box-shadow: none;
   color: #cbae71;
 }
+
+.Input:disabled {
+  border-radius: 2px;
+  text-align: center;
+  padding: 10px;
+  margin-top: 4px;
+  background-color: #2f3547b0;
+  color: #cbae71;
+  border: none;
+}

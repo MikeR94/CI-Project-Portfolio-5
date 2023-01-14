@@ -44,6 +44,7 @@ const ProfilePage = () => {
                 name="username"
                 value={profileData.username}
                 onChange=""
+                disabled="disabled"
               />
             </Form.Group>
 
@@ -56,6 +57,7 @@ const ProfilePage = () => {
                 name="first_name"
                 value={profileData.first_name}
                 onChange=""
+                disabled="disabled"
               />
             </Form.Group>
 
@@ -68,6 +70,7 @@ const ProfilePage = () => {
                 name="last_name"
                 value={profileData.last_name}
                 onChange=""
+                disabled="disabled"
               />
             </Form.Group>
           </Col>
