@@ -9,6 +9,7 @@ import btnStyles from "../../styles/Button.module.css";
 const ProfilePage = () => {
   const { id } = useParams();
   const [disabled, setDisabled] = useState(true);
+  const [imageChange, setImageChange] = useState(false);
   const [profileData, setProfileData] = useState({
     first_name: "",
     last_name: "",
@@ -49,12 +50,14 @@ const ProfilePage = () => {
     try {
       await axiosReq.put(`/profiles/${id}`, formData);
       window.location.reload();
+      setImageChange(false); // might not need
     } catch (error) {
       console.log(error);
     }
   };
 
   const handleChangeImage = (event) => {
+    setImageChange(true);
     const imageRef = {
       avatar_image: "avatar_image",
     };
@@ -97,11 +100,13 @@ const ProfilePage = () => {
                   onChange={handleChangeImage}
                 ></Form.File>
               </Row>
-              <Row className="justify-content-center mt-2">
-                <Button className={`mt-4 ${btnStyles.Button}`} type="submit">
-                  Save
-                </Button>
-              </Row>
+              {imageChange && (
+                <Row className="justify-content-center mt-2">
+                  <Button className={`mt-4 ${btnStyles.Button}`} type="submit">
+                    Save
+                  </Button>
+                </Row>
+              )}
             </Form.Label>
           </Form.Group>
         </Form>
