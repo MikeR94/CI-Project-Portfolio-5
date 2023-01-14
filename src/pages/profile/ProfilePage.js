@@ -8,9 +8,9 @@ import btnStyles from "../../styles/Button.module.css";
 
 const ProfilePage = () => {
   const { id } = useParams();
-
   const [profileData, setProfileData] = useState({});
   const [disabled, setDisabled] = useState(true);
+  const is_owner = profileData?.is_owner;
 
   useEffect(() => {
     const fetchProfileData = async () => {
@@ -72,7 +72,7 @@ const ProfilePage = () => {
                 disabled={disabled}
               />
             </Form.Group>
-            {disabled ? (
+            {disabled && is_owner && (
               <Button
                 className={`mt-4 ${btnStyles.Button}`}
                 onClick={(e) => {
@@ -82,7 +82,8 @@ const ProfilePage = () => {
               >
                 Edit
               </Button>
-            ) : (
+            )}
+            {!disabled && is_owner && (
               <Button
                 className={`mt-4 ${btnStyles.Button}`}
                 onClick={(e) => {
