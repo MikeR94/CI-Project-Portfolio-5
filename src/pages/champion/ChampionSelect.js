@@ -152,10 +152,7 @@ const ChampionSelect = () => {
               )}
             </>
           ) : (
-            // TODO - Add a spinner
-            <div className="text-center">
-              <LoadingSpinner className="text-center"></LoadingSpinner>
-            </div>
+            <LoadingSpinner></LoadingSpinner>
           )}
         </div>
       </Container>
