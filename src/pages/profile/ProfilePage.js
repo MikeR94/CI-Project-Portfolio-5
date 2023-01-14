@@ -13,12 +13,14 @@ import { axiosReq } from "../../api/axiosDefaults";
 import Avatar from "../../components/Avatar";
 import styles from "../../styles/ProfilePage.module.css";
 import btnStyles from "../../styles/Button.module.css";
+import LoadingSpinner from "../../components/LoadingSpinner";
 
 const ProfilePage = () => {
   const { id } = useParams();
   const [disabled, setDisabled] = useState(true);
   const [imageChange, setImageChange] = useState(false);
   const [hasChanged, setHasChanged] = useState(false);
+  const [hasLoaded, setHasLoaded] = useState(false);
   const [profileData, setProfileData] = useState({
     first_name: "",
     last_name: "",
@@ -44,6 +46,7 @@ const ProfilePage = () => {
           avatar_image,
           is_owner,
         });
+        setHasLoaded(true);
       } catch (err) {
         console.log(err);
       }
@@ -108,108 +111,117 @@ const ProfilePage = () => {
 
   return (
     <div>
-      <Container>
-        <Row className="mt-5">
-          <h1 className={styles.Header}>{username}</h1>
-          <hr></hr>
-        </Row>
-        <Form onSubmit={handleImageSubmit} className="text-center mt-5">
-          <Form.Group controlId="avatar_image">
-            {is_owner && (
-              <OverlayTrigger
-                placement="right"
-                overlay={<Tooltip>Click to update your profile image</Tooltip>}
-              >
-                <Form.Label>
-                  <div className={styles.AvatarRow}>
-                    <Avatar src={avatar_image} height={170}></Avatar>
-                  </div>
-                </Form.Label>
-              </OverlayTrigger>
-            )}
+      {hasLoaded ? (
+        <Container>
+          <Row className="mt-5">
+            <h1 className={styles.Header}>{username}</h1>
+            <hr></hr>
+          </Row>
+          <Form onSubmit={handleImageSubmit} className="text-center mt-5">
+            <Form.Group controlId="avatar_image">
+              {is_owner && (
+                <OverlayTrigger
+                  placement="right"
+                  overlay={
+                    <Tooltip>Click to update your profile image</Tooltip>
+                  }
+                >
+                  <Form.Label>
+                    <div className={styles.AvatarRow}>
+                      <Avatar src={avatar_image} height={170}></Avatar>
+                    </div>
+                  </Form.Label>
+                </OverlayTrigger>
+              )}
 
-            <Form.File
-              htmlFor="avatar_image"
-              id="avatar_image"
-              accept="image/*"
-              ref={avatar_image_ref}
-              onChange={handleChangeImage}
-            ></Form.File>
+              <Form.File
+                htmlFor="avatar_image"
+                id="avatar_image"
+                accept="image/*"
+                ref={avatar_image_ref}
+                onChange={handleChangeImage}
+              ></Form.File>
 
-            {!is_owner && <Avatar src={avatar_image} height={170}></Avatar>}
+              {!is_owner && <Avatar src={avatar_image} height={170}></Avatar>}
 
-            {imageChange && (
-              <Row className="justify-content-center mt-2">
-                <Button className={`mt-4 ${btnStyles.Button}`} type="submit">
-                  Save
-                </Button>
-              </Row>
-            )}
-          </Form.Group>
-        </Form>
-        <Row className="mt-5 justify-content-center">
-          <Col md={6} className={`${styles.ContentBackground} p-4 `}>
-            <Form onSubmit={handleSubmit}>
-              <Form.Group>
-                <Form.Label className="d-none">First Name</Form.Label>
-                <Form.Control
-                  className={styles.Input}
-                  type="text"
-                  placeholder="First Name"
-                  name="first_name"
-                  value={first_name}
-                  disabled={disabled}
-                  onChange={handleChange}
-                />
-              </Form.Group>
+              {imageChange && (
+                <Row className="justify-content-center mt-2">
+                  <Button className={`mt-4 ${btnStyles.Button}`} type="submit">
+                    Save
+                  </Button>
+                </Row>
+              )}
+            </Form.Group>
+          </Form>
+          <Row className="mt-5 justify-content-center">
+            <Col md={6} className={`${styles.ContentBackground} p-4 `}>
+              <Form onSubmit={handleSubmit}>
+                <Form.Group>
+                  <Form.Label className="d-none">First Name</Form.Label>
+                  <Form.Control
+                    className={styles.Input}
+                    type="text"
+                    placeholder="First Name"
+                    name="first_name"
+                    value={first_name}
+                    disabled={disabled}
+                    onChange={handleChange}
+                  />
+                </Form.Group>
 
-              <Form.Group>
-                <Form.Label className="d-none">Last Name</Form.Label>
-                <Form.Control
-                  className={styles.Input}
-                  type="text"
-                  placeholder="Last Name"
-                  name="last_name"
-                  value={last_name}
-                  disabled={disabled}
-                  onChange={handleChange}
-                />
-              </Form.Group>
-              <div class="d-flex justify-content-between">
-                {!disabled && is_owner && (
+                <Form.Group>
+                  <Form.Label className="d-none">Last Name</Form.Label>
+                  <Form.Control
+                    className={styles.Input}
+                    type="text"
+                    placeholder="Last Name"
+                    name="last_name"
+                    value={last_name}
+                    disabled={disabled}
+                    onChange={handleChange}
+                  />
+                </Form.Group>
+                <div class="d-flex justify-content-between">
+                  {!disabled && is_owner && (
+                    <Button
+                      className={`mt-4 ${btnStyles.Button}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setDisabled(true);
+                      }}
+                    >
+                      Cancel
+                    </Button>
+                  )}
+                  {hasChanged && !disabled && (
+                    <Button
+                      className={`mt-4 ${btnStyles.Button}`}
+                      type="submit"
+                    >
+                      Save
+                    </Button>
+                  )}
+                </div>
+              </Form>
+              <div>
+                {disabled && is_owner && (
                   <Button
                     className={`mt-4 ${btnStyles.Button}`}
                     onClick={(e) => {
                       e.preventDefault();
-                      setDisabled(true);
+                      setDisabled(false);
                     }}
                   >
-                    Cancel
-                  </Button>
-                )}
-                {hasChanged && !disabled && (
-                  <Button className={`mt-4 ${btnStyles.Button}`} type="submit">
-                    Save
+                    Edit
                   </Button>
                 )}
               </div>
-            </Form>
-            <div>
-              {disabled && is_owner && (
-                <Button
-                  className={`mt-4 ${btnStyles.Button}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setDisabled(false);
-                  }}
-                >
-                  Edit
-                </Button>
-              )}
-            </div>
-          </Col>
-        </Row>
-      </Container>
+            </Col>
+          </Row>
+        </Container>
+      ) : (
+        <LoadingSpinner></LoadingSpinner>
+      )}
     </div>
   );
 };
