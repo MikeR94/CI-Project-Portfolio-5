@@ -72,15 +72,27 @@ const ProfilePage = () => {
                 disabled={disabled}
               />
             </Form.Group>
-            <Button
-              className={`mt-4 ${btnStyles.Button}`}
-              onClick={(e) => {
-                e.preventDefault();
-                setDisabled(false);
-              }}
-            >
-              Edit
-            </Button>
+            {disabled ? (
+              <Button
+                className={`mt-4 ${btnStyles.Button}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setDisabled(false);
+                }}
+              >
+                Edit
+              </Button>
+            ) : (
+              <Button
+                className={`mt-4 ${btnStyles.Button}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setDisabled(true);
+                }}
+              >
+                Cancel
+              </Button>
+            )}
           </Col>
         </Row>
       </Container>
