@@ -64,6 +64,22 @@ const ProfilePage = () => {
     }
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+    let avatar_image_blob = await fetch(avatar_image).then((r) => r.blob());
+    formData.append("avatar_image", avatar_image_blob, "image1.jpg");
+    for (const data in profileData) {
+      formData.append(`${data}`, profileData[data]);
+    }
+    try {
+      await axiosReq.put(`/profiles/${id}`, formData);
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const handleChangeImage = (event) => {
     setImageChange(true);
     const imageRef = {
@@ -131,44 +147,36 @@ const ProfilePage = () => {
         </Form>
         <Row className="mt-5 justify-content-center">
           <Col md={6} className={`${styles.ContentBackground} p-4 `}>
-            <Form.Group>
-              <Form.Label className="d-none">Username</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Username"
-                name="username"
-                value={username}
-                disabled={disabled}
-                onChange={handleChange}
-              />
-            </Form.Group>
+            <Form onSubmit={handleSubmit}>
+              <Form.Group>
+                <Form.Label className="d-none">First Name</Form.Label>
+                <Form.Control
+                  className={styles.Input}
+                  type="text"
+                  placeholder="First Name"
+                  name="first_name"
+                  value={first_name}
+                  disabled={disabled}
+                  onChange={handleChange}
+                />
+              </Form.Group>
 
-            <Form.Group>
-              <Form.Label className="d-none">First Name</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="First Name"
-                name="first_name"
-                value={first_name}
-                disabled={disabled}
-                onChange={handleChange}
-              />
-            </Form.Group>
-
-            <Form.Group>
-              <Form.Label className="d-none">Last Name</Form.Label>
-              <Form.Control
-                className={styles.Input}
-                type="text"
-                placeholder="Last Name"
-                name="last_name"
-                value={last_name}
-                disabled={disabled}
-                onChange={handleChange}
-              />
-            </Form.Group>
+              <Form.Group>
+                <Form.Label className="d-none">Last Name</Form.Label>
+                <Form.Control
+                  className={styles.Input}
+                  type="text"
+                  placeholder="Last Name"
+                  name="last_name"
+                  value={last_name}
+                  disabled={disabled}
+                  onChange={handleChange}
+                />
+              </Form.Group>
+              <Button className={`mt-4 ${btnStyles.Button}`} type="submit">
+                Save
+              </Button>
+            </Form>
             {disabled && is_owner && (
               <Button
                 className={`mt-4 ${btnStyles.Button}`}
