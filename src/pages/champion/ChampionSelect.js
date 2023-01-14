@@ -10,6 +10,7 @@ import ChampionCard from "../../components/ChampionCard";
 import { Container } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useSearchQueryContext } from "../../contexts/SearchQueryContext";
+import LoadingSpinner from "../../components/LoadingSpinner";
 
 const ChampionSelect = () => {
   const [champions, setChampions] = useState({ results: [] });
@@ -152,7 +153,9 @@ const ChampionSelect = () => {
             </>
           ) : (
             // TODO - Add a spinner
-            <h1>Loading...</h1>
+            <div className="text-center">
+              <LoadingSpinner className="text-center"></LoadingSpinner>
+            </div>
           )}
         </div>
       </Container>
