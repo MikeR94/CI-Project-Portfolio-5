@@ -84,7 +84,7 @@ const ProfilePage = () => {
     <div>
       <Container>
         <Row className="mt-5">
-          <h1 className={styles.Header}>Profile - {username}</h1>
+          <h1 className={styles.Header}>{username}</h1>
           <hr></hr>
         </Row>
         <Form onSubmit={handleImageSubmit} className="text-center mt-5">
