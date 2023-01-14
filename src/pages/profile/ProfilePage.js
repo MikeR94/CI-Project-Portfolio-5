@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
+import Avatar from "../../components/Avatar";
 import styles from "../../styles/ProfilePage.module.css";
 
 const ProfilePage = () => {
@@ -29,10 +30,9 @@ const ProfilePage = () => {
           <h1 className={styles.Header}>Profile - {profileData.username}</h1>
           <hr></hr>
         </Row>
-        <div className="mt-5">
-          <span>Current Profile Id = {id}</span>
-          <span>Current Profile Name = {profileData.username}</span>
-        </div>
+        <Row className="text-center mt-5">
+          <Avatar src={profileData.avatar_image} height={170}></Avatar>
+        </Row>
       </Container>
     </div>
   );
