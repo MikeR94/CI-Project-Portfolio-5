@@ -41,3 +41,9 @@ input[type="text"]:focus {
   border: none;
   color: #6c757d;
 }
+
+.AvatarRow {
+  margin-top: 10px;
+  text-align: center;
+  cursor: pointer;
+}

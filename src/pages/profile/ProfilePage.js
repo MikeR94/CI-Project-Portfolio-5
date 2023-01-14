@@ -90,7 +90,7 @@ const ProfilePage = () => {
         <Form onSubmit={handleImageSubmit} className="text-center mt-5">
           <Form.Group controlId="avatar_image">
             <Form.Label>
-              <Row className="text-center mt-5">
+              <Row className={styles.AvatarRow}>
                 <Avatar src={avatar_image} height={170}></Avatar>
                 <Form.File
                   htmlFor="avatar_image"
