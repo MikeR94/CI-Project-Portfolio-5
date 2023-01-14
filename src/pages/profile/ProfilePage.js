@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Col, Container, Form, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import Avatar from "../../components/Avatar";
@@ -32,6 +32,45 @@ const ProfilePage = () => {
         </Row>
         <Row className="text-center mt-5">
           <Avatar src={profileData.avatar_image} height={170}></Avatar>
+        </Row>
+        <Row className="mt-5 justify-content-center">
+          <Col md={6} className={`${styles.ContentBackground} p-4 `}>
+            <Form.Group controlId="username">
+              <Form.Label className="d-none">Username</Form.Label>
+              <Form.Control
+                className={styles.Input}
+                type="text"
+                placeholder="Username"
+                name="username"
+                value={profileData.username}
+                onChange=""
+              />
+            </Form.Group>
+
+            <Form.Group controlId="first_name">
+              <Form.Label className="d-none">First Name</Form.Label>
+              <Form.Control
+                className={styles.Input}
+                type="text"
+                placeholder="First Name"
+                name="first_name"
+                value={profileData.first_name}
+                onChange=""
+              />
+            </Form.Group>
+
+            <Form.Group controlId="last_name">
+              <Form.Label className="d-none">Last Name</Form.Label>
+              <Form.Control
+                className={styles.Input}
+                type="text"
+                placeholder="Last Name"
+                name="last_name"
+                value={profileData.last_name}
+                onChange=""
+              />
+            </Form.Group>
+          </Col>
         </Row>
       </Container>
     </div>
