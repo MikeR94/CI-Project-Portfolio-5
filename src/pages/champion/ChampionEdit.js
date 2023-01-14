@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useRedirect } from "../../hooks/useRedirect";
 import styles from "../../styles/ChampionCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Form, Button, Col, Row } from "react-bootstrap";
@@ -9,7 +8,6 @@ import ImagePreview from "../../components/ImagePreview";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function ChampionEdit() {
-  useRedirect("loggedOut");
   const history = useHistory();
   const { id } = useParams();
   const currentUser = useCurrentUser();

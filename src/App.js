@@ -1,14 +1,13 @@
 import styles from "./App.module.css";
 import NavBar from "./components/NavBar";
 import Container from "react-bootstrap/Container";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import SignUpForm from "./pages/auth/SignUpForm";
 import "./api/axiosDefaults";
 import SignInForm from "./pages/auth/SignInForm";
 import ChampionSelect from "./pages/champion/ChampionSelect";
 import ChampionPage from "./pages/champion/ChampionPage";
 import ChampionCreate from "./pages/champion/ChampionCreate";
-import { useCurrentUser } from "./contexts/CurrentUserContext";
 import ChampionEdit from "./pages/champion/ChampionEdit";
 import ChampionLeaderboard from "./pages/champion/ChampionLeaderboard";
 import ProfilePage from "./pages/profile/ProfilePage";

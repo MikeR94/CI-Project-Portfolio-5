@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import { useRedirect } from "../../hooks/useRedirect";
 import styles from "../../styles/ChampionCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Form, Button, Col, Row } from "react-bootstrap";
