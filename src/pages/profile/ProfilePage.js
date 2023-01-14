@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 const ProfilePage = () => {
   const { id } = useParams();
