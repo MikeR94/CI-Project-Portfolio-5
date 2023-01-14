@@ -97,16 +97,19 @@ const ProfilePage = () => {
         </Row>
         <Form onSubmit={handleImageSubmit} className="text-center mt-5">
           <Form.Group controlId="avatar_image">
-            <OverlayTrigger
-              placement="right"
-              overlay={<Tooltip>Click to update your profile image</Tooltip>}
-            >
-              <Form.Label>
-                <div className={styles.AvatarRow}>
-                  <Avatar src={avatar_image} height={170}></Avatar>
-                </div>
-              </Form.Label>
-            </OverlayTrigger>
+            {is_owner && (
+              <OverlayTrigger
+                placement="right"
+                overlay={<Tooltip>Click to update your profile image</Tooltip>}
+              >
+                <Form.Label>
+                  <div className={styles.AvatarRow}>
+                    <Avatar src={avatar_image} height={170}></Avatar>
+                  </div>
+                </Form.Label>
+              </OverlayTrigger>
+            )}
+
             <Form.File
               htmlFor="avatar_image"
               id="avatar_image"
@@ -114,6 +117,8 @@ const ProfilePage = () => {
               ref={avatar_image_ref}
               onChange={handleChangeImage}
             ></Form.File>
+
+            {!is_owner && <Avatar src={avatar_image} height={170}></Avatar>}
 
             {imageChange && (
               <Row className="justify-content-center mt-2">
