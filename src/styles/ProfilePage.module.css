@@ -47,3 +47,8 @@ input[type="text"]:focus {
   text-align: center;
   cursor: pointer;
 }
+
+.InputText {
+  color: #cbae71;
+  margin-bottom: 10px;
+}

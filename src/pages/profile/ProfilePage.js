@@ -157,7 +157,9 @@ const ProfilePage = () => {
             <Col md={6} className={`${styles.ContentBackground} p-4 `}>
               <Form onSubmit={handleSubmit}>
                 <Form.Group>
-                  <Form.Label className="d-none">First Name</Form.Label>
+                  <Form.Label className={`${styles.InputText}`}>
+                    First Name
+                  </Form.Label>
                   <Form.Control
                     className={styles.Input}
                     type="text"
@@ -170,7 +172,9 @@ const ProfilePage = () => {
                 </Form.Group>
 
                 <Form.Group>
-                  <Form.Label className="d-none">Last Name</Form.Label>
+                  <Form.Label className={`${styles.InputText} mt-3`}>
+                    Last Name
+                  </Form.Label>
                   <Form.Control
                     className={styles.Input}
                     type="text"
