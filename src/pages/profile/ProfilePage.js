@@ -48,6 +48,7 @@ const ProfilePage = () => {
     formData.append("avatar_image", avatar_image_blob, "image1.jpg");
     try {
       await axiosReq.put(`/profiles/${id}`, formData);
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }
