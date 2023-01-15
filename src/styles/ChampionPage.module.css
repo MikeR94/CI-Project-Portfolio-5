@@ -17,6 +17,16 @@
   color: #cbae71;
 }
 
+.ManageChampion {
+  color: grey;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.ManageChampion:hover {
+  color: #cbae71;
+}
+
 .Name {
   justify-content: center;
   font-size: 30px;

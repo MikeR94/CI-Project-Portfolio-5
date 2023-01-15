@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react";
-import {
-  Button,
-  Col,
-  Container,
-  OverlayTrigger,
-  Row,
-  Tooltip,
-} from "react-bootstrap";
+import { Col, Container, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 import { useHistory, useParams } from "react-router-dom";
 import { axiosReq, axiosRes } from "../../api/axiosDefaults";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { fetchMoreData } from "../../utils/utils";
+import { Link } from "react-router-dom";
 import styles from "../../styles/ChampionPage.module.css";
 import FighterIcon from "../../assets/class_icons/fighter.webp";
 import TankIcon from "../../assets/class_icons/tank.webp";
@@ -23,12 +19,8 @@ import LowDifficultyIcon from "../../assets/difficulty_icons/low.webp";
 import ModerateDifficultyIcon from "../../assets/difficulty_icons/moderate.webp";
 import HighDifficultyIcon from "../../assets/difficulty_icons/high.webp";
 import Comment from "../comments/Comment";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { fetchMoreData } from "../../utils/utils";
 import CommentCreateForm from "../comments/CommentCreateForm";
-import btnStyles from "../../styles/Button.module.css";
-import { Link } from "react-router-dom";
 import LoadingSpinner from "../../components/LoadingSpinner";
 
 const ChampionPage = () => {
@@ -41,6 +33,7 @@ const ChampionPage = () => {
   const [hasLoaded, setHasLoaded] = useState(false);
   const profile_avatar = currentUser?.profile_avatar;
   const [champData, setChampData] = useState({ results: [] });
+
   const {
     name,
     alias,
@@ -136,8 +129,6 @@ const ChampionPage = () => {
     };
     fetchChampion();
   }, [id, history]);
-
-  console.log(commentData);
 
   const handleDelete = async () => {
     try {
@@ -270,16 +261,19 @@ const ChampionPage = () => {
           </Row>
           <Row className={styles.Name}>{name}</Row>
           <Row className={styles.Alias}>{alias}</Row>
-          {is_staff && (
-            <div>
-              <Link to={`/champion/${id}/edit`}>
-                <Button className={`${btnStyles.Button}`}>Edit</Button>
-              </Link>
-              <Button onClick={handleDelete} className={`${btnStyles.Button}`}>
-                Delete
-              </Button>
-            </div>
-          )}
+          <Row className="text-center">
+            {is_staff && (
+              <div>
+                <Link to={`/champion/${id}/edit`}>
+                  <i className={`fas fa-edit ${styles.ManageChampion}`} />
+                </Link>
+                <i
+                  onClick={handleDelete}
+                  className={`fas fa-trash-alt ${styles.ManageChampion}`}
+                />
+              </div>
+            )}
+          </Row>
           <hr className="mt-5 mb-5"></hr>
           <Row>{lore}</Row>
           <hr className="mt-5 mb-5"></hr>
