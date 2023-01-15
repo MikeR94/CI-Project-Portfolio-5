@@ -9,6 +9,13 @@
   text-align: center;
 }
 
+.StaffCrown {
+  height: 16px;
+  width: 20px;
+  margin-bottom: 4px;
+  margin-right: 2px;
+}
+
 .NavLink {
   padding: 5px;
   background-color: #070a14;

@@ -10,6 +10,7 @@ import {
 } from "../contexts/CurrentUserContext";
 import SearchBar from "./SearchBar";
 import axios from "axios";
+import StaffCrownIcon from "../assets/staff_crown.png";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -36,6 +37,13 @@ const NavBar = () => {
         id="nav-dropdown"
       >
         <div className={styles.DropdownMenu}>
+          {is_staff && (
+            <img
+              src={StaffCrownIcon}
+              alt="staff crown"
+              className={styles.StaffCrown}
+            ></img>
+          )}
           {currentUser?.username}
           <hr></hr>
         </div>
