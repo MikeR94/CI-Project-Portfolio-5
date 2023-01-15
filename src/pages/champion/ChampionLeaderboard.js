@@ -8,7 +8,7 @@ const ChampionLeaderboard = () => {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [champions, setChampions] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [championsPerPage] = useState(3);
+  const [championsPerPage] = useState(10);
   const indexOfLastChampion = currentPage * championsPerPage;
   const indexOfFirstChampion = indexOfLastChampion - championsPerPage;
   const currentChampions = champions.slice(
