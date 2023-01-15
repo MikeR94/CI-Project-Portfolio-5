@@ -254,7 +254,7 @@ function ChampionCreate() {
     },
     {
       label: "ADC",
-      value: "bottom",
+      value: "adc",
     },
     {
       label: "Support",

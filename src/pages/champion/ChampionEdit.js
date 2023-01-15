@@ -260,7 +260,7 @@ function ChampionEdit() {
     },
     {
       label: "ADC",
-      value: "bottom",
+      value: "adc",
     },
     {
       label: "Support",
