@@ -1,17 +1,24 @@
 import React, { useEffect, useRef, useState } from "react";
+import { axiosReq } from "../../api/axiosDefaults";
+import { Form, Button, Col, Row } from "react-bootstrap";
+import { useHistory, useParams } from "react-router-dom";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/ChampionCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { Form, Button, Col, Row } from "react-bootstrap";
-import { axiosReq } from "../../api/axiosDefaults";
-import { useHistory, useParams } from "react-router-dom";
 import ImagePreview from "../../components/ImagePreview";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function ChampionEdit() {
+  const champImageInput = useRef(null);
+  const passiveImageInput = useRef(null);
+  const ability1ImageInput = useRef(null);
+  const ability2ImageInput = useRef(null);
+  const ability3ImageInput = useRef(null);
+  const ultimateImageInput = useRef(null);
   const history = useHistory();
   const { id } = useParams();
   const currentUser = useCurrentUser();
   const is_staff = currentUser?.is_staff;
+  const [errors, setErrors] = useState({});
 
   if (!is_staff) {
     history.push("/");
@@ -68,13 +75,6 @@ function ChampionEdit() {
     ultimate_ability_description,
     ultimate_ability_image,
   } = champData;
-
-  const champImageInput = useRef(null);
-  const passiveImageInput = useRef(null);
-  const ability1ImageInput = useRef(null);
-  const ability2ImageInput = useRef(null);
-  const ability3ImageInput = useRef(null);
-  const ultimateImageInput = useRef(null);
 
   const handleChange = (event) => {
     setChampData({
@@ -178,7 +178,9 @@ function ChampionEdit() {
       await axiosReq.put(`/champions/${id}/`, formData);
       history.push(`/`);
     } catch (error) {
-      console.log(error);
+      if (error.response?.status !== 401) {
+        setErrors(error.response?.data);
+      }
     }
   };
 
@@ -342,6 +344,11 @@ function ChampionEdit() {
               onChange={handleChange}
             />
           </Form.Group>
+          {errors?.name?.map((message, idx) => (
+            <div key={idx} className={styles.FormError}>
+              {message}
+            </div>
+          ))}
 
           <Form.Group controlId="alias">
             <Form.Label className="d-none">Alias</Form.Label>
@@ -354,6 +361,11 @@ function ChampionEdit() {
               onChange={handleChange}
             />
           </Form.Group>
+          {errors?.alias?.map((message, idx) => (
+            <div key={idx} className={styles.FormError}>
+              {message}
+            </div>
+          ))}
 
           <Form.Group controlId="lore">
             <Form.Label className="d-none">Lore</Form.Label>
@@ -366,6 +378,11 @@ function ChampionEdit() {
               onChange={handleChange}
             />
           </Form.Group>
+          {errors?.lore?.map((message, idx) => (
+            <div key={idx} className={styles.FormError}>
+              {message}
+            </div>
+          ))}
 
           <Form.Group controlId="passive_ability">
             <Form.Label className="d-none">Passive</Form.Label>
@@ -378,6 +395,11 @@ function ChampionEdit() {
               onChange={handleChange}
             />
           </Form.Group>
+          {errors?.passive_ability?.map((message, idx) => (
+            <div key={idx} className={styles.FormError}>
+              {message}
+            </div>
+          ))}
 
           <Form.Group controlId="passive_ability_description">
             <Form.Label className="d-none">Passive Description</Form.Label>
@@ -390,6 +412,12 @@ function ChampionEdit() {
               onChange={handleChange}
             />
           </Form.Group>
+          {errors?.passive_ability_description?.map((message, idx) => (
+            <div key={idx} className={styles.FormError}>
+              {message}
+            </div>
+          ))}
+
           <Form.Group controlId="ability_1">
             <Form.Label className="d-none">Ability 1</Form.Label>
             <Form.Control
@@ -401,6 +429,11 @@ function ChampionEdit() {
               onChange={handleChange}
             />
           </Form.Group>
+          {errors?.ability_1?.map((message, idx) => (
+            <div key={idx} className={styles.FormError}>
+              {message}
+            </div>
+          ))}
 
           <Form.Group controlId="ability_1_description">
             <Form.Label className="d-none">Ability 1 Description</Form.Label>
@@ -413,6 +446,11 @@ function ChampionEdit() {
               onChange={handleChange}
             />
           </Form.Group>
+          {errors?.ability_1_description?.map((message, idx) => (
+            <div key={idx} className={styles.FormError}>
+              {message}
+            </div>
+          ))}
         </Col>
 
         <Col md={6} className={`${styles.ContentBackground} p-4 `}>
@@ -427,6 +465,11 @@ function ChampionEdit() {
               onChange={handleChange}
             />
           </Form.Group>
+          {errors?.ability_2?.map((message, idx) => (
+            <div key={idx} className={styles.FormError}>
+              {message}
+            </div>
+          ))}
 
           <Form.Group controlId="ability_2_description">
             <Form.Label className="d-none">Ability 2 Description</Form.Label>
@@ -439,6 +482,11 @@ function ChampionEdit() {
               onChange={handleChange}
             />
           </Form.Group>
+          {errors?.ability_2_description?.map((message, idx) => (
+            <div key={idx} className={styles.FormError}>
+              {message}
+            </div>
+          ))}
 
           <Form.Group controlId="ability_3">
             <Form.Label className="d-none">Ability 3</Form.Label>
@@ -451,6 +499,11 @@ function ChampionEdit() {
               onChange={handleChange}
             />
           </Form.Group>
+          {errors?.ability_3?.map((message, idx) => (
+            <div key={idx} className={styles.FormError}>
+              {message}
+            </div>
+          ))}
 
           <Form.Group controlId="ability_3_description">
             <Form.Label className="d-none">Ability 3 Description</Form.Label>
@@ -463,6 +516,11 @@ function ChampionEdit() {
               onChange={handleChange}
             />
           </Form.Group>
+          {errors?.ability_3_description?.map((message, idx) => (
+            <div key={idx} className={styles.FormError}>
+              {message}
+            </div>
+          ))}
 
           <Form.Group controlId="ultimate_ability">
             <Form.Label className="d-none">Ultimate</Form.Label>
@@ -475,6 +533,11 @@ function ChampionEdit() {
               onChange={handleChange}
             />
           </Form.Group>
+          {errors?.ultimate_ability?.map((message, idx) => (
+            <div key={idx} className={styles.FormError}>
+              {message}
+            </div>
+          ))}
 
           <Form.Group controlId="ultimate_ability_description">
             <Form.Label className="d-none">Ultimate Description</Form.Label>
@@ -487,6 +550,11 @@ function ChampionEdit() {
               onChange={handleChange}
             />
           </Form.Group>
+          {errors?.ultimate_ability_description?.map((message, idx) => (
+            <div key={idx} className={styles.FormError}>
+              {message}
+            </div>
+          ))}
         </Col>
       </Row>
 
@@ -507,6 +575,13 @@ function ChampionEdit() {
             ))}
           </Form.Control>
         </Form.Group>
+        {errors?.role?.map((message, idx) => (
+          <div key={idx} className={styles.FormError}>
+            {message === '"" is not a valid choice.'
+              ? "Please select an option from the dropdown."
+              : message}
+          </div>
+        ))}
 
         <Form.Group>
           <Form.Label className="d-none">Select Champ Class</Form.Label>
@@ -524,6 +599,13 @@ function ChampionEdit() {
             ))}
           </Form.Control>
         </Form.Group>
+        {errors?.champ_class?.map((message, idx) => (
+          <div key={idx} className={styles.FormError}>
+            {message === '"" is not a valid choice.'
+              ? "Please select an option from the dropdown."
+              : message}
+          </div>
+        ))}
 
         <Form.Group>
           <Form.Label className="d-none">Select Range</Form.Label>
@@ -541,6 +623,13 @@ function ChampionEdit() {
             ))}
           </Form.Control>
         </Form.Group>
+        {errors?.range?.map((message, idx) => (
+          <div key={idx} className={styles.FormError}>
+            {message === '"" is not a valid choice.'
+              ? "Please select an option from the dropdown."
+              : message}
+          </div>
+        ))}
 
         <Form.Group>
           <Form.Label className="d-none">Difficulty</Form.Label>
@@ -558,6 +647,13 @@ function ChampionEdit() {
             ))}
           </Form.Control>
         </Form.Group>
+        {errors?.difficulty?.map((message, idx) => (
+          <div key={idx} className={styles.FormError}>
+            {message === '"" is not a valid choice.'
+              ? "Please select an option from the dropdown."
+              : message}
+          </div>
+        ))}
       </Row>
 
       <Row className={`${styles.ContentBackgroundImage} p-4`}>
@@ -583,7 +679,13 @@ function ChampionEdit() {
               </Row>
             </Form.Label>
           </Form.Group>
+          {errors?.champ_image?.map((message, idx) => (
+            <div key={idx} className={styles.FormError}>
+              {message}
+            </div>
+          ))}
         </Col>
+
         <Col className="text-center">
           <Form.Group controlId="passive_ability_image">
             <Row>
@@ -606,7 +708,13 @@ function ChampionEdit() {
               </Row>
             </Form.Label>
           </Form.Group>
+          {errors?.passive_ability_image?.map((message, idx) => (
+            <div key={idx} className={styles.FormError}>
+              {message}
+            </div>
+          ))}
         </Col>
+
         <Col className="text-center">
           <Form.Group controlId="ability_1_image">
             <Row>
@@ -629,6 +737,11 @@ function ChampionEdit() {
               </Row>
             </Form.Label>
           </Form.Group>
+          {errors?.ability_1_image?.map((message, idx) => (
+            <div key={idx} className={styles.FormError}>
+              {message}
+            </div>
+          ))}
         </Col>
       </Row>
 
@@ -655,7 +768,13 @@ function ChampionEdit() {
               </Row>
             </Form.Label>
           </Form.Group>
+          {errors?.ability_2_image?.map((message, idx) => (
+            <div key={idx} className={styles.FormError}>
+              {message}
+            </div>
+          ))}
         </Col>
+
         <Col className="text-center">
           <Form.Group controlId="ability_3_image">
             <Row>
@@ -678,7 +797,13 @@ function ChampionEdit() {
               </Row>
             </Form.Label>
           </Form.Group>
+          {errors?.ability_3_image?.map((message, idx) => (
+            <div key={idx} className={styles.FormError}>
+              {message}
+            </div>
+          ))}
         </Col>
+
         <Col className="text-center">
           <Form.Group controlId="ultimate_ability_image">
             <Row>
@@ -701,8 +826,14 @@ function ChampionEdit() {
               </Row>
             </Form.Label>
           </Form.Group>
+          {errors?.ultimate_ability_image?.map((message, idx) => (
+            <div key={idx} className={styles.FormError}>
+              {message}
+            </div>
+          ))}
         </Col>
       </Row>
+
       <Row className="d-flex justify-content-center">
         <Button className={`mt-4 ${btnStyles.Button}`} type="submit">
           Update
