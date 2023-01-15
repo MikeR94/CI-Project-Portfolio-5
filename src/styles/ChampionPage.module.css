@@ -7,6 +7,12 @@
   height: auto;
 }
 
+.CommentInfo {
+  text-align: center;
+  color: #cbae71;
+  margin-top: 30px;
+}
+
 .UpVoteName {
   color: #cbae71;
 }

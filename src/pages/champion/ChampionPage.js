@@ -439,7 +439,7 @@ const ChampionPage = () => {
               setCommentData={setCommentData}
             />
           ) : commentData.results.length ? (
-            "Comments"
+            ""
           ) : null}
           {commentData.results.length ? (
             <InfiniteScroll
@@ -455,14 +455,19 @@ const ChampionPage = () => {
               loader={<LoadingSpinner></LoadingSpinner>}
               hasMore={!!commentData.next}
               next={() => fetchMoreData(commentData, setCommentData)}
+              endMessage={
+                <div className={styles.CommentInfo}>
+                  Great! You've seen all the comments!
+                </div>
+              }
             />
           ) : currentUser ? (
-            <div className="mt-5">
-              <span>No comments yet, be the first to comment!</span>
+            <div className={styles.CommentInfo}>
+              No comments yet, be the first to comment!
             </div>
           ) : (
-            <div className="mt-5">
-              <span>No comments, sign up and be the first to comment!</span>
+            <div className={styles.CommentInfo}>
+              No comments, sign up and be the first to comment!
             </div>
           )}
         </Container>
