@@ -457,9 +457,13 @@ const ChampionPage = () => {
               next={() => fetchMoreData(commentData, setCommentData)}
             />
           ) : currentUser ? (
-            <span>No comments yet, be the first to comment!</span>
+            <div className="mt-5">
+              <span>No comments yet, be the first to comment!</span>
+            </div>
           ) : (
-            <span>No comments, sign up and be the first to comment!</span>
+            <div className="mt-5">
+              <span>No comments, sign up and be the first to comment!</span>
+            </div>
           )}
         </Container>
       ) : (

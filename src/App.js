@@ -11,6 +11,7 @@ import ChampionCreate from "./pages/champion/ChampionCreate";
 import ChampionEdit from "./pages/champion/ChampionEdit";
 import ChampionLeaderboard from "./pages/champion/ChampionLeaderboard";
 import ProfilePage from "./pages/profile/ProfilePage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -71,6 +72,7 @@ function App() {
           />
         </Switch>
       </Container>
+      <Footer />
     </div>
   );
 }
