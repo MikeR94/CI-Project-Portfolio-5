@@ -35,8 +35,8 @@ const NavBar = () => {
         title={<Avatar src={currentUser?.profile_avatar} height={50}></Avatar>}
         id="nav-dropdown"
       >
-        {currentUser?.username}
-        <NavDropdown.Item as={Link} to="/">
+        <div className={styles.DropdownMenu}>{currentUser?.username}</div>
+        <NavDropdown.Item className={styles.DropdownMenu} as={Link} to="/">
           Home
         </NavDropdown.Item>
         <NavDropdown.Item as={Link} to={`/profile/${currentUser?.profile_id}`}>

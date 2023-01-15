@@ -2,13 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
+
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="icon" href="%PUBLIC_URL%/favicon-16x16.png" />
     <link
       rel="stylesheet"
@@ -16,24 +17,35 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <script
-      src="https://kit.fontawesome.com/b1af7d0af3.js"
-      crossorigin="anonymous"
-    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="manifest"
       href="%PUBLIC_URL%/manifest.json"
       crossorigin="use-credentials"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&display=swap"
-      rel="stylesheet"
-    />
+
+    <script
+      src="https://kit.fontawesome.com/b1af7d0af3.js"
+      crossorigin="anonymous"
+    ></script>
+
+    // Below styling is to override the nav dropdown
+    <style>
+      div.dropdown-menu.show {
+        background-color: #2f3547b0;
+      }
+      a.dropdown-item {
+        color: #cbae71;
+      }
+    </style>
 
     <title>League Hub</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>You need to enable JavaScript to run this application.</noscript>
     <div id="root"></div>
   </body>
 </html>
