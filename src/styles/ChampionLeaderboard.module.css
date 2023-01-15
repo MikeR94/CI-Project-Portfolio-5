@@ -6,6 +6,18 @@
   align-items: center;
 }
 
+.Header {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #cbae71;
+}
+
 .LeaderboardResults {
   text-align: center;
   border-collapse: collapse;
