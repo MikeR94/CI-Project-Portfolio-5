@@ -20,14 +20,14 @@
   text-align: center;
   padding: 10px;
   margin-top: 4px;
-  background-color: #2f3547b0;
+  background-color: #222837;
   color: #cbae71;
   border: none;
 }
 
 input[type="text"]:focus {
   border: 2px #cbae71 solid;
-  background-color: #2f3547b0;
+  background-color: #222837;
   box-shadow: none;
   color: #cbae71;
 }
@@ -37,7 +37,7 @@ input[type="text"]:focus {
   text-align: center;
   padding: 10px;
   margin-top: 4px;
-  background-color: #2f3547b0;
+  background-color: #222837;
   border: none;
   color: #6c757d;
 }

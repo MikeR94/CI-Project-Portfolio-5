@@ -2,7 +2,7 @@
   border: none;
   margin-left: 20px;
   margin-right: 20px;
-  background-color: #2f3547b0;
+  background-color: #222837;
 }
 
 .ButtonContainer {
@@ -12,14 +12,14 @@
 }
 
 .Input textarea {
-  background-color: #2f3547b0;
+  background-color: #222837;
   color: white;
   border: none;
 }
 
 .Input textarea:focus {
   border: 2px #cbae71 solid;
-  background-color: #2f3547b0;
+  background-color: #222837;
   box-shadow: none;
   color: white;
 }
