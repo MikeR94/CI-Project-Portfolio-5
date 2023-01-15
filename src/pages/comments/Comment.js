@@ -22,6 +22,7 @@ const Comment = (props) => {
   const [showEditForm, setShowEditForm] = useState(false);
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+  const is_staff_member = currentUser?.is_staff;
 
   const handleDelete = async () => {
     try {
@@ -60,12 +61,12 @@ const Comment = (props) => {
                     <i className={`fas fa-edit ${styles.ManageComment}`} />
                   </div>
                 )}
-                {is_staff && !showEditForm && (
+                {is_staff_member && !showEditForm && (
                   <div onClick={handleDelete}>
                     <i className={`fas fa-trash-alt ${styles.ManageComment}`} />
                   </div>
                 )}
-                {is_owner && !showEditForm && !is_staff && (
+                {is_owner && !showEditForm && !is_staff_member && (
                   <div onClick={handleDelete}>
                     <i className={`fas fa-trash-alt ${styles.ManageComment}`} />
                   </div>
