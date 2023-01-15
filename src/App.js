@@ -26,11 +26,6 @@ function App() {
           />
           <Route
             exact
-            path="/signout"
-            render={() => <h1>You have successfully signed out</h1>}
-          />
-          <Route
-            exact
             path="/profile/:id"
             render={() => <ProfilePage></ProfilePage>}
           />
