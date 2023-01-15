@@ -1,13 +1,15 @@
 import React, { useState } from "react";
+import { Form, Button, Col, Row, Container } from "react-bootstrap";
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import axios from "axios";
-import { Form, Button, Col, Row, Container, Alert } from "react-bootstrap";
-import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 const SignInForm = () => {
   const setCurrentUser = useSetCurrentUser();
+  const [errors, setErrors] = useState({});
+  const history = useHistory();
 
   const [signInData, setSignInData] = useState({
     username: "",
@@ -22,10 +24,6 @@ const SignInForm = () => {
       [event.target.name]: event.target.value,
     });
   };
-
-  const [errors, setErrors] = useState({});
-
-  const history = useHistory();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -61,10 +59,10 @@ const SignInForm = () => {
                   onChange={handleChange}
                 />
               </Form.Group>
-              {errors.username?.map((message, idx) => (
-                <Alert className={styles.Alert} key={idx}>
+              {errors?.username?.map((message, idx) => (
+                <div key={idx} className={styles.FormError}>
                   {message}
-                </Alert>
+                </div>
               ))}
 
               <Form.Group controlId="password">
@@ -78,15 +76,15 @@ const SignInForm = () => {
                   onChange={handleChange}
                 />
               </Form.Group>
-              {errors.password1?.map((message, idx) => (
-                <Alert className={styles.Alert} key={idx}>
+              {errors?.password?.map((message, idx) => (
+                <div key={idx} className={styles.FormError}>
                   {message}
-                </Alert>
+                </div>
               ))}
               {errors.non_field_errors?.map((message, idx) => (
-                <Alert className={styles.Alert} key={idx}>
+                <div key={idx} className={styles.FormError}>
                   {message}
-                </Alert>
+                </div>
               ))}
 
               <Button className={`mt-4 ${btnStyles.Button}`} type="submit">

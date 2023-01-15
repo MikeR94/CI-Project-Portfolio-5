@@ -4,6 +4,13 @@
   align-items: center;
 }
 
+.FormError {
+  color: rgb(139, 41, 41);
+  text-align: left;
+  margin-top: 7px;
+  margin-bottom: 5px;
+}
+
 .Container {
   margin-top: 50px;
   display: flex;
