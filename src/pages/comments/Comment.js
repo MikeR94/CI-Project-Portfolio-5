@@ -5,6 +5,7 @@ import CommentEditForm from "./CommentEditForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 import { Card, Col, Container, Row } from "react-bootstrap";
+import StaffCrownIcon from "../../assets/staff_crown.png";
 
 const Comment = (props) => {
   const {
@@ -42,7 +43,16 @@ const Comment = (props) => {
           <Col className="col-md-12">
             <Card.Header className={styles.Header}>
               <Avatar src={profile_avatar} />
-              <div className={styles.Owner}>{owner}</div>
+              <div className={styles.Owner}>
+                {is_staff && (
+                  <img
+                    src={StaffCrownIcon}
+                    alt="staff crown"
+                    className={styles.StaffCrown}
+                  ></img>
+                )}
+                {owner}
+              </div>
               <div className={styles.Date}>{updated_at}</div>
               <div className={styles.Dropdown}>
                 {is_owner && !showEditForm && (

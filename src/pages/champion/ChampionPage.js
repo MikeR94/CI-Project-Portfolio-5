@@ -137,6 +137,8 @@ const ChampionPage = () => {
     fetchChampion();
   }, [id, history]);
 
+  console.log(commentData);
+
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/champions/${id}`);
