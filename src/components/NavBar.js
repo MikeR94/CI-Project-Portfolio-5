@@ -35,22 +35,38 @@ const NavBar = () => {
         title={<Avatar src={currentUser?.profile_avatar} height={50}></Avatar>}
         id="nav-dropdown"
       >
-        <div className={styles.DropdownMenu}>{currentUser?.username}</div>
+        <div className={styles.DropdownMenu}>
+          {currentUser?.username}
+          <hr></hr>
+        </div>
         <NavDropdown.Item className={styles.DropdownMenu} as={Link} to="/">
           Home
         </NavDropdown.Item>
-        <NavDropdown.Item as={Link} to={`/profile/${currentUser?.profile_id}`}>
+        <NavDropdown.Item
+          className={styles.DropdownMenu}
+          as={Link}
+          to={`/profile/${currentUser?.profile_id}`}
+        >
           Profile
         </NavDropdown.Item>
-        <NavDropdown.Item as={Link} to="/leaderboard">
+        <NavDropdown.Item
+          className={styles.DropdownMenu}
+          as={Link}
+          to="/leaderboard"
+        >
           Leaderboard
         </NavDropdown.Item>
         {is_staff ? (
-          <NavDropdown.Item as={Link} to="/create">
+          <NavDropdown.Item
+            className={styles.DropdownMenu}
+            as={Link}
+            to="/create"
+          >
             Create
           </NavDropdown.Item>
         ) : null}
         <NavDropdown.Item
+          className={styles.DropdownMenu}
           as={Link}
           to="/"
           onClick={() => {
