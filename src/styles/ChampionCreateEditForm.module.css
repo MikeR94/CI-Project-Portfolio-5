@@ -8,6 +8,13 @@
   border: none;
 }
 
+.FormError {
+  color: rgb(139, 41, 41);
+  text-align: left;
+  margin-top: 7px;
+  margin-bottom: 5px;
+}
+
 input[type="text"]:focus {
   border: 2px #cbae71 solid;
   background-color: #222837;
