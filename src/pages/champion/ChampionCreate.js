@@ -1,23 +1,13 @@
 import React, { useRef, useState } from "react";
-import styles from "../../styles/ChampionCreateEditForm.module.css";
-import btnStyles from "../../styles/Button.module.css";
 import { Form, Button, Col, Row } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useHistory } from "react-router-dom";
-import ImagePreview from "../../components/ImagePreview";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import styles from "../../styles/ChampionCreateEditForm.module.css";
+import btnStyles from "../../styles/Button.module.css";
+import ImagePreview from "../../components/ImagePreview";
 
 function ChampionCreate() {
-  const currentUser = useCurrentUser();
-  const is_staff = currentUser?.is_staff;
-  const [errors, setErrors] = useState({});
-
-  const history = useHistory();
-
-  if (!is_staff) {
-    history.push("/");
-  }
-
   const champImageInput = useRef(null);
   const passiveImageInput = useRef(null);
   const ability1ImageInput = useRef(null);
@@ -28,6 +18,14 @@ function ChampionCreate() {
   const [roleSelected, setRoleSelected] = useState(false);
   const [difficultySelected, setDifficultySelected] = useState(false);
   const [champClassSelected, setChampClassSelected] = useState(false);
+  const history = useHistory();
+  const [errors, setErrors] = useState({});
+  const currentUser = useCurrentUser();
+  const is_staff = currentUser?.is_staff;
+
+  if (!is_staff) {
+    history.push("/");
+  }
 
   const [champData, setChampData] = useState({
     name: "",
@@ -235,10 +233,8 @@ function ChampionCreate() {
       await axiosReq.post("/champions/create/", formData);
       history.push("/");
     } catch (error) {
-      console.log(error);
       if (error.response?.status !== 401) {
         setErrors(error.response?.data);
-        console.log(error.response?.data);
       }
     }
   };
