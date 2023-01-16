@@ -1,9 +1,14 @@
 .Button {
   background-color: #222837;
-  color: #cbae71;
+  color: white;
   border: 0px;
   border-radius: 0px;
   margin-right: 5px;
+}
+
+.Button:hover {
+  background-color: #cbae71;
+  color: white;
 }
 
 .Ul {
