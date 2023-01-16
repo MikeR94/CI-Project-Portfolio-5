@@ -17,7 +17,7 @@ div.dropdown-menu.show {
 }
 
 a.dropdown-item {
-  color: #cbae71;
+  color: white;
 }
 
 .dropdown-menu {
@@ -25,6 +25,8 @@ a.dropdown-item {
   right: 0px;
   left: auto;
   margin-top: 7px !important;
+  --bs-dropdown-link-hover-bg: #cbae71;
+  --bs-dropdown-link-hover-color: white;
 }
 
 .btn-primary:hover {
