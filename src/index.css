@@ -39,3 +39,8 @@ a.dropdown-item {
   --bs-pagination-focus-box-shadow: none;
   --bs-pagination-focus-color: white !important;
 }
+
+.card-title {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}

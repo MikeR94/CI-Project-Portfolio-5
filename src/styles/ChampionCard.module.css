@@ -1,5 +1,7 @@
 .ChampionName {
-  color: white;
+  color: #ffffffd6;
+  font-family: "Bungee", sans-serif;
+  font-size: 16px;
 }
 
 .ChampionCard {
