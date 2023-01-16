@@ -30,10 +30,12 @@
 .Name {
   justify-content: center;
   font-size: 30px;
+  font-family: "Bungee", sans-serif;
 }
 
 .Alias {
   justify-content: center;
+  font-family: "Bungee", sans-serif;
 }
 
 .AbilityImage {
@@ -43,15 +45,26 @@
 }
 
 .AbilityType {
-  margin-top: 7px;
+  margin-top: 9px;
   text-align: center;
-  color: lightgray;
-  font-size: 13px;
+  color: #797979;
+  font-size: 12px;
+  font-family: "Bungee", sans-serif;
 }
 
 .AbilityName {
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
+  font-family: "Bungee", sans-serif;
+  margin-top: 5px;
+}
+
+.CRDText {
+  margin-bottom: 9px;
+  text-align: center;
+  color: #797979;
+  font-size: 12px;
+  font-family: "Bungee", sans-serif;
 }
 
 .RangeIcon {
@@ -75,6 +88,7 @@
   justify-content: center;
   font-size: 18px;
   margin-bottom: 30px;
+  font-family: "Bungee", sans-serif;
 }
 
 .UpVoteText {
@@ -94,6 +108,7 @@
   justify-content: center;
   font-size: 18px;
   margin-bottom: 30px;
+  font-family: "Bungee", sans-serif;
 }
 
 @media all and (max-width: 1400px) {

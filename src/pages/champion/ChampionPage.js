@@ -350,27 +350,24 @@ const ChampionPage = () => {
           <hr className="mt-5 mb-5"></hr>
           <Row className="text-center">
             <Col>
-              <div>Class</div>
+              <div className={styles.CRDText}>Class</div>
               <img alt="class icon" src={classIcon}></img>
-              <div className="text-capitalize">{champ_class}</div>
             </Col>
             <Col>
-              <div>Range</div>
+              <div className={styles.CRDText}>Range</div>
               <img
                 alt="range icon"
                 src={rangeImage}
                 className={isMelee ? styles.MeleeIcon : styles.RangeIcon}
               ></img>
-              <div className="text-capitalize">{range}</div>
             </Col>
             <Col>
-              <div>Difficulty</div>
+              <div className={styles.CRDText}>Difficulty</div>
               <img
                 alt="difficulty icon"
                 src={difficultyImage}
                 className={styles.DifficultyIcon}
               ></img>
-              <div className="text-capitalize">{difficulty}</div>
             </Col>
           </Row>
           <hr className="mt-5 mb-5"></hr>
