@@ -11,3 +11,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+div.dropdown-menu.show {
+  background-color: #222837;
+}
+
+a.dropdown-item {
+  color: #cbae71;
+}
+
+.dropdown-menu {
+  top: 55px;
+  right: 0px;
+  left: auto;
+  margin-top: 7px !important;
+}
+
+.btn-primary:hover {
+  background-color: #222837;
+  color: white;
+}
+
+.pagination {
+  --bs-pagination-focus-bg: #cbae71 !important;
+  --bs-pagination-focus-box-shadow: none;
+  --bs-pagination-focus-color: white !important;
+}
