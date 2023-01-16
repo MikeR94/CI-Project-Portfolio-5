@@ -20,14 +20,27 @@
 }
 
 .Input {
-  background: #ffffff;
-  border: 2px solid #222837;
-  box-sizing: border-box;
   border-radius: 2px;
-  color: #1a1a1a;
   text-align: center;
   padding: 10px;
   margin-top: 4px;
+  background-color: #222837;
+  color: #cbae71;
+  border: none;
+}
+
+.FormError {
+  color: rgb(139, 41, 41);
+  text-align: left;
+  margin-top: 7px;
+  margin-bottom: 5px;
+}
+
+input[type="text"]:focus {
+  border: 2px #cbae71 solid;
+  background-color: #222837;
+  box-shadow: none;
+  color: #cbae71;
 }
 
 .Header {
@@ -43,7 +56,7 @@
 }
 
 .ContentBackground {
-  background-color: #222837;
+  background-color: #070a14;
   border-radius: 11px;
   text-align: center;
 }
