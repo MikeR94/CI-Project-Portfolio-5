@@ -106,6 +106,12 @@ const ChampionSelect = () => {
     }
   };
 
+  const NoChampsFound = (
+    <>
+      <span className={`${styles.NoChampsFound}`}>No champions found...</span>
+    </>
+  );
+
   const RoleIcons = (
     <>
       <RoleIcon
@@ -143,13 +149,11 @@ const ChampionSelect = () => {
         <div className={`${styles.Grid}`}>
           {hasLoaded ? (
             <>
-              {champions.results.length ? (
-                champions.results.map((champions) => (
-                  <ChampionCard key={champions.id} {...champions} />
-                ))
-              ) : (
-                <h1>No champions found...</h1>
-              )}
+              {champions.results.length
+                ? champions.results.map((champions) => (
+                    <ChampionCard key={champions.id} {...champions} />
+                  ))
+                : NoChampsFound}
             </>
           ) : (
             <LoadingSpinner></LoadingSpinner>
