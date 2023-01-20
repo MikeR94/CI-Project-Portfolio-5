@@ -1,70 +1,218 @@
-# Getting Started with Create React App
+# **_League Hub - Project Portfolio 5 - Advanced Front End (React)_**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+League hub description
 
-## Available Scripts
+You can view the live site here - <a href="https://ci-league-hub.herokuapp.com/" target="_blank" rel="noopener">League Hub</a>
 
-In the project directory, you can run:
+# Contents
 
-### `npm start`
+- [**Objective**](#objective)
+- [**User Experience UX**](#user-experience-ux)
+  - [User Stories](#user-stories)
+  - [Design Prototype](#design-prototype)
+  - [Site Structure](#site-structure)
+  - [Design Choices](#design-choices)
+  - [Typography](#typography)
+  - [Colour Scheme](#colour-scheme)
+  - [Project Management](#project-management)
+- [**Existing Features (Site User)**](#existing-features-for-site-user)
+  - [Existing Feature 1](#existing-feature-1)
+- [**Existing Features (Staff Member)**](#existing-features-for-staff-member)
+  - [Existing Staff Feature 1](#existing-staff-feature-1)
+- [**Future Features**](#future-features)
+  - [Future Feature 1](#future-feature-1)
+- [**Technologies Used**](#technologies-used)
+- [**Testing**](#testing)
+- [**Deployment To Heroku**](#deployment-to-heroku)
+- [**Cloning This Project**](#cloning-and-setting-up-this-project)
+- [**Credits**](#credits)
+  - [**Content**](#content)
+  - [**Media**](#media)
+- [**Acknowledgments**](#acknowledgements)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Objective
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Objective text here
 
-### `npm test`
+[Back to top](#contents)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# User Experience (UX)
 
-### `npm run build`
+## User Stories
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Site User
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+|                |       |         |
+| :------------: | :---- | :------ |
+| As a Site User | I can | &check; |
+| As a Site User | I can | &check; |
+| As a Site User | I can | &check; |
+| As a Site User | I can | &check; |
+| As a Site User | I can | &check; |
+| As a Site User | I can | &check; |
+| As a Site User | I can | &check; |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Site Staff Member
 
-### `npm run eject`
+|                        |     |         |
+| :--------------------: | :-- | :------ |
+| As a Site Staff Member |     | &check; |
+| As a Site Staff Member |     | &check; |
+| As a Site Staff Member |     | &check; |
+| As a Site Staff Member |     | &check; |
+| As a Site Staff Member |     | &check; |
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Design Prototype
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Design Prototype<br /><br />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+[Back to top](#contents)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Site Structure
 
-## Learn More
+Site Structure here <br /><br />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Design Choices
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- ### Typography
 
-### Code Splitting
+  Typography here
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- ### Colour Scheme
+  Colour scheme here<br /><br />
 
-### Analyzing the Bundle Size
+## Project Management
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- ### Trello
 
-### Making a Progressive Web App
+  Trello <br /><br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- ### GitHub Project Board
+  Github <br /><br />
 
-### Advanced Configuration
+## Existing Features For Site User
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- ### Existing Feature 1
 
-### Deployment
+  - Feature 1. <br /><br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Existing Features For Staff Member
 
-### `npm run build` fails to minify
+- ### Existing Feature For Staff Member 1
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  - Staff Feature 1 <br /><br />
+
+[Back to top](#contents)
+
+- ## Future Features
+
+- ### Future Feature 1
+
+  - Future Feature 1
+
+# Technologies Used
+
+- [React]() - Front end framework
+
+# Libraries
+
+Libraries
+
+- [axios]() - Library 1
+
+[Back to top](#contents)
+
+# Testing
+
+- ## Code Validation
+
+  - Code Validation Here
+
+- ## Lighthouse Testing
+
+  - Lighthouse Testing Here<br /><br />
+
+- ## Accessibility Testing
+
+  - Accessibility testing <br /><br />
+
+- ## Responsiveness Testing
+
+  - Responsive testing [Responsive Design Checker](https://www.responsivedesignchecker.com/).<br /><br />
+
+- ## Compressing Images
+
+  - Compressing Images.<br /><br />
+
+- ## Automated Testing
+
+  - Automated testing
+
+- ## Manual Testing
+  Manual Testing
+
+| Status  | **Main Website - User Logged Out** |
+| :-----: | :--------------------------------- |
+| &check; | Manual test 1                      |
+
+| Status  | **Main Website - User Logged In** |
+| :-----: | :-------------------------------- |
+| &check; | Manual test 1                     |
+
+- ## Browser Compatibility
+  - Browser compatibility
+    <br /><br />
+
+[Back to top](#contents)
+
+- ## Bugs Fixed
+
+  ### Bug 1
+
+  - Bug 1 issue <br /><br />
+
+  - Bug 1 solved
+
+- ## Bugs Unresolved
+
+  ### Buf Unresolved 1
+
+  - Bug Unresolved 1 issue <br /><br />
+
+  - Bug Unresolved 1 solved
+
+[Back to top](#contents)
+
+# Deployment To Heroku
+
+The project was deployed to [Heroku](https://www.heroku.com). The deployment process is as follows:
+
+The live link to the Github repository can be found here - https://github.com/MikeR94/CI-Project-Portfolio-5
+
+[Back to top](#contents)
+
+# Cloning and setting up this project
+
+If you wish to clone and setup this project locally then the process is as follows:
+
+[Back to top](#contents)
+
+# Credits
+
+### Content
+
+- Content 1
+
+### Media
+
+- Media 1
+
+[Back to top](#contents)
+
+# Acknowledgments
+
+Acknowledgements
+
+Mike Ralph 2023.
+
+[Back to top](#contents)
