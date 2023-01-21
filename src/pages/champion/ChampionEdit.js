@@ -175,7 +175,7 @@ function ChampionEdit() {
       formData.append(`${data}`, champData[data]);
     }
     try {
-      await axiosReq.put(`/champions/${id}/`, formData);
+      await axiosReq.put(`/champions/${id}/edit`, formData);
       history.push(`/`);
     } catch (error) {
       if (error.response?.status !== 401) {

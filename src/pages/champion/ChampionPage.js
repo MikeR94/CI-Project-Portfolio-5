@@ -132,7 +132,7 @@ const ChampionPage = () => {
 
   const handleDelete = async () => {
     try {
-      await axiosRes.delete(`/champions/${id}`);
+      await axiosRes.delete(`/champions/${id}/delete`);
       history.push("/");
     } catch (error) {
       console.log(error);
