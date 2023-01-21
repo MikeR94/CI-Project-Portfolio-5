@@ -185,7 +185,7 @@ const ProfilePage = () => {
                     onChange={handleChange}
                   />
                 </Form.Group>
-                <div class="d-flex justify-content-between">
+                <div className="d-flex justify-content-between">
                   {!disabled && is_owner && (
                     <Button
                       className={`mt-4 ${btnStyles.Button}`}
