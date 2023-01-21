@@ -165,44 +165,30 @@ const ChampionPage = () => {
     }
   };
 
-  let classIcon = "";
+  const classIcons = {
+    controller: ControllerIcon,
+    fighter: FighterIcon,
+    mage: MageIcon,
+    marksman: MarksmanIcon,
+    slayer: SlayerIcon,
+    specialist: SpecialistIcon,
+    tank: TankIcon,
+  };
 
-  if (champ_class === "controller") {
-    classIcon = ControllerIcon;
-  } else if (champ_class === "fighter") {
-    classIcon = FighterIcon;
-  } else if (champ_class === "mage") {
-    classIcon = MageIcon;
-  } else if (champ_class === "marksman") {
-    classIcon = MarksmanIcon;
-  } else if (champ_class === "slayer") {
-    classIcon = SlayerIcon;
-  } else if (champ_class === "specialist") {
-    classIcon = SpecialistIcon;
-  } else if (champ_class === "tank") {
-    classIcon = TankIcon;
-  }
+  const rangeImages = {
+    melee: { icon: MeleeIcon, isMelee: true },
+    ranged: { icon: RangeIcon, isMelee: false },
+  };
 
-  let rangeImage = "";
-  let isMelee = false;
+  const difficultyIcons = {
+    low: LowDifficultyIcon,
+    moderate: ModerateDifficultyIcon,
+    high: HighDifficultyIcon,
+  };
 
-  if (range === "melee") {
-    rangeImage = MeleeIcon;
-    isMelee = true;
-  } else if (range === "ranged") {
-    rangeImage = RangeIcon;
-    isMelee = false;
-  }
-
-  let difficultyImage = "";
-
-  if (difficulty === "low") {
-    difficultyImage = LowDifficultyIcon;
-  } else if (difficulty === "moderate") {
-    difficultyImage = ModerateDifficultyIcon;
-  } else if (difficulty === "high") {
-    difficultyImage = HighDifficultyIcon;
-  }
+  let classIcon = classIcons[champ_class] || "";
+  let { icon: rangeImage, isMelee } = rangeImages[range] || {};
+  let difficultyImage = difficultyIcons[difficulty] || "";
 
   return (
     <div>
