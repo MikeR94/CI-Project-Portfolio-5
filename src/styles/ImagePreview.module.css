@@ -1,3 +1,4 @@
 .ImagePreview {
   object-fit: cover;
+  cursor: pointer;
 }
