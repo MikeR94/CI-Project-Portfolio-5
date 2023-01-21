@@ -141,34 +141,12 @@ const ChampionPage = () => {
 
   const handleUpVote = async () => {
     try {
-      await axiosRes.post("/upvotes/", { champion: id });
-      setChampData(() => ({
-        name: name,
-        alias: alias,
-        champ_image: champ_image,
-        lore: lore,
-        passive_ability: passive_ability,
-        passive_ability_description: passive_ability_description,
-        passive_ability_image: passive_ability_image,
-        ability_1: ability_1,
-        ability_1_description: ability_1_description,
-        ability_1_image: ability_1_image,
-        ability_2: ability_2,
-        ability_2_description: ability_2_description,
-        ability_2_image: ability_2_image,
-        ability_3: ability_3,
-        ability_3_description: ability_3_description,
-        ability_3_image: ability_3_image,
-        ultimate_ability: ultimate_ability,
-        ultimate_ability_description: ultimate_ability_description,
-        ultimate_ability_image: ultimate_ability_image,
-        champ_class: champ_class,
-        range: range,
-        difficulty: difficulty,
-        upvotes_count: upvotes_count,
-        upvotes_id: upvotes_id,
+      const { data } = await axiosRes.post("/upvotes/", { champion: id });
+      setChampData((prevChampData) => ({
+        ...prevChampData,
+        upvotes_count: prevChampData.upvotes_count + 1,
+        upvotes_id: data.id,
       }));
-      window.location.reload();
     } catch (error) {
       console.log(error);
     }
@@ -177,33 +155,11 @@ const ChampionPage = () => {
   const handleDownVote = async () => {
     try {
       await axiosRes.delete(`/upvotes/${upvotes_id}/`);
-      setChampData(() => ({
-        name: name,
-        alias: alias,
-        champ_image: champ_image,
-        lore: lore,
-        passive_ability: passive_ability,
-        passive_ability_description: passive_ability_description,
-        passive_ability_image: passive_ability_image,
-        ability_1: ability_1,
-        ability_1_description: ability_1_description,
-        ability_1_image: ability_1_image,
-        ability_2: ability_2,
-        ability_2_description: ability_2_description,
-        ability_2_image: ability_2_image,
-        ability_3: ability_3,
-        ability_3_description: ability_3_description,
-        ability_3_image: ability_3_image,
-        ultimate_ability: ultimate_ability,
-        ultimate_ability_description: ultimate_ability_description,
-        ultimate_ability_image: ultimate_ability_image,
-        champ_class: champ_class,
-        range: range,
-        difficulty: difficulty,
-        upvotes_count: upvotes_count,
-        upvotes_id: upvotes_id,
+      setChampData((prevChampData) => ({
+        ...prevChampData,
+        upvotes_count: prevChampData.upvotes_count - 1,
+        upvotes_id: null,
       }));
-      window.location.reload();
     } catch (error) {
       console.log(error);
     }
