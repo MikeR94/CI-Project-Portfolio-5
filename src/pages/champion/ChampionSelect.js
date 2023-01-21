@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import RoleIcon from "../../components/RoleIcon";
 import SupportIcon from "../../assets/role_icons/support.png";
 import AdcIcon from "../../assets/role_icons/adc.png";
@@ -18,24 +18,27 @@ const ChampionSelect = () => {
   const [filterSelected, setFilterSelected] = useState(false);
   const { searchQuery } = useSearchQueryContext();
 
-  const fetchChampionData = async (roleFilter = "") => {
-    try {
-      const { data } = await axiosReq.get(
-        `/champions/?search=${searchQuery}${roleFilter}`
-      );
-      setChampions(data);
-      setHasLoaded(true);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const fetchChampionData = useCallback(
+    async (roleFilter = "") => {
+      try {
+        const { data } = await axiosReq.get(
+          `/champions/?search=${searchQuery}${roleFilter}`
+        );
+        setChampions(data);
+        setHasLoaded(true);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    [searchQuery]
+  );
 
   const setFilter = (isSelected) => setFilterSelected(isSelected);
 
   useEffect(() => {
     setHasLoaded(false);
     fetchChampionData();
-  }, [searchQuery]);
+  }, [searchQuery, fetchChampionData]);
 
   const getTopChampsFilter = () => {
     if (filterSelected) {
