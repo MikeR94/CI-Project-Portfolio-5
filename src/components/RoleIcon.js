@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import styles from "../styles/RoleIcon.module.css";
 
-const RoleIcon = ({ src, height = 45, onClick }) => {
+const RoleIcon = ({
+  src,
+  height = 45,
+  onClick,
+  activeFilter,
+  filter,
+  previousFilter,
+}) => {
   const [isHovering, setIsHovering] = useState(false);
 
   const handleMouseOver = () => {
@@ -16,7 +23,9 @@ const RoleIcon = ({ src, height = 45, onClick }) => {
     <span>
       <img
         className={
-          isHovering ? `${styles.RoleIconHover}` : `${styles.RoleIcon}`
+          (isHovering || activeFilter === filter) && filter !== previousFilter
+            ? `${styles.RoleIconHover}`
+            : `${styles.RoleIcon}`
         }
         src={src}
         height={height}

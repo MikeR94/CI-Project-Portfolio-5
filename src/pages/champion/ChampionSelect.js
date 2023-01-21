@@ -16,6 +16,8 @@ const ChampionSelect = () => {
   const [champions, setChampions] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const [filterSelected, setFilterSelected] = useState(false);
+  const [activeFilter, setActiveFilter] = useState(null);
+  const [previousFilter, setPreviousFilter] = useState(null);
   const { searchQuery } = useSearchQueryContext();
 
   const fetchChampionData = useCallback(
@@ -33,60 +35,22 @@ const ChampionSelect = () => {
     [searchQuery]
   );
 
-  const setFilter = (isSelected) => setFilterSelected(isSelected);
-
   useEffect(() => {
     setHasLoaded(false);
     fetchChampionData();
   }, [searchQuery, fetchChampionData]);
 
-  const getTopChampsFilter = () => {
-    if (filterSelected) {
-      setFilter(false);
+  const handleFilter = (filter) => {
+    if (filterSelected && activeFilter === filter) {
+      setFilterSelected(false);
+      setActiveFilter(null);
+      setPreviousFilter(filter);
       fetchChampionData();
     } else {
-      setFilter(true);
-      fetchChampionData("&role=top");
-    }
-  };
-
-  const getMidChampsFilter = () => {
-    if (filterSelected) {
-      setFilter(false);
-      fetchChampionData();
-    } else {
-      setFilter(true);
-      fetchChampionData("&role=mid");
-    }
-  };
-
-  const getJungleChampsFilter = () => {
-    if (filterSelected) {
-      setFilter(false);
-      fetchChampionData();
-    } else {
-      setFilter(true);
-      fetchChampionData("&role=jungle");
-    }
-  };
-
-  const getAdcChampsFilter = () => {
-    if (filterSelected) {
-      setFilter(false);
-      fetchChampionData();
-    } else {
-      setFilter(true);
-      fetchChampionData("&role=adc");
-    }
-  };
-
-  const getSupportChampsFilter = () => {
-    if (filterSelected) {
-      setFilter(false);
-      fetchChampionData();
-    } else {
-      setFilter(true);
-      fetchChampionData("&role=support");
+      setFilterSelected(true);
+      setPreviousFilter(activeFilter);
+      setActiveFilter(filter);
+      fetchChampionData(`&role=${filter}`);
     }
   };
 
@@ -100,27 +64,42 @@ const ChampionSelect = () => {
     <>
       <RoleIcon
         src={SupportIcon}
-        onClick={getSupportChampsFilter}
+        onClick={() => handleFilter("support")}
+        activeFilter={activeFilter}
+        previousFilter={previousFilter}
+        filter="support"
         height={50}
       ></RoleIcon>
       <RoleIcon
         src={AdcIcon}
-        onClick={getAdcChampsFilter}
+        onClick={() => handleFilter("adc")}
+        activeFilter={activeFilter}
+        previousFilter={previousFilter}
+        filter="adc"
         height={50}
       ></RoleIcon>
       <RoleIcon
         src={JungleIcon}
-        onClick={getJungleChampsFilter}
+        onClick={() => handleFilter("jungle")}
+        activeFilter={activeFilter}
+        previousFilter={previousFilter}
+        filter="jungle"
         height={50}
       ></RoleIcon>
       <RoleIcon
         src={TopIcon}
-        onClick={getTopChampsFilter}
+        onClick={() => handleFilter("top")}
+        activeFilter={activeFilter}
+        previousFilter={previousFilter}
+        filter="top"
         height={50}
       ></RoleIcon>
       <RoleIcon
         src={MiddleIcon}
-        onClick={getMidChampsFilter}
+        onClick={() => handleFilter("mid")}
+        activeFilter={activeFilter}
+        previousFilter={previousFilter}
+        filter="mid"
         height={50}
       ></RoleIcon>
     </>
