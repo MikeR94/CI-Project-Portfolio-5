@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "../styles/ImagePreview.module.css";
-import fileIcon from "../assets/file.png";
+import plusIcon from "../assets/plus_icon.png";
 
 const ImagePreview = ({ src, height = 45, width = 45 }) => {
   if (src === "") {
-    src = fileIcon;
+    src = plusIcon;
   }
 
   return (
