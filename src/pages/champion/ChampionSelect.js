@@ -18,91 +18,72 @@ const ChampionSelect = () => {
   const [filterSelected, setFilterSelected] = useState(false);
   const { searchQuery } = useSearchQueryContext();
 
-  useEffect(() => {
-    const fetchChampions = async () => {
-      try {
-        const { data } = await axiosReq.get(
-          `/champions/?search=${searchQuery}`
-        );
-        setChampions(data);
-        setHasLoaded(true);
-        setFilterSelected(false);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  const fetchChampionData = async (roleFilter = "") => {
+    try {
+      const { data } = await axiosReq.get(
+        `/champions/?search=${searchQuery}${roleFilter}`
+      );
+      setChampions(data);
+      setHasLoaded(true);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
+  const setFilter = (isSelected) => setFilterSelected(isSelected);
+
+  useEffect(() => {
     setHasLoaded(false);
-    fetchChampions();
+    fetchChampionData();
   }, [searchQuery]);
 
-  const getTopChampsFilter = async () => {
+  const getTopChampsFilter = () => {
     if (filterSelected) {
-      const { data } = await axiosReq.get("/champions/");
-      setChampions(data);
-      setHasLoaded(true);
-      setFilterSelected(false);
+      setFilter(false);
+      fetchChampionData();
     } else {
-      const { data } = await axiosReq.get("/champions/?role=top");
-      setChampions(data);
-      setHasLoaded(true);
-      setFilterSelected(true);
+      setFilter(true);
+      fetchChampionData("&role=top");
     }
   };
 
-  const getMidChampsFilter = async () => {
+  const getMidChampsFilter = () => {
     if (filterSelected) {
-      const { data } = await axiosReq.get("/champions/");
-      setChampions(data);
-      setHasLoaded(true);
-      setFilterSelected(false);
+      setFilter(false);
+      fetchChampionData();
     } else {
-      const { data } = await axiosReq.get("/champions/?role=mid");
-      setChampions(data);
-      setHasLoaded(true);
-      setFilterSelected(true);
+      setFilter(true);
+      fetchChampionData("&role=mid");
     }
   };
 
-  const getJungleChampsFilter = async () => {
+  const getJungleChampsFilter = () => {
     if (filterSelected) {
-      const { data } = await axiosReq.get("/champions/");
-      setChampions(data);
-      setHasLoaded(true);
-      setFilterSelected(false);
+      setFilter(false);
+      fetchChampionData();
     } else {
-      const { data } = await axiosReq.get("/champions/?role=jungle");
-      setChampions(data);
-      setHasLoaded(true);
-      setFilterSelected(true);
+      setFilter(true);
+      fetchChampionData("&role=jungle");
     }
   };
 
-  const getAdcChampsFilter = async () => {
+  const getAdcChampsFilter = () => {
     if (filterSelected) {
-      const { data } = await axiosReq.get("/champions/");
-      setChampions(data);
-      setHasLoaded(true);
-      setFilterSelected(false);
+      setFilter(false);
+      fetchChampionData();
     } else {
-      const { data } = await axiosReq.get("/champions/?role=adc");
-      setChampions(data);
-      setHasLoaded(true);
-      setFilterSelected(true);
+      setFilter(true);
+      fetchChampionData("&role=adc");
     }
   };
 
-  const getSupportChampsFilter = async () => {
+  const getSupportChampsFilter = () => {
     if (filterSelected) {
-      const { data } = await axiosReq.get("/champions/");
-      setChampions(data);
-      setHasLoaded(true);
-      setFilterSelected(false);
+      setFilter(false);
+      fetchChampionData();
     } else {
-      const { data } = await axiosReq.get("/champions/?role=support");
-      setChampions(data);
-      setHasLoaded(true);
-      setFilterSelected(true);
+      setFilter(true);
+      fetchChampionData("&role=support");
     }
   };
 
