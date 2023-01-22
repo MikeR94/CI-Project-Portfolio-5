@@ -119,6 +119,8 @@ function ChampionEdit() {
           "ultimate_ability_image"
         );
         break;
+      default:
+        return null;
     }
   };
 
