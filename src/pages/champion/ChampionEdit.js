@@ -545,7 +545,7 @@ function ChampionEdit() {
             as="select"
             name="role"
             onChange={handleChange}
-            defaultValue={role}
+            value={role}
             className={styles.DropdownUnselected}
           >
             {roleOptions.map((option) => (
@@ -569,7 +569,7 @@ function ChampionEdit() {
             as="select"
             name="champ_class"
             onChange={handleChange}
-            defaultValue={champ_class}
+            value={champ_class}
             className={styles.DropdownUnselected}
           >
             {champClassOptions.map((option) => (
@@ -593,7 +593,7 @@ function ChampionEdit() {
             as="select"
             name="range"
             onChange={handleChange}
-            defaultValue={range}
+            value={range}
             className={styles.DropdownUnselected}
           >
             {rangeOptions.map((option) => (
@@ -617,7 +617,7 @@ function ChampionEdit() {
             as="select"
             name="difficulty"
             onChange={handleChange}
-            defaultValue={difficulty}
+            value={difficulty}
             className={styles.DropdownUnselected}
           >
             {difficultyOptions.map((option) => (
