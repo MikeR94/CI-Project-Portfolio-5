@@ -110,10 +110,20 @@ const ChampionSelect = () => {
   return (
     <div className={styles.RoleIconSection}>
       <div>{RoleIcons}</div>
-      <Row className="mt-5">
-        <h1 className={styles.Header}>Champions - {header}</h1>
-        <hr></hr>
-      </Row>
+      {!searchQuery && (
+        <Row className="mt-5">
+          <h1 className={styles.Header}>Champions - {header}</h1>
+          <hr></hr>
+        </Row>
+      )}
+      {searchQuery && (
+        <Row className="mt-5">
+          <h1 className={styles.Header}>
+            Searching for champion - {searchQuery}
+          </h1>
+          <hr></hr>
+        </Row>
+      )}
 
       <Container className="mt-5">
         <div className={`${styles.Grid}`}>
