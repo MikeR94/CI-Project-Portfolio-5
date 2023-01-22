@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
+import {
+  Button,
+  Col,
+  Container,
+  OverlayTrigger,
+  Row,
+  Tooltip,
+} from "react-bootstrap";
 import { useHistory, useParams } from "react-router-dom";
 import { axiosReq, axiosRes } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
@@ -22,6 +29,7 @@ import Comment from "../comments/Comment";
 import InfiniteScroll from "react-infinite-scroll-component";
 import CommentCreateForm from "../comments/CommentCreateForm";
 import LoadingSpinner from "../../components/LoadingSpinner";
+import Modal from "react-modal";
 
 const ChampionPage = () => {
   const { id } = useParams();
@@ -33,6 +41,7 @@ const ChampionPage = () => {
   const [hasLoaded, setHasLoaded] = useState(false);
   const profile_avatar = currentUser?.profile_avatar;
   const [champData, setChampData] = useState({ results: [] });
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const {
     name,
@@ -139,6 +148,10 @@ const ChampionPage = () => {
     }
   };
 
+  const toggleModal = () => {
+    setModalIsOpen(!modalIsOpen);
+  };
+
   const handleUpVote = async () => {
     try {
       const { data } = await axiosRes.post("/upvotes/", { champion: id });
@@ -210,11 +223,38 @@ const ChampionPage = () => {
                   <i className={`fas fa-edit ${styles.ManageChampion}`} />
                 </Link>
                 <i
-                  onClick={handleDelete}
+                  onClick={toggleModal}
                   className={`fas fa-trash-alt ${styles.ManageChampion}`}
                 />
               </div>
             )}
+            <Modal
+              isOpen={modalIsOpen}
+              onRequestClose={() => setModalIsOpen(false)}
+              ariaHideApp={false}
+              contentLabel="My dialog"
+              className={styles.Modal}
+              overlayClassName={styles.Overlay}
+              closeTimeoutMS={200}
+            >
+              <div className={styles.ModalText}>
+                <p>Are you sure you want to delete this champion?</p>
+              </div>
+              <div className={styles.ModalButtons}>
+                <Button
+                  className={styles.Button}
+                  onClick={() => setModalIsOpen(false)}
+                >
+                  Cancel
+                </Button>
+                <Button
+                  className={styles.Button}
+                  onClick={() => handleDelete()}
+                >
+                  Delete
+                </Button>
+              </div>
+            </Modal>
           </Row>
           <hr className="mt-5 mb-5"></hr>
           <Row>{lore}</Row>
