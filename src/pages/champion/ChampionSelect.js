@@ -7,7 +7,7 @@ import TopIcon from "../../assets/role_icons/top.png";
 import MiddleIcon from "../../assets/role_icons/middle.png";
 import styles from "../../styles/ChampionSelect.module.css";
 import ChampionCard from "../../components/ChampionCard";
-import { Container } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useSearchQueryContext } from "../../contexts/SearchQueryContext";
 import LoadingSpinner from "../../components/LoadingSpinner";
@@ -19,6 +19,7 @@ const ChampionSelect = () => {
   const [activeFilter, setActiveFilter] = useState(null);
   const [previousFilter, setPreviousFilter] = useState(null);
   const { searchQuery } = useSearchQueryContext();
+  const [header, setHeader] = useState("All");
 
   const fetchChampionData = useCallback(
     async (roleFilter = "") => {
@@ -46,11 +47,13 @@ const ChampionSelect = () => {
       setActiveFilter(null);
       setPreviousFilter(filter);
       fetchChampionData();
+      setHeader("All");
     } else {
       setFilterSelected(true);
       setPreviousFilter(activeFilter);
       setActiveFilter(filter);
       fetchChampionData(`&role=${filter}`);
+      setHeader(filter);
     }
   };
 
@@ -107,6 +110,10 @@ const ChampionSelect = () => {
   return (
     <div className={styles.RoleIconSection}>
       <div>{RoleIcons}</div>
+      <Row className="mt-5">
+        <h1 className={styles.Header}>Champions - {header}</h1>
+        <hr></hr>
+      </Row>
 
       <Container className="mt-5">
         <div className={`${styles.Grid}`}>
