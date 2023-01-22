@@ -53,3 +53,15 @@ input:-webkit-autofill:active {
 input:-webkit-autofill {
   -webkit-text-fill-color: #cbae71 !important;
 }
+
+input[type="password"] {
+  background-color: #222837;
+  color: #cbae71;
+}
+
+input[type="password"]:focus {
+  border: 2px #cbae71 solid;
+  background-color: #222837;
+  box-shadow: none;
+  color: #cbae71;
+}
