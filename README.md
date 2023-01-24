@@ -44,15 +44,10 @@ Objective Text
 
 ### Site User
 
-|                |       |         |
-| :------------: | :---- | :------ |
-| As a Site User | I can | &check; |
-| As a Site User | I can | &check; |
-| As a Site User | I can | &check; |
-| As a Site User | I can | &check; |
-| As a Site User | I can | &check; |
-| As a Site User | I can | &check; |
-| As a Site User | I can | &check; |
+|                      |                                                                                                                                      |         |
+| :------------------: | :----------------------------------------------------------------------------------------------------------------------------------- | :------ |
+| As a Logged out User | I can create a new account via the sign up page which can be accessed via the navigation bar                                         | &check; |
+| As a Logged out User | I can view all champion cards that when clicked will navigate me to the champion page which displays information about that champion | &check; |
 
 ### Site Staff Member
 
