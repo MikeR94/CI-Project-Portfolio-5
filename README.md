@@ -34,7 +34,7 @@ You can view the live site here - <a href="https://ci-league-hub.herokuapp.com/"
 
 # Objective
 
-Objective Text
+For my fifth and final project, I intend to create an online resource for League of Legends enthusiasts where they can glean information about the champions, interact with the community, vote for their favourite champions and more. The main objective is to demonstrate a proficient understanding in creating a website that uses React JS for the front end and Django REST framework for the backend whilst adhering to agile methodologies, showcasing a strong focus on design and providing a positive user experience.
 
 [Back to top](#contents)
 
@@ -44,8 +44,8 @@ Objective Text
 
 | User type            | User story                                                                                                                           | State   |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
-| As a Logged out user | I can create a new account via the sign up page which can be accessed via the navigation bar                                         | &check; |
-| As a Logged out user | I can view all champion cards that when clicked will navigate me to the champion page which displays information about that champion | &check; |
+| As a logged out user | I can create a new account via the sign up page which can be accessed via the navigation bar                                         | &check; |
+| As a logged out user | I can view all champion cards that when clicked will navigate me to the champion page which displays information about that champion | &check; |
 | As a logged out user | I can see all the champion cards on the champion select page                                                                         | &check; |
 | As a logged out user | I can filter my search when looking for a champion                                                                                   | &check; |
 | As a logged out user | I can view all comments left by users on a champion page but not be able to comment until I have created an account                  | &check; |
