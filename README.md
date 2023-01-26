@@ -84,7 +84,12 @@ Site Structure here <br /><br />
   Typography here
 
 - ### Colour Scheme
-  Colour scheme here<br /><br />
+
+  The colour scheme that I decided to use consisted of rich black, light french beige, raisin black and white. This colour scheme gives off a very League of Legends style feeling which promotes a positive user experience.
+
+  ![Colour Theme](/src/assets/readme_images/colour-theme.png)
+
+  <br /><br />
 
 ## Project Management
 
