@@ -42,22 +42,26 @@ Objective Text
 
 ## User Stories
 
-### Site User
-
-|                      |                                                                                                                                      |         |
-| :------------------: | :----------------------------------------------------------------------------------------------------------------------------------- | :------ |
-| As a Logged out User | I can create a new account via the sign up page which can be accessed via the navigation bar                                         | &check; |
-| As a Logged out User | I can view all champion cards that when clicked will navigate me to the champion page which displays information about that champion | &check; |
-
-### Site Staff Member
-
-|                        |     |         |
-| :--------------------: | :-- | :------ |
-| As a Site Staff Member |     | &check; |
-| As a Site Staff Member |     | &check; |
-| As a Site Staff Member |     | &check; |
-| As a Site Staff Member |     | &check; |
-| As a Site Staff Member |     | &check; |
+| User type            | User story                                                                                                                           | State   |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
+| As a Logged out user | I can create a new account via the sign up page which can be accessed via the navigation bar                                         | &check; |
+| As a Logged out user | I can view all champion cards that when clicked will navigate me to the champion page which displays information about that champion | &check; |
+| As a logged out user | I can see all the champion cards on the champion select page                                                                         | &check; |
+| As a logged out user | I can filter my search when looking for a champion                                                                                   | &check; |
+| As a logged out user | I can view all comments left by users on a champion page but not be able to comment until I have created an account                  | &check; |
+| As a logged out user | I should be able to log into the website when I have created a valid account                                                         | &check; |
+| As a logged in user  | I can create, edit and delete a comment on a champion                                                                                | &check; |
+| As a logged in user  | I can upvote a champion if I wish to do so                                                                                           | &check; |
+| As a logged in user  | I can view the champion upvote leaderboard to see how all the champions are ranked against each other                                | &check; |
+| As a logged in user  | I can leave a comment about a champion on the champion page                                                                          | &check; |
+| As a logged in user  | I can delete a comment that I have created on the champions page                                                                     | &check; |
+| As a logged in user  | I should be able to log out of the website                                                                                           | &check; |
+| As a logged in user  | I should be able to remove my upvote from a champion if I wish to do so                                                              | &check; |
+| As a logged in user  | I can update my profile information such as my first name, last name and avatar image                                                | &check; |
+| As a logged in user  | I can view my profile page that displays information about my profile                                                                | &check; |
+| As a staff member    | I must have the ability to update the champions information so I can provide the most up to date information for consumers           | &check; |
+| As a staff member    | I must have the ability to delete a champion if necessary                                                                            | &check; |
+| As a staff member    | I must have the ability to be able to delete any inappropriate comments submitted by users                                           | &check; |
 
 ## Design Prototype
 
