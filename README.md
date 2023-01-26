@@ -65,7 +65,11 @@ For my fifth and final project, I intend to create an online resource for League
 
 ## Design Prototype
 
-Design Prototype<br /><br />
+When I decided that I wanted to create this project, as I've used [Figma](https://www.figma.com/) in my previous projects, I felt comfortable enough to start designing my project using this tool. As you can see in the image below, I created 3 pages, the home page, the main champion page which stores all the information and then an icons page where I can store the icons for quick reference. Because of these 3 pages, I was able to quickly created pages for the website that followed this exact theme.
+
+![Figma Design](/src/assets/readme_images/figma-design.png)
+
+<br /><br />
 
 [Back to top](#contents)
 
