@@ -328,7 +328,7 @@ function ChampionCreate() {
       <Row className="mt-5">
         <Col md={6} className={`${styles.ContentBackground} p-4 `}>
           <Form.Group controlId="name">
-            <Form.Label className="d-none">Name</Form.Label>
+            <Form.Label className={styles.FormLabel}>Name</Form.Label>
             <Form.Control
               className={styles.Input}
               type="text"
@@ -345,7 +345,7 @@ function ChampionCreate() {
           ))}
 
           <Form.Group controlId="alias">
-            <Form.Label className="d-none">Alias</Form.Label>
+            <Form.Label className={styles.FormLabel}>Alias</Form.Label>
             <Form.Control
               className={styles.Input}
               type="text"
@@ -362,7 +362,7 @@ function ChampionCreate() {
           ))}
 
           <Form.Group controlId="lore">
-            <Form.Label className="d-none">Lore</Form.Label>
+            <Form.Label className={styles.FormLabel}>Lore</Form.Label>
             <Form.Control
               className={styles.Input}
               type="text"
@@ -379,7 +379,7 @@ function ChampionCreate() {
           ))}
 
           <Form.Group controlId="passive_ability">
-            <Form.Label className="d-none">Passive</Form.Label>
+            <Form.Label className={styles.FormLabel}>Passive</Form.Label>
             <Form.Control
               className={styles.Input}
               type="text"
@@ -396,7 +396,9 @@ function ChampionCreate() {
           ))}
 
           <Form.Group controlId="passive_ability_description">
-            <Form.Label className="d-none">Passive Description</Form.Label>
+            <Form.Label className={styles.FormLabel}>
+              Passive Description
+            </Form.Label>
             <Form.Control
               className={styles.Input}
               type="text"
@@ -413,7 +415,7 @@ function ChampionCreate() {
           ))}
 
           <Form.Group controlId="ability_1">
-            <Form.Label className="d-none">Ability 1</Form.Label>
+            <Form.Label className={styles.FormLabel}>Ability 1</Form.Label>
             <Form.Control
               className={styles.Input}
               type="text"
@@ -430,7 +432,9 @@ function ChampionCreate() {
           ))}
 
           <Form.Group controlId="ability_1_description">
-            <Form.Label className="d-none">Ability 1 Description</Form.Label>
+            <Form.Label className={styles.FormLabel}>
+              Ability 1 Description
+            </Form.Label>
             <Form.Control
               className={styles.Input}
               type="text"
@@ -449,7 +453,7 @@ function ChampionCreate() {
 
         <Col md={6} className={`${styles.ContentBackground} p-4 `}>
           <Form.Group controlId="ability_2">
-            <Form.Label className="d-none">Ability 2</Form.Label>
+            <Form.Label className={styles.FormLabel}>Ability 2</Form.Label>
             <Form.Control
               className={styles.Input}
               type="text"
@@ -466,7 +470,9 @@ function ChampionCreate() {
           ))}
 
           <Form.Group controlId="ability_2_description">
-            <Form.Label className="d-none">Ability 2 Description</Form.Label>
+            <Form.Label className={styles.FormLabel}>
+              Ability 2 Description
+            </Form.Label>
             <Form.Control
               className={styles.Input}
               type="text"
@@ -483,7 +489,7 @@ function ChampionCreate() {
           ))}
 
           <Form.Group controlId="ability_3">
-            <Form.Label className="d-none">Ability 3</Form.Label>
+            <Form.Label className={styles.FormLabel}>Ability 3</Form.Label>
             <Form.Control
               className={styles.Input}
               type="text"
@@ -500,7 +506,9 @@ function ChampionCreate() {
           ))}
 
           <Form.Group controlId="ability_3_description">
-            <Form.Label className="d-none">Ability 3 Description</Form.Label>
+            <Form.Label className={styles.FormLabel}>
+              Ability 3 Description
+            </Form.Label>
             <Form.Control
               className={styles.Input}
               type="text"
@@ -517,7 +525,7 @@ function ChampionCreate() {
           ))}
 
           <Form.Group controlId="ultimate_ability">
-            <Form.Label className="d-none">Ultimate</Form.Label>
+            <Form.Label className={styles.FormLabel}>Ultimate</Form.Label>
             <Form.Control
               className={styles.Input}
               type="text"
@@ -534,7 +542,9 @@ function ChampionCreate() {
           ))}
 
           <Form.Group controlId="ultimate_ability_description">
-            <Form.Label className="d-none">Ultimate Description</Form.Label>
+            <Form.Label className={styles.FormLabel}>
+              Ultimate Description
+            </Form.Label>
             <Form.Control
               className={styles.Input}
               type="text"
@@ -554,7 +564,7 @@ function ChampionCreate() {
 
       <Row className={`${styles.ContentBackground} p-4`}>
         <Form.Group>
-          <Form.Label className="d-none">Select Role</Form.Label>
+          <Form.Label className={styles.FormLabel}>Role</Form.Label>
           <Form.Control
             as="select"
             name="role"
@@ -585,7 +595,7 @@ function ChampionCreate() {
         ))}
 
         <Form.Group>
-          <Form.Label className="d-none">Select Champ Class</Form.Label>
+          <Form.Label className={styles.FormLabel}>Champ Class</Form.Label>
           <Form.Control
             as="select"
             name="champ_class"
@@ -616,7 +626,7 @@ function ChampionCreate() {
         ))}
 
         <Form.Group>
-          <Form.Label className="d-none">Select Range</Form.Label>
+          <Form.Label className={styles.FormLabel}>Range</Form.Label>
           <Form.Control
             as="select"
             name="range"
@@ -647,7 +657,7 @@ function ChampionCreate() {
         ))}
 
         <Form.Group>
-          <Form.Label className="d-none">Difficulty</Form.Label>
+          <Form.Label className={styles.FormLabel}>Difficulty</Form.Label>
           <Form.Control
             as="select"
             name="difficulty"

@@ -15,6 +15,12 @@
   margin-bottom: 5px;
 }
 
+.FormLabel {
+  color: #797979;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
 input[type="text"]:focus {
   border: 2px #cbae71 solid;
   background-color: #222837;
@@ -27,7 +33,7 @@ input[type="file"] {
 }
 
 .ImageText {
-  color: #cbae71;
+  color: #797979;
   margin-bottom: 10px;
 }
 
