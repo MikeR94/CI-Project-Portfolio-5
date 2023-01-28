@@ -33,7 +33,7 @@
   color: #cbae71;
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 764px) {
   .RoleIconSection {
     margin-top: 150px;
   }
