@@ -11,6 +11,7 @@ import {
 import SearchBar from "./SearchBar";
 import axios from "axios";
 import StaffCrownIcon from "../assets/staff_crown.png";
+import { NotificationManager } from "react-notifications";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -25,8 +26,13 @@ const NavBar = () => {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
       history.push("/");
+      NotificationManager.success(
+        "You have successfully signed out",
+        "Success!"
+      );
     } catch (error) {
       console.log(error);
+      NotificationManager.error("There was an issue signing you out", "Error");
     }
   };
 
