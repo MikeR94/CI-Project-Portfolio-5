@@ -6,6 +6,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/ChampionCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import ImagePreview from "../../components/ImagePreview";
+import { NotificationManager } from "react-notifications";
 
 function ChampionCreate() {
   const champImageInput = useRef(null);
@@ -232,10 +233,18 @@ function ChampionCreate() {
     try {
       await axiosReq.post("/champions/create/", formData);
       history.push("/");
+      NotificationManager.success(
+        "Champion " + name + " was successfully created!",
+        "Success!"
+      );
     } catch (error) {
       if (error.response?.status !== 401) {
         setErrors(error.response?.data);
       }
+      NotificationManager.error(
+        "There wan issue creating this champion",
+        "Error"
+      );
     }
   };
 

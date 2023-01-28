@@ -30,6 +30,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import CommentCreateForm from "../comments/CommentCreateForm";
 import LoadingSpinner from "../../components/LoadingSpinner";
 import Modal from "react-modal";
+import { NotificationManager } from "react-notifications";
 
 const ChampionPage = () => {
   const { id } = useParams();
@@ -143,6 +144,10 @@ const ChampionPage = () => {
     try {
       await axiosRes.delete(`/champions/${id}/delete`);
       history.push("/");
+      NotificationManager.success(
+        "Champion " + name + " successfully deleted",
+        "Success!"
+      );
     } catch (error) {
       console.log(error);
     }
