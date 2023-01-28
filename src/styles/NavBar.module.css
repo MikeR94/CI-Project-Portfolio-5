@@ -4,6 +4,10 @@
   height: 80px;
 }
 
+.Logo {
+  cursor: pointer;
+}
+
 .DropdownMenu {
   color: #cbae71;
   text-align: center;

@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, Container, NavDropdown } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
-import { Link, NavLink, useHistory } from "react-router-dom";
+import { Link, NavLink, useHistory, useLocation } from "react-router-dom";
 import Avatar from "../components/Avatar";
 import {
   useCurrentUser,
@@ -16,6 +16,7 @@ import { NotificationManager } from "react-notifications";
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
+  const location = useLocation();
 
   const is_staff = currentUser?.is_staff;
 
@@ -33,6 +34,14 @@ const NavBar = () => {
     } catch (error) {
       console.log(error);
       NotificationManager.error("There was an issue signing you out", "Error");
+    }
+  };
+
+  const handleGoHomePage = () => {
+    if (location.pathname !== "/") {
+      history.push("/");
+    } else {
+      window.location.reload();
     }
   };
 
@@ -117,11 +126,15 @@ const NavBar = () => {
     <Navbar className={styles.NavBar} expand="md" fixed="top">
       <Container className={styles.Container}>
         <div className={`${styles.Block} ${styles.Left}`}>
-          <NavLink to="/">
-            <Navbar.Brand>
-              <img src={logo} alt="logo" height="80" />
-            </Navbar.Brand>
-          </NavLink>
+          <Navbar.Brand>
+            <img
+              src={logo}
+              className={styles.Logo}
+              alt="logo"
+              height="80"
+              onClick={handleGoHomePage}
+            />
+          </Navbar.Brand>
         </div>
         <div className={`${styles.Block} ${styles.Center}`}>
           <SearchBar></SearchBar>
