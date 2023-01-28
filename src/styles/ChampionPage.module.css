@@ -109,28 +109,35 @@
 }
 
 .CRDText {
-  margin-bottom: 9px;
   text-align: center;
   color: #797979;
   font-size: 12px;
   font-family: "Bungee", sans-serif;
+  margin-bottom: 20px;
 }
 
 .RangeIcon {
   width: 70px;
-  height: 60%;
-  margin-top: 10px;
+  height: 100%;
+  object-fit: contain;
 }
 
 .MeleeIcon {
   width: 150px;
-  height: 60%;
-  margin-top: 10px;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ClassIcon {
+  width: 100px;
+  height: 100%;
+  object-fit: contain;
 }
 
 .DifficultyIcon {
-  margin-top: 50px;
-  margin-bottom: 41px;
+  height: 100%;
+  width: 150px;
+  object-fit: contain;
 }
 
 .UpVoteTitle {
@@ -160,6 +167,14 @@
   font-family: "Bungee", sans-serif;
 }
 
+.CRDRow {
+  text-align: center;
+}
+
+.Lore {
+  padding: 20px;
+}
+
 @media all and (max-width: 1400px) {
   .Image {
     padding-top: 50px;
@@ -186,8 +201,63 @@
     padding-right: 50px;
   }
 }
+
 @media all and (max-width: 600px) {
   .Image {
     margin-top: 150px;
+  }
+}
+
+@media all and (max-width: 580px) {
+  .CRDRow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .CRDText {
+    text-align: center;
+    color: #797979;
+    font-size: 12px;
+    font-family: "Bungee", sans-serif;
+    margin-bottom: 50px;
+  }
+
+  .RangeIcon {
+    width: 70px;
+    height: 60%;
+    margin-bottom: 20px;
+  }
+
+  .MeleeIcon {
+    width: 150px;
+    height: 100%;
+    margin-bottom: 20px;
+  }
+
+  .ClassIcon {
+    width: 100px;
+    height: 100%;
+    margin-bottom: 20px;
+  }
+
+  .DifficultyIcon {
+    height: 100%;
+    width: 150px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .UpVoteText {
+    text-align: center;
+  }
+
+  .Lore {
+    text-align: center;
+  }
+
+  .Br {
+    display: none;
   }
 }

@@ -262,7 +262,7 @@ const ChampionPage = () => {
             </Modal>
           </Row>
           <hr className="mt-5 mb-5"></hr>
-          <Row>{lore}</Row>
+          <Row className={styles.Lore}>{lore}</Row>
           <hr className="mt-5 mb-5"></hr>
           <Row className="justify-content-center">
             <OverlayTrigger
@@ -335,28 +335,34 @@ const ChampionPage = () => {
             <div className={styles.AbilityName}>{ultimate_ability}</div>
           </Row>
           <hr className="mt-5 mb-5"></hr>
-          <Row className="text-center">
+          <Row className={styles.CRDRow}>
             <Col>
-              <div className={styles.CRDText}>Class</div>
-              <img alt="class icon" src={classIcon}></img>
+              <img
+                alt="class icon"
+                className={styles.ClassIcon}
+                src={classIcon}
+              ></img>
+              <div className={styles.CRDText}>{champ_class}</div>
             </Col>
             <Col>
-              <div className={styles.CRDText}>Range</div>
               <img
                 alt="range icon"
                 src={rangeImage}
                 className={isMelee ? styles.MeleeIcon : styles.RangeIcon}
               ></img>
+              <div className={styles.CRDText}>{range}</div>
             </Col>
             <Col>
-              <div className={styles.CRDText}>Difficulty</div>
               <img
                 alt="difficulty icon"
                 src={difficultyImage}
                 className={styles.DifficultyIcon}
               ></img>
+              <div className={styles.CRDText}>{difficulty}</div>
             </Col>
           </Row>
+          <br className={styles.Br}></br>
+          <br className={styles.Br}></br>
           <hr className="mt-5 mb-5"></hr>
           <Row className={styles.UpVoteTitle}>Up Vote</Row>
           <Row className="align-items-center">
