@@ -12,11 +12,14 @@ import ChampionEdit from "./pages/champion/ChampionEdit";
 import ChampionLeaderboard from "./pages/champion/ChampionLeaderboard";
 import ProfilePage from "./pages/profile/ProfilePage";
 import Footer from "./components/Footer";
+import { NotificationContainer } from "react-notifications";
+import "react-notifications/lib/notifications.css";
 
 function App() {
   return (
     <div className={styles.App}>
       <NavBar />
+      <NotificationContainer />
       <Container className={styles.Main}>
         <Switch>
           <Route

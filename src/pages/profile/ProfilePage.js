@@ -14,6 +14,7 @@ import Avatar from "../../components/Avatar";
 import styles from "../../styles/ProfilePage.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import LoadingSpinner from "../../components/LoadingSpinner";
+import { NotificationManager } from "react-notifications";
 
 const ProfilePage = () => {
   const { id } = useParams();
@@ -78,7 +79,7 @@ const ProfilePage = () => {
     }
     try {
       await axiosReq.put(`/profiles/${id}`, formData);
-      window.location.reload();
+      NotificationManager.success("Profile updated", "Success!");
     } catch (error) {
       console.log(error);
     }
