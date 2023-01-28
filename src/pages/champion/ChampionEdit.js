@@ -6,6 +6,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/ChampionCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import ImagePreview from "../../components/ImagePreview";
+import { NotificationManager } from "react-notifications";
 
 function ChampionEdit() {
   const champImageInput = useRef(null);
@@ -156,11 +157,20 @@ function ChampionEdit() {
     }
     try {
       await axiosReq.put(`/champions/${id}/edit`, formData);
-      history.push(`/`);
+      history.goBack();
+      NotificationManager.success(
+        "Champion " + name + " successfully edited",
+        "Success!"
+      );
+      setErrors({});
     } catch (error) {
       if (error.response?.status !== 401) {
         setErrors(error.response?.data);
       }
+      NotificationManager.error(
+        "There wan issue updating this champion",
+        "Error"
+      );
     }
   };
 
