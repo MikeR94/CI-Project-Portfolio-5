@@ -4,6 +4,7 @@ import { axiosRes } from "../../api/axiosDefaults";
 import styles from "../../styles/CommentCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Button, InputGroup } from "react-bootstrap";
+import { NotificationManager } from "react-notifications";
 
 function CommentEditForm(props) {
   const { id, comment, setShowEditForm, setCommentData } = props;
@@ -33,6 +34,7 @@ function CommentEditForm(props) {
         }),
       }));
       setShowEditForm(false);
+      NotificationManager.success("Your comment has been updated", "Success!");
     } catch (error) {
       console.log(error);
     }

@@ -6,6 +6,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import StaffCrownIcon from "../../assets/staff_crown.png";
+import { NotificationManager } from "react-notifications";
 
 const Comment = (props) => {
   const {
@@ -32,6 +33,14 @@ const Comment = (props) => {
         ...prevComments,
         results: prevComments.results.filter((comment) => comment.id !== id),
       }));
+      if (is_owner) {
+        NotificationManager.success(
+          "Your comment has been deleted",
+          "Success!"
+        );
+      } else {
+        NotificationManager.success("The comment has been deleted", "Success!");
+      }
     } catch (error) {
       console.log(error);
     }

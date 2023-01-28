@@ -6,6 +6,7 @@ import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import btnStyles from "../../styles/Button.module.css";
 import { Button } from "react-bootstrap";
+import { NotificationManager } from "react-notifications";
 
 function CommentCreateForm(props) {
   const { setCommentData, profile_avatar, champion } = props;
@@ -27,6 +28,10 @@ function CommentCreateForm(props) {
         results: [data, ...prevComments.results],
       }));
       setComment("");
+      NotificationManager.success(
+        "Your comment was added successfully",
+        "Success!"
+      );
     } catch (error) {
       console.log(error);
     }
