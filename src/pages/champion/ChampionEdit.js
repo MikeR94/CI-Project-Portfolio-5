@@ -656,7 +656,7 @@ function ChampionEdit() {
         ))}
       </Row>
 
-      <Row className={`${styles.ContentBackgroundImage} p-4`}>
+      <Row className={`${styles.ImageRow1} p-4`}>
         <Col className="text-center">
           <Form.Group controlId="champ_image">
             <Row>
@@ -745,7 +745,7 @@ function ChampionEdit() {
         </Col>
       </Row>
 
-      <Row className={`${styles.ContentBackgroundImage} p-4 mb-4`}>
+      <Row className={`${styles.ImageRow2} p-4 mb-4`}>
         <Col className="text-center">
           <Form.Group controlId="ability_2_image">
             <Row>
