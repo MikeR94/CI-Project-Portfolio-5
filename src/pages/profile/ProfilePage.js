@@ -62,10 +62,14 @@ const ProfilePage = () => {
     formData.append("avatar_image", avatar_image_blob, "image1.jpg");
     try {
       await axiosReq.put(`/profiles/${id}`, formData);
-      window.location.reload();
-      setImageChange(false); // might not need
+      NotificationManager.success("Profile avatar updated", "Success!");
+      setImageChange(false);
     } catch (error) {
       console.log(error);
+      NotificationManager.error(
+        "There was an issue updating your profile image",
+        "Error"
+      );
     }
   };
 
@@ -82,6 +86,10 @@ const ProfilePage = () => {
       NotificationManager.success("Profile updated", "Success!");
     } catch (error) {
       console.log(error);
+      NotificationManager.error(
+        "There was an issue updating your profile",
+        "Error"
+      );
     }
   };
 
