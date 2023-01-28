@@ -90,3 +90,9 @@ option {
   margin-bottom: 20px;
   color: #cbae71;
 }
+
+@media all and (max-width: 764px) {
+  .Header {
+    margin-top: 100px;
+  }
+}
