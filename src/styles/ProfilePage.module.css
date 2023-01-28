@@ -59,3 +59,9 @@ input[type="text"]:focus {
   color: #cbae71;
   margin-bottom: 10px;
 }
+
+@media all and (max-width: 764px) {
+  .Header {
+    margin-top: 100px;
+  }
+}
