@@ -23,6 +23,8 @@ const ProfilePage = () => {
   const [hasChanged, setHasChanged] = useState(false);
   const [hasLoaded, setHasLoaded] = useState(false);
   const [errors, setErrors] = useState({});
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [avatarHeight, setAvatarHeight] = useState(170);
   const [profileData, setProfileData] = useState({
     first_name: "",
     last_name: "",
@@ -34,6 +36,19 @@ const ProfilePage = () => {
     profileData;
 
   const avatar_image_ref = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+      if (screenWidth < 600) {
+        setAvatarHeight(120);
+      } else {
+        setAvatarHeight(170);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [screenWidth]);
 
   useEffect(() => {
     const fetchProfileData = async () => {
@@ -145,7 +160,7 @@ const ProfilePage = () => {
                 >
                   <Form.Label>
                     <div className={styles.AvatarRow}>
-                      <Avatar src={avatar_image} height={170}></Avatar>
+                      <Avatar src={avatar_image} height={avatarHeight}></Avatar>
                     </div>
                   </Form.Label>
                 </OverlayTrigger>
