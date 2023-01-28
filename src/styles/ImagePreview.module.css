@@ -2,3 +2,9 @@
   object-fit: cover;
   cursor: pointer;
 }
+
+.ImagePreviewHover {
+  filter: drop-shadow(0 0 0.2rem rgb(255, 217, 0));
+  object-fit: cover;
+  cursor: pointer;
+}
