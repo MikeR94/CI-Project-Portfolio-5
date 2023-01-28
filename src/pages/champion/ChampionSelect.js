@@ -66,19 +66,11 @@ const ChampionSelect = () => {
   const RoleIcons = (
     <>
       <RoleIcon
-        src={SupportIcon}
-        onClick={() => handleFilter("support")}
+        src={TopIcon}
+        onClick={() => handleFilter("top")}
         activeFilter={activeFilter}
         previousFilter={previousFilter}
-        filter="support"
-        height={50}
-      ></RoleIcon>
-      <RoleIcon
-        src={AdcIcon}
-        onClick={() => handleFilter("adc")}
-        activeFilter={activeFilter}
-        previousFilter={previousFilter}
-        filter="adc"
+        filter="top"
         height={50}
       ></RoleIcon>
       <RoleIcon
@@ -90,19 +82,27 @@ const ChampionSelect = () => {
         height={50}
       ></RoleIcon>
       <RoleIcon
-        src={TopIcon}
-        onClick={() => handleFilter("top")}
-        activeFilter={activeFilter}
-        previousFilter={previousFilter}
-        filter="top"
-        height={50}
-      ></RoleIcon>
-      <RoleIcon
         src={MiddleIcon}
         onClick={() => handleFilter("mid")}
         activeFilter={activeFilter}
         previousFilter={previousFilter}
         filter="mid"
+        height={50}
+      ></RoleIcon>
+      <RoleIcon
+        src={AdcIcon}
+        onClick={() => handleFilter("adc")}
+        activeFilter={activeFilter}
+        previousFilter={previousFilter}
+        filter="adc"
+        height={50}
+      ></RoleIcon>
+      <RoleIcon
+        src={SupportIcon}
+        onClick={() => handleFilter("support")}
+        activeFilter={activeFilter}
+        previousFilter={previousFilter}
+        filter="support"
         height={50}
       ></RoleIcon>
     </>
