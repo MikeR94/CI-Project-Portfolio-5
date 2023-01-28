@@ -4,9 +4,10 @@ import styles from "../../styles/Comment.module.css";
 import CommentEditForm from "./CommentEditForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Card, Button, Col, Container, Row } from "react-bootstrap";
 import StaffCrownIcon from "../../assets/staff_crown.png";
 import { NotificationManager } from "react-notifications";
+import Modal from "react-modal";
 
 const Comment = (props) => {
   const {
@@ -24,6 +25,11 @@ const Comment = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const is_staff_member = currentUser?.is_staff;
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const toggleModal = () => {
+    setModalIsOpen(!modalIsOpen);
+  };
 
   const handleDelete = async () => {
     try {
@@ -71,16 +77,43 @@ const Comment = (props) => {
                   </div>
                 )}
                 {is_staff_member && !showEditForm && (
-                  <div onClick={handleDelete}>
+                  <div onClick={toggleModal}>
                     <i className={`fas fa-trash-alt ${styles.ManageComment}`} />
                   </div>
                 )}
                 {is_owner && !showEditForm && !is_staff_member && (
-                  <div onClick={handleDelete}>
+                  <div onClick={toggleModal}>
                     <i className={`fas fa-trash-alt ${styles.ManageComment}`} />
                   </div>
                 )}
               </div>
+              <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={() => setModalIsOpen(false)}
+                ariaHideApp={false}
+                contentLabel="My dialog"
+                className={styles.Modal}
+                overlayClassName={styles.Overlay}
+                closeTimeoutMS={200}
+              >
+                <div className={styles.ModalText}>
+                  <p>Are you sure you want to delete this comment?</p>
+                </div>
+                <div className={styles.ModalButtons}>
+                  <Button
+                    className={styles.Button}
+                    onClick={() => setModalIsOpen(false)}
+                  >
+                    Cancel
+                  </Button>
+                  <Button
+                    className={styles.Button}
+                    onClick={() => handleDelete()}
+                  >
+                    Delete
+                  </Button>
+                </div>
+              </Modal>
             </Card.Header>
             <Card.Body>
               {showEditForm ? (

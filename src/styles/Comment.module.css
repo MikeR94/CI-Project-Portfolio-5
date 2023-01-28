@@ -36,6 +36,55 @@
   margin-right: 4px;
 }
 
+.Modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #cbae71;
+  background: #222837;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.ModalText {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 40px;
+}
+
+.Button {
+  font-size: 0.8rem;
+  align-self: center;
+  border-color: transparent;
+  padding: 8px 10px;
+  width: 130px;
+  background-color: grey;
+  color: #ffffff;
+}
+
+.Button:hover {
+  border-color: transparent;
+  cursor: pointer;
+  background-color: #cbae71 !important;
+}
+
+.ModalButtons {
+  display: flex;
+  justify-content: space-between;
+}
+
 @media all and (max-width: 500px) {
   .Date {
     display: none;
