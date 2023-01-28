@@ -22,6 +22,7 @@ const ProfilePage = () => {
   const [imageChange, setImageChange] = useState(false);
   const [hasChanged, setHasChanged] = useState(false);
   const [hasLoaded, setHasLoaded] = useState(false);
+  const [errors, setErrors] = useState({});
   const [profileData, setProfileData] = useState({
     first_name: "",
     last_name: "",
@@ -64,8 +65,11 @@ const ProfilePage = () => {
       await axiosReq.put(`/profiles/${id}`, formData);
       NotificationManager.success("Profile avatar updated", "Success!");
       setImageChange(false);
+      setErrors({});
     } catch (error) {
-      console.log(error);
+      if (error.response?.status !== 401) {
+        setErrors(error.response?.data);
+      }
       NotificationManager.error(
         "There was an issue updating your profile image",
         "Error"
@@ -84,8 +88,11 @@ const ProfilePage = () => {
     try {
       await axiosReq.put(`/profiles/${id}`, formData);
       NotificationManager.success("Profile updated", "Success!");
+      setErrors({});
     } catch (error) {
-      console.log(error);
+      if (error.response?.status !== 401) {
+        setErrors(error.response?.data);
+      }
       NotificationManager.error(
         "There was an issue updating your profile",
         "Error"
@@ -162,6 +169,12 @@ const ProfilePage = () => {
               )}
             </Form.Group>
           </Form>
+          {errors?.avatar_image?.map((message, idx) => (
+            <div key={idx} className={styles.FormError}>
+              {message}
+            </div>
+          ))}
+
           <Row className="mt-5 justify-content-center">
             <Col md={6} className={`${styles.ContentBackground} p-4 `}>
               <Form onSubmit={handleSubmit}>
@@ -179,6 +192,11 @@ const ProfilePage = () => {
                     onChange={handleChange}
                   />
                 </Form.Group>
+                {errors?.first_name?.map((message, idx) => (
+                  <div key={idx} className={styles.FormError}>
+                    {message}
+                  </div>
+                ))}
 
                 <Form.Group>
                   <Form.Label className={`${styles.InputText} mt-3`}>
@@ -194,6 +212,12 @@ const ProfilePage = () => {
                     onChange={handleChange}
                   />
                 </Form.Group>
+                {errors?.last_name?.map((message, idx) => (
+                  <div key={idx} className={styles.FormError}>
+                    {message}
+                  </div>
+                ))}
+
                 <div className="d-flex justify-content-between">
                   {!disabled && is_owner && (
                     <Button
