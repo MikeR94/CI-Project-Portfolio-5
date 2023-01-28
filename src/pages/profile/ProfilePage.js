@@ -89,6 +89,7 @@ const ProfilePage = () => {
       await axiosReq.put(`/profiles/${id}`, formData);
       NotificationManager.success("Profile updated", "Success!");
       setErrors({});
+      setDisabled(true);
     } catch (error) {
       if (error.response?.status !== 401) {
         setErrors(error.response?.data);
