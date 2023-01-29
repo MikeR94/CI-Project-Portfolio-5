@@ -6,6 +6,7 @@ import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import axios from "axios";
 import { NotificationManager } from "react-notifications";
+import { setTokenTimestamp } from "../../utils/utils";
 
 const SignInForm = () => {
   const setCurrentUser = useSetCurrentUser();
@@ -31,6 +32,7 @@ const SignInForm = () => {
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       setCurrentUser(data.user);
+      setTokenTimestamp(data);
       history.push("/");
       NotificationManager.success(
         "Welcome " + username + ". You are now signed in",

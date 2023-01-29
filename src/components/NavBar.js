@@ -13,6 +13,7 @@ import axios from "axios";
 import StaffCrownIcon from "../assets/staff_crown.png";
 import { NotificationManager } from "react-notifications";
 import UserLoggedOutImage from "../assets/user-logged-out.png";
+import { removeTokenTimestamp } from "../utils/utils";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -27,7 +28,7 @@ const NavBar = () => {
     try {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
-      history.push("/");
+      removeTokenTimestamp();
       NotificationManager.success(
         "You have successfully signed out",
         "Success!"
