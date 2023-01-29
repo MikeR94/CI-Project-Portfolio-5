@@ -8,7 +8,7 @@ import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
-import SearchBar from "./SearchBar";
+import SearchBar from "../components/SearchBar";
 import axios from "axios";
 import StaffCrownIcon from "../assets/staff_crown.png";
 import { NotificationManager } from "react-notifications";
