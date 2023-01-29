@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, Container, NavDropdown } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
-import { Link, NavLink, useHistory, useLocation } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import Avatar from "../components/Avatar";
 import {
   useCurrentUser,
@@ -12,6 +12,7 @@ import SearchBar from "./SearchBar";
 import axios from "axios";
 import StaffCrownIcon from "../assets/staff_crown.png";
 import { NotificationManager } from "react-notifications";
+import UserLoggedOutImage from "../assets/user-logged-out.png";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -104,21 +105,25 @@ const NavBar = () => {
 
   const loggedOutMenu = (
     <>
-      {" "}
-      <NavLink
-        className={styles.NavLink}
-        activeClassName={styles.Active}
-        to="/signin"
+      <NavDropdown
+        title={<Avatar src={UserLoggedOutImage} height={60}></Avatar>}
+        id="nav-dropdown"
       >
-        <i className="fas fa-sign-in-alt"></i>Sign in
-      </NavLink>
-      <NavLink
-        to="/signup"
-        className={styles.NavLink}
-        activeClassName={styles.Active}
-      >
-        <i className="fas fa-user-plus"></i>Sign up
-      </NavLink>
+        <NavDropdown.Item
+          className={styles.DropdownMenu}
+          as={Link}
+          to="/signin"
+        >
+          Sign In
+        </NavDropdown.Item>
+        <NavDropdown.Item
+          className={styles.DropdownMenu}
+          as={Link}
+          to={`/signup`}
+        >
+          Sign Up
+        </NavDropdown.Item>
+      </NavDropdown>
     </>
   );
 
