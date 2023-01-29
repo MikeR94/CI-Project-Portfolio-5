@@ -63,11 +63,6 @@ function App() {
             path="/champion/:id/edit"
             render={() => <ChampionEdit></ChampionEdit>}
           />
-          <Route
-            exact
-            path="/create"
-            render={() => <ChampionCreate></ChampionCreate>}
-          />
         </Switch>
       </Container>
       <Footer />
