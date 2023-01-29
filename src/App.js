@@ -14,6 +14,7 @@ import ProfilePage from "./pages/profile/ProfilePage";
 import Footer from "./components/Footer";
 import { NotificationContainer } from "react-notifications";
 import "react-notifications/lib/notifications.css";
+import PageNotFound from "./components/PageNotFound";
 
 function App() {
   return (
@@ -63,6 +64,7 @@ function App() {
             path="/champion/:id/edit"
             render={() => <ChampionEdit></ChampionEdit>}
           />
+          <Route render={() => <PageNotFound />} />
         </Switch>
       </Container>
       <Footer />
