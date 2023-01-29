@@ -13,7 +13,7 @@ const SearchBar = () => {
   return (
     <div className={`form-inline ${styles.SearchBar}`}>
       <input
-        type="search"
+        type="text"
         className="form-control"
         placeholder="Search for a champion"
         aria-label="Search"

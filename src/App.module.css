@@ -43,17 +43,6 @@ i:hover {
   transition: ease-in-out 0.3s;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px #222837 inset !important;
-}
-
-input:-webkit-autofill {
-  -webkit-text-fill-color: #cbae71 !important;
-}
-
 input[type="password"] {
   background-color: #222837;
   color: #cbae71;

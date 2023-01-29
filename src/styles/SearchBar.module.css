@@ -6,4 +6,20 @@
   align-items: center;
   margin: 0 auto;
   width: 80%;
+  border: none;
+  outline: none;
+}
+
+input[type="text"] {
+  background-color: #222837;
+  border: none;
+  color: #cbae71;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  background-color: #222837;
+  border: none;
+  color: #cbae71;
+  outline: none;
 }
