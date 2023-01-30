@@ -42,18 +42,18 @@ For my fifth and final project, I intend to create an online resource for League
 
 ## Project Goals
 
-1 - Build a project to help users gain knowledge about League of Legends
-2 - Ensure the project is fully responsive to cater for all user device screen sizes
-3 - Design an intuitive layout that promotes a positive user experience
-4 - Implement a theme that compliments the project
-5 - Allow users to quickly search for a champion
-6 - Allow users to filter champions by role
-7 - Give the users the ability to upvote and remove the upvote on a champion
-8 - Give the users the ability to view a champion leaderboard
-9 - Give the users the ability to create/edit and delete a comment on a champion
-10 - Allow staff members to be able to manage the website
-11 - Ensure users don't have access to staff member features
-12 - Require users to have an account to access additional features
+1 - Build a project to help users gain knowledge about League of Legends <br>
+2 - Ensure the project is fully responsive to cater for all user device screen sizes <br>
+3 - Design an intuitive layout that promotes a positive user experience <br>
+4 - Implement a theme that compliments the project <br>
+5 - Allow users to quickly search for a champion <br>
+6 - Allow users to filter champions by role <br>
+7 - Give the users the ability to upvote and remove the upvote on a champion <br>
+8 - Give the users the ability to view a champion leaderboard <br>
+9 - Give the users the ability to create/edit and delete a comment on a champion <br>
+10 - Allow staff members to be able to manage the website <br>
+11 - Ensure users don't have access to staff member features <br>
+12 - Require users to have an account to access additional features <br>
 
 ## User Stories
 
