@@ -98,7 +98,7 @@ This project was created using React which allows for the re-use of components t
 
 I've created a React Component Tree diagram for the League Hub so we can easily see the hierarchical order of each component, also known as a parent/child relationship
 
-<br /><br />
+<br />
 
 ![Component Tree](/src/assets/readme_images/component-tree.png)
 
