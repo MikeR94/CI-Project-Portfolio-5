@@ -10,6 +10,7 @@ You can view the live site here - <a href="https://ci-league-hub.herokuapp.com/"
 
 - [**Objective**](#objective)
 - [**User Experience UX**](#user-experience-ux)
+  - [Project Goals](#project-goals)
   - [User Stories](#user-stories)
   - [Design Prototype](#design-prototype)
   - [Site Structure](#site-structure)
@@ -91,9 +92,15 @@ When I decided that I wanted to create this project, as I've used [Figma](https:
 
 [Back to top](#contents)
 
-## Site Structure
+## Components
 
-Site Structure here <br /><br />
+This project was created using React which allows for the re-use of components throughout the application. A react component is able to perform a multitude of operations such as render elements on a page, display data, handle events/user interactions, communicate to other components via props and much more.<br /><br />
+
+I've created a React Component Tree diagram for the League Hub so we can easily see the hierarchical order of each component, also known as a parent/child relationship
+
+<br /><br />
+
+![Component Tree](/src/assets/readme_images/component-tree.png)
 
 ## Design Choices
 
