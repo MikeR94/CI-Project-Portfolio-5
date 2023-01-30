@@ -40,28 +40,42 @@ For my fifth and final project, I intend to create an online resource for League
 
 # User Experience (UX)
 
+## Project Goals
+
+1 - Build a project to help users gain knowledge about League of Legends
+2 - Ensure the project is fully responsive to cater for all user device screen sizes
+3 - Design an intuitive layout that promotes a positive user experience
+4 - Implement a theme that compliments the project
+5 - Allow users to quickly search for a champion
+6 - Allow users to filter champions by role
+7 - Give the users the ability to upvote and remove the upvote on a champion
+8 - Give the users the ability to view a champion leaderboard
+9 - Give the users the ability to create/edit and delete a comment on a champion
+10 - Allow staff members to be able to manage the website
+11 - Ensure users don't have access to staff member features
+12 - Require users to have an account to access additional features
+
 ## User Stories
 
-| User type            | User story                                                                                                                           | State   |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
-| As a logged out user | I can create a new account via the sign up page which can be accessed via the navigation bar                                         | &check; |
-| As a logged out user | I can view all champion cards that when clicked will navigate me to the champion page which displays information about that champion | &check; |
-| As a logged out user | I can see all the champion cards on the champion select page                                                                         | &check; |
-| As a logged out user | I can filter my search when looking for a champion                                                                                   | &check; |
-| As a logged out user | I can view all comments left by users on a champion page but not be able to comment until I have created an account                  | &check; |
-| As a logged out user | I should be able to log into the website when I have created a valid account                                                         | &check; |
-| As a logged in user  | I can create, edit and delete a comment on a champion                                                                                | &check; |
-| As a logged in user  | I can upvote a champion if I wish to do so                                                                                           | &check; |
-| As a logged in user  | I can view the champion upvote leaderboard to see how all the champions are ranked against each other                                | &check; |
-| As a logged in user  | I can leave a comment about a champion on the champion page                                                                          | &check; |
-| As a logged in user  | I can delete a comment that I have created on the champions page                                                                     | &check; |
-| As a logged in user  | I should be able to log out of the website                                                                                           | &check; |
-| As a logged in user  | I should be able to remove my upvote from a champion if I wish to do so                                                              | &check; |
-| As a logged in user  | I can update my profile information such as my first name, last name and avatar image                                                | &check; |
-| As a logged in user  | I can view my profile page that displays information about my profile                                                                | &check; |
-| As a staff member    | I must have the ability to update the champions information so I can provide the most up to date information for consumers           | &check; |
-| As a staff member    | I must have the ability to delete a champion if necessary                                                                            | &check; |
-| As a staff member    | I must have the ability to be able to delete any inappropriate comments submitted by users                                           | &check; |
+| User type            | User story                                                                                                                           | Project Goal  | State   |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------- | ------- |
+| As a logged out user | I can create a new account via the sign up page which can be accessed via the navigation bar                                         | 1, 3, 11 12   | &check; |
+| As a logged out user | I can view all champion cards that when clicked will navigate me to the champion page which displays information about that champion | 1, 2, 3, 4    | &check; |
+| As a logged out user | I can see all the champion cards on the champion select page                                                                         | 1, 2, 3, 4    | &check; |
+| As a logged out user | I can filter my search when looking for a champion                                                                                   | 2, 3, 4, 5, 6 | &check; |
+| As a logged out user | I can view all comments left by users on a champion page but not be able to comment until I have created an account                  | 3, 12         | &check; |
+| As a logged out user | I should be able to log into the website when I have created a valid account                                                         | 11, 12        | &check; |
+| As a logged in user  | I can upvote a champion if I wish to do so                                                                                           | 7, 12         | &check; |
+| As a logged in user  | I can view the champion upvote leaderboard to see how all the champions are ranked against each other                                | 8, 12         | &check; |
+| As a logged in user  | I can leave a comment about a champion on the champion page                                                                          | 9, 12         | &check; |
+| As a logged in user  | I can delete a comment that I have created on the champions page                                                                     | 9, 12         | &check; |
+| As a logged in user  | I should be able to log out of the website                                                                                           | 3, 12         | &check; |
+| As a logged in user  | I should be able to remove my upvote from a champion if I wish to do so                                                              | 7, 12         | &check; |
+| As a logged in user  | I can update my profile information such as my first name, last name and avatar image                                                | 12            | &check; |
+| As a logged in user  | I can view my profile page that displays information about my profile                                                                | 3, 12         | &check; |
+| As a staff member    | I must have the ability to update the champions information so I can provide the most up to date information for consumers           | 10, 11        | &check; |
+| As a staff member    | I must have the ability to delete a champion if necessary                                                                            | 10, 11        | &check; |
+| As a staff member    | I must have the ability to be able to delete any inappropriate comments submitted by users                                           | 10, 11        | &check; |
 
 <br /><br />
 
