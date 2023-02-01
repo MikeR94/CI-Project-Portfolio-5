@@ -20,7 +20,7 @@ const SearchBar = () => {
         value={searchQuery}
         onChange={(event) => {
           setSearchQuery(event.target.value);
-          history.push("/");
+          history.push("/home");
         }}
       />
     </div>

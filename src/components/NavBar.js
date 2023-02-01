@@ -39,6 +39,10 @@ const NavBar = () => {
     }
   };
 
+  // if (location.pathname === "/") {
+  //   return null;
+  // }
+
   const handleGoHomePage = () => {
     if (location.pathname !== "/") {
       history.push("/");

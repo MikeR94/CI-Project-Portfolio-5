@@ -15,6 +15,7 @@ import Footer from "./components/Footer";
 import { NotificationContainer } from "react-notifications";
 import "react-notifications/lib/notifications.css";
 import PageNotFound from "./components/PageNotFound";
+import SplashPage from "./pages/splash/SplashPage";
 
 function App() {
   return (
@@ -23,9 +24,10 @@ function App() {
       <NotificationContainer />
       <Container className={styles.Main}>
         <Switch>
+          <Route exact path="/" render={() => <SplashPage></SplashPage>} />
           <Route
             exact
-            path="/"
+            path="/home"
             render={() => <ChampionSelect></ChampionSelect>}
           />
           <Route
