@@ -1,9 +1,21 @@
-.SplashContainer {
+.SplashBackground {
+  background-image: url("../assets/splash_images/splash_image.webp");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  filter: grayscale(100);
+  opacity: 0.05;
+  z-index: 1;
+}
+
+.InnerContainer {
   height: 100vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  margin-top: -100px;
 }
 
 .WelcomeText {
@@ -11,35 +23,19 @@
   font-weight: bold;
   color: #cbae71;
   text-align: center;
-  margin-top: -80px;
+  align-items: center;
+  justify-content: center;
+}
+
+.ButtonRow {
+  justify-content: center;
 }
 
 .DescriptionText {
-  color: grey;
+  color: #cbae71;
   padding: 20px;
   font-size: 18px;
   line-height: 1.5;
   text-align: center;
-}
-
-.TextImageRow {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin-top: 150px;
-}
-
-.SplashImage {
-  border-radius: 5%;
-  width: 100%;
-  animation: fadeIn 2s;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  justify-content: center;
 }

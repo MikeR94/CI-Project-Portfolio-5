@@ -39,9 +39,9 @@ const NavBar = () => {
     }
   };
 
-  // if (location.pathname === "/") {
-  //   return null;
-  // }
+  if (location.pathname === "/") {
+    return null;
+  }
 
   const handleGoHomePage = () => {
     if (location.pathname !== "/") {

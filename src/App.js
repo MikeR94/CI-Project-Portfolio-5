@@ -1,7 +1,7 @@
 import styles from "./App.module.css";
 import NavBar from "./components/NavBar";
 import Container from "react-bootstrap/Container";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
 import SignUpForm from "./pages/auth/SignUpForm";
 import "./api/axiosDefaults";
 import SignInForm from "./pages/auth/SignInForm";
@@ -18,58 +18,79 @@ import PageNotFound from "./components/PageNotFound";
 import SplashPage from "./pages/splash/SplashPage";
 
 function App() {
+  const location = useLocation();
+
+  let splashPage = true;
+  let mainSite = false;
+
+  if (location.pathname === "/") {
+    splashPage = true;
+    mainSite = false;
+  } else {
+    mainSite = true;
+    splashPage = false;
+  }
+
   return (
     <div className={styles.App}>
-      <NavBar />
-      <NotificationContainer />
-      <Container className={styles.Main}>
+      {splashPage && (
         <Switch>
           <Route exact path="/" render={() => <SplashPage></SplashPage>} />
-          <Route
-            exact
-            path="/home"
-            render={() => <ChampionSelect></ChampionSelect>}
-          />
-          <Route
-            exact
-            path="/profile/:id"
-            render={() => <ProfilePage></ProfilePage>}
-          />
-          <Route
-            exact
-            path="/leaderboard"
-            render={() => <ChampionLeaderboard></ChampionLeaderboard>}
-          />
-          <Route
-            exact
-            path="/signin"
-            render={() => <SignInForm></SignInForm>}
-          />
-          <Route
-            exact
-            path="/signup"
-            render={() => <SignUpForm></SignUpForm>}
-          />
-          <Route
-            exact
-            path="/champion/:id"
-            render={() => <ChampionPage></ChampionPage>}
-          />
-          <Route
-            exact
-            path="/create"
-            render={() => <ChampionCreate></ChampionCreate>}
-          />
-
-          <Route
-            exact
-            path="/champion/:id/edit"
-            render={() => <ChampionEdit></ChampionEdit>}
-          />
-          <Route render={() => <PageNotFound />} />
         </Switch>
-      </Container>
-      <Footer />
+      )}
+      {mainSite && (
+        <>
+          <NavBar />
+          <NotificationContainer />
+          <Container className={styles.Main}>
+            <Switch>
+              <Route
+                exact
+                path="/home"
+                render={() => <ChampionSelect></ChampionSelect>}
+              />
+              <Route
+                exact
+                path="/profile/:id"
+                render={() => <ProfilePage></ProfilePage>}
+              />
+              <Route
+                exact
+                path="/leaderboard"
+                render={() => <ChampionLeaderboard></ChampionLeaderboard>}
+              />
+              <Route
+                exact
+                path="/signin"
+                render={() => <SignInForm></SignInForm>}
+              />
+              <Route
+                exact
+                path="/signup"
+                render={() => <SignUpForm></SignUpForm>}
+              />
+              <Route
+                exact
+                path="/champion/:id"
+                render={() => <ChampionPage></ChampionPage>}
+              />
+              <Route
+                exact
+                path="/create"
+                render={() => <ChampionCreate></ChampionCreate>}
+              />
+
+              <Route
+                exact
+                path="/champion/:id/edit"
+                render={() => <ChampionEdit></ChampionEdit>}
+              />
+              <Route render={() => <PageNotFound />} />
+            </Switch>
+          </Container>
+          <Footer />
+        </>
+      )}
     </div>
   );
 }
