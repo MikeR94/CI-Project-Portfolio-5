@@ -78,7 +78,7 @@ For my fifth and final project, I intend to create an online resource for League
 | As a staff member    | I must have the ability to delete a champion if necessary                                                                            | 10, 11        | &check; |
 | As a staff member    | I must have the ability to be able to delete any inappropriate comments submitted by users                                           | 10, 11        | &check; |
 
-<br /><br />
+<br />
 
 [Back to top](#contents)
 
@@ -106,7 +106,7 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 - ### Typography
 
-  Typography here
+  The fonts chosen for this project have been a combination of both DM Sans for informative/long text and then I used Bungee for the names, headlines and titles. Different font sizes have been used throughout the website where appropriate. All fonts will fall back to sans-serif if the DM Sans or Bungee fonts can't be loaded.
 
 - ### Colour Scheme
 
@@ -114,7 +114,7 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
   ![Colour Theme](/src/assets/readme_images/colour-theme.png)
 
-  <br /><br />
+  <br />
 
 ## Project Management
 
