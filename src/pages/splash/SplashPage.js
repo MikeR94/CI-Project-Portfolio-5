@@ -1,5 +1,12 @@
 import React from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import {
+  Button,
+  Col,
+  Container,
+  OverlayTrigger,
+  Row,
+  Tooltip,
+} from "react-bootstrap";
 import styles from "../../styles/Splash.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Link } from "react-router-dom";
@@ -24,35 +31,52 @@ const SplashPage = () => {
         </Row>
         <Row className={styles.FeatureRow}>
           <Col className={styles.FeatureCol}>
-            <img
-              className={styles.ActiveImage}
-              src={ChampionImage}
-              alt="Champion"
-            ></img>
+            <OverlayTrigger placement="top" overlay={<Tooltip>Live</Tooltip>}>
+              <img
+                className={styles.ActiveImage}
+                src={ChampionImage}
+                alt="Champion"
+              ></img>
+            </OverlayTrigger>
             <p className={styles.FeatureText}>Champions</p>
           </Col>
           <Col className={styles.FeatureCol}>
-            <img
-              className={styles.InactiveImage}
-              src={ItemImage}
-              alt="Item"
-            ></img>
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>Coming soon</Tooltip>}
+            >
+              <img
+                className={styles.InactiveImage}
+                src={ItemImage}
+                alt="Item"
+              ></img>
+            </OverlayTrigger>
             <p className={styles.FeatureText}>Items</p>
           </Col>
           <Col className={styles.FeatureCol}>
-            <img
-              className={styles.InactiveImage}
-              src={TrophyImage}
-              alt="Trophy"
-            ></img>
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>Coming soon</Tooltip>}
+            >
+              <img
+                className={styles.InactiveImage}
+                src={TrophyImage}
+                alt="Trophy"
+              ></img>
+            </OverlayTrigger>
             <p className={styles.FeatureText}>Events</p>
           </Col>
           <Col className={styles.FeatureCol}>
-            <img
-              className={styles.InactiveImage}
-              src={NewsImage}
-              alt="News"
-            ></img>
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>Coming soon</Tooltip>}
+            >
+              <img
+                className={styles.InactiveImage}
+                src={NewsImage}
+                alt="News"
+              ></img>
+            </OverlayTrigger>
             <p className={styles.FeatureText}>News</p>
           </Col>
         </Row>

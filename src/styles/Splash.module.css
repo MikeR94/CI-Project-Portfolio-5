@@ -60,6 +60,7 @@
 .FeatureCol {
   text-align: center;
   margin-top: 100px;
+  z-index: 20;
 }
 
 .FeatureText {
