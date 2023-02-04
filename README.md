@@ -166,11 +166,17 @@ Libraries
 
 - ## Code Validation
 
-  - Code Validation Here
+  ![JSX Compiler](/src/assets/readme_images/jsx-compiler.png)
 
 - ## Lighthouse Testing
 
-  - Lighthouse Testing Here<br /><br />
+  ![Lighthouse Desktop](/src/assets/readme_images/lighthouse-desktop.png)
+
+  <br>
+
+  ![Lighthouse Mobile](/src/assets/readme_images/lighthouse-mobile.png)
+
+  Performance to be improved
 
 - ## Accessibility Testing
 
