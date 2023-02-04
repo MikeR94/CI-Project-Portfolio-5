@@ -44,8 +44,8 @@ const NavBar = () => {
   }
 
   const handleGoHomePage = () => {
-    if (location.pathname !== "/") {
-      history.push("/");
+    if (location.pathname !== "/home") {
+      history.push("/home");
     } else {
       window.location.reload();
     }
@@ -68,7 +68,7 @@ const NavBar = () => {
           {currentUser?.username}
           <hr></hr>
         </div>
-        <NavDropdown.Item className={styles.DropdownMenu} as={Link} to="/">
+        <NavDropdown.Item className={styles.DropdownMenu} as={Link} to="/home">
           Home
         </NavDropdown.Item>
         <NavDropdown.Item
@@ -97,7 +97,7 @@ const NavBar = () => {
         <NavDropdown.Item
           className={styles.DropdownMenu}
           as={Link}
-          to="/"
+          to="/home"
           onClick={() => {
             handleSignOut();
           }}

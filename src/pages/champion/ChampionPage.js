@@ -134,7 +134,7 @@ const ChampionPage = () => {
         setHasLoaded(true);
       } catch (error) {
         console.log(error);
-        history.push("/");
+        history.push("/home");
       }
     };
     fetchChampion();
@@ -143,7 +143,7 @@ const ChampionPage = () => {
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/champions/${id}/delete`);
-      history.push("/");
+      history.push("/home");
       NotificationManager.success(
         "Champion " + name + " successfully deleted",
         "Success!"

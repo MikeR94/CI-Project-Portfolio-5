@@ -22,7 +22,7 @@ function ChampionEdit() {
   const [errors, setErrors] = useState({});
 
   if (!is_staff) {
-    history.push("/");
+    history.push("/home");
   }
 
   const [champData, setChampData] = useState({

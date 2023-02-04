@@ -25,7 +25,7 @@ function ChampionCreate() {
   const is_staff = currentUser?.is_staff;
 
   if (!is_staff) {
-    history.push("/");
+    history.push("/home");
   }
 
   const [champData, setChampData] = useState({
@@ -232,7 +232,7 @@ function ChampionCreate() {
 
     try {
       await axiosReq.post("/champions/create/", formData);
-      history.push("/");
+      history.push("/home");
       NotificationManager.success(
         "Champion " + name + " was successfully created!",
         "Success!"

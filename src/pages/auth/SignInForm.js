@@ -33,7 +33,7 @@ const SignInForm = () => {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       setCurrentUser(data.user);
       setTokenTimestamp(data);
-      history.push("/");
+      history.push("/home");
       NotificationManager.success(
         "Welcome " + username + ". You are now signed in",
         "Success!"
