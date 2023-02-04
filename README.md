@@ -152,13 +152,21 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 # Technologies Used
 
-- [React]() - Front end framework
+## Dependencies
 
-# Libraries
-
-Libraries
-
-- [axios]() - Library 1
+- [axios](https://www.npmjs.com/package/axios) - HTTP client for making network requests.
+- [bootstrap](https://getbootstrap.com/) - CSS framework for styling web pages.
+- [jwt-decode](https://jwt.io/) - Library for decoding JWT tokens.
+- [react](https://reactjs.org/) - JavaScript library for building user interfaces.
+- [react-bootstrap](https://react-bootstrap.github.io/) - React components for using Bootstrap with React.
+- [react-dom](https://reactjs.org/docs/react-dom.html) - React library for rendering components on the DOM
+- [react-infinite-scroll-component](https://www.npmjs.com/package/react-infinite-scroll-component) - Component for implementing infinite scrolling in React.
+- [react-modal](https://www.npmjs.com/package/react-modal) - Library for creating modal dialogs in React.
+- [react-notifications](https://www.npmjs.com/package/react-notifications) - Library for displaying notifications in React.
+- [react-paginate](https://www.npmjs.com/package/react-paginate) - Library for creating pagination controls in React.
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom) - Library for routing in single-page applications.
+- [react-scripts](https://www.npmjs.com/package/react-scripts) - Scripts for creating and building React projects with Create React App.
+- [web-vitals](https://web.dev/vitals/) - Library for measuring web performance metrics.
 
 [Back to top](#contents)
 
