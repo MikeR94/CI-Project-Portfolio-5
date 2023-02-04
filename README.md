@@ -118,12 +118,17 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 ## Project Management
 
-- ### Trello
-
-  Trello <br /><br />
-
 - ### GitHub Project Board
-  Github <br /><br />
+
+  To manage this project I utilised the GitHub project management features. I created a Kanban board so I could organise and manage my issues/tasks for the project and maintain a solid understanding of what is required to complete the project <br />
+
+  Furthermore, when adding my user stories, I decided to take advantage of the milestone feature and I added my EPICS there so I could manage the basic user stories required for release
+
+  ![Project Board](/src/assets/readme_images/league-hub-project-board.png)
+
+  <br>
+
+  ![Milestones](/src/assets/readme_images/league-hub-milestones.png)
 
 ## Existing Features For Site User
 
