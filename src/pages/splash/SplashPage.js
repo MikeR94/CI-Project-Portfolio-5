@@ -1,8 +1,12 @@
 import React from "react";
-import { Button, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import styles from "../../styles/Splash.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Link } from "react-router-dom";
+import ChampionImage from "../../assets/splash_images/champion.jpg";
+import ItemImage from "../../assets/splash_images/item.webp";
+import TrophyImage from "../../assets/splash_images/trophy.jpg";
+import NewsImage from "../../assets/splash_images/news.jpg";
 
 const SplashPage = () => {
   return (
@@ -17,6 +21,40 @@ const SplashPage = () => {
           provide the latest and most up to date information about each champion
           and will have upcoming additional features such as pro teams, latest
           league news, upcoming events and more.{" "}
+        </Row>
+        <Row className={styles.FeatureRow}>
+          <Col className={styles.FeatureCol}>
+            <img
+              className={styles.ActiveImage}
+              src={ChampionImage}
+              alt="Champion"
+            ></img>
+            <p className={styles.FeatureText}>Champions</p>
+          </Col>
+          <Col className={styles.FeatureCol}>
+            <img
+              className={styles.InactiveImage}
+              src={ItemImage}
+              alt="Item"
+            ></img>
+            <p className={styles.FeatureText}>Items</p>
+          </Col>
+          <Col className={styles.FeatureCol}>
+            <img
+              className={styles.InactiveImage}
+              src={TrophyImage}
+              alt="Trophy"
+            ></img>
+            <p className={styles.FeatureText}>Events</p>
+          </Col>
+          <Col className={styles.FeatureCol}>
+            <img
+              className={styles.InactiveImage}
+              src={NewsImage}
+              alt="News"
+            ></img>
+            <p className={styles.FeatureText}>News</p>
+          </Col>
         </Row>
         <Row className={styles.ButtonRow}>
           <Button as={Link} to="/home" className={btnStyles.Button}>

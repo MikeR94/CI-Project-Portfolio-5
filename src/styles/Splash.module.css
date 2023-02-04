@@ -1,5 +1,5 @@
 .SplashBackground {
-  background-image: url("../assets/splash_images/splash_image.webp");
+  background-image: url("../assets/splash_images/splash_image.jpg");
   background-size: cover;
   position: absolute;
   top: 0px;
@@ -29,6 +29,7 @@
 
 .ButtonRow {
   justify-content: center;
+  margin-top: 100px;
 }
 
 .DescriptionText {
@@ -38,4 +39,56 @@
   line-height: 1.5;
   text-align: center;
   justify-content: center;
+  margin-top: 100px;
+}
+
+.ActiveImage {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.InactiveImage {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: grayscale(100);
+}
+
+.FeatureCol {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.FeatureText {
+  margin-top: 10px;
+  color: #cbae71;
+}
+
+@media all and (max-width: 940px) {
+  .ActiveImage {
+    height: 100px;
+    width: 100px;
+  }
+
+  .InactiveImage {
+    height: 100px;
+    width: 100px;
+  }
+
+  .WelcomeText {
+    font-size: 40px;
+  }
+
+  .FeatureRow {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .FeatureCol {
+    margin-top: 20px;
+  }
 }
