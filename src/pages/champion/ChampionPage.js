@@ -374,21 +374,28 @@ const ChampionPage = () => {
                   check out the leaderboard!
                 </div>
               )}
-              {!upvotes_id ? (
+              {!upvotes_id && is_owner && (
                 <div className={styles.UpVoteText}>
                   Do you like this champion? Make sure you up-vote it by
                   clicking the arrow if you do!
                 </div>
-              ) : !is_owner ? (
+              )}{" "}
+              {!is_owner && !upvotes_id && (
                 <div className={styles.UpVoteText}>
-                  Do you like this champion? Make sure you up-vote it by
-                  clicking the arrow if you do!
+                  Do you like this champion? Make sure to log in so you can cast
+                  your vote!
                 </div>
-              ) : null}
+              )}
+              {upvotes_id && !is_owner && (
+                <div className={styles.UpVoteText}>
+                  Do you like this champion? Make sure to log in so you can cast
+                  your vote!
+                </div>
+              )}
             </Col>
             <Col lg={4}>
               <div className={styles.UpVoteIcon}>
-                {is_owner && upvotes_id ? (
+                {is_owner && upvotes_id && (
                   <OverlayTrigger
                     placement="top"
                     overlay={
@@ -399,12 +406,33 @@ const ChampionPage = () => {
                       <i className="fa fa-angle-down"></i>
                     </span>
                   </OverlayTrigger>
-                ) : (
+                )}
+                {is_owner && !upvotes_id && (
                   <OverlayTrigger
                     placement="top"
                     overlay={<Tooltip>Click to up vote this champion</Tooltip>}
                   >
                     <span onClick={handleUpVote}>
+                      <i className="fa fa-angle-up"></i>
+                    </span>
+                  </OverlayTrigger>
+                )}
+                {!is_owner && !upvotes_id && (
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={<Tooltip>Log in to cast your vote!</Tooltip>}
+                  >
+                    <span>
+                      <i className="fa fa-angle-up"></i>
+                    </span>
+                  </OverlayTrigger>
+                )}
+                {!is_owner && upvotes_id && (
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={<Tooltip>Log in to cast your vote!</Tooltip>}
+                  >
+                    <span>
                       <i className="fa fa-angle-up"></i>
                     </span>
                   </OverlayTrigger>
