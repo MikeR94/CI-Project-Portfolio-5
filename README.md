@@ -226,16 +226,85 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
   - Responsive testing [Responsive Design Checker](https://www.responsivedesignchecker.com/).<br /><br />
 
-- ## Manual Testing
-  Manual Testing
+- ## Manual Testing Pages
 
-| Status  | **Main Website - User Logged Out** |
-| :-----: | :--------------------------------- |
-| &check; | Manual test 1                      |
+| Page             | Expected Result                                                                                                   | Pass/Fail | Comments          |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------- | --------- | ----------------- |
+| Splash           | Loading the website renders the splash page                                                                       | &check;   |                   |
+| Splash           | The navigation and the footer components don't load                                                               | &check;   |                   |
+| Splash           | The feature icons display the relavent tooltip when the user hovers over one                                      | &check;   |                   |
+| Splash           | Hovering over the continue button turns the button gold                                                           | &check;   |                   |
+| Splash           | Clicking the continue button navigates the user to the home page                                                  | &check;   |                   |
+| Home             | The navigation bar is displayed to the user and all functionality works as per the navigation manual tests        | &check;   |                   |
+| Home             | The role icons are displayed to the user and all functionality works as per the role icon manual tests            | &check;   |                   |
+| Home             | The champion cards are displayed to the user and all functionality works as per the role icon manual tests        | &check;   |                   |
+| Champion Page    | The correct champion image is displayed to the user                                                               | &check;   |                   |
+| Champion Page    | The correct champion name is displayed to the user                                                                | &check;   |                   |
+| Champion Page    | The correct champion alias is displayed to the user                                                               | &check;   |                   |
+| Champion Page    | The edit champion icon is only displayed to staff members only                                                    | &check;   |                   |
+| Champion Page    | Clicking the edit champion icon loads the ChampionEdit component with the correct data                            | &check;   |                   |
+| Champion Page    | The delete champion icon is only displayed to staff members only                                                  | &check;   |                   |
+| Champion Page    | Clicking the delete champion icon loads a modal to the user                                                       | &check;   |                   |
+| Champion Page    | Clicking "delete" when the delete modal pops up deletes the champion and returns the user to the home page        | &check;   |                   |
+| Champion Page    | Clicking "cancel" when the delete modal pops up cancels the modal and returns the user to the Champion page       | &check;   |                   |
+| Champion Page    | The correct champion lore is displayed to the user                                                                | &check;   |                   |
+| Champion Page    | The correct passive ability image is displayed to the user                                                        | &check;   |                   |
+| Champion Page    | The correct passive ability name is displayed to the user                                                         | &check;   |                   |
+| Champion Page    | The correct passive ability description is displayed to the user when they hover over the passive ability image   | &check;   |                   |
+| Champion Page    | The correct ability 1 image is displayed to the user                                                              | &check;   |                   |
+| Champion Page    | The correct ability 1 name is displayed to the user                                                               | &check;   |                   |
+| Champion Page    | The correct ability 1 description is displayed to the user when they hover over the ability 1 image               | &check;   |                   |
+| Champion Page    | The correct ability 2 image is displayed to the user                                                              | &check;   |                   |
+| Champion Page    | The correct ability 2 name is displayed to the user                                                               | &check;   |                   |
+| Champion Page    | The correct ability 2 description is displayed to the user when they hover over the ability 2 image               | &check;   |                   |
+| Champion Page    | The correct ability 3 image is displayed to the user                                                              | &check;   |                   |
+| Champion Page    | The correct ability 3 name is displayed to the user                                                               | &check;   |                   |
+| Champion Page    | The correct ability 3 description is displayed to the user when they hover over the ability 3 image               | &check;   |                   |
+| Champion Page    | The correct ultimate ability image is displayed to the user                                                       | &check;   |                   |
+| Champion Page    | The correct ultimate ability name is displayed to the user                                                        | &check;   |                   |
+| Champion Page    | The correct ultimate ability description is displayed to the user when they hover over the ultimate ability image | &check;   |                   |
+| Champion Page    | The correct champion class image is displayed to the user                                                         | &check;   |                   |
+| Champion Page    | The correct champion class text is displayed to the user                                                          | &check;   |                   |
+| Champion Page    | The correct champion range image is displayed to the user                                                         | &check;   |                   |
+| Champion Page    | The correct champion range text is displayed to the user                                                          | &check;   |                   |
+| Champion Page    | The correct champion difficulty image is displayed to the user                                                    | &check;   |                   |
+| Champion Page    | The correct champion difficulty text is displayed to the user                                                     | &check;   |                   |
+| Champion Page    | The upvoting functionality works as per the upvoting manual tests                                                 | &check;   |                   |
+| Champion Page    | The comments are displayed to the user and all functionality works as per the comments manual tests               | &check;   |                   |
+| Sign In Page     | Clicking the username input box allows the user to input alphanumeric characters                                  | &check;   |                   |
+| Sign In Page     | Clicking the password input box allows the user to input alphanumeric characters                                  | &check;   |                   |
+| Sign In Page     | Clicking the sign in button will sign the user in if correct credentials have been entered                        | &check;   |                   |
+| Sign In Page     | Clicking the sign in button will not sign the user in if incorrect credentials have been entered                  | &check;   |                   |
+| Sign In Page     | Clicking the "sign up" text will navigate the user to the sign up page                                            | fail      | Needs to be fixed |
+| Sign Up Page     | Clicking the username input box allows the user to input alphanumeric characters                                  | &check;   |                   |
+| Sign Up Page     | Clicking the password input box allows the user to input alphanumeric characters                                  | &check;   |                   |
+| Sign Up Page     | Clicking the confirm password input box allows the user to input alphanumeric characters                          | &check;   |                   |
+| Sign Up Page     | Clicking the sign up button will sign the user up if correct credentials have been entered                        | &check;   |                   |
+| Sign Up Page     | Clicking the "sign in" text will navigate the user to the sign in page                                            | &check;   |                   |
+| Profile Page     | Clicking the profile avatar image will allow the user to select a new image for their profile avatar              | &check;   |                   |
+| Profile Page     | Selecting a new image for the profile avatar will render the save button                                          | &check;   |                   |
+| Profile Page     | Clicking the save button on the profile avatar will deal with the image update request to the API                 | &check;   |                   |
+| Profile Page     | Clicking the edit button will allow the user to edit the first name and last name input fields                    | &check;   |                   |
+| Profile Page     | Changing the value of the first name or last name renders the save button                                         | &check;   |                   |
+| Profile Page     | Clicking the save button will deal with the update request to the API                                             | &check;   |                   |
+| Leaderboard Page | The first 10 most upvoted champions are rendered to the user                                                      | &check;   |                   |
+| Leaderboard Page | Hovering over a row in the leaderboard turns the row gold                                                         | &check;   |                   |
+| Leaderboard Page | Clicking the pagination button renders the next correct 10 champions to the user                                  | &check;   |                   |
+| Champion Create  | The champion create page renders all the relevant input fields for a staff member to create a champion            | &check;   |                   |
+| Champion Create  | All the champion create input fields perform the correct functionality (text, dropdown, image)                    | &check;   |                   |
+| Champion Create  | Clicking the create button sends the create request to the API                                                    | &check;   |                   |
+| Champion Edit    | The champion edit page renders all the relevant input fields for a staff member to edit a champion                | &check;   |                   |
+| Champion Edit    | All the champion edit input fields perform the correct functionality (text, dropdown, image)                      | &check;   |                   |
+| Champion Edit    | Clicking the update button sends the edit request to the API                                                      | &check;   |                   |
 
-| Status  | **Main Website - User Logged In** |
-| :-----: | :-------------------------------- |
-| &check; | Manual test 1                     |
+- ## Manual Testing Features
+
+| Feature       | Expected Result | Pass/Fail | Comments |
+| ------------- | --------------- | --------- | -------- |
+| Navigation    | Test            | &check;   |          |
+| Role Icon     | Test            | &check;   |          |
+| Champion Card | Test            | &check;   |          |
+| Upvoting      | Test            | &check;   |          |
 
 - ## Browser Compatibility
   - Browser compatibility
