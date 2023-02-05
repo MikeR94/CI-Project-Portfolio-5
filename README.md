@@ -152,12 +152,23 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 # Technologies Used
 
-## Dependencies
+## Languages
+
+- [JavaScript](https://www.javascript.com/) - A dynamic programming language that's used for web development
+- [HTML5](https://en.wikipedia.org/wiki/HTML5) - A markup language used for structuring and presenting content
+- [CSS3](https://en.wikipedia.org/wiki/CSS) - A style sheet language used for describing the presentation of a document
+
+## Libraries and Frameworks
+
+- [React](https://reactjs.org/) - Advanced front-end JavaScript library for building user interfaces
+- [Bootstrap](https://getbootstrap.com/) - Popular CSS Framework for developing responsive and mobile-first websites
+- [Font Awesome](https://fontawesome.com/) - A font and icon toolkit based on CSS
+- [Google Fonts](https://fonts.google.com/) - A library of 1482 open source font families and APIs for convenient use via CSS
+
+## NPM Packages / Dependencies
 
 - [axios](https://www.npmjs.com/package/axios) - HTTP client for making network requests.
-- [bootstrap](https://getbootstrap.com/) - CSS framework for styling web pages.
 - [jwt-decode](https://jwt.io/) - Library for decoding JWT tokens.
-- [react](https://reactjs.org/) - JavaScript library for building user interfaces.
 - [react-bootstrap](https://react-bootstrap.github.io/) - React components for using Bootstrap with React.
 - [react-dom](https://reactjs.org/docs/react-dom.html) - React library for rendering components on the DOM
 - [react-infinite-scroll-component](https://www.npmjs.com/package/react-infinite-scroll-component) - Component for implementing infinite scrolling in React.
@@ -167,6 +178,24 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 - [react-router-dom](https://www.npmjs.com/package/react-router-dom) - Library for routing in single-page applications.
 - [react-scripts](https://www.npmjs.com/package/react-scripts) - Scripts for creating and building React projects with Create React App.
 - [web-vitals](https://web.dev/vitals/) - Library for measuring web performance metrics.
+
+## Other Tools
+
+- [a11y](https://color.a11y.com/Contrast/) - Used to test the contrast and accessibility.
+- [Favicon](https://favicon.io/) - Used to create the favicon.
+- [Compressor](https://compressor.io/) - Used to compress the images.
+- [VSCode](https://code.visualstudio.com/) - Used to create and edit the website.
+- [GitHub](https://github.com/) - Used to host and deploy the website as well as manage the project.
+- [GitBash](<https://en.wikipedia.org/wiki/Bash_(Unix_shell)>) - Terminal used to push changes to the GitHub repository.
+- [removebg](https://www.remove.bg/) - Used to remove background images.
+- [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Used to test responsiveness and debug.
+- [Responsive Design Checker](https://www.responsivedesignchecker.com/) - Used to test responsiveness.
+- [Figma](https://www.figma.com/) - Used to create mock-up designs.
+- [Heroku](https://dashboard.heroku.com) - Used to deploy the website
+- [HTML Validation](https://validator.w3.org/) - Used to validate HTML code
+- [CSS Validation](https://jigsaw.w3.org/css-validator/) - Used to validate CSS code
+- [JSHint Validation](https://jshint.com/) - Used to validate JavaScript code
+- [Microsoft Paint](https://en.wikipedia.org/wiki/Microsoft_Paint) - Used to create/edit images for the website
 
 [Back to top](#contents)
 
