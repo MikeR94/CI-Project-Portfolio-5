@@ -17,6 +17,7 @@ import MageIcon from "../assets/class_icons/mage.webp";
 import MarksmanIcon from "../assets/class_icons/marksman.webp";
 import SlayerIcon from "../assets/class_icons/slayer.webp";
 import SpecialistIcon from "../assets/class_icons/specialist.webp";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const Leaderboard = ({ champions }) => {
   return (
@@ -103,8 +104,7 @@ const Leaderboard = ({ champions }) => {
                   </tr>
                 ))
               ) : (
-                // TODO - Add a spinner
-                <h1>Loading....</h1>
+                <LoadingSpinner></LoadingSpinner>
               )}
             </>
           </tbody>

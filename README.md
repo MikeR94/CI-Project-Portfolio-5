@@ -88,7 +88,7 @@ When I decided that I wanted to create this project, as I've used [Figma](https:
 
 ![Figma Design](/src/assets/readme_images/figma-design.png)
 
-<br /><br />
+<br />
 
 [Back to top](#contents)
 
@@ -183,7 +183,6 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 - [a11y](https://color.a11y.com/Contrast/) - Used to test the contrast and accessibility.
 - [Favicon](https://favicon.io/) - Used to create the favicon.
-- [Compressor](https://compressor.io/) - Used to compress the images.
 - [VSCode](https://code.visualstudio.com/) - Used to create and edit the website.
 - [GitHub](https://github.com/) - Used to host and deploy the website as well as manage the project.
 - [GitBash](<https://en.wikipedia.org/wiki/Bash_(Unix_shell)>) - Terminal used to push changes to the GitHub repository.
@@ -226,14 +225,6 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 - ## Responsiveness Testing
 
   - Responsive testing [Responsive Design Checker](https://www.responsivedesignchecker.com/).<br /><br />
-
-- ## Compressing Images
-
-  - Compressing Images.<br /><br />
-
-- ## Automated Testing
-
-  - Automated testing
 
 - ## Manual Testing
   Manual Testing
