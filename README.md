@@ -245,19 +245,68 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 - ## Bugs Fixed
 
-  ### Bug 1
+  ### Upvoting/Downvoting
 
-  - Bug 1 issue <br /><br />
+  - When developing the project, I stumbled upon a bug that perplexed me for a few days. When I was writing the logic to allow users to upvote a champion and then downvote a champion, I created 2 methods to handle this logic. What I had done initially was set the champion data to the current values but changed the upvotes_count value to be "upvotes_count: upvotes_count + 1". I did the opposite for handling the downvote function. This would initially work however because an upvote_id is attached to the request, when the user had removed their upvote, it would nullify the upvote_id, not allowing them to re-upvote a champion if they wish to do so. I managed to overcome this issue by forcing a page reload which would refresh all the values, including the upvote_id, allowing the request to have the correct data to perform the request. This was a temporary fix until I could figure out a way around it. <br />
 
-  - Bug 1 solved
+  - I looked back through the Moments walkthrough project and realized where I had gone wrong. After changing the code to the below image, this would now allow for users to constantly upvote and downvote their champion without having to refresh the page and we can now take advantage of the state machine. I changed the code so that it would destructure the response data into a variable called "data" and then update the champData state object by spreading the previous champData values and then updating the two properties which had been effected (upvotes_count and upvotes_id).
+
+  ![Upvotes Bug](/src/assets/readme_images/upvote-bug-1.png)
+
+### Image Change
+
+- I overlooked a very obvious and quite silly mistake when I was originally writing the logic to handle when a user changes an image. Whenever a user would change ability 1, ability 2 or ability 3 image, the image would always be set to the ability 1 image. Upon looking into the code and trying to understand why this was happening, I realized that I had set the value of the ability 2 image and the ability 3 image to be the value of the ability 1 image.
+
+![Image Change Bug](/src/assets/readme_images/image-change-bug.png)
+
+### Comment Delete
+
+- Because I had written the logic of the comments CRUD functionality before implementing staff functionality, I encountered a bug where 2 delete icons would appear for a user that created the comment and they had the ability to delete other users comments even though they were not staff members.
+
+![Comment Bug 1](/src/assets/readme_images/comment-bug-1.png)
+
+- The correct functionality that I needed was below
+
+  - A user can delete their own comment
+  - A user can edit their own comment
+  - A user cant edit other peoples comments
+  - A user cant delete other peoples comments
+  - A staff member cant edit other peoples comments
+  - A staff member can delete other peoples comments
+  - A staff member can delete their own comment
+  - A staff member can edit their own comment
+
+- To achieve this I had to create a new constant that would determine if the current user is a staff member (line 27 in the below image)
+
+![Comment Bug 2](/src/assets/readme_images/comment-bug-4.png)
+
+- I then had create the logic in the JSX to allow for the correct functionality (line 79 and line 84 in the below image)
+
+![Comment Bug 3](/src/assets/readme_images/comment-bug-5.png)
+
+- This then fixed the issue and now I have the correct comment CRUD functionality
+
+**User view**
+
+![Comment Bug 4](/src/assets/readme_images/comment-bug-2.png)
+
+**Staff view**
+
+![Comment Bug 5](/src/assets/readme_images/comment-bug-3.png)
 
 - ## Bugs Unresolved
 
-  ### Buf Unresolved 1
+  ### Automatic log in
 
-  - Bug Unresolved 1 issue <br /><br />
+  - I currently have an unresolved bug where after a user logs out successfully, if they then refresh the page, they automatically get logged back in. I have implemented the functionality to remove tokens and I also went a step further by attempting to delete the users session in their local storage but the issue still persists.
 
-  - Bug Unresolved 1 solved
+  - Here is an image of the user successfully logging out
+
+  ![Log Out Bug 1](/src/assets/readme_images/log-out-bug-1.png)
+
+  - And after refreshing the page, they get logged back in
+
+  ![Log Out Bug 2](/src/assets/readme_images/log-out-bug-2.png)
 
 [Back to top](#contents)
 
