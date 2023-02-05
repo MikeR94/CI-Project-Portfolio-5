@@ -217,7 +217,11 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 - ## Accessibility Testing
 
-  - Accessibility testing <br /><br />
+  - I put the website through the [a11y](https://color.a11y.com/Contrast/) to test if there was any conflicting contrast issues with the colours selected but found no errors
+
+  ![a11y](/src/assets/readme_images/a11y.png)
+
+  <br /><br />
 
 - ## Responsiveness Testing
 
