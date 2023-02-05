@@ -25,11 +25,12 @@
   text-align: center;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
 
 .ButtonRow {
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 .DescriptionText {
@@ -91,5 +92,62 @@
 
   .FeatureCol {
     margin-top: 20px;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .ActiveImage {
+    height: 75px;
+    width: 75px;
+  }
+
+  .InactiveImage {
+    height: 75px;
+    width: 75px;
+  }
+
+  .WelcomeText {
+    font-size: 25px;
+  }
+
+  .DescriptionText {
+    font-size: 13px;
+  }
+
+  .FeatureRow {
+    margin-top: 10px;
+  }
+
+  .FeatureCol {
+    margin-top: 0px;
+  }
+}
+
+@media all and (max-width: 375px), all and (max-height: 750px) {
+  .ActiveImage {
+    height: 50px;
+    width: 50px;
+  }
+
+  .InactiveImage {
+    height: 50px;
+    width: 50px;
+  }
+
+  .WelcomeText {
+    font-size: 20px;
+  }
+
+  .DescriptionText {
+    font-size: 10px;
+    margin-top: 50px;
+  }
+
+  .FeatureRow {
+    margin-top: 0px;
+  }
+
+  .FeatureCol {
+    margin-top: 0px;
   }
 }
