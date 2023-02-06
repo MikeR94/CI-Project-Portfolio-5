@@ -132,9 +132,65 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 ## Existing Features For Site User
 
-- ### Existing Feature 1
+- ### Informative Splash Page
 
-  - Feature 1. <br /><br />
+  - Description. <br />
+
+- ### Responsive Navigation Bar
+
+  - Description. <br />
+
+- ### Search Bar
+
+  - Description. <br />
+
+- ### Role Icons
+
+  - Description. <br />
+
+- ### Champion Card
+
+  - Description. <br />
+
+- ### Account Creation
+
+  - Description. <br />
+
+- ### Profile Page
+
+  - Description. <br />
+
+- ### Page Not Found
+
+  - Description. <br />
+
+- ### Champion Create
+
+  - Description. <br />
+
+- ### Champion Edit
+
+  - Description. <br />
+
+- ### Champion Delete
+
+  - Description. <br />
+
+- ### Champion Information Page
+
+  - Description. <br />
+
+- ### Comments
+
+  - Description. <br />
+
+- ### Upvoting
+
+  - Description. <br />
+
+- ### Leaderboard
+
+  - Description. <br />
 
 ## Existing Features For Staff Member
 
