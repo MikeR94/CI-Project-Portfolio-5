@@ -36,7 +36,12 @@ You can view the live site here - <a href="https://ci-league-hub.herokuapp.com/"
   - [Leaderboard](#leaderboard)
   - [Notifications](#notifications)
 - [**Future Features**](#future-features)
-  - [Future Feature 1](#future-feature-1)
+  - [Items](#items)
+  - [Events](#events)
+  - [News](#news)
+  - [Teams](#teams)
+  - [Contact Form](#contact-form)
+  - [Improved Profile Page](#improved-profile-page)
 - [**Technologies Used**](#technologies-used)
 - [**Testing**](#testing)
 - [**Deployment To Heroku**](#deployment-to-heroku)
@@ -327,9 +332,29 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 - ## Future Features
 
-- ### Future Feature 1
+- ### Items
 
-  - Future Feature 1
+  - Description
+
+- ### Events
+
+  - Description
+
+- ### News
+
+  - Description
+
+- ### Teams
+
+  - Description
+
+- ### Contact Form
+
+  - Description
+
+- ### Improved Profile Page
+
+  - Description
 
 # Technologies Used
 
