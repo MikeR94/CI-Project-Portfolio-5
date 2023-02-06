@@ -18,10 +18,23 @@ You can view the live site here - <a href="https://ci-league-hub.herokuapp.com/"
   - [Typography](#typography)
   - [Colour Scheme](#colour-scheme)
   - [Project Management](#project-management)
-- [**Existing Features (Site User)**](#existing-features-for-site-user)
-  - [Existing Feature 1](#existing-feature-1)
-- [**Existing Features (Staff Member)**](#existing-features-for-staff-member)
-  - [Existing Staff Feature 1](#existing-staff-feature-1)
+- [**Existing Features**](#existing-features)
+  - [Informative Splash Page](#informative-splash-page)
+  - [Responsive Navigation Bar](#responsive-navigation-bar)
+  - [Search Bar](#search-bar)
+  - [Role Icons](#role-icons)
+  - [Champion Card](#champion-card)
+  - [Account Creation](#account-creation)
+  - [Profile Page](#profile-page)
+  - [Page Not Found](#page-not-found)
+  - [Champion Create](#champion-create)
+  - [Champion Edit](#champion-edit)
+  - [Champion Delete](#champion-delete)
+  - [Champion Information Page](#champion-information-page)
+  - [Comments](#comments)
+  - [Upvoting](#upvoting)
+  - [Leaderboard](#leaderboard)
+  - [Notifications](#notifications)
 - [**Future Features**](#future-features)
   - [Future Feature 1](#future-feature-1)
 - [**Technologies Used**](#technologies-used)
@@ -130,7 +143,7 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
   ![Milestones](/src/assets/readme_images/league-hub-milestones.png)
 
-## Existing Features For Site User
+## Existing Features
 
 - ### Informative Splash Page
 
@@ -309,12 +322,6 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
   ![Notification 3](/src/assets/readme_images/notification-3.png)
 
   <br />
-
-## Existing Features For Staff Member
-
-- ### Existing Feature For Staff Member 1
-
-  - Staff Feature 1 <br /><br />
 
 [Back to top](#contents)
 
