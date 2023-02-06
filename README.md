@@ -228,123 +228,125 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 - ## Manual Testing Pages
 
-| Page             | Expected Result                                                                                                   | Pass/Fail | Comments          |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------- | --------- | ----------------- |
-| Splash           | Loading the website renders the splash page                                                                       | Pass      |                   |
-| Splash           | The navigation and the footer components don't load                                                               | Pass      |                   |
-| Splash           | The feature icons display the relavent tooltip when the user hovers over one                                      | Pass      |                   |
-| Splash           | Hovering over the continue button turns the button gold                                                           | Pass      |                   |
-| Splash           | Clicking the continue button navigates the user to the home page                                                  | Pass      |                   |
-| Home             | The navigation bar is displayed to the user and all functionality works as per the navigation manual tests        | Pass      |                   |
-| Home             | The role icons are displayed to the user and all functionality works as per the role icon manual tests            | Pass      |                   |
-| Home             | The champion cards are displayed to the user and all functionality works as per the role icon manual tests        | Pass      |                   |
-| Champion Page    | The correct champion image is displayed to the user                                                               | Pass      |                   |
-| Champion Page    | The correct champion name is displayed to the user                                                                | Pass      |                   |
-| Champion Page    | The correct champion alias is displayed to the user                                                               | Pass      |                   |
-| Champion Page    | The edit champion icon is only displayed to staff members only                                                    | Pass      |                   |
-| Champion Page    | Clicking the edit champion icon loads the ChampionEdit component with the correct data                            | Pass      |                   |
-| Champion Page    | The delete champion icon is only displayed to staff members only                                                  | Pass      |                   |
-| Champion Page    | Clicking the delete champion icon loads a modal to the user                                                       | Pass      |                   |
-| Champion Page    | Clicking "delete" when the delete modal pops up deletes the champion and returns the user to the home page        | Pass      |                   |
-| Champion Page    | Clicking "cancel" when the delete modal pops up cancels the modal and returns the user to the Champion page       | Pass      |                   |
-| Champion Page    | The correct champion lore is displayed to the user                                                                | Pass      |                   |
-| Champion Page    | The correct passive ability image is displayed to the user                                                        | Pass      |                   |
-| Champion Page    | The correct passive ability name is displayed to the user                                                         | Pass      |                   |
-| Champion Page    | The correct passive ability description is displayed to the user when they hover over the passive ability image   | Pass      |                   |
-| Champion Page    | The correct ability 1 image is displayed to the user                                                              | Pass      |                   |
-| Champion Page    | The correct ability 1 name is displayed to the user                                                               | Pass      |                   |
-| Champion Page    | The correct ability 1 description is displayed to the user when they hover over the ability 1 image               | Pass      |                   |
-| Champion Page    | The correct ability 2 image is displayed to the user                                                              | Pass      |                   |
-| Champion Page    | The correct ability 2 name is displayed to the user                                                               | Pass      |                   |
-| Champion Page    | The correct ability 2 description is displayed to the user when they hover over the ability 2 image               | Pass      |                   |
-| Champion Page    | The correct ability 3 image is displayed to the user                                                              | Pass      |                   |
-| Champion Page    | The correct ability 3 name is displayed to the user                                                               | Pass      |                   |
-| Champion Page    | The correct ability 3 description is displayed to the user when they hover over the ability 3 image               | Pass      |                   |
-| Champion Page    | The correct ultimate ability image is displayed to the user                                                       | Pass      |                   |
-| Champion Page    | The correct ultimate ability name is displayed to the user                                                        | Pass      |                   |
-| Champion Page    | The correct ultimate ability description is displayed to the user when they hover over the ultimate ability image | Pass      |                   |
-| Champion Page    | The correct champion class image is displayed to the user                                                         | Pass      |                   |
-| Champion Page    | The correct champion class text is displayed to the user                                                          | Pass      |                   |
-| Champion Page    | The correct champion range image is displayed to the user                                                         | Pass      |                   |
-| Champion Page    | The correct champion range text is displayed to the user                                                          | Pass      |                   |
-| Champion Page    | The correct champion difficulty image is displayed to the user                                                    | Pass      |                   |
-| Champion Page    | The correct champion difficulty text is displayed to the user                                                     | Pass      |                   |
-| Champion Page    | The upvoting functionality works as per the upvoting manual tests                                                 | Pass      |                   |
-| Champion Page    | The comments are displayed to the user and all functionality works as per the comments manual tests               | Pass      |                   |
-| Sign In Page     | Clicking the username input box allows the user to input alphanumeric characters                                  | Pass      |                   |
-| Sign In Page     | Clicking the password input box allows the user to input alphanumeric characters                                  | Pass      |                   |
-| Sign In Page     | Clicking the sign in button will sign the user in if correct credentials have been entered                        | Pass      |                   |
-| Sign In Page     | Clicking the sign in button will not sign the user in if incorrect credentials have been entered                  | Pass      |                   |
-| Sign In Page     | Clicking the "sign up" text will navigate the user to the sign up page                                            | Fail      | Needs to be fixed |
-| Sign Up Page     | Clicking the username input box allows the user to input alphanumeric characters                                  | Pass      |                   |
-| Sign Up Page     | Clicking the password input box allows the user to input alphanumeric characters                                  | Pass      |                   |
-| Sign Up Page     | Clicking the confirm password input box allows the user to input alphanumeric characters                          | Pass      |                   |
-| Sign Up Page     | Clicking the sign up button will sign the user up if correct credentials have been entered                        | Pass      |                   |
-| Sign Up Page     | Clicking the "sign in" text will navigate the user to the sign in page                                            | Pass      |                   |
-| Profile Page     | Clicking the profile avatar image will allow the user to select a new image for their profile avatar              | Pass      |                   |
-| Profile Page     | Selecting a new image for the profile avatar will render the save button                                          | Pass      |                   |
-| Profile Page     | Clicking the save button on the profile avatar will deal with the image update request to the API                 | Pass      |                   |
-| Profile Page     | Clicking the edit button will allow the user to edit the first name and last name input fields                    | Pass      |                   |
-| Profile Page     | Changing the value of the first name or last name renders the save button                                         | Pass      |                   |
-| Profile Page     | Clicking the save button will deal with the update request to the API                                             | Pass      |                   |
-| Leaderboard Page | The first 10 most upvoted champions are rendered to the user                                                      | Pass      |                   |
-| Leaderboard Page | Hovering over a row in the leaderboard turns the row gold                                                         | Pass      |                   |
-| Leaderboard Page | Clicking the pagination button renders the next correct 10 champions to the user                                  | Pass      |                   |
-| Champion Create  | The champion create page renders all the relevant input fields for a staff member to create a champion            | Pass      |                   |
-| Champion Create  | All the champion create input fields perform the correct functionality (text, dropdown, image)                    | Pass      |                   |
-| Champion Create  | Clicking the create button sends the create request to the API                                                    | Pass      |                   |
-| Champion Edit    | The champion edit page renders all the relevant input fields for a staff member to edit a champion                | Pass      |                   |
-| Champion Edit    | All the champion edit input fields perform the correct functionality (text, dropdown, image)                      | Pass      |                   |
-| Champion Edit    | Clicking the update button sends the edit request to the API                                                      | Pass      |                   |
+| Page             | Expected Result                                                                                                   | Pass/Fail |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------- | --------- |
+| Splash           | Loading the website renders the splash page                                                                       | Pass      |
+| Splash           | The navigation and the footer components don't load                                                               | Pass      |
+| Splash           | The feature icons display the relavent tooltip when the user hovers over one                                      | Pass      |
+| Splash           | Hovering over the continue button turns the button gold                                                           | Pass      |
+| Splash           | Clicking the continue button navigates the user to the home page                                                  | Pass      |
+| Home             | The navigation bar is displayed to the user and all functionality works as per the navigation manual tests        | Pass      |
+| Home             | The role icons are displayed to the user and all functionality works as per the role icon manual tests            | Pass      |
+| Home             | The champion cards are displayed to the user and all functionality works as per the role icon manual tests        | Pass      |
+| Champion Page    | The correct champion image is displayed to the user                                                               | Pass      |
+| Champion Page    | The correct champion name is displayed to the user                                                                | Pass      |
+| Champion Page    | The correct champion alias is displayed to the user                                                               | Pass      |
+| Champion Page    | The edit champion icon is only displayed to staff members only                                                    | Pass      |
+| Champion Page    | Clicking the edit champion icon loads the ChampionEdit component with the correct data                            | Pass      |
+| Champion Page    | The delete champion icon is only displayed to staff members only                                                  | Pass      |
+| Champion Page    | Clicking the delete champion icon loads a modal to the user                                                       | Pass      |
+| Champion Page    | Clicking "delete" when the delete modal pops up deletes the champion and returns the user to the home page        | Pass      |
+| Champion Page    | Clicking "cancel" when the delete modal pops up cancels the modal and returns the user to the Champion page       | Pass      |
+| Champion Page    | The correct champion lore is displayed to the user                                                                | Pass      |
+| Champion Page    | The correct passive ability image is displayed to the user                                                        | Pass      |
+| Champion Page    | The correct passive ability name is displayed to the user                                                         | Pass      |
+| Champion Page    | The correct passive ability description is displayed to the user when they hover over the passive ability image   | Pass      |
+| Champion Page    | The correct ability 1 image is displayed to the user                                                              | Pass      |
+| Champion Page    | The correct ability 1 name is displayed to the user                                                               | Pass      |
+| Champion Page    | The correct ability 1 description is displayed to the user when they hover over the ability 1 image               | Pass      |
+| Champion Page    | The correct ability 2 image is displayed to the user                                                              | Pass      |
+| Champion Page    | The correct ability 2 name is displayed to the user                                                               | Pass      |
+| Champion Page    | The correct ability 2 description is displayed to the user when they hover over the ability 2 image               | Pass      |
+| Champion Page    | The correct ability 3 image is displayed to the user                                                              | Pass      |
+| Champion Page    | The correct ability 3 name is displayed to the user                                                               | Pass      |
+| Champion Page    | The correct ability 3 description is displayed to the user when they hover over the ability 3 image               | Pass      |
+| Champion Page    | The correct ultimate ability image is displayed to the user                                                       | Pass      |
+| Champion Page    | The correct ultimate ability name is displayed to the user                                                        | Pass      |
+| Champion Page    | The correct ultimate ability description is displayed to the user when they hover over the ultimate ability image | Pass      |
+| Champion Page    | The correct champion class image is displayed to the user                                                         | Pass      |
+| Champion Page    | The correct champion class text is displayed to the user                                                          | Pass      |
+| Champion Page    | The correct champion range image is displayed to the user                                                         | Pass      |
+| Champion Page    | The correct champion range text is displayed to the user                                                          | Pass      |
+| Champion Page    | The correct champion difficulty image is displayed to the user                                                    | Pass      |
+| Champion Page    | The correct champion difficulty text is displayed to the user                                                     | Pass      |
+| Champion Page    | The upvoting functionality works as per the upvoting manual tests                                                 | Pass      |
+| Champion Page    | The comments are displayed to the user and all functionality works as per the comments manual tests               | Pass      |
+| Sign In Page     | Clicking the username input box allows the user to input alphanumeric characters                                  | Pass      |
+| Sign In Page     | Clicking the password input box allows the user to input alphanumeric characters                                  | Pass      |
+| Sign In Page     | Clicking the sign in button will sign the user in if correct credentials have been entered                        | Pass      |
+| Sign In Page     | Clicking the sign in button will not sign the user in if incorrect credentials have been entered                  | Pass      |
+| Sign In Page     | Clicking the "sign up" text will navigate the user to the sign up page                                            | Pass      |
+| Sign Up Page     | Clicking the username input box allows the user to input alphanumeric characters                                  | Pass      |
+| Sign Up Page     | Clicking the password input box allows the user to input alphanumeric characters                                  | Pass      |
+| Sign Up Page     | Clicking the confirm password input box allows the user to input alphanumeric characters                          | Pass      |
+| Sign Up Page     | Clicking the sign up button will sign the user up if correct credentials have been entered                        | Pass      |
+| Sign Up Page     | Clicking the "sign in" text will navigate the user to the sign in page                                            | Pass      |
+| Profile Page     | Clicking the profile avatar image will allow the user to select a new image for their profile avatar              | Pass      |
+| Profile Page     | Selecting a new image for the profile avatar will render the save button                                          | Pass      |
+| Profile Page     | Clicking the save button on the profile avatar will deal with the image update request to the API                 | Pass      |
+| Profile Page     | Clicking the edit button will allow the user to edit the first name and last name input fields                    | Pass      |
+| Profile Page     | Changing the value of the first name or last name renders the save button                                         | Pass      |
+| Profile Page     | Clicking the save button will deal with the update request to the API                                             | Pass      |
+| Leaderboard Page | The first 10 most upvoted champions are rendered to the user                                                      | Pass      |
+| Leaderboard Page | Hovering over a row in the leaderboard turns the row gold                                                         | Pass      |
+| Leaderboard Page | Clicking the pagination button renders the next correct 10 champions to the user                                  | Pass      |
+| Champion Create  | The champion create page renders all the relevant input fields for a staff member to create a champion            | Pass      |
+| Champion Create  | All the champion create input fields perform the correct functionality (text, dropdown, image)                    | Pass      |
+| Champion Create  | Clicking the create button sends the create request to the API                                                    | Pass      |
+| Champion Edit    | The champion edit page renders all the relevant input fields for a staff member to edit a champion                | Pass      |
+| Champion Edit    | All the champion edit input fields perform the correct functionality (text, dropdown, image)                      | Pass      |
+| Champion Edit    | Clicking the update button sends the edit request to the API                                                      | Pass      |
 
 - ## Manual Testing Features
 
-| Feature       | Expected Result                                                                                                                                                 | Pass/Fail | Comments |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | -------- |
-| Navigation    | The logo appears on the left hand side                                                                                                                          | Pass      |          |
-| Navigation    | The logo redirects the user to the /home page when clicked                                                                                                      | Pass      |          |
-| Navigation    | The search bar is positioned in the middle of the navigation bar                                                                                                | Pass      |          |
-| Navigation    | The avatar icon appears on the right hand side                                                                                                                  | Pass      |          |
-| Navigation    | When the user is logged out, the golden head and shoulders avatar is rendered                                                                                   | Pass      |          |
-| Navigation    | When the user is logged in, the users profile avatar is rendered                                                                                                | Pass      |          |
-| Navigation    | When the user is logged out, clicking the avatar opens a dropdown menu with "Sign In" and "Sign Up" options                                                     | Pass      |          |
-| Navigation    | If a logged out users clicks "Sign Up" it redirects the user to the /signup page                                                                                | Pass      |          |
-| Navigation    | If a logged out users clicks "Sign In" it redirects the user to the /signin page                                                                                | Pass      |          |
-| Navigation    | When the user is logged in, clicking the avatar opens a dropdown menu with "Home", "Profile", "Leaderboard" and "Log Out" options                               | Pass      |          |
-| Navigation    | If a logged in users clicks "Home" it redirects the user to the /home page                                                                                      | Pass      |          |
-| Navigation    | If a logged in users clicks "Profile" it redirects the user to the /profile/{profile_id} page                                                                   | Pass      |          |
-| Navigation    | If a logged in users clicks "Leaderboard" it redirects the user to the /leaderboard page                                                                        | Pass      |          |
-| Navigation    | If a logged in users clicks "Log Out" it redirects the user to the /home page and logs the user out                                                             | Pass      |          |
-| Navigation    | When a staff is logged in, clicking the avatar opens a dropdown menu with "Home", "Profile", "Leaderboard", "Create" and "Log Out" options                      | Pass      |          |
-| Navigation    | If a staff member clicks "Create", it redirects the staff member to the /create page                                                                            | Pass      |          |
-| Navigation    | If a non-staff member tries to visit the /create url, it will redirect them to the /home page                                                                   | Pass      |          |
-| Navigation    | As a non-staff member, the staff crown icon should not appear next to their name in the dropdown menu                                                           | Pass      |          |
-| Navigation    | As a staff member, the staff crown icon should appear next to their name in the dropdown menu                                                                   | Pass      |          |
-| Search Bar    | When a user types an alphanumeric character/word in the search bar, the API filters the request as per the text entered                                         | Pass      |          |
-| Search Bar    | When a user types an alphanumeric character/word in the search bar, if there are not results then "no champions found..." text is displayed                     | Pass      |          |
-| Role Icon     | Hovering over the top icon applies a golden glow to the icon and a tooltip that says "Filter by top role"                                                       | Pass      |          |
-| Role Icon     | Hovering over the jungle icon applies a golden glow to the icon and a tooltip that says "Filter by jungle role"                                                 | Pass      |          |
-| Role Icon     | Hovering over the middle icon applies a golden glow to the icon and a tooltip that says "Filter by mid role"                                                    | Pass      |          |
-| Role Icon     | Hovering over the adc icon applies a golden glow to the icon and a tooltip that says "Filter by adc role"                                                       | Pass      |          |
-| Role Icon     | Hovering over the support icon applies a golden glow to the icon and a tooltip that says "Filter by support role"                                               | Pass      |          |
-| Role Icon     | Clicking the top role icon applies the golden glow and filters the champion cards by the top role                                                               | Pass      |          |
-| Role Icon     | Clicking the jungle role icon applies the golden glow and filters the champion cards by the jungle role                                                         | Pass      |          |
-| Role Icon     | Clicking the middle role icon applies the golden glow and filters the champion cards by the middle role                                                         | Pass      |          |
-| Role Icon     | Clicking the adc role icon applies the golden glow and filters the champion cards by the adc role                                                               | Pass      |          |
-| Role Icon     | Clicking the support role icon applies the golden glow and filters the champion cards by the support role                                                       | Pass      |          |
-| Role Icon     | Clicking any of the role icons again after the filter has been applied will remove the filter and all champions will be displayed                               | Pass      |          |
-| Champion Card | The champion card contains the champion image                                                                                                                   | Pass      |          |
-| Champion Card | The champion card contains the champion name                                                                                                                    | Pass      |          |
-| Champion Card | Clicking the champion card will render the /champion/{id} page that contains all the data about that champion                                                   | Pass      |          |
-| Upvoting      | As a logged out user, clicking the upvote icon does not upvote the champion                                                                                     | Pass      |          |
-| Upvoting      | As a logged out user, hovering over the upvote icon shows a tooltip that says "Log in to cast your vote!"                                                       | Pass      |          |
-| Upvoting      | As a logged out user, the upvote text to the left says "Do you like this champion? Make sure to log in so you can cast your vote!"                              | Pass      |          |
-| Upvoting      | As a logged in user, clicking the upvote icon upvotes the champion and increases the upvote_count by 1                                                          | Pass      |          |
-| Upvoting      | As a logged in user, clicking the downvote icon downvotes the champion and decreases the upvote_count by 1                                                      | Pass      |          |
-| Upvoting      | As a logged in user that hasn't upvoted, hovering over the upvote icon shows a tooltip that says "Click to upvote this champion!"                               | Pass      |          |
-| Upvoting      | As a logged in user that has upvoted, hovering over the downvote icon shows a tooltip that says "Click to downvote this champion"                               | Fail      |          |
-| Upvoting      | As a logged in user that hasn't upvoted, the text to the left says "Do you like this champion? Make sure you up-vote it by clicking the arrow if you do!"       | Pass      |          |
-| Upvoting      | As a logged in user that has upvoted, the text to the left says "Great! You have successfully upvoted for {champ_name} Make sure to check out the leaderboard!" | Pass      |          |
+| Feature       | Expected Result                                                                                                                                                 | Pass/Fail |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| Navigation    | The logo appears on the left hand side                                                                                                                          | Pass      |
+| Navigation    | The logo redirects the user to the /home page when clicked                                                                                                      | Pass      |
+| Navigation    | The search bar is positioned in the middle of the navigation bar                                                                                                | Pass      |
+| Navigation    | The avatar icon appears on the right hand side                                                                                                                  | Pass      |
+| Navigation    | When the user is logged out, the golden head and shoulders avatar is rendered                                                                                   | Pass      |
+| Navigation    | When the user is logged in, the users profile avatar is rendered                                                                                                | Pass      |
+| Navigation    | When the user is logged out, clicking the avatar opens a dropdown menu with "Sign In" and "Sign Up" options                                                     | Pass      |
+| Navigation    | If a logged out users clicks "Sign Up" it redirects the user to the /signup page                                                                                | Pass      |
+| Navigation    | If a logged out users clicks "Sign In" it redirects the user to the /signin page                                                                                | Pass      |
+| Navigation    | When the user is logged in, clicking the avatar opens a dropdown menu with "Home", "Profile", "Leaderboard" and "Log Out" options                               | Pass      |
+| Navigation    | If a logged in users clicks "Home" it redirects the user to the /home page                                                                                      | Pass      |
+| Navigation    | If a logged in users clicks "Profile" it redirects the user to the /profile/{profile_id} page                                                                   | Pass      |
+| Navigation    | If a logged in users clicks "Leaderboard" it redirects the user to the /leaderboard page                                                                        | Pass      |
+| Navigation    | If a logged in users clicks "Log Out" it redirects the user to the /home page and logs the user out                                                             | Pass      |
+| Navigation    | When a staff is logged in, clicking the avatar opens a dropdown menu with "Home", "Profile", "Leaderboard", "Create" and "Log Out" options                      | Pass      |
+| Navigation    | If a staff member clicks "Create", it redirects the staff member to the /create page                                                                            | Pass      |
+| Navigation    | If a non-staff member tries to visit the /create url, it will redirect them to the /home page                                                                   | Pass      |
+| Navigation    | As a non-staff member, the staff crown icon should not appear next to their name in the dropdown menu                                                           | Pass      |
+| Navigation    | As a staff member, the staff crown icon should appear next to their name in the dropdown menu                                                                   | Pass      |
+| Search Bar    | When a user types an alphanumeric character/word in the search bar, the API filters the request as per the text entered                                         | Pass      |
+| Search Bar    | When a user types an alphanumeric character/word in the search bar, if there are not results then "no champions found..." text is displayed                     | Pass      |
+| Role Icon     | Hovering over the top icon applies a golden glow to the icon and a tooltip that says "Filter by top role"                                                       | Pass      |
+| Role Icon     | Hovering over the jungle icon applies a golden glow to the icon and a tooltip that says "Filter by jungle role"                                                 | Pass      |
+| Role Icon     | Hovering over the middle icon applies a golden glow to the icon and a tooltip that says "Filter by mid role"                                                    | Pass      |
+| Role Icon     | Hovering over the adc icon applies a golden glow to the icon and a tooltip that says "Filter by adc role"                                                       | Pass      |
+| Role Icon     | Hovering over the support icon applies a golden glow to the icon and a tooltip that says "Filter by support role"                                               | Pass      |
+| Role Icon     | Clicking the top role icon applies the golden glow and filters the champion cards by the top role                                                               | Pass      |
+| Role Icon     | Clicking the jungle role icon applies the golden glow and filters the champion cards by the jungle role                                                         | Pass      |
+| Role Icon     | Clicking the middle role icon applies the golden glow and filters the champion cards by the middle role                                                         | Pass      |
+| Role Icon     | Clicking the adc role icon applies the golden glow and filters the champion cards by the adc role                                                               | Pass      |
+| Role Icon     | Clicking the support role icon applies the golden glow and filters the champion cards by the support role                                                       | Pass      |
+| Role Icon     | Clicking any of the role icons again after the filter has been applied will remove the filter and all champions will be displayed                               | Pass      |
+| Champion Card | The champion card contains the champion image                                                                                                                   | Pass      |
+| Champion Card | The champion card contains the champion name                                                                                                                    | Pass      |
+| Champion Card | Clicking the champion card will render the /champion/{id} page that contains all the data about that champion                                                   | Pass      |
+| Upvoting      | As a logged out user, clicking the upvote icon does not upvote the champion                                                                                     | Pass      |
+| Upvoting      | As a logged out user, hovering over the upvote icon shows a tooltip that says "Log in to cast your vote!"                                                       | Pass      |
+| Upvoting      | As a logged out user, the upvote text to the left says "Do you like this champion? Make sure to log in so you can cast your vote!"                              | Pass      |
+| Upvoting      | As a logged in user, clicking the upvote icon upvotes the champion and increases the upvote_count by 1                                                          | Pass      |
+| Upvoting      | As a logged in user, clicking the downvote icon downvotes the champion and decreases the upvote_count by 1                                                      | Pass      |
+| Upvoting      | As a logged in user that hasn't upvoted, hovering over the upvote icon shows a tooltip that says "Click to upvote this champion!"                               | Pass      |
+| Upvoting      | As a logged in user that has upvoted, hovering over the downvote icon shows a tooltip that says "Click to downvote this champion"                               | Fail      |
+| Upvoting      | As a logged in user that hasn't upvoted, the text to the left says "Do you like this champion? Make sure you up-vote it by clicking the arrow if you do!"       | Pass      |
+| Upvoting      | As a logged in user that has upvoted, the text to the left says "Great! You have successfully upvoted for {champ_name} Make sure to check out the leaderboard!" | Pass      |
+
+ <br />
 
 - ## Browser Compatibility
 
@@ -354,7 +356,7 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
     - Firefox
     - Safari
 
-  <br /><br />
+  <br />
 
 [Back to top](#contents)
 
@@ -408,6 +410,26 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 **Staff view**
 
 ![Comment Bug 5](/src/assets/readme_images/comment-bug-3.png)
+
+## Upvote Render
+
+- When creating the manual testing process I noticed that when a user had cast a vote on a champion but logged out there was a bug causing the upvote text and icon to not render properly.
+
+![Upvote Render Bug 1](/src/assets/readme_images/upvote-bug-2.png)
+
+- To fix this I added extra logic which handles the rendering of the text and the icon to allow for this condition.
+
+![Upvote Render Bug 2](/src/assets/readme_images/upvote-bug-3.png)
+
+## Sign In Incorrect Link
+
+- Furthermore, when conducting the manual tests I stumbled upon another issue which I had overlooked. When the user clicked the "Don't have an account with us? Sign up now!" link, it was redirecting the user to the wrong URL.
+
+![Sign Up Bug](/src/assets/readme_images/signup-bug.png)
+
+- This was a simple fix as it was a case of changing the to="/signin" to be "to="/signup" but I wanted to put this in here to show the importance of manual testing
+
+![Sign Up Fix](/src/assets/readme_images/signup-fix.png)
 
 - ## Bugs Unresolved
 

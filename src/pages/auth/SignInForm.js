@@ -102,7 +102,7 @@ const SignInForm = () => {
           </Container>
 
           <Container className={`mt-3 ${styles.ContentBackground}`}>
-            <Link className={styles.Link} to="/signin">
+            <Link className={styles.Link} to="/signup">
               Don't have an account with us? <span>Sign up now!</span>
             </Link>
           </Container>
