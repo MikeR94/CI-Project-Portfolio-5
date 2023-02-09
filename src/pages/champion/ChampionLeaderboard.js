@@ -1,5 +1,8 @@
+// React
 import React, { useEffect, useState } from "react";
+// API
 import { axiosReq } from "../../api/axiosDefaults";
+// Components
 import Pagination from "../../components/Pagination";
 import Leaderboard from "../../components/Leaderboard";
 import LoadingSpinner from "../../components/LoadingSpinner";
@@ -17,6 +20,10 @@ const ChampionLeaderboard = () => {
   );
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  /**
+   * Retrieve data from the API and store it in the
+   * champions state
+   */
   useEffect(() => {
     const fetchChampions = async () => {
       const res = await axiosReq.get("/champions/leaderboard");

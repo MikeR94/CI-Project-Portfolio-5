@@ -1,12 +1,23 @@
+// React and Router
 import React, { useRef, useState } from "react";
-import { Form, Button, Col, Row } from "react-bootstrap";
-import { axiosReq } from "../../api/axiosDefaults";
 import { useHistory } from "react-router-dom";
+// API
+import { axiosReq } from "../../api/axiosDefaults";
+// Contexts
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+// Notifications
+import { NotificationManager } from "react-notifications";
+// Components
+import { Form, Button, Col, Row } from "react-bootstrap";
+import ImagePreview from "../../components/ImagePreview";
+// Styles
 import styles from "../../styles/ChampionCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import ImagePreview from "../../components/ImagePreview";
-import { NotificationManager } from "react-notifications";
+// Utils
+import { difficultyOptions } from "../../utils/constants.js";
+import { roleOptions } from "../../utils/constants.js";
+import { champClassOptions } from "../../utils/constants.js";
+import { rangeOptions } from "../../utils/constants.js";
 
 function ChampionCreate() {
   const champImageInput = useRef(null);
@@ -24,10 +35,17 @@ function ChampionCreate() {
   const currentUser = useCurrentUser();
   const is_staff = currentUser?.is_staff;
 
+  /**
+   * Redirect the user to the home page
+   * if they are not a staff member
+   */
   if (!is_staff) {
     history.push("/home");
   }
 
+  /**
+   * Initialize the champData object
+   */
   const [champData, setChampData] = useState({
     name: "",
     alias: "",
@@ -54,6 +72,9 @@ function ChampionCreate() {
     ultimate_ability_image: "",
   });
 
+  /**
+   * Destructure champData
+   */
   const {
     name,
     alias,
@@ -80,8 +101,11 @@ function ChampionCreate() {
     ultimate_ability_image,
   } = champData;
 
+  /**
+   * Function to allow users to edit the input and dropdown fields
+   * and updates the champData object
+   */
   const handleChange = (event) => {
-    console.log(event.target.value);
     if (
       event.target.value === "mid" ||
       event.target.value === "top" ||
@@ -117,6 +141,12 @@ function ChampionCreate() {
     });
   };
 
+  /**
+   * Function to handle the image change and display the new image to the user
+   * This is the original image change functionalty before I decided to spend some
+   * time refactoring. I've left both versions in to remind myself of the benefits
+   * of refactoring and to also display the before + after (ChampionEdit.js has the refactored code)
+   */
   const handleChangeImage = (event) => {
     const imageRef = {
       champ_image: "champ_image",
@@ -188,6 +218,9 @@ function ChampionCreate() {
     }
   };
 
+  /**
+   *  Function to handle the form submission
+   */
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -247,86 +280,6 @@ function ChampionCreate() {
       );
     }
   };
-
-  const roleOptions = [
-    {
-      label: "Middle",
-      value: "mid",
-    },
-    {
-      label: "Top",
-      value: "top",
-    },
-    {
-      label: "Jungle",
-      value: "jungle",
-    },
-    {
-      label: "ADC",
-      value: "adc",
-    },
-    {
-      label: "Support",
-      value: "support",
-    },
-  ];
-
-  const champClassOptions = [
-    {
-      label: "Controller",
-      value: "controller",
-    },
-    {
-      label: "Fighter",
-      value: "fighter",
-    },
-    {
-      label: "Mage",
-      value: "mage",
-    },
-    {
-      label: "Marksman",
-      value: "marksman",
-    },
-    {
-      label: "Slayer",
-      value: "slayer",
-    },
-    {
-      label: "Tank",
-      value: "tank",
-    },
-    {
-      label: "Specialist",
-      value: "specialist",
-    },
-  ];
-
-  const rangeOptions = [
-    {
-      label: "Melee",
-      value: "melee",
-    },
-    {
-      label: "Ranged",
-      value: "ranged",
-    },
-  ];
-
-  const difficultyOptions = [
-    {
-      label: "Low",
-      value: "low",
-    },
-    {
-      label: "Moderate",
-      value: "moderate",
-    },
-    {
-      label: "High",
-      value: "high",
-    },
-  ];
 
   return (
     <Form onSubmit={handleSubmit}>

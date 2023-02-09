@@ -1,18 +1,25 @@
+// React and Router
 import React, { useEffect, useState } from "react";
-import {
-  Button,
-  Col,
-  Container,
-  OverlayTrigger,
-  Row,
-  Tooltip,
-} from "react-bootstrap";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams, Link } from "react-router-dom";
+// API
 import { axiosReq, axiosRes } from "../../api/axiosDefaults";
+// Contexts
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { fetchMoreData } from "../../utils/utils";
-import { Link } from "react-router-dom";
+// Notifications
+import { NotificationManager } from "react-notifications";
+// Components
+import { Button, Col, Container } from "react-bootstrap";
+import { OverlayTrigger, Row, Tooltip } from "react-bootstrap";
+import Comment from "../comments/Comment";
+import InfiniteScroll from "react-infinite-scroll-component";
+import CommentCreateForm from "../comments/CommentCreateForm";
+import LoadingSpinner from "../../components/LoadingSpinner";
+import Modal from "react-modal";
+// Styles
 import styles from "../../styles/ChampionPage.module.css";
+// Utils
+import { fetchMoreData } from "../../utils/utils";
+// Assets
 import FighterIcon from "../../assets/class_icons/fighter.webp";
 import TankIcon from "../../assets/class_icons/tank.webp";
 import ControllerIcon from "../../assets/class_icons/controller.webp";
@@ -25,12 +32,6 @@ import MeleeIcon from "../../assets/range_icons/melee.png";
 import LowDifficultyIcon from "../../assets/difficulty_icons/low.webp";
 import ModerateDifficultyIcon from "../../assets/difficulty_icons/moderate.webp";
 import HighDifficultyIcon from "../../assets/difficulty_icons/high.webp";
-import Comment from "../comments/Comment";
-import InfiniteScroll from "react-infinite-scroll-component";
-import CommentCreateForm from "../comments/CommentCreateForm";
-import LoadingSpinner from "../../components/LoadingSpinner";
-import Modal from "react-modal";
-import { NotificationManager } from "react-notifications";
 
 const ChampionPage = () => {
   const { id } = useParams();
@@ -43,7 +44,28 @@ const ChampionPage = () => {
   const profile_avatar = currentUser?.profile_avatar;
   const [champData, setChampData] = useState({ results: [] });
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const classIcons = {
+    controller: ControllerIcon,
+    fighter: FighterIcon,
+    mage: MageIcon,
+    marksman: MarksmanIcon,
+    slayer: SlayerIcon,
+    specialist: SpecialistIcon,
+    tank: TankIcon,
+  };
+  const rangeImages = {
+    melee: { icon: MeleeIcon, isMelee: true },
+    ranged: { icon: RangeIcon, isMelee: false },
+  };
+  const difficultyIcons = {
+    low: LowDifficultyIcon,
+    moderate: ModerateDifficultyIcon,
+    high: HighDifficultyIcon,
+  };
 
+  /**
+   * Destructure champData
+   */
   const {
     name,
     alias,
@@ -71,6 +93,9 @@ const ChampionPage = () => {
     upvotes_id,
   } = champData;
 
+  /**
+   * Retrieve both champion and comment data from the API
+   */
   useEffect(() => {
     const fetchChampion = async () => {
       try {
@@ -140,6 +165,18 @@ const ChampionPage = () => {
     fetchChampion();
   }, [id, history]);
 
+  // Set the classIcon image depending on the champ_class data value
+  let classIcon = classIcons[champ_class] || "";
+
+  // Set the range image depending on the range data value
+  let { icon: rangeImage, isMelee } = rangeImages[range] || {};
+
+  // Set the difficulty image depending on the difficulty data value
+  let difficultyImage = difficultyIcons[difficulty] || "";
+
+  /**
+   * Function to delete a champion
+   */
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/champions/${id}/delete`);
@@ -150,13 +187,22 @@ const ChampionPage = () => {
       );
     } catch (error) {
       console.log(error);
+      NotificationManager.error(
+        "There was an error trying to delete the champion"
+      );
     }
   };
 
+  /**
+   * Function to toggle the modal
+   */
   const toggleModal = () => {
     setModalIsOpen(!modalIsOpen);
   };
 
+  /**
+   * Function to handle when a user upvotes a champion
+   */
   const handleUpVote = async () => {
     try {
       const { data } = await axiosRes.post("/upvotes/", { champion: id });
@@ -170,6 +216,9 @@ const ChampionPage = () => {
     }
   };
 
+  /**
+   * Function to handle when a user downvotes a champion
+   */
   const handleDownVote = async () => {
     try {
       await axiosRes.delete(`/upvotes/${upvotes_id}/`);
@@ -182,31 +231,6 @@ const ChampionPage = () => {
       console.log(error);
     }
   };
-
-  const classIcons = {
-    controller: ControllerIcon,
-    fighter: FighterIcon,
-    mage: MageIcon,
-    marksman: MarksmanIcon,
-    slayer: SlayerIcon,
-    specialist: SpecialistIcon,
-    tank: TankIcon,
-  };
-
-  const rangeImages = {
-    melee: { icon: MeleeIcon, isMelee: true },
-    ranged: { icon: RangeIcon, isMelee: false },
-  };
-
-  const difficultyIcons = {
-    low: LowDifficultyIcon,
-    moderate: ModerateDifficultyIcon,
-    high: HighDifficultyIcon,
-  };
-
-  let classIcon = classIcons[champ_class] || "";
-  let { icon: rangeImage, isMelee } = rangeImages[range] || {};
-  let difficultyImage = difficultyIcons[difficulty] || "";
 
   return (
     <div>

@@ -1,12 +1,23 @@
+// React and Router
 import React, { useEffect, useRef, useState } from "react";
-import { axiosReq } from "../../api/axiosDefaults";
-import { Form, Button, Col, Row } from "react-bootstrap";
 import { useHistory, useParams } from "react-router-dom";
+// API
+import { axiosReq } from "../../api/axiosDefaults";
+// Contexts
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+// Notifications
+import { NotificationManager } from "react-notifications";
+// Components
+import { Form, Button, Col, Row } from "react-bootstrap";
+import ImagePreview from "../../components/ImagePreview";
+// Styles
 import styles from "../../styles/ChampionCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import ImagePreview from "../../components/ImagePreview";
-import { NotificationManager } from "react-notifications";
+// Utils
+import { difficultyOptions } from "../../utils/constants.js";
+import { roleOptions } from "../../utils/constants.js";
+import { champClassOptions } from "../../utils/constants.js";
+import { rangeOptions } from "../../utils/constants.js";
 
 function ChampionEdit() {
   const champImageInput = useRef(null);
@@ -21,10 +32,17 @@ function ChampionEdit() {
   const is_staff = currentUser?.is_staff;
   const [errors, setErrors] = useState({});
 
+  /**
+   * Redirect the user to the home page
+   * if they are not a staff member
+   */
   if (!is_staff) {
     history.push("/home");
   }
 
+  /**
+   * Initialize the champData object
+   */
   const [champData, setChampData] = useState({
     name: "",
     alias: "",
@@ -51,6 +69,9 @@ function ChampionEdit() {
     ultimate_ability_image: "",
   });
 
+  /**
+   * Destructure champData
+   */
   const {
     name,
     alias,
@@ -77,103 +98,10 @@ function ChampionEdit() {
     ultimate_ability_image,
   } = champData;
 
-  const handleChange = (event) => {
-    setChampData({
-      ...champData,
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  const handleChangeImage = (event) => {
-    const imageRef = {
-      champ_image: "champ_image",
-      passive_ability_image: "passive_ability_image",
-      ability_1_image: "ability_1_image",
-      ability_2_image: "ability_2_image",
-      ability_3_image: "ability_3_image",
-      ultimate_ability_image: "ultimate_ability_image",
-    };
-    switch (event.target.id) {
-      case imageRef.champ_image:
-        handleImageChange(event, champ_image, "champ_image");
-        break;
-      case imageRef.passive_ability_image:
-        handleImageChange(
-          event,
-          passive_ability_image,
-          "passive_ability_image"
-        );
-        break;
-      case imageRef.ability_1_image:
-        handleImageChange(event, ability_1_image, "ability_1_image");
-        break;
-      case imageRef.ability_2_image:
-        handleImageChange(event, ability_2_image, "ability_2_image");
-        break;
-      case imageRef.ability_3_image:
-        handleImageChange(event, ability_3_image, "ability_3_image");
-        break;
-      case imageRef.ultimate_ability_image:
-        handleImageChange(
-          event,
-          ultimate_ability_image,
-          "ultimate_ability_image"
-        );
-        break;
-      default:
-        return null;
-    }
-  };
-
-  const handleImageChange = (event, image, imageName) => {
-    if (event.target.files.length) {
-      URL.revokeObjectURL(image);
-      setChampData({
-        ...champData,
-        [imageName]: URL.createObjectURL(event.target.files[0]),
-      });
-    }
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const formData = new FormData();
-    let champBlob = await fetch(champ_image).then((r) => r.blob());
-    let passiveBlob = await fetch(passive_ability_image).then((r) => r.blob());
-    let ability1Blob = await fetch(ability_1_image).then((r) => r.blob());
-    let ability2Blob = await fetch(ability_2_image).then((r) => r.blob());
-    let ability3Blob = await fetch(ability_3_image).then((r) => r.blob());
-    let ultimateBlob = await fetch(ultimate_ability_image).then((r) =>
-      r.blob()
-    );
-    formData.append("champ_image", champBlob, "image1.jpg");
-    formData.append("passive_ability_image", passiveBlob, "image2.jpg");
-    formData.append("ability_1_image", ability1Blob, "image3.jpg");
-    formData.append("ability_2_image", ability2Blob, "image4.jpg");
-    formData.append("ability_3_image", ability3Blob, "image5.jpg");
-    formData.append("ultimate_ability_image", ultimateBlob, "image6.jpg");
-    for (const data in champData) {
-      formData.append(`${data}`, champData[data]);
-    }
-    try {
-      await axiosReq.put(`/champions/${id}/edit`, formData);
-      history.goBack();
-      NotificationManager.success(
-        "Champion " + name + " successfully edited",
-        "Success!"
-      );
-      setErrors({});
-    } catch (error) {
-      if (error.response?.status !== 401) {
-        setErrors(error.response?.data);
-      }
-      NotificationManager.error(
-        "There wan issue updating this champion",
-        "Error"
-      );
-    }
-  };
-
+  /**
+   * Retrieve data from the API and store it in the
+   * champData state
+   */
   useEffect(() => {
     const handleMount = async () => {
       try {
@@ -235,85 +163,118 @@ function ChampionEdit() {
     handleMount();
   }, [id]);
 
-  const roleOptions = [
-    {
-      label: "Middle",
-      value: "mid",
-    },
-    {
-      label: "Top",
-      value: "top",
-    },
-    {
-      label: "Jungle",
-      value: "jungle",
-    },
-    {
-      label: "ADC",
-      value: "adc",
-    },
-    {
-      label: "Support",
-      value: "support",
-    },
-  ];
+  /**
+   * Function to allow users to edit the input fields
+   * and updates the champData object
+   */
+  const handleChange = (event) => {
+    setChampData({
+      ...champData,
+      [event.target.name]: event.target.value,
+    });
+  };
 
-  const champClassOptions = [
-    {
-      label: "Controller",
-      value: "controller",
-    },
-    {
-      label: "Fighter",
-      value: "fighter",
-    },
-    {
-      label: "Mage",
-      value: "mage",
-    },
-    {
-      label: "Marksman",
-      value: "marksman",
-    },
-    {
-      label: "Slayer",
-      value: "slayer",
-    },
-    {
-      label: "Tank",
-      value: "tank",
-    },
-    {
-      label: "Specialist",
-      value: "specialist",
-    },
-  ];
+  /**
+   * Function to handle an image change which calls another
+   * function (handleImageChange) which then updates the state with
+   * the new image
+   */
+  const handleChangeImage = (event) => {
+    const imageRef = {
+      champ_image: "champ_image",
+      passive_ability_image: "passive_ability_image",
+      ability_1_image: "ability_1_image",
+      ability_2_image: "ability_2_image",
+      ability_3_image: "ability_3_image",
+      ultimate_ability_image: "ultimate_ability_image",
+    };
+    switch (event.target.id) {
+      case imageRef.champ_image:
+        handleImageChange(event, champ_image, "champ_image");
+        break;
+      case imageRef.passive_ability_image:
+        handleImageChange(
+          event,
+          passive_ability_image,
+          "passive_ability_image"
+        );
+        break;
+      case imageRef.ability_1_image:
+        handleImageChange(event, ability_1_image, "ability_1_image");
+        break;
+      case imageRef.ability_2_image:
+        handleImageChange(event, ability_2_image, "ability_2_image");
+        break;
+      case imageRef.ability_3_image:
+        handleImageChange(event, ability_3_image, "ability_3_image");
+        break;
+      case imageRef.ultimate_ability_image:
+        handleImageChange(
+          event,
+          ultimate_ability_image,
+          "ultimate_ability_image"
+        );
+        break;
+      default:
+        return null;
+    }
+  };
 
-  const rangeOptions = [
-    {
-      label: "Melee",
-      value: "melee",
-    },
-    {
-      label: "Ranged",
-      value: "ranged",
-    },
-  ];
+  /**
+   * Function to update the state with the new image and then
+   * display the new image to the user
+   */
+  const handleImageChange = (event, image, imageName) => {
+    if (event.target.files.length) {
+      URL.revokeObjectURL(image);
+      setChampData({
+        ...champData,
+        [imageName]: URL.createObjectURL(event.target.files[0]),
+      });
+    }
+  };
 
-  const difficultyOptions = [
-    {
-      label: "Low",
-      value: "low",
-    },
-    {
-      label: "Moderate",
-      value: "moderate",
-    },
-    {
-      label: "High",
-      value: "high",
-    },
-  ];
+  /**
+   *  Function to handle the form submission
+   */
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+    let champBlob = await fetch(champ_image).then((r) => r.blob());
+    let passiveBlob = await fetch(passive_ability_image).then((r) => r.blob());
+    let ability1Blob = await fetch(ability_1_image).then((r) => r.blob());
+    let ability2Blob = await fetch(ability_2_image).then((r) => r.blob());
+    let ability3Blob = await fetch(ability_3_image).then((r) => r.blob());
+    let ultimateBlob = await fetch(ultimate_ability_image).then((r) =>
+      r.blob()
+    );
+    formData.append("champ_image", champBlob, "image1.jpg");
+    formData.append("passive_ability_image", passiveBlob, "image2.jpg");
+    formData.append("ability_1_image", ability1Blob, "image3.jpg");
+    formData.append("ability_2_image", ability2Blob, "image4.jpg");
+    formData.append("ability_3_image", ability3Blob, "image5.jpg");
+    formData.append("ultimate_ability_image", ultimateBlob, "image6.jpg");
+    for (const data in champData) {
+      formData.append(`${data}`, champData[data]);
+    }
+    try {
+      await axiosReq.put(`/champions/${id}/edit`, formData);
+      history.goBack();
+      NotificationManager.success(
+        "Champion " + name + " successfully edited",
+        "Success!"
+      );
+      setErrors({});
+    } catch (error) {
+      if (error.response?.status !== 401) {
+        setErrors(error.response?.data);
+      }
+      NotificationManager.error(
+        "There wan issue updating this champion",
+        "Error"
+      );
+    }
+  };
 
   return (
     <Form onSubmit={handleSubmit}>

@@ -1,16 +1,22 @@
+// React and Router
 import React, { useEffect, useState, useCallback } from "react";
+// API
+import { axiosReq } from "../../api/axiosDefaults";
+// Contexts
+import { useSearchQueryContext } from "../../contexts/SearchQueryContext";
+// Components
 import RoleIcon from "../../components/RoleIcon";
+import ChampionCard from "../../components/ChampionCard";
+import { Container, Row } from "react-bootstrap";
+import LoadingSpinner from "../../components/LoadingSpinner";
+// Styles
+import styles from "../../styles/ChampionSelect.module.css";
+// Assets
 import SupportIcon from "../../assets/role_icons/support.png";
 import AdcIcon from "../../assets/role_icons/adc.png";
 import JungleIcon from "../../assets/role_icons/jungle.png";
 import TopIcon from "../../assets/role_icons/top.png";
 import MiddleIcon from "../../assets/role_icons/middle.png";
-import styles from "../../styles/ChampionSelect.module.css";
-import ChampionCard from "../../components/ChampionCard";
-import { Container, Row } from "react-bootstrap";
-import { axiosReq } from "../../api/axiosDefaults";
-import { useSearchQueryContext } from "../../contexts/SearchQueryContext";
-import LoadingSpinner from "../../components/LoadingSpinner";
 
 const ChampionSelect = () => {
   const [champions, setChampions] = useState({ results: [] });
@@ -21,6 +27,10 @@ const ChampionSelect = () => {
   const { searchQuery } = useSearchQueryContext();
   const [header, setHeader] = useState("All");
 
+  /**
+   * Retrieve data from the API and store it in the
+   * champions state
+   */
   const fetchChampionData = useCallback(
     async (roleFilter = "") => {
       try {
@@ -41,6 +51,10 @@ const ChampionSelect = () => {
     fetchChampionData();
   }, [searchQuery, fetchChampionData]);
 
+  /**
+   * Function to handle when a role icon filter has
+   * been selected
+   */
   const handleFilter = (filter) => {
     if (filterSelected && activeFilter === filter) {
       setFilterSelected(false);
@@ -73,7 +87,6 @@ const ChampionSelect = () => {
         filter="top"
         height={50}
       ></RoleIcon>
-
       <RoleIcon
         src={JungleIcon}
         onClick={() => handleFilter("jungle")}
@@ -108,6 +121,7 @@ const ChampionSelect = () => {
       ></RoleIcon>
     </>
   );
+
   return (
     <div className={styles.RoleIconSection}>
       <div>{RoleIcons}</div>
