@@ -1,11 +1,18 @@
+// React and Router
 import React, { useState } from "react";
-import { Form, Button, Col, Row, Container } from "react-bootstrap";
-import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { Link, useHistory } from "react-router-dom";
+// API
+import { axiosReq } from "../../api/axiosDefaults";
+// Contexts
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
+// Notifications
+import { NotificationManager } from "react-notifications";
+// Components
+import { Form, Button, Col, Row, Container } from "react-bootstrap";
+// Styles
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import axios from "axios";
-import { NotificationManager } from "react-notifications";
+// Utils
 import { setTokenTimestamp } from "../../utils/utils";
 
 const SignInForm = () => {
@@ -13,13 +20,23 @@ const SignInForm = () => {
   const [errors, setErrors] = useState({});
   const history = useHistory();
 
+  /**
+   * Initialize the signInData object
+   */
   const [signInData, setSignInData] = useState({
     username: "",
     password: "",
   });
 
+  /**
+   * Destructure signInData
+   */
   const { username, password } = signInData;
 
+  /**
+   * Function to allow users to edit the input fields
+   * and updates the signInData object
+   */
   const handleChange = (event) => {
     setSignInData({
       ...signInData,
@@ -27,10 +44,13 @@ const SignInForm = () => {
     });
   };
 
+  /**
+   * Function to handle form submission
+   */
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const { data } = await axios.post("/dj-rest-auth/login/", signInData);
+      const { data } = await axiosReq.post("/dj-rest-auth/login/", signInData);
       setCurrentUser(data.user);
       setTokenTimestamp(data);
       history.push("/home");

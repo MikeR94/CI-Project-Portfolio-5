@@ -1,22 +1,38 @@
+// React and Router
 import React, { useState } from "react";
-import { Form, Button, Col, Row, Container } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
+// API
+import { axiosReq } from "../../api/axiosDefaults";
+// Notifications
+import { NotificationManager } from "react-notifications";
+// Components
+import { Form, Button, Col, Row, Container } from "react-bootstrap";
+// Styles
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import axios from "axios";
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState({});
   const history = useHistory();
 
+  /**
+   * Initialize the signInData object
+   */
   const [signUpData, setSignUpData] = useState({
     username: "",
     password1: "",
     password2: "",
   });
 
+  /**
+   * Destructure signUpData
+   */
   const { username, password1, password2 } = signUpData;
 
+  /**
+   * Function to allow users to edit the input fields
+   * and updates the signInData object
+   */
   const handleChange = (event) => {
     setSignUpData({
       ...signUpData,
@@ -24,13 +40,18 @@ const SignUpForm = () => {
     });
   };
 
+  /**
+   * Function to handle form submission
+   */
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("/dj-rest-auth/registration/", signUpData);
+      await axiosReq.post("/dj-rest-auth/registration/", signUpData);
       history.push("/signin");
+      NotificationManager.success("Account created successfully", "Success!");
     } catch (error) {
       setErrors(error.response?.data);
+      NotificationManager.error("There was an issue signing you up", "Error");
     }
   };
 
