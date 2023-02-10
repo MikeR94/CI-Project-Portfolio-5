@@ -3,6 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 // API
 import { axiosReq } from "../../api/axiosDefaults";
+// Contexts
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 // Notifications
 import { NotificationManager } from "react-notifications";
 // Components
@@ -24,6 +26,7 @@ const ProfilePage = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [avatarHeight, setAvatarHeight] = useState(170);
   const avatar_image_ref = useRef(null);
+  const setCurrentUser = useSetCurrentUser();
 
   /**
    * Initialize the profileData object
@@ -92,10 +95,14 @@ const ProfilePage = () => {
     let avatar_image_blob = await fetch(avatar_image).then((r) => r.blob());
     formData.append("avatar_image", avatar_image_blob, "image1.jpg");
     try {
-      await axiosReq.put(`/profiles/${id}`, formData);
+      const { data } = await axiosReq.put(`/profiles/${id}`, formData);
       NotificationManager.success("Profile avatar updated", "Success!");
       setImageChange(false);
       setErrors({});
+      setCurrentUser((prevUser) => ({
+        ...prevUser,
+        profile_avatar: data.avatar_image,
+      }));
     } catch (error) {
       if (error.response?.status !== 401) {
         setErrors(error.response?.data);
