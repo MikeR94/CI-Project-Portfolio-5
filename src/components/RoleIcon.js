@@ -1,5 +1,8 @@
+// React and Router
 import React, { useState } from "react";
+// Components
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
+// Styles
 import styles from "../styles/RoleIcon.module.css";
 
 const RoleIcon = ({
@@ -12,10 +15,16 @@ const RoleIcon = ({
 }) => {
   const [isHovering, setIsHovering] = useState(false);
 
+  /**
+   * Function to set the isHovering state to true
+   */
   const handleMouseOver = () => {
     setIsHovering(true);
   };
 
+  /**
+   * Function to set the isHovering state to false
+   */
   const handleMouseOut = () => {
     setIsHovering(false);
   };

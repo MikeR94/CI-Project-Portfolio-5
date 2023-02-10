@@ -1,13 +1,20 @@
+// React and Router
 import React, { useState } from "react";
-import Avatar from "../../components/Avatar";
-import styles from "../../styles/Comment.module.css";
-import CommentEditForm from "./CommentEditForm";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
+// API
 import { axiosRes } from "../../api/axiosDefaults";
-import { Card, Button, Col, Container, Row } from "react-bootstrap";
-import StaffCrownIcon from "../../assets/staff_crown.png";
+// Contexts
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+// Notifications
 import { NotificationManager } from "react-notifications";
+// Components
+import { Card, Button, Col, Container, Row } from "react-bootstrap";
+import Avatar from "../../components/Avatar";
+import CommentEditForm from "./CommentEditForm";
 import Modal from "react-modal";
+// Styles
+import styles from "../../styles/Comment.module.css";
+// Assets
+import StaffCrownIcon from "../../assets/staff_crown.png";
 
 const Comment = (props) => {
   const {
@@ -27,10 +34,18 @@ const Comment = (props) => {
   const is_staff_member = currentUser?.is_staff;
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
+  /**
+   * Function to toggle the value of the
+   * modalIsOpen state
+   */
   const toggleModal = () => {
     setModalIsOpen(!modalIsOpen);
   };
 
+  /**
+   * Function to handle when a user
+   * deletes a comment
+   */
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/comments/delete/${id}/`);

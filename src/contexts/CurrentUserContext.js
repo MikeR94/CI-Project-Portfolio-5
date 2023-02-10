@@ -1,26 +1,46 @@
+// React and Router
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { useHistory } from "react-router";
+// API
 import axios from "axios";
-import { useHistory } from "react-router-dom";
 import { axiosReq, axiosRes } from "../api/axiosDefaults";
+// Utils
 import { removeTokenTimestamp, shouldRefreshToken } from "../utils/utils";
 
+/**
+ * Create the CurrentUserContext
+ */
 export const CurrentUserContext = createContext();
+
+/**
+ * Create the SetCurrentUserContext
+ */
 export const SetCurrentUserContext = createContext();
 
+/**
+ * Function to retrieve the CurrentUserContext
+ */
 export const useCurrentUser = () => useContext(CurrentUserContext);
+
+/**
+ * Function to retrieve the SetCurrentUserContext
+ */
 export const useSetCurrentUser = () => useContext(SetCurrentUserContext);
 
 export const CurrentUserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
-
   const history = useHistory();
 
+  /**
+   * API request to fetch the users data and set it to the
+   * currentUser state
+   */
   const handleMount = async () => {
     try {
-      const { data } = await axios.get("dj-rest-auth/user/");
+      const { data } = await axiosRes.get("dj-rest-auth/user/");
       setCurrentUser(data);
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      // console.log(err);
     }
   };
 
@@ -28,12 +48,16 @@ export const CurrentUserProvider = ({ children }) => {
     handleMount();
   }, []);
 
+  /**
+   * axios request interceptors to check local storage for jwt refresh tokens
+   */
   useMemo(() => {
     axiosReq.interceptors.request.use(
       async (config) => {
-        if (shouldRefreshToken) {
+        if (shouldRefreshToken()) {
           try {
             await axios.post("/dj-rest-auth/token/refresh/");
+            console.log("hey");
           } catch (err) {
             setCurrentUser((prevCurrentUser) => {
               if (prevCurrentUser) {
@@ -41,13 +65,14 @@ export const CurrentUserProvider = ({ children }) => {
               }
               return null;
             });
+            removeTokenTimestamp();
             return config;
           }
         }
-        removeTokenTimestamp();
         return config;
       },
       (err) => {
+        console.log("hey");
         return Promise.reject(err);
       }
     );

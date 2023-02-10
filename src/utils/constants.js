@@ -1,3 +1,6 @@
+/**
+ * roleOptions object used for the champion dropdown options
+ */
 export const roleOptions = [
   {
     label: "Middle",
@@ -21,6 +24,9 @@ export const roleOptions = [
   },
 ];
 
+/**
+ * champClassOptions object used for the champion dropdown options
+ */
 export const champClassOptions = [
   {
     label: "Controller",
@@ -52,6 +58,9 @@ export const champClassOptions = [
   },
 ];
 
+/**
+ * rangeOptions object used for the champion dropdown options
+ */
 export const rangeOptions = [
   {
     label: "Melee",
@@ -63,6 +72,9 @@ export const rangeOptions = [
   },
 ];
 
+/**
+ * difficultyOptions object used for the champion dropdown options
+ */
 export const difficultyOptions = [
   {
     label: "Low",

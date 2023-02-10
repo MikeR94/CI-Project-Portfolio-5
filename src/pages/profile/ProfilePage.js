@@ -1,20 +1,18 @@
+// React and Router
 import React, { useEffect, useRef, useState } from "react";
-import {
-  Button,
-  Col,
-  Container,
-  Form,
-  OverlayTrigger,
-  Row,
-  Tooltip,
-} from "react-bootstrap";
 import { useParams } from "react-router-dom";
+// API
 import { axiosReq } from "../../api/axiosDefaults";
+// Notifications
+import { NotificationManager } from "react-notifications";
+// Components
+import { Form, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
+import { Button, Col, Container } from "react-bootstrap";
 import Avatar from "../../components/Avatar";
+import LoadingSpinner from "../../components/LoadingSpinner";
+// Styles
 import styles from "../../styles/ProfilePage.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import LoadingSpinner from "../../components/LoadingSpinner";
-import { NotificationManager } from "react-notifications";
 
 const ProfilePage = () => {
   const { id } = useParams();
@@ -25,6 +23,11 @@ const ProfilePage = () => {
   const [errors, setErrors] = useState({});
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [avatarHeight, setAvatarHeight] = useState(170);
+  const avatar_image_ref = useRef(null);
+
+  /**
+   * Initialize the profileData object
+   */
   const [profileData, setProfileData] = useState({
     first_name: "",
     last_name: "",
@@ -32,11 +35,17 @@ const ProfilePage = () => {
     avatar_image: "",
     is_owner: "",
   });
+
+  /**
+   * Destructure the profileData object
+   */
   const { first_name, last_name, username, avatar_image, is_owner } =
     profileData;
 
-  const avatar_image_ref = useRef(null);
-
+  /**
+   * Function to resize the Avatar depending on the
+   * screen width
+   */
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
@@ -50,6 +59,9 @@ const ProfilePage = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, [screenWidth]);
 
+  /**
+   * Retrieve the profile data from the API
+   */
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
@@ -71,6 +83,9 @@ const ProfilePage = () => {
     fetchProfileData();
   }, [id, setProfileData]);
 
+  /**
+   * Function to update the profile avatar image
+   */
   const handleImageSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -92,6 +107,9 @@ const ProfilePage = () => {
     }
   };
 
+  /**
+   * Function to update the users first and last name
+   */
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -116,6 +134,10 @@ const ProfilePage = () => {
     }
   };
 
+  /**
+   * Function to allow the user to change the profile avatar
+   * and the new image is displayed to the user
+   */
   const handleChangeImage = (event) => {
     setImageChange(true);
     const imageRef = {
@@ -133,6 +155,10 @@ const ProfilePage = () => {
     }
   };
 
+  /**
+   * Function to allow the user to edit the first and last name.
+   * The edited value gets stored in the profileData state
+   */
   const handleChange = (event) => {
     setHasChanged(true);
     setProfileData({

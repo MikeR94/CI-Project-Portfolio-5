@@ -1,5 +1,8 @@
+// React and Router
 import React from "react";
+// Components
 import { Button } from "react-bootstrap";
+// Styles
 import styles from "../styles/Pagination.module.css";
 
 const Pagination = ({ championsPerPage, totalChampions, paginate }) => {

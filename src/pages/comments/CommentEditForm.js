@@ -1,25 +1,36 @@
+// React and Router
 import React, { useState } from "react";
-import Form from "react-bootstrap/Form";
+// API
 import { axiosRes } from "../../api/axiosDefaults";
+// Notifications
+import { NotificationManager } from "react-notifications";
+// Components
+import Form from "react-bootstrap/Form";
+import { Button, InputGroup } from "react-bootstrap";
+// Styles
 import styles from "../../styles/CommentCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { Button, InputGroup } from "react-bootstrap";
-import { NotificationManager } from "react-notifications";
 
 function CommentEditForm(props) {
   const { id, comment, setShowEditForm, setCommentData } = props;
+  const [editedComment, setEditedComment] = useState(comment);
 
-  const [formContent, setFormContent] = useState(comment);
-
+  /**
+   * Function to set the editedComment state to what
+   * the user inputs in the input field
+   */
   const handleChange = (event) => {
-    setFormContent(event.target.value);
+    setEditedComment(event.target.value);
   };
 
+  /**
+   * Function to handle form submission
+   */
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       await axiosRes.put(`/comments/${id}/`, {
-        comment: formContent.trim(),
+        comment: editedComment.trim(),
       });
       setCommentData((prevComments) => ({
         ...prevComments,
@@ -27,7 +38,7 @@ function CommentEditForm(props) {
           return comment.id === id
             ? {
                 ...comment,
-                comment: formContent.trim(),
+                comment: editedComment.trim(),
                 updated_at: "now",
               }
             : comment;
@@ -46,7 +57,7 @@ function CommentEditForm(props) {
         <InputGroup className={styles.Input}>
           <Form.Control
             as="textarea"
-            value={formContent}
+            value={editedComment}
             onChange={handleChange}
             rows={3}
           />

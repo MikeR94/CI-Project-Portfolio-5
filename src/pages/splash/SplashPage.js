@@ -1,15 +1,13 @@
+// React and Router
 import React from "react";
-import {
-  Button,
-  Col,
-  Container,
-  OverlayTrigger,
-  Row,
-  Tooltip,
-} from "react-bootstrap";
+import { Link } from "react-router-dom";
+// Components
+import { OverlayTrigger, Row, Tooltip } from "react-bootstrap";
+import { Button, Col, Container } from "react-bootstrap";
+// Styles
 import styles from "../../styles/Splash.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { Link } from "react-router-dom";
+// Assets
 import ChampionImage from "../../assets/splash_images/champion.jpg";
 import ItemImage from "../../assets/splash_images/item.webp";
 import TrophyImage from "../../assets/splash_images/trophy.jpg";

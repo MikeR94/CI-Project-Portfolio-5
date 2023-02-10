@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 // API
-import { axiosReq } from "../../api/axiosDefaults";
+import axios from "axios";
 // Contexts
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 // Notifications
@@ -50,7 +50,7 @@ const SignInForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const { data } = await axiosReq.post("/dj-rest-auth/login/", signInData);
+      const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       setCurrentUser(data.user);
       setTokenTimestamp(data);
       history.push("/home");

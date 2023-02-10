@@ -1,6 +1,8 @@
+// React and Router
 import React from "react";
-import styles from "../styles/Footer.module.css";
 import { useLocation } from "react-router-dom";
+// Styles
+import styles from "../styles/Footer.module.css";
 
 const Footer = () => {
   const location = useLocation();

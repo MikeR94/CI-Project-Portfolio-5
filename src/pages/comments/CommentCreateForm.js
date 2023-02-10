@@ -1,21 +1,33 @@
+// React and Router
 import React, { useState } from "react";
-import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
-import styles from "../../styles/CommentCreateEditForm.module.css";
-import Avatar from "../../components/Avatar";
+// API
 import { axiosRes } from "../../api/axiosDefaults";
-import btnStyles from "../../styles/Button.module.css";
-import { Button } from "react-bootstrap";
+// Notifications
 import { NotificationManager } from "react-notifications";
+// Components
+import Form from "react-bootstrap/Form";
+import Avatar from "../../components/Avatar";
+import InputGroup from "react-bootstrap/InputGroup";
+import { Button } from "react-bootstrap";
+// Styles
+import styles from "../../styles/CommentCreateEditForm.module.css";
+import btnStyles from "../../styles/Button.module.css";
 
 function CommentCreateForm(props) {
   const { setCommentData, profile_avatar, champion } = props;
   const [comment, setComment] = useState("");
 
+  /**
+   * Function to set the comment state to what
+   * the user inputs in the input field
+   */
   const handleChange = (event) => {
     setComment(event.target.value);
   };
 
+  /**
+   * Function to handle form submission
+   */
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {

@@ -1,10 +1,13 @@
+// React and Router
 import React from "react";
-import styles from "../styles/SearchBar.module.css";
+import { useHistory } from "react-router-dom";
+// Contexts
 import {
   useSearchQueryContext,
   useSetSearchQueryContext,
 } from "../contexts/SearchQueryContext";
-import { useHistory } from "react-router-dom";
+// Styles
+import styles from "../styles/SearchBar.module.css";
 
 const SearchBar = () => {
   const { searchQuery } = useSearchQueryContext();

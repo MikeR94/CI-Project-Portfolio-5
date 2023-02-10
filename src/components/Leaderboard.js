@@ -1,7 +1,12 @@
+// React and Router
 import React from "react";
+// Components
 import Avatar from "../components/Avatar";
 import { Container, Row } from "react-bootstrap";
+import LoadingSpinner from "../components/LoadingSpinner";
+// Styles
 import styles from "../styles/ChampionLeaderboard.module.css";
+// Assets
 import SupportIcon from "../assets/role_icons/support.png";
 import AdcIcon from "../assets/role_icons/adc.png";
 import JungleIcon from "../assets/role_icons/jungle.png";
@@ -17,7 +22,6 @@ import MageIcon from "../assets/class_icons/mage.webp";
 import MarksmanIcon from "../assets/class_icons/marksman.webp";
 import SlayerIcon from "../assets/class_icons/slayer.webp";
 import SpecialistIcon from "../assets/class_icons/specialist.webp";
-import LoadingSpinner from "../components/LoadingSpinner";
 
 const Leaderboard = ({ champions }) => {
   return (

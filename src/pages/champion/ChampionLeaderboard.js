@@ -6,6 +6,8 @@ import { axiosReq } from "../../api/axiosDefaults";
 import Pagination from "../../components/Pagination";
 import Leaderboard from "../../components/Leaderboard";
 import LoadingSpinner from "../../components/LoadingSpinner";
+// Hooks
+import { useRedirect } from "../../hooks/useRedirect";
 
 const ChampionLeaderboard = () => {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -19,6 +21,11 @@ const ChampionLeaderboard = () => {
     indexOfLastChampion
   );
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  /**
+   * Redirect the user to the home page if they are logged out
+   */
+  useRedirect("loggedOut");
 
   /**
    * Retrieve data from the API and store it in the

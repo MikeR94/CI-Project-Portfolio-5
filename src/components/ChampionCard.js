@@ -1,7 +1,10 @@
+// React and Router
 import React from "react";
-import Card from "react-bootstrap/Card";
-import styles from "../styles/ChampionCard.module.css";
 import { Link } from "react-router-dom";
+// Components
+import Card from "react-bootstrap/Card";
+// Styles
+import styles from "../styles/ChampionCard.module.css";
 
 const ChampionCard = (props) => {
   const { champ_image, name, id } = props;

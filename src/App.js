@@ -1,9 +1,15 @@
-import styles from "./App.module.css";
+// React and Router
+import { Route, Switch, useLocation } from "react-router-dom";
+// API
+import "./api/axiosDefaults";
+// Contexts
+// Notifications
+import { NotificationContainer } from "react-notifications";
+import "react-notifications/lib/notifications.css";
+// Components
 import NavBar from "./components/NavBar";
 import Container from "react-bootstrap/Container";
-import { Route, Switch, useLocation } from "react-router-dom";
 import SignUpForm from "./pages/auth/SignUpForm";
-import "./api/axiosDefaults";
 import SignInForm from "./pages/auth/SignInForm";
 import ChampionSelect from "./pages/champion/ChampionSelect";
 import ChampionPage from "./pages/champion/ChampionPage";
@@ -12,10 +18,10 @@ import ChampionEdit from "./pages/champion/ChampionEdit";
 import ChampionLeaderboard from "./pages/champion/ChampionLeaderboard";
 import ProfilePage from "./pages/profile/ProfilePage";
 import Footer from "./components/Footer";
-import { NotificationContainer } from "react-notifications";
-import "react-notifications/lib/notifications.css";
 import PageNotFound from "./components/PageNotFound";
 import SplashPage from "./pages/splash/SplashPage";
+// Styles
+import styles from "./App.module.css";
 
 function App() {
   const location = useLocation();

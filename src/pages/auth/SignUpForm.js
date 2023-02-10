@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 // API
-import { axiosReq } from "../../api/axiosDefaults";
+import axios from "axios";
 // Notifications
 import { NotificationManager } from "react-notifications";
 // Components
@@ -46,7 +46,7 @@ const SignUpForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axiosReq.post("/dj-rest-auth/registration/", signUpData);
+      await axios.post("/dj-rest-auth/registration/", signUpData);
       history.push("/signin");
       NotificationManager.success("Account created successfully", "Success!");
     } catch (error) {

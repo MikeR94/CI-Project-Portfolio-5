@@ -1,5 +1,8 @@
+// React and Router
 import React from "react";
+// Components
 import Spinner from "react-bootstrap/Spinner";
+// Styles
 import styles from "../styles/Spinner.module.css";
 
 const LoadingSpinner = () => {
