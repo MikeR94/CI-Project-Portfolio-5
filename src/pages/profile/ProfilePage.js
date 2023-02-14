@@ -68,7 +68,7 @@ const ProfilePage = () => {
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
-        const { data } = await axiosReq.get(`/profiles/${id}`);
+        const { data } = await axiosReq.get(`/profiles/${id}/`);
         const { first_name, last_name, username, avatar_image, is_owner } =
           data;
         setProfileData({
@@ -95,7 +95,7 @@ const ProfilePage = () => {
     let avatar_image_blob = await fetch(avatar_image).then((r) => r.blob());
     formData.append("avatar_image", avatar_image_blob, "image1.jpg");
     try {
-      const { data } = await axiosReq.put(`/profiles/${id}`, formData);
+      const { data } = await axiosReq.put(`/profiles/${id}/`, formData);
       NotificationManager.success("Profile avatar updated", "Success!");
       setImageChange(false);
       setErrors({});
@@ -126,7 +126,7 @@ const ProfilePage = () => {
       formData.append(`${data}`, profileData[data]);
     }
     try {
-      await axiosReq.put(`/profiles/${id}`, formData);
+      await axiosReq.put(`/profiles/${id}/`, formData);
       NotificationManager.success("Profile updated", "Success!");
       setErrors({});
       setDisabled(true);

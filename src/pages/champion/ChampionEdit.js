@@ -105,7 +105,7 @@ function ChampionEdit() {
   useEffect(() => {
     const handleMount = async () => {
       try {
-        const { data } = await axiosReq.get(`/champions/${id}`);
+        const { data } = await axiosReq.get(`/champions/${id}/`);
         const {
           name,
           alias,
@@ -258,7 +258,7 @@ function ChampionEdit() {
       formData.append(`${data}`, champData[data]);
     }
     try {
-      await axiosReq.put(`/champions/${id}/edit`, formData);
+      await axiosReq.put(`/champions/${id}/edit/`, formData);
       history.goBack();
       NotificationManager.success(
         "Champion " + name + " successfully edited",

@@ -179,7 +179,7 @@ const ChampionPage = () => {
    */
   const handleDelete = async () => {
     try {
-      await axiosRes.delete(`/champions/${id}/delete`);
+      await axiosRes.delete(`/champions/${id}/delete/`);
       history.push("/home");
       NotificationManager.success(
         "Champion " + name + " successfully deleted",
@@ -248,7 +248,7 @@ const ChampionPage = () => {
           <Row className="text-center">
             {is_staff && (
               <div>
-                <Link to={`/champion/${id}/edit`}>
+                <Link to={`/champion/${id}/edit/`}>
                   <i className={`fas fa-edit ${styles.ManageChampion}`} />
                 </Link>
                 <i

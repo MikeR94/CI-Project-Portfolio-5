@@ -33,7 +33,7 @@ const ChampionLeaderboard = () => {
    */
   useEffect(() => {
     const fetchChampions = async () => {
-      const res = await axiosReq.get("/champions/leaderboard");
+      const res = await axiosReq.get("/champions/leaderboard/");
       let championsData = res.data.results;
 
       championsData.map((champion, i) => {
