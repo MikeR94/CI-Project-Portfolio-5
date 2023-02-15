@@ -29,13 +29,15 @@ const SplashPage = () => {
         </Row>
         <Row className={styles.FeatureRow}>
           <Col className={styles.FeatureCol}>
-            <OverlayTrigger placement="top" overlay={<Tooltip>Live</Tooltip>}>
-              <img
-                className={styles.ActiveImage}
-                src={ChampionImage}
-                alt="Champion"
-              ></img>
-            </OverlayTrigger>
+            <Link to="/home">
+              <OverlayTrigger placement="top" overlay={<Tooltip>Live</Tooltip>}>
+                <img
+                  className={styles.ActiveImage}
+                  src={ChampionImage}
+                  alt="Champion"
+                ></img>
+              </OverlayTrigger>
+            </Link>
             <p className={styles.FeatureText}>Champions</p>
           </Col>
           <Col className={styles.FeatureCol}>
