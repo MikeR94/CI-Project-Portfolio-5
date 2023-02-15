@@ -67,6 +67,7 @@
 .FeatureText {
   margin-top: 10px;
   color: #cbae71;
+  font-size: 18px;
 }
 
 @media all and (max-width: 940px) {
@@ -111,7 +112,7 @@
   }
 
   .DescriptionText {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .FeatureRow {
@@ -121,17 +122,21 @@
   .FeatureCol {
     margin-top: 0px;
   }
+
+  .FeatureText {
+    font-size: 14px;
+  }
 }
 
 @media all and (max-width: 375px), all and (max-height: 750px) {
   .ActiveImage {
-    height: 50px;
-    width: 50px;
+    height: 35px;
+    width: 35px;
   }
 
   .InactiveImage {
-    height: 50px;
-    width: 50px;
+    height: 35px;
+    width: 35px;
   }
 
   .WelcomeText {
@@ -139,7 +144,6 @@
   }
 
   .DescriptionText {
-    font-size: 10px;
     margin-top: 50px;
   }
 
@@ -149,5 +153,39 @@
 
   .FeatureCol {
     margin-top: 0px;
+  }
+}
+
+@media all and (max-width: 375px) {
+  .ActiveImage {
+    height: 35px;
+    width: 35px;
+  }
+
+  .InactiveImage {
+    height: 35px;
+    width: 35px;
+  }
+
+  .WelcomeText {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .DescriptionText {
+    margin-top: 0px;
+    font-size: 12px;
+  }
+
+  .FeatureRow {
+    margin-top: 0px;
+  }
+
+  .FeatureCol {
+    margin-top: 0px;
+  }
+
+  .ButtonRow {
+    margin-top: 20px;
   }
 }
