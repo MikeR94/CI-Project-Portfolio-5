@@ -327,7 +327,8 @@ function ChampionCreate() {
             <Form.Label className={styles.FormLabel}>Lore</Form.Label>
             <Form.Control
               className={styles.Input}
-              type="text"
+              as="textarea"
+              rows={7}
               placeholder="Champion Lore"
               name="lore"
               value={lore}
@@ -363,7 +364,8 @@ function ChampionCreate() {
             </Form.Label>
             <Form.Control
               className={styles.Input}
-              type="text"
+              as="textarea"
+              rows={2}
               placeholder="Champion Passive Description"
               name="passive_ability_description"
               value={passive_ability_description}
@@ -392,14 +394,17 @@ function ChampionCreate() {
               {message}
             </div>
           ))}
+        </Col>
 
+        <Col md={6} className={`${styles.ContentBackground} p-4 `}>
           <Form.Group controlId="ability_1_description">
             <Form.Label className={styles.FormLabel}>
               Ability 1 Description
             </Form.Label>
             <Form.Control
               className={styles.Input}
-              type="text"
+              as="textarea"
+              rows={2}
               placeholder="Champion Ability 1 Description"
               name="ability_1_description"
               value={ability_1_description}
@@ -411,9 +416,6 @@ function ChampionCreate() {
               {message}
             </div>
           ))}
-        </Col>
-
-        <Col md={6} className={`${styles.ContentBackground} p-4 `}>
           <Form.Group controlId="ability_2">
             <Form.Label className={styles.FormLabel}>Ability 2</Form.Label>
             <Form.Control
@@ -437,7 +439,8 @@ function ChampionCreate() {
             </Form.Label>
             <Form.Control
               className={styles.Input}
-              type="text"
+              as="textarea"
+              rows={2}
               placeholder="Champion Ability 2 Description"
               name="ability_2_description"
               value={ability_2_description}
@@ -473,7 +476,8 @@ function ChampionCreate() {
             </Form.Label>
             <Form.Control
               className={styles.Input}
-              type="text"
+              as="textarea"
+              rows={2}
               placeholder="Champion Ability 3 Description"
               name="ability_3_description"
               value={ability_3_description}
@@ -509,7 +513,8 @@ function ChampionCreate() {
             </Form.Label>
             <Form.Control
               className={styles.Input}
-              type="text"
+              as="textarea"
+              rows={2}
               placeholder="Champion Ultimate Description"
               name="ultimate_ability_description"
               value={ultimate_ability_description}
