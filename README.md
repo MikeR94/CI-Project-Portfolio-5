@@ -93,6 +93,7 @@ For my fifth and final project, I intend to create an online resource for League
 | As a logged in user  | I can update my profile information such as my first name, last name and avatar image                                                | 12            | &check; |
 | As a logged in user  | I can view my profile page that displays information about my profile                                                                | 3, 12         | &check; |
 | As a staff member    | I must have the ability to update the champions information so I can provide the most up to date information for consumers           | 10, 11        | &check; |
+| As a staff member    | I must have the ability to create a new champion that will be displayed on the website                                               | 10, 11        | &check; |
 | As a staff member    | I must have the ability to delete a champion if necessary                                                                            | 10, 11        | &check; |
 | As a staff member    | I must have the ability to be able to delete any inappropriate comments submitted by users                                           | 10, 11        | &check; |
 
@@ -152,29 +153,62 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 - ### Informative Splash Page
 
-  - Description. <br />
+  Upon receiving some great feedback from my mentor, it was apparent that if you are not a fan or aware of the game League of Legends, then visiting this website might leave you wondering what it’s purpose and intentions are.
+  The splash page was added to provide a fast and informative way to inform the user about this website and some of the upcoming features that will be coming soon.
+  <br />
 
   ![Splash Page](/src/assets/readme_images/splash-page-1.png)
 
-  <br />
+    <br />
 
 - ### Responsive Navigation Bar
 
-  - Description. <br />
+  The navigation is one of the most important features for any website and as such, I’ve done my best to provide the user with a very intuitive and useful navigation bar
+  The navigation bar has a clickable logo which will redirect the user back to the home page, a search bar to search for a champion in the middle, and the users logged in state on the top right. If the user is logged out, it will display a golden avatar and when clicked, will give the users the following drop-down menu
 
-  ![Nav Bar 1](/src/assets/readme_images/nav-bar-1.png)
+  - Sign In
+  - Sign Up
 
-  ![Nav Bar 2](/src/assets/readme_images/nav-bar-2.png)
+  If the user is logged in, they will see the following drop-down menu
 
-  ![Nav Bar 3](/src/assets/readme_images/nav-bar-3.png)
+  - Home
+  - Profile
+  - Leaderboard
+  - Log out
 
-  ![Nav Bar 4](/src/assets/readme_images/nav-bar-4.png)
+  If a staff member is logged in, they will see the following drop-down menu
+
+  - Home
+  - Profile
+  - Leaderboard
+  - Create
+  - Log out
+
+  A staff member will also have a silver crown appear next to their name
+
+  **User Story - I can create a new account via the sign-up page which can be accessed via the navigation bar**
+
+  **User Story - I should be able to log out of the website**
+
+  <br />
+
+![Nav Bar 1](/src/assets/readme_images/nav-bar-1.png)
+
+![Nav Bar 2](/src/assets/readme_images/nav-bar-2.png)
+
+![Nav Bar 3](/src/assets/readme_images/nav-bar-3.png)
+
+![Nav Bar 4](/src/assets/readme_images/nav-bar-4.png)
 
   <br />
 
 - ### Search Bar
 
-  - Description. <br />
+  I’ve currently developed the search bar so that is present throughout the entire website and can be used to search for a champion from any page. In future updates, the search bar will be contained within each section and will provide search queries for their respective pages (champions, items, etc)
+
+  **User Story - I can filter my search when looking for a champion**
+
+  <br />
 
   ![Search Bar 1](/src/assets/readme_images/search-bar-1.png)
 
@@ -186,25 +220,43 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 - ### Role Icons
 
-  - Description. <br />
+  The role icons act as an additional filter to the search bar. There are 5 roles in the game league of legends and they all champions are assigned a role.
 
-  ![Role Icons 1](/src/assets/readme_images/role-icons-1.png)
+  - Top
+  - Middle
+  - Jungle
+  - Bottom (ADC)
+  - Support
 
-  ![Role Icons 2](/src/assets/readme_images/role-icons-2.png)
+  Hovering over the role icon will apply a very nice glow effect with a tooltip to inform the user which role is being selected and then when clicked, only the champions that fall into that role category are displayed.
 
-  ![Role Icons 3](/src/assets/readme_images/role-icons-3.png)
+  **User Story - I can filter my search when looking for a champion**
 
-  ![Role Icons 4](/src/assets/readme_images/role-icons-4.png)
+ <br />
 
-  ![Role Icons 5](/src/assets/readme_images/role-icons-5.png)
+![Role Icons 1](/src/assets/readme_images/role-icons-1.png)
 
-  ![Role Icons 6](/src/assets/readme_images/role-icons-6.png)
+![Role Icons 2](/src/assets/readme_images/role-icons-2.png)
+
+![Role Icons 3](/src/assets/readme_images/role-icons-3.png)
+
+![Role Icons 4](/src/assets/readme_images/role-icons-4.png)
+
+![Role Icons 5](/src/assets/readme_images/role-icons-5.png)
+
+![Role Icons 6](/src/assets/readme_images/role-icons-6.png)
 
   <br />
 
 - ### Champion Card
 
-  - Description. <br />
+  The champion card is the main clickable item that a user will search/filter for and then click to then be redirected to the champion information page where they can consume more information regarding that champion
+
+  **User Story - I can view all champion cards that when clicked will navigate me to the champion page which displays information about that champion**
+
+  **User Story - I can see all the champion cards on the champion select page**
+
+   <br />
 
   ![Champion Card](/src/assets/readme_images/champ-card-1.png)
 
@@ -212,7 +264,11 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 - ### Account Creation
 
-  - Description. <br />
+  Everybody can create an account on the League Hub. Upon creating an account, a user has access to additional features such as the leaderboard, champion upvoting, profile page and the ability to leave a comment on a champion
+
+  **User Story - I should be able to log into the website when I have created a valid account**
+
+   <br />
 
   ![Account Creation 1](/src/assets/readme_images/account-creation-1.png)
 
@@ -222,7 +278,13 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 - ### Profile Page
 
-  - Description. <br />
+  The profile page is a simple page where the user can update their first name, last name and their avatar image
+
+  **User Story - I can update my profile information such as my first-name, last-name and avatar image**
+
+  **User Story - I can view my profile page that displays information about my profile**
+
+   <br />
 
   ![Profile Page 1](/src/assets/readme_images/profile-page-1.png)
 
@@ -234,7 +296,7 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 - ### Page Not Found
 
-  - Description. <br />
+  This is the page that is displayed when the user enters a URL or tries to navigate to a page that does not exist
 
   Image to be added
 
@@ -242,7 +304,11 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 - ### Champion Create
 
-  - Description. <br />
+  This is a staff member only feature and is used for the creation of the champions that you see on the home page. Each input field is responsible for a characteristic value for a champion. Each input field has error handling and will inform the user of any incorrect or missing data.
+
+  **User Story - I must have the ability to create a new champion that will be displayed on the website**
+
+  <br />
 
   ![Champion Create 1](/src/assets/readme_images/champion-create-1.png)
 
@@ -252,7 +318,11 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 - ### Champion Edit
 
-  - Description. <br />
+  This is a staff member only feature and is used to edit a champion if a staff member ever needs to do so. Upon clicking the edit button, all fields are pre-populated with the champion data to make it easier for the staff member to edit the champion
+
+  **User Story - I must have the ability to update the champions information so I can provide the most up to date information for consumers**
+
+  <br />
 
   ![Champion Edit 1](/src/assets/readme_images/champion-edit-1.png)
 
@@ -262,7 +332,11 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 - ### Champion Delete
 
-  - Description. <br />
+  This is a staff member only feature and is used to delete a champion if they need to do so. Upon clicking the trash can icon, a modal will prompt the user asking them again if they are sure they wish to delete the champion from the database and the website. Upon clicking delete, it will delete the champion and redirect the user back to the home page. If they click cancel, then it will cancel the pop-up modal and return the user back to the champion information page.
+
+  **User Story - I must have the ability to delete a champion if necessary**
+
+   <br />
 
   ![Champion Delete 1](/src/assets/readme_images/champion-delete-1.png)
 
@@ -272,25 +346,50 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 - ### Champion Information Page
 
-  - Description. <br />
+  This is the heart of the website, and it is where users will glean information about each League of Legends champion. It has multiple different sections which render data about the champion that the user can see. Some of the information that a user can gain from this page is the following
 
-  ![Champion Info Page 1](/src/assets/readme_images/champion-page-1.png)
+  - Champion name
+  - A large image of the champion
+  - Champion alias
+  - Champion lore
+  - Champion abilities (with images and descriptions)
+  - Champion class
+  - Champion range
+  - Champion difficulty
 
-  ![Champion Info Page 2](/src/assets/readme_images/champion-page-2.png)
+  There is also additional interactive features on this page such as allowing the user the ability to upvote a champion and remove the upvote from a champion if they wish to do so. They can also leave a comment about a champion and interact in community discussions with other site members
 
-  ![Champion Info Page 3](/src/assets/readme_images/champion-page-3.png)
+  **User Story - I can view all champion cards that when clicked will navigate me to the champion page which displays information about that champion**
 
-  ![Champion Info Page 4](/src/assets/readme_images/champion-page-4.png)
+ <br />
 
-  ![Champion Info Page 5](/src/assets/readme_images/champion-page-5.png)
+![Champion Info Page 1](/src/assets/readme_images/champion-page-1.png)
 
-  ![Champion Info Page 6](/src/assets/readme_images/champion-page-6.png)
+![Champion Info Page 2](/src/assets/readme_images/champion-page-2.png)
+
+![Champion Info Page 3](/src/assets/readme_images/champion-page-3.png)
+
+![Champion Info Page 4](/src/assets/readme_images/champion-page-4.png)
+
+![Champion Info Page 5](/src/assets/readme_images/champion-page-5.png)
+
+![Champion Info Page 6](/src/assets/readme_images/champion-page-6.png)
 
   <br />
 
 - ### Comments
 
-  - Description. <br />
+  This is a feature within the champion information page and allows registered users to interact with each other and leave their feedback and opinions on a champion. A logged in user can create a comment, edit their own comment, and delete their own comment. A staff member can do the exact same, but they have additional permissions to be able to delete other users’ comments if they need to do so to avoid any inappropriate comments
+
+  **User Story - I can view all comments left by users on a champion page but not be able to comment until I have created an account**
+
+  **User Story - I can leave a comment about a champion on the champion page**
+
+  **User Story - I can delete a comment that I have created on the champion’s page**
+
+  **User Story - I must have the ability to be able to delete any inappropriate comments submitted by users**
+
+  <br />
 
   ![Comment 1](/src/assets/readme_images/comment-feature-1.png)
 
@@ -300,7 +399,13 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 - ### Upvoting
 
-  - Description. <br />
+  This is another feature within the champion information page and allows registered users to show their love for a champion by upvoting the champion and increasing the champions chances of being the number one upvoted champion on the leaderboard. Only a registered user can upvote a champion. If a user wishes to remove their upvote from a champion, they simply just must click the icon again and it will remove the upvote
+
+  **User Story - I can upvote a champion if I wish to do so**
+
+  **User Story - I should be able to remove my upvote from a champion if I wish to do so**
+
+  <br />
 
   ![Upvoting 1](/src/assets/readme_images/upvote-feature-1.png)
 
@@ -312,7 +417,11 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 - ### Leaderboard
 
-  - Description. <br />
+  This is the result of all the users upvotes for the champions. It shows a ranked order of champions with the most upvotes to the least upvotes. Every single champion that is displayed on the website will be present on the leaderboard, but their position depends on the amount of upvotes they have
+
+  **User Story - I can view the champion upvote leaderboard to see how all the champions are ranked against each other**
+
+   <br />
 
   ![Leaderboard](/src/assets/readme_images/leaderboard-1.png)
 
@@ -320,11 +429,19 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 - ### Notifications
 
-  - Description. <br />
+  For each user input, I have implemented a brilliant package called react-notifications which allows for notifications to pop up to give the user additional feedback about their action. I’ve implemented both success and error notifications which can be seen below
+
+   <br />
 
   ![Notification 1](/src/assets/readme_images/notification-1.png)
+
   ![Notification 2](/src/assets/readme_images/notification-2.png)
+
   ![Notification 3](/src/assets/readme_images/notification-3.png)
+
+  ![Notification 4](/src/assets/readme_images/notification-4.png)
+
+  ![Notification 5](/src/assets/readme_images/notification-5.png)
 
   <br />
 
