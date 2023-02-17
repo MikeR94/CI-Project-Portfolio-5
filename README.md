@@ -547,6 +547,10 @@ I am happy with the lighthouse results for each page however in future updates I
 
 ![Lighthouse 8](/src/assets/readme_images/lighthouse-champion-info.png)
 
+![Lighthouse 9](/src/assets/readme_images/lighthouse-create.png)
+
+![Lighthouse 10](/src/assets/readme_images/lighthouse-edit.png)
+
 - ## Accessibility Testing
 
   - I put the website through the [a11y](https://color.a11y.com/Contrast/) to test if there was any conflicting contrast issues with the colours selected but found no errors
