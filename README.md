@@ -105,6 +105,8 @@ For my fifth and final project, I intend to create an online resource for League
 
 When I decided that I wanted to create this project, as I've used [Figma](https://www.figma.com/) in my previous projects, I felt comfortable enough to start designing my project using this tool. As you can see in the image below, I created 3 pages, the home page, the main champion page which stores all the information and then an icons page where I can store the icons for quick reference. Because of these 3 pages, I was able to quickly created pages for the website that followed this exact theme.
 
+To view the Figma project, you can visit it [here](https://www.figma.com/file/f55wXYMVslUqsuny4vM9xq/League-Project-Idea?node-id=0%3A1&t=HxaZ17Ib1BMHvcSm-0)
+
 ![Figma Design](/src/assets/readme_images/figma-design.png)
 
 <br />
@@ -514,8 +516,6 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 - [Responsive Design Checker](https://www.responsivedesignchecker.com/) - Used to test responsiveness.
 - [Figma](https://www.figma.com/) - Used to create mock-up designs.
 - [Heroku](https://dashboard.heroku.com) - Used to deploy the website
-- [HTML Validation](https://validator.w3.org/) - Used to validate HTML code
-- [CSS Validation](https://jigsaw.w3.org/css-validator/) - Used to validate CSS code
 - [JSHint Validation](https://jshint.com/) - Used to validate JavaScript code
 - [Microsoft Paint](https://en.wikipedia.org/wiki/Microsoft_Paint) - Used to create/edit images for the website
 
