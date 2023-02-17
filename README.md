@@ -529,13 +529,23 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 - ## Lighthouse Testing
 
-  ![Lighthouse Desktop](/src/assets/readme_images/lighthouse-desktop.png)
+I am happy with the lighthouse results for each page however in future updates I will aim to increase all lighthouse scores to be a minumum of 90 for performance, accessibility, best practices and SEO.
 
-  <br>
+![Lighthouse 1](/src/assets/readme_images/lighthouse-splash.png)
 
-  ![Lighthouse Mobile](/src/assets/readme_images/lighthouse-mobile.png)
+![Lighthouse 2](/src/assets/readme_images/lighthouse-sign-up.png)
 
-  Performance to be improved
+![Lighthouse 3](/src/assets/readme_images/lighthouse-sign-in.png)
+
+![Lighthouse 4](/src/assets/readme_images/lighthouse-profile.png)
+
+![Lighthouse 5](/src/assets/readme_images/lighthouse-notfound.png)
+
+![Lighthouse 6](/src/assets/readme_images/lighthouse-champions.png)
+
+![Lighthouse 7](/src/assets/readme_images/lighthouse-leaderboard.png)
+
+![Lighthouse 8](/src/assets/readme_images/lighthouse-champion-info.png)
 
 - ## Accessibility Testing
 
