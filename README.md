@@ -451,27 +451,27 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 - ### Items
 
-  - Description
+  - League of Legends is home to hundreds of different items that the champions can use to become stronger during the game. In a future update I would like to give the user the ability to view all the items in the same way they can view all the champions
 
 - ### Events
 
-  - Description
+  - League of Legends hosts multiple events throughout the year with the professional teams competing against each other for the title. In a future update I would like to provide this information for the users so they can keep up to date on upcoming events
 
 - ### News
 
-  - Description
+  - Providing a news feature would be very beneficial for everybody visiting the website as it could possibly be their new preferred way of gleaning news about both League of Legends information and League Hub updates. This could increase user retention and open opportunities for people to apply to be a staff member to provide the latest news and present it on the website
 
 - ### Teams
 
-  - Description
+  - League of Legends has many professional teams and organisations that compete at a very high level. It would be beneficial to the user if they could gain the latest information about each team and it’s players
 
 - ### Contact Form
 
-  - Description
+  - Currently there is no way for a user to contact the League Hub. In a future update I would like to rectify this and allow users to be able to contact the League Hub with any queries or feedback and it would give users the opportunity to apply for a staff position to help manage and keep the website up to date
 
 - ### Improved Profile Page
 
-  - Description
+  - In its current form, the profile page does what it is intended to do, however I believe there could be some user experiences improvements such as displaying statistical information about their interactivity on the website, their favourite champion, password reset option and much more
 
 # Technologies Used
 
