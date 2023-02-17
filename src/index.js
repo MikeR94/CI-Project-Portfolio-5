@@ -12,15 +12,13 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <CurrentUserProvider>
-        <SearchQueryProvider>
-          <App />
-        </SearchQueryProvider>
-      </CurrentUserProvider>
-    </Router>
-  </React.StrictMode>,
+  <Router>
+    <CurrentUserProvider>
+      <SearchQueryProvider>
+        <App />
+      </SearchQueryProvider>
+    </CurrentUserProvider>
+  </Router>,
   document.getElementById("root")
 );
 
