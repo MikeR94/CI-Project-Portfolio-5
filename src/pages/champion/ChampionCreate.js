@@ -3,8 +3,6 @@ import React, { useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 // API
 import { axiosReq } from "../../api/axiosDefaults";
-// Contexts
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
 // Notifications
 import { NotificationManager } from "react-notifications";
 // Components
@@ -32,16 +30,6 @@ function ChampionCreate() {
   const [champClassSelected, setChampClassSelected] = useState(false);
   const history = useHistory();
   const [errors, setErrors] = useState({});
-  const currentUser = useCurrentUser();
-  const is_staff = currentUser?.is_staff;
-
-  /**
-   * Redirect the user to the home page
-   * if they are not a staff member
-   */
-  if (!is_staff) {
-    history.push("/home");
-  }
 
   /**
    * Initialize the champData object

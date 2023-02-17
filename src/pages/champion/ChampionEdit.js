@@ -3,8 +3,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 // API
 import { axiosReq } from "../../api/axiosDefaults";
-// Contexts
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
 // Notifications
 import { NotificationManager } from "react-notifications";
 // Components
@@ -28,17 +26,7 @@ function ChampionEdit() {
   const ultimateImageInput = useRef(null);
   const history = useHistory();
   const { id } = useParams();
-  const currentUser = useCurrentUser();
-  const is_staff = currentUser?.is_staff;
   const [errors, setErrors] = useState({});
-
-  /**
-   * Redirect the user to the home page
-   * if they are not a staff member
-   */
-  if (!is_staff) {
-    history.push("/home");
-  }
 
   /**
    * Initialize the champData object

@@ -3,6 +3,7 @@ import { Route, Switch, useLocation } from "react-router-dom";
 // API
 import "./api/axiosDefaults";
 // Contexts
+import { useCurrentUser } from "./contexts/CurrentUserContext";
 // Notifications
 import { NotificationContainer } from "react-notifications";
 import "react-notifications/lib/notifications.css";
@@ -25,6 +26,8 @@ import styles from "./App.module.css";
 
 function App() {
   const location = useLocation();
+  const currentUser = useCurrentUser();
+  const is_staff = currentUser?.is_staff;
 
   let splashPage = true;
   let mainSite = false;
@@ -80,17 +83,21 @@ function App() {
                 path="/champion/:id"
                 render={() => <ChampionPage></ChampionPage>}
               />
-              <Route
-                exact
-                path="/create"
-                render={() => <ChampionCreate></ChampionCreate>}
-              />
+              {is_staff && (
+                <Route
+                  exact
+                  path="/create"
+                  render={() => <ChampionCreate></ChampionCreate>}
+                />
+              )}
+              {is_staff && (
+                <Route
+                  exact
+                  path="/champion/:id/edit"
+                  render={() => <ChampionEdit></ChampionEdit>}
+                />
+              )}
 
-              <Route
-                exact
-                path="/champion/:id/edit"
-                render={() => <ChampionEdit></ChampionEdit>}
-              />
               <Route render={() => <PageNotFound />} />
             </Switch>
           </Container>
