@@ -145,7 +145,10 @@ function ChampionEdit() {
           ultimate_ability_image,
         });
       } catch (error) {
-        console.log(error);
+        NotificationManager.error(
+          "There was an issue retrieving the champion data",
+          "Error"
+        );
       }
     };
     handleMount();

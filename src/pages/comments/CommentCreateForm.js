@@ -45,7 +45,10 @@ function CommentCreateForm(props) {
         "Success!"
       );
     } catch (error) {
-      console.log(error);
+      NotificationManager.error(
+        "There was an issue creating your comment",
+        "Error"
+      );
     }
   };
 

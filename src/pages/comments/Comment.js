@@ -63,7 +63,10 @@ const Comment = (props) => {
         NotificationManager.success("The comment has been deleted", "Success!");
       }
     } catch (error) {
-      console.log(error);
+      NotificationManager.error(
+        "There was an issue deleting this comment",
+        "Error"
+      );
     }
   };
 

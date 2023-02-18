@@ -47,7 +47,10 @@ function CommentEditForm(props) {
       setShowEditForm(false);
       NotificationManager.success("Your comment has been updated", "Success!");
     } catch (error) {
-      console.log(error);
+      NotificationManager.error(
+        "There was an issue updating your comment",
+        "Error"
+      );
     }
   };
 

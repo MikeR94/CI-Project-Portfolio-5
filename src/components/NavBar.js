@@ -36,7 +36,6 @@ const NavBar = () => {
         "Success!"
       );
     } catch (error) {
-      console.log(error);
       NotificationManager.error("There was an issue signing you out", "Error");
     }
   };

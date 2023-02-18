@@ -80,7 +80,10 @@ const ProfilePage = () => {
         });
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
+        NotificationManager.error(
+          "There was an issue loading your profile",
+          "Error"
+        );
       }
     };
     fetchProfileData();

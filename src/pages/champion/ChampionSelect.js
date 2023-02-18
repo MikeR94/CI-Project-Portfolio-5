@@ -17,6 +17,8 @@ import AdcIcon from "../../assets/role_icons/adc.png";
 import JungleIcon from "../../assets/role_icons/jungle.png";
 import TopIcon from "../../assets/role_icons/top.png";
 import MiddleIcon from "../../assets/role_icons/middle.png";
+// Notifications
+import { NotificationManager } from "react-notifications";
 
 const ChampionSelect = () => {
   const [champions, setChampions] = useState({ results: [] });
@@ -40,7 +42,10 @@ const ChampionSelect = () => {
         setChampions(data);
         setHasLoaded(true);
       } catch (error) {
-        console.log(error);
+        NotificationManager.error(
+          "There was an issue with the search request",
+          "Error"
+        );
       }
     },
     [searchQuery]

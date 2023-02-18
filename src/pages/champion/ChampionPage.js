@@ -158,7 +158,10 @@ const ChampionPage = () => {
         }));
         setHasLoaded(true);
       } catch (error) {
-        console.log(error);
+        NotificationManager.error(
+          "There was an issue retrieving the champion data",
+          "Error"
+        );
         history.push("/home");
       }
     };
@@ -186,7 +189,6 @@ const ChampionPage = () => {
         "Success!"
       );
     } catch (error) {
-      console.log(error);
       NotificationManager.error(
         "There was an error trying to delete the champion"
       );
@@ -211,8 +213,15 @@ const ChampionPage = () => {
         upvotes_count: prevChampData.upvotes_count + 1,
         upvotes_id: data.id,
       }));
+      NotificationManager.success(
+        "Your upvote has been added for the champion" + name,
+        "Success!"
+      );
     } catch (error) {
-      console.log(error);
+      NotificationManager.error(
+        "There was an issue upvoting this champion",
+        "Error"
+      );
     }
   };
 
@@ -227,8 +236,15 @@ const ChampionPage = () => {
         upvotes_count: prevChampData.upvotes_count - 1,
         upvotes_id: null,
       }));
+      NotificationManager.success(
+        "Your upvote has been removed for the champion" + name,
+        "Success!"
+      );
     } catch (error) {
-      console.log(error);
+      NotificationManager.error(
+        "There was an issue downvoting this champion",
+        "Error"
+      );
     }
   };
 
