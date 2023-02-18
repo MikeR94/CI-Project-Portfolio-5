@@ -1,0 +1,44 @@
+.RowContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 150px;
+}
+
+.TeemoImage {
+  filter: grayscale(0.2);
+}
+
+.TeemoImage img {
+  max-width: 80%;
+  height: auto;
+
+  overflow: hidden;
+}
+
+.Col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.Title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #cbae71;
+}
+
+@media all and (width: 1024px), all and (height: 600px) {
+  .RowContainer {
+    margin-top: 100px;
+  }
+}
