@@ -805,7 +805,7 @@ Now we need to open up a command prompt to pull this empty repository down onto 
 - Open a CMD
 - CD to a location you wish to store this project
 - Now type **git clone https://github.com/MikeR94/pp5-deployment-process.git**
-- After the project has been pulled down onto your local machine, type **code .** to open the project with [VSCode](https://code.visualstudio.com/)
+- After the project has been pulled down onto your local machine, CD to the project and type **code .** to open the project with [VSCode](https://code.visualstudio.com/)
 
 ![Deployment 3](/src/assets/readme_images/deployment-3.png)
 
@@ -874,7 +874,14 @@ Your new [React](https://reactjs.org/) application is now successfully deployed 
 
 # Acknowledgments
 
-Acknowledgements
+I have thoroughly enjoyed developing this project and although I found React to be challenging learning curve, after much perseverance I feel like I have a good baseline knowledge when it comes to developing applications that use an advanced front-end framework like React that talk to a back-end API developed using the Django REST Framework.
+Unlike my other projects which I was able to work on full time, I had successfully landed a software developer job and I only had time to work on this project in my spare time whilst trying to have a balanced personal life. This was extremely challenging for myself, and I am very proud to have managed to finally submit my fifth and final project with [Code Institute](https://codeinstitute.net/)
+
+I would like to thank my mentor Marcel, my educator Luke Walters, my brother Jack Ralph, my partner Beth, the Slack community, and all at the [Code Institute](https://codeinstitute.net/) for their help and support.
+
+It has been an incredible journey and I’m extremely excited to see where this adventure will take me.
+
+Thank you so much for a fantastic experience [Code Institute](https://codeinstitute.net/)!
 
 Mike Ralph 2023.
 
