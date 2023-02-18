@@ -864,11 +864,44 @@ Your new [React](https://reactjs.org/) application is now successfully deployed 
 
 ### Content
 
-- Content 1
+This project was inspired by the [Code Institute](https://codeinstitute.net/) walk-through **Moments** project and has been heavily modified
+
+The files which have been created and used for the League Hub project that have been copied from the **Moments** walkthrough project were the following
+
+- CurrentUserContext.js
+- useRedirect.js
+- axiosDefault.js
+
+Additional files that I have drawn inspiration from and modified to meet the League Hubs needs were the following
+
+- SignInForm.js
+- SignUpForm.js
+- Comment.js
+- CommentCreateForm.js
+- CommentEditForm.js
+- Asset.js
+- utils.js
+- Avatar.js
+
+I also found this brilliant example of how to move my search bar to the middle of the screen when the screen size gets smaller - [Link](https://jsfiddle.net/wqLezyfe/2/)
+
+I had an issue with the dropdown value not being properly populated which was resolved by finding a Stack Overflow answer - [Link](https://stackoverflow.com/questions/44786669/warning-use-the-defaultvalue-or-value-props-on-select-instead-of-setting)
+
+When developing the leaderboard, I wanted to add pagination to the leaderboard itself. I found this excellent YouTube tutorial which explains in detail how to do just that - [Link](https://www.youtube.com/watch?v=IYCa1F-OWmk)
 
 ### Media
 
-- Media 1
+All champion information (including champion images) presented on the website is sourced from the official [League of Legends](https://www.leagueoflegends.com/en-gb/champions/) website
+
+The faint background image you can see on the Splash Page is from [alphacoders](https://wall.alphacoders.com/by_sub_category.php?id=169908&name=League+Of+Legends+Wallpapers)
+
+The role icon images came from a GitHub repository - [Link](https://github.com/esports-bits/lol_images)
+
+The class icon and difficulty images came from [leagueoflegends.fandom](https://leagueoflegends.fandom.com/wiki/Champion_classes)
+
+The crossed sword and bow and arrow icons came from [pngaaa](https://www.pngaaa.com/)
+
+The silver moderator crown came from [geneisscape](https://genesisscape.fandom.com/wiki/Player_Moderator)
 
 [Back to top](#contents)
 
