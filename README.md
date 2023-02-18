@@ -45,7 +45,6 @@ You can view the live site here - <a href="https://ci-league-hub.herokuapp.com/"
 - [**Technologies Used**](#technologies-used)
 - [**Testing**](#testing)
 - [**Deployment To Heroku**](#deployment-to-heroku)
-- [**Cloning This Project**](#cloning-and-setting-up-this-project)
 - [**Credits**](#credits)
   - [**Content**](#content)
   - [**Media**](#media)
@@ -858,12 +857,6 @@ You can either choose **Enable Automatic Deploys** or **Deploy Branch**. I chose
 Your new [React](https://reactjs.org/) application is now successfully deployed to [Heroku](https://www.heroku.com)
 
 ![Deployment 9](/src/assets/readme_images/deployment-9.png)
-
-[Back to top](#contents)
-
-# Cloning and setting up this project
-
-If you wish to clone and setup this project locally then the process is as follows:
 
 [Back to top](#contents)
 
