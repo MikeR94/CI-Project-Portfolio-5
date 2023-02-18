@@ -299,7 +299,7 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
   This is the page that is displayed when the user enters a URL or tries to navigate to a page that does not exist
 
-  Image to be added
+  ![Page Not Found](/src/assets/readme_images/page-not-found.png)
 
   <br />
 
@@ -902,6 +902,8 @@ The class icon and difficulty images came from [leagueoflegends.fandom](https://
 The crossed sword and bow and arrow icons came from [pngaaa](https://www.pngaaa.com/)
 
 The silver moderator crown came from [geneisscape](https://genesisscape.fandom.com/wiki/Player_Moderator)
+
+The page not found image of Teemo is from [toppng](https://toppng.com/show_download/205781/ersonagens-de-lol-png-teemo-transparent/large)
 
 [Back to top](#contents)
 
