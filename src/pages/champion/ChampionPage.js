@@ -214,7 +214,7 @@ const ChampionPage = () => {
         upvotes_id: data.id,
       }));
       NotificationManager.success(
-        "Your upvote has been added for the champion" + name,
+        "Your upvote has been added for the champion " + name,
         "Success!"
       );
     } catch (error) {
@@ -237,7 +237,7 @@ const ChampionPage = () => {
         upvotes_id: null,
       }));
       NotificationManager.success(
-        "Your upvote has been removed for the champion" + name,
+        "Your upvote has been removed for the champion " + name,
         "Success!"
       );
     } catch (error) {
