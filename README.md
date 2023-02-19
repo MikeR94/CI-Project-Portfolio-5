@@ -684,7 +684,7 @@ I am happy with the lighthouse results for each page however in future updates I
 | Upvoting      | As a logged in user, clicking the upvote icon upvotes the champion and increases the upvote_count by 1                                                          | Pass      |
 | Upvoting      | As a logged in user, clicking the downvote icon downvotes the champion and decreases the upvote_count by 1                                                      | Pass      |
 | Upvoting      | As a logged in user that hasn't upvoted, hovering over the upvote icon shows a tooltip that says "Click to upvote this champion!"                               | Pass      |
-| Upvoting      | As a logged in user that has upvoted, hovering over the downvote icon shows a tooltip that says "Click to downvote this champion"                               | Fail      |
+| Upvoting      | As a logged in user that has upvoted, hovering over the downvote icon shows a tooltip that says "Click to downvote this champion"                               | Pass      |
 | Upvoting      | As a logged in user that hasn't upvoted, the text to the left says "Do you like this champion? Make sure you up-vote it by clicking the arrow if you do!"       | Pass      |
 | Upvoting      | As a logged in user that has upvoted, the text to the left says "Great! You have successfully upvoted for {champ_name} Make sure to check out the leaderboard!" | Pass      |
 

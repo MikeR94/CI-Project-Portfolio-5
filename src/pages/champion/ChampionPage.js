@@ -438,9 +438,7 @@ const ChampionPage = () => {
                 {is_owner && upvotes_id && (
                   <OverlayTrigger
                     placement="top"
-                    overlay={
-                      <Tooltip>Click to down vote this champion</Tooltip>
-                    }
+                    overlay={<Tooltip>Click to downvote this champion</Tooltip>}
                   >
                     <span onClick={handleDownVote}>
                       <i className="fa fa-angle-down"></i>
