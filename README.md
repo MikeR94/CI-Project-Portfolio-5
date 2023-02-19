@@ -566,7 +566,7 @@ I am happy with the lighthouse results for each page however in future updates I
 
 - ## Responsiveness Testing
 
-  - Responsive testing [Responsive Design Checker](https://www.responsivedesignchecker.com/).<br /><br />
+  - Responsive testing [Responsive Design Checker](https://www.responsivedesignchecker.com/).<br />
 
 - ## Manual Testing Pages
 
@@ -772,6 +772,30 @@ I am happy with the lighthouse results for each page however in future updates I
 - This was a simple fix as it was a case of changing the to="/signin" to be "to="/signup" but I wanted to put this in here to show the importance of manual testing
 
 ![Sign Up Fix](/src/assets/readme_images/signup-fix.png)
+
+## Minor Responsive Issues
+
+- When testing the website for responsiveness, I created a spreadsheet and performed tests on each page for different devices. As shown in the picture below, I noticed that I had a few minor alignment and size issues which I wanted to rectify
+
+<br/>
+
+![Responsive Issue 1](/src/assets/readme_images/responsive-issue-1.png)
+
+<br/>
+
+- After identifiying what the issue was and where it was, I rectified the problem and now both the alignment and size issues are no longer present. This reinforces the importance of thorough testing throughout the website
+
+<br/>
+
+| Alignment Issue - Before                                             | Alignment Issue - After (Fixed)                                      |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| ![Alignment Issue](/src/assets/readme_images/responsive-issue-2.png) | ![Alignment Fixed](/src/assets/readme_images/responsive-issue-3.png) |
+
+<br/>
+
+| Size Issue - Before                                                  | Size Issue - After (Fixed)                                           |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| ![Alignment Issue](/src/assets/readme_images/responsive-issue-4.png) | ![Alignment Fixed](/src/assets/readme_images/responsive-issue-5.png) |
 
 - ## Bugs Unresolved
 
