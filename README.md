@@ -566,7 +566,28 @@ I am happy with the lighthouse results for each page however in future updates I
 
 - ## Responsiveness Testing
 
-  - Responsive testing [Responsive Design Checker](https://www.responsivedesignchecker.com/).<br />
+  I've conducted responsive testing for all pages for the following devices.
+
+  - iPhone SE
+  - iPhone XR
+  - iPhone 12 Pro
+  - Pixel 5
+  - Samsung Galaxy S8
+  - Samsung Galaxy S20 Ultra
+  - iPad Air
+  - iPad Mini
+  - Surface Pro 7
+  - Surface Duo
+  - Galaxy Fold
+  - Samsung Galaxy A51/71
+  - Nest Hub
+  - Nest Hub Max
+
+  ![Responsive Test Results](/src/assets/readme_images/responsive-test-results.png)
+
+  Upon initial responsive testing, I did find some minor alignment and size issues which have been documented in the Bugs Found section but they have now been rectified and the website is responsive on all the above devices
+
+  <br />
 
 - ## Manual Testing Pages
 
