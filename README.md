@@ -595,9 +595,12 @@ I am happy with the lighthouse results for each page however in future updates I
 | ---------------- | ----------------------------------------------------------------------------------------------------------------- | --------- |
 | Splash           | Loading the website renders the splash page                                                                       | Pass      |
 | Splash           | The navigation and the footer components don't load                                                               | Pass      |
-| Splash           | The feature icons display the relavent tooltip when the user hovers over one                                      | Pass      |
 | Splash           | Hovering over the continue button turns the button gold                                                           | Pass      |
 | Splash           | Clicking the continue button navigates the user to the home page                                                  | Pass      |
+| Splash           | Clicking the coloured feature icon "Champions" loads the home page                                                | Pass      |
+| Splash           | Clicking the greyed out feature icon "Items, Events, News" does nothing                                           | Pass      |
+| Splash           | Hovering over the Champions icon shows a tooltip that says "Live"                                                 | Pass      |
+| Splash           | Hovering over the Items, Events and News icons shows a tooltip that says "Coming soon"                            | Pass      |
 | Home             | The navigation bar is displayed to the user and all functionality works as per the navigation manual tests        | Pass      |
 | Home             | The role icons are displayed to the user and all functionality works as per the role icon manual tests            | Pass      |
 | Home             | The champion cards are displayed to the user and all functionality works as per the role icon manual tests        | Pass      |
