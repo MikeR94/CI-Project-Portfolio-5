@@ -4,6 +4,12 @@ League Hub is an online resource for people around the world to easily access an
 
 You can view the live site here - <a href="https://ci-league-hub.herokuapp.com/" target="_blank" rel="noopener">League Hub</a>
 
+You can view the live API here - <a href="https://drf-api-league-hub.herokuapp.com/" target="_blank" rel="noopener">League Hub DRF API</a>
+
+You can view the front-end README.md here - <a href="https://github.com/MikeR94/ci-project-portfolio-5" target="_blank" rel="noopener">League Hub Front-End README</a>
+
+You can view the back-end README.md here - <a href="https://github.com/MikeR94/drf-api-league-hub" target="_blank" rel="noopener">League Hub Back-End README</a>
+
 ![League Hub responsive design](/src/assets/readme_images/responsive-preview.png)
 
 # Contents
