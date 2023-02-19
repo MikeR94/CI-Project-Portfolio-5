@@ -303,7 +303,7 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
 - ### Page Not Found
 
-  This is the page that is displayed when the user enters a URL or tries to navigate to a page that does not exist
+  This is the page that is displayed when the user enters a URL or tries to navigate to a page that does not exist or if the user does not have the correct permissions
 
   ![Page Not Found](/src/assets/readme_images/page-not-found.png)
 
