@@ -21,6 +21,12 @@
   font-size: 20px;
 }
 
+.CardContainer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
 .Header {
   font-style: normal;
   font-weight: bold;

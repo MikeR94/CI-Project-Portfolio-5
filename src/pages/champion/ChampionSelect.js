@@ -145,7 +145,7 @@ const ChampionSelect = () => {
         </Row>
       )}
 
-      <Container className="mt-5">
+      <Container className={styles.CardContainer}>
         <div className={`${styles.Grid}`}>
           {hasLoaded ? (
             <>
