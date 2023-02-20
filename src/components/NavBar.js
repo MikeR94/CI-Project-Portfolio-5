@@ -1,29 +1,38 @@
+// React and Router
 import React from "react";
-import { Navbar, Container, NavDropdown } from "react-bootstrap";
-import logo from "../assets/logo.png";
-import styles from "../styles/NavBar.module.css";
 import { Link, useHistory, useLocation } from "react-router-dom";
-import Avatar from "../components/Avatar";
+// Context
 import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
+// Components
+import { Navbar, Container, NavDropdown } from "react-bootstrap";
 import SearchBar from "../components/SearchBar";
+// API
 import axios from "axios";
+// Assets
+import logo from "../assets/logo.png";
+import Avatar from "../components/Avatar";
 import StaffCrownIcon from "../assets/staff_crown.png";
-import { NotificationManager } from "react-notifications";
 import UserLoggedOutImage from "../assets/user-logged-out.png";
+// Styles
+import styles from "../styles/NavBar.module.css";
+// Utils
 import { removeTokenTimestamp } from "../utils/utils";
+// Notifications
+import { NotificationManager } from "react-notifications";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
   const location = useLocation();
-
   const is_staff = currentUser?.is_staff;
-
   const history = useHistory();
 
+  /**
+   * Function to sign the user out
+   */
   const handleSignOut = async () => {
     try {
       await axios.post("dj-rest-auth/logout/");
@@ -44,6 +53,10 @@ const NavBar = () => {
     return null;
   }
 
+  /**
+   * Function to return the user
+   * to the home page
+   */
   const handleGoHomePage = () => {
     if (location.pathname !== "/home") {
       history.push("/home");
