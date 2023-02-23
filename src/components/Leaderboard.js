@@ -1,8 +1,9 @@
 // React and Router
 import React from "react";
+import { Link } from "react-router-dom";
 // Components
 import Avatar from "../components/Avatar";
-import { Container, Row } from "react-bootstrap";
+import { Container, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 import LoadingSpinner from "../components/LoadingSpinner";
 // Styles
 import styles from "../styles/ChampionLeaderboard.module.css";
@@ -50,7 +51,16 @@ const Leaderboard = ({ champions }) => {
                   <tr key={champions.id}>
                     <td>{champions.rank}</td>
                     <td>
-                      <Avatar src={champions.champ_image}></Avatar>
+                      <OverlayTrigger
+                        placement="bottom"
+                        overlay={
+                          <Tooltip>{`Click to view ${champions.name}'s page`}</Tooltip>
+                        }
+                      >
+                        <Link to={`/champion/${champions.id}`}>
+                          <Avatar src={champions.champ_image}></Avatar>
+                        </Link>
+                      </OverlayTrigger>
                     </td>
                     <td>{champions.name}</td>
                     <td>
