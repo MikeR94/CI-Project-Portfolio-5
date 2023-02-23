@@ -931,8 +931,8 @@ Additional files that I have drawn inspiration from and modified to meet the Lea
 - SignInForm.js
 - SignUpForm.js
 - Comment.js
-- CommentCreateForm.js
-- CommentEditForm.js
+- CommentCreate.js
+- CommentEdit.js
 - Asset.js
 - utils.js
 - Avatar.js

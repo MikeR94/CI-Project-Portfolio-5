@@ -13,7 +13,7 @@ import { Button } from "react-bootstrap";
 import styles from "../../styles/CommentCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
-function CommentCreateForm(props) {
+const CommentCreate = (props) => {
   const { setCommentData, profile_avatar, champion } = props;
   const [comment, setComment] = useState("");
 
@@ -81,6 +81,6 @@ function CommentCreateForm(props) {
       <hr></hr>
     </Form>
   );
-}
+};
 
-export default CommentCreateForm;
+export default CommentCreate;

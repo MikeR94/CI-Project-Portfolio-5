@@ -18,7 +18,7 @@ import {
   Tooltip,
 } from "react-bootstrap";
 import Avatar from "../../components/Avatar";
-import CommentEditForm from "./CommentEditForm";
+import CommentEdit from "./CommentEdit";
 import Modal from "react-modal";
 // Styles
 import styles from "../../styles/Comment.module.css";
@@ -151,7 +151,7 @@ const Comment = (props) => {
             </Card.Header>
             <Card.Body>
               {showEditForm ? (
-                <CommentEditForm
+                <CommentEdit
                   id={id}
                   profile_id={profile_id}
                   comment={comment}

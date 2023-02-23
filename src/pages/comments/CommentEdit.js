@@ -11,7 +11,7 @@ import { Button, InputGroup } from "react-bootstrap";
 import styles from "../../styles/CommentCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
-function CommentEditForm(props) {
+const CommentEdit = (props) => {
   const { id, comment, setShowEditForm, setCommentData } = props;
   const [editedComment, setEditedComment] = useState(comment);
 
@@ -81,6 +81,6 @@ function CommentEditForm(props) {
       <hr></hr>
     </Form>
   );
-}
+};
 
-export default CommentEditForm;
+export default CommentEdit;

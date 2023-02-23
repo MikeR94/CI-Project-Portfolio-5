@@ -12,7 +12,7 @@ import { Button, Col, Container } from "react-bootstrap";
 import { OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 import Comment from "../comments/Comment";
 import InfiniteScroll from "react-infinite-scroll-component";
-import CommentCreateForm from "../comments/CommentCreateForm";
+import CommentCreate from "../comments/CommentCreate";
 import LoadingSpinner from "../../components/LoadingSpinner";
 import Modal from "react-modal";
 // Styles
@@ -482,7 +482,7 @@ const ChampionPage = () => {
           </Row>
           <Row className={styles.CommentTitle}>Have Your Say</Row>
           {currentUser ? (
-            <CommentCreateForm
+            <CommentCreate
               profile_id={currentUser.profile_id}
               profile_avatar={profile_avatar}
               champion={id}
