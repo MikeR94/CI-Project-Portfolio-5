@@ -36,11 +36,17 @@ const ChampionSelect = () => {
   const fetchChampionData = useCallback(
     async (roleFilter = "") => {
       try {
-        const { data } = await axiosReq.get(
-          `/champions/?search=${searchQuery}${roleFilter}`
-        );
-        setChampions(data);
-        setHasLoaded(true);
+        if (searchQuery === "") {
+          const { data } = await axiosReq.get(`/champions/?${roleFilter}`);
+          setHasLoaded(true);
+          setChampions(data);
+        } else {
+          const { data } = await axiosReq.get(
+            `/champions/?search=${searchQuery}${roleFilter}`
+          );
+          setHasLoaded(true);
+          setChampions(data);
+        }
       } catch (error) {
         NotificationManager.error(
           "There was an issue with the search request",
@@ -52,8 +58,20 @@ const ChampionSelect = () => {
   );
 
   useEffect(() => {
-    setHasLoaded(false);
-    fetchChampionData();
+    let delayApiCall = null;
+    if (searchQuery === "") {
+      fetchChampionData();
+    } else {
+      delayApiCall = setTimeout(() => {
+        fetchChampionData();
+      }, 2000);
+
+      setHasLoaded(false);
+    }
+
+    return () => {
+      clearTimeout(delayApiCall);
+    };
   }, [searchQuery, fetchChampionData]);
 
   /**
