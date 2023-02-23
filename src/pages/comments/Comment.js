@@ -1,5 +1,6 @@
 // React and Router
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 // API
 import { axiosRes } from "../../api/axiosDefaults";
 // Contexts
@@ -7,7 +8,15 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 // Notifications
 import { NotificationManager } from "react-notifications";
 // Components
-import { Card, Button, Col, Container, Row } from "react-bootstrap";
+import {
+  Card,
+  Button,
+  Col,
+  Container,
+  Row,
+  OverlayTrigger,
+  Tooltip,
+} from "react-bootstrap";
 import Avatar from "../../components/Avatar";
 import CommentEditForm from "./CommentEditForm";
 import Modal from "react-modal";
@@ -76,7 +85,14 @@ const Comment = (props) => {
         <Row className="d-flex justify-content-center">
           <Col className="col-md-12">
             <Card.Header className={styles.Header}>
-              <Avatar src={profile_avatar} />
+              <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>{`View ${owner}'s profile`}</Tooltip>}
+              >
+                <Link to={`/profile/${profile_id}/`}>
+                  <Avatar src={profile_avatar} />
+                </Link>
+              </OverlayTrigger>
               <div className={styles.Owner}>
                 {is_staff && (
                   <img
