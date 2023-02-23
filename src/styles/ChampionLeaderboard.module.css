@@ -41,11 +41,6 @@
   font-weight: bold;
 }
 
-.LeaderboardResults tbody tr:hover td {
-  background: #cbae71;
-  transition: background-color 0.5s ease;
-}
-
 .LeaderboardResults tbody span {
   font-weight: bold;
   padding: 10px 15px;
