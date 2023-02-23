@@ -55,6 +55,16 @@ input[type="text"]:focus {
   cursor: pointer;
 }
 
+.UpdateProfileText {
+  color: #6c757d;
+  margin-top: 10px;
+}
+
+.UpdateProfileText:hover {
+  color: #cbae71;
+  cursor: pointer;
+}
+
 .InputText {
   color: #cbae71;
   margin-bottom: 10px;

@@ -190,13 +190,14 @@ const ProfilePage = () => {
               {is_owner && (
                 <OverlayTrigger
                   placement="right"
-                  overlay={
-                    <Tooltip>Click to update your profile image</Tooltip>
-                  }
+                  overlay={<Tooltip>Update your profile image</Tooltip>}
                 >
                   <Form.Label>
                     <div className={styles.AvatarRow}>
                       <Avatar src={avatar_image} height={avatarHeight}></Avatar>
+                    </div>
+                    <div className={styles.UpdateProfileText}>
+                      Update your profile image?
                     </div>
                   </Form.Label>
                 </OverlayTrigger>
