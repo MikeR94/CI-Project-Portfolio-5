@@ -928,8 +928,8 @@ The files which have been created and used for the League Hub project that have 
 
 Additional files that I have drawn inspiration from and modified to meet the League Hubs needs were the following
 
-- SignInForm.js
-- SignUpForm.js
+- SignIn.js
+- SignUp.js
 - Comment.js
 - CommentCreate.js
 - CommentEdit.js

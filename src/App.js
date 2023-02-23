@@ -10,8 +10,8 @@ import "react-notifications/lib/notifications.css";
 // Components
 import NavBar from "./components/NavBar";
 import Container from "react-bootstrap/Container";
-import SignUpForm from "./pages/auth/SignUpForm";
-import SignInForm from "./pages/auth/SignInForm";
+import SignUp from "./pages/auth/SignUp";
+import SignIn from "./pages/auth/SignIn";
 import ChampionSelect from "./pages/champion/ChampionSelect";
 import ChampionPage from "./pages/champion/ChampionPage";
 import ChampionCreate from "./pages/champion/ChampionCreate";
@@ -68,16 +68,8 @@ function App() {
                 path="/leaderboard"
                 render={() => <ChampionLeaderboard></ChampionLeaderboard>}
               />
-              <Route
-                exact
-                path="/signin"
-                render={() => <SignInForm></SignInForm>}
-              />
-              <Route
-                exact
-                path="/signup"
-                render={() => <SignUpForm></SignUpForm>}
-              />
+              <Route exact path="/signin" render={() => <SignIn></SignIn>} />
+              <Route exact path="/signup" render={() => <SignUp></SignUp>} />
               <Route
                 exact
                 path="/champion/:id"
