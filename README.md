@@ -426,11 +426,15 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
   This is the result of all the users upvotes for the champions. It shows a ranked order of champions with the most upvotes to the least upvotes. Every single champion that is displayed on the website will be present on the leaderboard, but their position depends on the amount of upvotes they have
 
+  The user also has the ability to navigate straight to the champion information page for the specific champion if they click the avatar icon
+
   **User Story - I can view the champion upvote leaderboard to see how all the champions are ranked against each other**
 
    <br />
 
   ![Leaderboard](/src/assets/readme_images/leaderboard-1.png)
+
+  ![Leaderboard](/src/assets/readme_images/leaderboard-2.png)
 
   <br />
 
