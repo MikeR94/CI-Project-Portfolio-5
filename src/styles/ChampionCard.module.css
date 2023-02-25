@@ -9,6 +9,7 @@
   border: none;
   width: 200px;
   height: 230px;
+  transition: transform 0.2s ease-out;
 }
 
 .ChampionImage {
@@ -19,4 +20,9 @@
 
 .ChampionCardBody {
   padding: 10px;
+}
+
+.ChampionCard:hover {
+  transform: translateY(-8px);
+  filter: drop-shadow(0 0 0.2rem rgb(255, 217, 0));
 }
