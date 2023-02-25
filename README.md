@@ -957,6 +957,12 @@ I had an issue with the dropdown value not being properly populated which was re
 
 When developing the leaderboard, I wanted to add pagination to the leaderboard itself. I found this excellent YouTube tutorial which explains in detail how to do just that - [Link](https://www.youtube.com/watch?v=IYCa1F-OWmk)
 
+After submitting my project for peer review with [Code Institute](https://codeinstitute.net/), a student very kindly pointed out the following
+
+- "The search filters are great! However the text search is sending a request instantly after entering a new character. I think it would be worth slowing this down (like in the tutorial) so users aren’t making as many calls."
+
+I used a guide from [rapidapi](https://rapidapi.com/guides/api-request-schedule) to show me how I could slow down the request call by using a setTimeout function and it worked brilliantly - [Link](https://rapidapi.com/guides/api-request-schedule)
+
 ### Media
 
 All champion information (including champion images) presented on the website is sourced from the official [League of Legends](https://www.leagueoflegends.com/en-gb/champions/) website
