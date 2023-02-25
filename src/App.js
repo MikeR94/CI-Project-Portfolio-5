@@ -44,7 +44,7 @@ function App() {
     <div className={styles.App}>
       {splashPage && (
         <Switch>
-          <Route exact path="/" render={() => <SplashPage></SplashPage>} />
+          <Route exact path="/" render={() => <SplashPage />} />
         </Switch>
       )}
       {mainSite && (
@@ -53,40 +53,28 @@ function App() {
           <NotificationContainer />
           <Container className={styles.Main}>
             <Switch>
-              <Route
-                exact
-                path="/home"
-                render={() => <ChampionSelect></ChampionSelect>}
-              />
-              <Route
-                exact
-                path="/profile/:id"
-                render={() => <ProfilePage></ProfilePage>}
-              />
+              <Route exact path="/home" render={() => <ChampionSelect />} />
+              <Route exact path="/profile/:id" render={() => <ProfilePage />} />
               <Route
                 exact
                 path="/leaderboard"
-                render={() => <ChampionLeaderboard></ChampionLeaderboard>}
+                render={() => <ChampionLeaderboard />}
               />
-              <Route exact path="/signin" render={() => <SignIn></SignIn>} />
-              <Route exact path="/signup" render={() => <SignUp></SignUp>} />
+              <Route exact path="/signin" render={() => <SignIn />} />
+              <Route exact path="/signup" render={() => <SignUp />} />
               <Route
                 exact
                 path="/champion/:id"
-                render={() => <ChampionPage></ChampionPage>}
+                render={() => <ChampionPage />}
               />
               {is_staff && (
-                <Route
-                  exact
-                  path="/create"
-                  render={() => <ChampionCreate></ChampionCreate>}
-                />
+                <Route exact path="/create" render={() => <ChampionCreate />} />
               )}
               {is_staff && (
                 <Route
                   exact
                   path="/champion/:id/edit"
-                  render={() => <ChampionEdit></ChampionEdit>}
+                  render={() => <ChampionEdit />}
                 />
               )}
 

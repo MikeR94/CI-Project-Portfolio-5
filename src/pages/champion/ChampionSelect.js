@@ -174,7 +174,7 @@ const ChampionSelect = () => {
                 : NoChampsFound}
             </>
           ) : (
-            <LoadingSpinner></LoadingSpinner>
+            <LoadingSpinner />
           )}
         </div>
       </Container>

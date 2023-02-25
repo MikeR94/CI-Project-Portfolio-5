@@ -162,7 +162,7 @@ const Comment = (props) => {
               ) : (
                 <div>
                   {comment}
-                  <hr></hr>
+                  <hr />
                 </div>
               )}
             </Card.Body>

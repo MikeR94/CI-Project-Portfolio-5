@@ -68,7 +68,7 @@ const NavBar = () => {
   const loggedInMenu = (
     <>
       <NavDropdown
-        title={<Avatar src={currentUser?.profile_avatar} height={50}></Avatar>}
+        title={<Avatar src={currentUser?.profile_avatar} height={50} />}
         id="nav-dropdown"
       >
         <div className={styles.DropdownMenu}>
@@ -125,7 +125,7 @@ const NavBar = () => {
   const loggedOutMenu = (
     <>
       <NavDropdown
-        title={<Avatar src={UserLoggedOutImage} height={60}></Avatar>}
+        title={<Avatar src={UserLoggedOutImage} height={60} />}
         id="nav-dropdown"
       >
         <NavDropdown.Item

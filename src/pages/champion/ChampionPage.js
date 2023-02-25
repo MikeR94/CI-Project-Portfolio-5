@@ -502,7 +502,7 @@ const ChampionPage = () => {
                 />
               ))}
               dataLength={commentData.results.length}
-              loader={<LoadingSpinner></LoadingSpinner>}
+              loader={<LoadingSpinner />}
               hasMore={!!commentData.next}
               next={() => fetchMoreData(commentData, setCommentData)}
               endMessage={
@@ -522,7 +522,7 @@ const ChampionPage = () => {
           )}
         </Container>
       ) : (
-        <LoadingSpinner></LoadingSpinner>
+        <LoadingSpinner />
       )}
     </div>
   );

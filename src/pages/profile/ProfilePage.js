@@ -194,7 +194,7 @@ const ProfilePage = () => {
                 >
                   <Form.Label>
                     <div className={styles.AvatarRow}>
-                      <Avatar src={avatar_image} height={avatarHeight}></Avatar>
+                      <Avatar src={avatar_image} height={avatarHeight} />
                     </div>
                     <div className={styles.UpdateProfileText}>
                       Update your profile image?
@@ -211,7 +211,7 @@ const ProfilePage = () => {
                 onChange={handleChangeImage}
               ></Form.File>
 
-              {!is_owner && <Avatar src={avatar_image} height={170}></Avatar>}
+              {!is_owner && <Avatar src={avatar_image} height={170} />}
 
               {imageChange && (
                 <Row className="justify-content-center mt-2">
@@ -310,7 +310,7 @@ const ProfilePage = () => {
           </Row>
         </Container>
       ) : (
-        <LoadingSpinner></LoadingSpinner>
+        <LoadingSpinner />
       )}
     </div>
   );

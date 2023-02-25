@@ -78,7 +78,7 @@ const CommentEdit = (props) => {
           Save
         </Button>
       </div>
-      <hr></hr>
+      <hr />
     </Form>
   );
 };

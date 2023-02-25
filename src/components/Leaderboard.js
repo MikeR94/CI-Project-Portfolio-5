@@ -58,39 +58,39 @@ const Leaderboard = ({ champions }) => {
                         }
                       >
                         <Link to={`/champion/${champions.id}`}>
-                          <Avatar src={champions.champ_image}></Avatar>
+                          <Avatar src={champions.champ_image} />
                         </Link>
                       </OverlayTrigger>
                     </td>
                     <td>{champions.name}</td>
                     <td>
                       {champions.role === "mid" ? (
-                        <Avatar src={MiddleIcon}></Avatar>
+                        <Avatar src={MiddleIcon} />
                       ) : champions.role === "top" ? (
-                        <Avatar src={TopIcon}></Avatar>
+                        <Avatar src={TopIcon} />
                       ) : champions.role === "jungle" ? (
-                        <Avatar src={JungleIcon}></Avatar>
+                        <Avatar src={JungleIcon} />
                       ) : champions.role === "adc" ? (
-                        <Avatar src={AdcIcon}></Avatar>
+                        <Avatar src={AdcIcon} />
                       ) : champions.role === "support" ? (
-                        <Avatar src={SupportIcon}></Avatar>
+                        <Avatar src={SupportIcon} />
                       ) : null}
                     </td>
                     <td>
                       {champions.champ_class === "fighter" ? (
-                        <Avatar src={FighterIcon}></Avatar>
+                        <Avatar src={FighterIcon} />
                       ) : champions.champ_class === "tank" ? (
-                        <Avatar src={TankIcon}></Avatar>
+                        <Avatar src={TankIcon} />
                       ) : champions.champ_class === "controller" ? (
-                        <Avatar src={ControllerIcon}></Avatar>
+                        <Avatar src={ControllerIcon} />
                       ) : champions.champ_class === "mage" ? (
-                        <Avatar src={MageIcon}></Avatar>
+                        <Avatar src={MageIcon} />
                       ) : champions.champ_class === "marksman" ? (
-                        <Avatar src={MarksmanIcon}></Avatar>
+                        <Avatar src={MarksmanIcon} />
                       ) : champions.champ_class === "slayer" ? (
-                        <Avatar src={SlayerIcon}></Avatar>
+                        <Avatar src={SlayerIcon} />
                       ) : champions.champ_class === "specialist" ? (
-                        <Avatar src={SpecialistIcon}></Avatar>
+                        <Avatar src={SpecialistIcon} />
                       ) : null}
                     </td>
                     <td>
@@ -118,7 +118,7 @@ const Leaderboard = ({ champions }) => {
                   </tr>
                 ))
               ) : (
-                <LoadingSpinner></LoadingSpinner>
+                <LoadingSpinner />
               )}
             </>
           </tbody>

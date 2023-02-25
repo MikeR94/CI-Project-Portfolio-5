@@ -78,7 +78,7 @@ const CommentCreate = (props) => {
         </Button>
       </div>
 
-      <hr></hr>
+      <hr />
     </Form>
   );
 };

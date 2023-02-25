@@ -51,7 +51,7 @@ const ChampionLeaderboard = () => {
       {hasLoaded ? (
         <Leaderboard champions={currentChampions} key={champions.id} />
       ) : (
-        <LoadingSpinner></LoadingSpinner>
+        <LoadingSpinner />
       )}
       <Pagination
         championsPerPage={championsPerPage}
