@@ -20,12 +20,13 @@ const SplashPage = () => {
       <Container className={styles.InnerContainer}>
         <Row className={styles.WelcomeText}>Welcome to the League Hub!</Row>
         <Row className={styles.DescriptionText}>
-          The League Hub is an online resource, focused on providing information
-          about League of Legend champions and where the community can discuss
-          and vote on the current champions that are currently in the game. We
-          provide the latest and most up to date information about each champion
-          and will have upcoming additional features such as items, professional
-          teams, latest League of Legends news, upcoming events and more.{" "}
+          The League Hub is an online resource, focused on providing the latest
+          information about all things League of Legend and where the community
+          can interact with each other by leaving comments and upvoting their
+          favourite champions. Currently, we provide the latest and most up to
+          date information about each champion and will have upcoming additional
+          features such as items, professional teams, latest League of Legends
+          news, upcoming events and more.{" "}
         </Row>
         <Row className={styles.FeatureRow}>
           <Col className={styles.FeatureCol}>

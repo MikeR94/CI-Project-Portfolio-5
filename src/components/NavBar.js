@@ -92,6 +92,9 @@ const NavBar = () => {
         >
           Profile
         </NavDropdown.Item>
+        <NavDropdown.Item className={styles.DropdownMenu} as={Link} to={`/`}>
+          About
+        </NavDropdown.Item>
         <NavDropdown.Item
           className={styles.DropdownMenu}
           as={Link}
@@ -128,6 +131,9 @@ const NavBar = () => {
         title={<Avatar src={UserLoggedOutImage} height={60} />}
         id="nav-dropdown"
       >
+        <NavDropdown.Item className={styles.DropdownMenu} as={Link} to={`/`}>
+          About
+        </NavDropdown.Item>
         <NavDropdown.Item
           className={styles.DropdownMenu}
           as={Link}
