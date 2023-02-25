@@ -595,77 +595,78 @@ I am happy with the lighthouse results for each page however in future updates I
 
 - ## Manual Testing Pages
 
-| Page             | Expected Result                                                                                                   | Pass/Fail |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------- | --------- |
-| Splash           | Loading the website renders the splash page                                                                       | Pass      |
-| Splash           | The navigation and the footer components don't load                                                               | Pass      |
-| Splash           | Hovering over the continue button turns the button gold                                                           | Pass      |
-| Splash           | Clicking the continue button navigates the user to the home page                                                  | Pass      |
-| Splash           | Clicking the coloured feature icon "Champions" loads the home page                                                | Pass      |
-| Splash           | Clicking the greyed out feature icon "Items, Events, News" does nothing                                           | Pass      |
-| Splash           | Hovering over the Champions icon shows a tooltip that says "Live"                                                 | Pass      |
-| Splash           | Hovering over the Items, Events and News icons shows a tooltip that says "Coming soon"                            | Pass      |
-| Home             | The navigation bar is displayed to the user and all functionality works as per the navigation manual tests        | Pass      |
-| Home             | The role icons are displayed to the user and all functionality works as per the role icon manual tests            | Pass      |
-| Home             | The champion cards are displayed to the user and all functionality works as per the role icon manual tests        | Pass      |
-| Champion Page    | The correct champion image is displayed to the user                                                               | Pass      |
-| Champion Page    | The correct champion name is displayed to the user                                                                | Pass      |
-| Champion Page    | The correct champion alias is displayed to the user                                                               | Pass      |
-| Champion Page    | The edit champion icon is only displayed to staff members only                                                    | Pass      |
-| Champion Page    | Clicking the edit champion icon loads the ChampionEdit component with the correct data                            | Pass      |
-| Champion Page    | The delete champion icon is only displayed to staff members only                                                  | Pass      |
-| Champion Page    | Clicking the delete champion icon loads a modal to the user                                                       | Pass      |
-| Champion Page    | Clicking "delete" when the delete modal pops up deletes the champion and returns the user to the home page        | Pass      |
-| Champion Page    | Clicking "cancel" when the delete modal pops up cancels the modal and returns the user to the Champion page       | Pass      |
-| Champion Page    | The correct champion lore is displayed to the user                                                                | Pass      |
-| Champion Page    | The correct passive ability image is displayed to the user                                                        | Pass      |
-| Champion Page    | The correct passive ability name is displayed to the user                                                         | Pass      |
-| Champion Page    | The correct passive ability description is displayed to the user when they hover over the passive ability image   | Pass      |
-| Champion Page    | The correct ability 1 image is displayed to the user                                                              | Pass      |
-| Champion Page    | The correct ability 1 name is displayed to the user                                                               | Pass      |
-| Champion Page    | The correct ability 1 description is displayed to the user when they hover over the ability 1 image               | Pass      |
-| Champion Page    | The correct ability 2 image is displayed to the user                                                              | Pass      |
-| Champion Page    | The correct ability 2 name is displayed to the user                                                               | Pass      |
-| Champion Page    | The correct ability 2 description is displayed to the user when they hover over the ability 2 image               | Pass      |
-| Champion Page    | The correct ability 3 image is displayed to the user                                                              | Pass      |
-| Champion Page    | The correct ability 3 name is displayed to the user                                                               | Pass      |
-| Champion Page    | The correct ability 3 description is displayed to the user when they hover over the ability 3 image               | Pass      |
-| Champion Page    | The correct ultimate ability image is displayed to the user                                                       | Pass      |
-| Champion Page    | The correct ultimate ability name is displayed to the user                                                        | Pass      |
-| Champion Page    | The correct ultimate ability description is displayed to the user when they hover over the ultimate ability image | Pass      |
-| Champion Page    | The correct champion class image is displayed to the user                                                         | Pass      |
-| Champion Page    | The correct champion class text is displayed to the user                                                          | Pass      |
-| Champion Page    | The correct champion range image is displayed to the user                                                         | Pass      |
-| Champion Page    | The correct champion range text is displayed to the user                                                          | Pass      |
-| Champion Page    | The correct champion difficulty image is displayed to the user                                                    | Pass      |
-| Champion Page    | The correct champion difficulty text is displayed to the user                                                     | Pass      |
-| Champion Page    | The upvoting functionality works as per the upvoting manual tests                                                 | Pass      |
-| Champion Page    | The comments are displayed to the user and all functionality works as per the comments manual tests               | Pass      |
-| Sign In Page     | Clicking the username input box allows the user to input alphanumeric characters                                  | Pass      |
-| Sign In Page     | Clicking the password input box allows the user to input alphanumeric characters                                  | Pass      |
-| Sign In Page     | Clicking the sign in button will sign the user in if correct credentials have been entered                        | Pass      |
-| Sign In Page     | Clicking the sign in button will not sign the user in if incorrect credentials have been entered                  | Pass      |
-| Sign In Page     | Clicking the "sign up" text will navigate the user to the sign up page                                            | Pass      |
-| Sign Up Page     | Clicking the username input box allows the user to input alphanumeric characters                                  | Pass      |
-| Sign Up Page     | Clicking the password input box allows the user to input alphanumeric characters                                  | Pass      |
-| Sign Up Page     | Clicking the confirm password input box allows the user to input alphanumeric characters                          | Pass      |
-| Sign Up Page     | Clicking the sign up button will sign the user up if correct credentials have been entered                        | Pass      |
-| Sign Up Page     | Clicking the "sign in" text will navigate the user to the sign in page                                            | Pass      |
-| Profile Page     | Clicking the profile avatar image will allow the user to select a new image for their profile avatar              | Pass      |
-| Profile Page     | Selecting a new image for the profile avatar will render the save button                                          | Pass      |
-| Profile Page     | Clicking the save button on the profile avatar will deal with the image update request to the API                 | Pass      |
-| Profile Page     | Clicking the edit button will allow the user to edit the first name and last name input fields                    | Pass      |
-| Profile Page     | Changing the value of the first name or last name renders the save button                                         | Pass      |
-| Profile Page     | Clicking the save button will deal with the update request to the API                                             | Pass      |
-| Leaderboard Page | The first 10 most upvoted champions are rendered to the user                                                      | Pass      |
-| Leaderboard Page | Hovering over a row in the leaderboard turns the row gold                                                         | Pass      |
-| Leaderboard Page | Clicking the pagination button renders the next correct 10 champions to the user                                  | Pass      |
-| Champion Create  | The champion create page renders all the relevant input fields for a staff member to create a champion            | Pass      |
-| Champion Create  | All the champion create input fields perform the correct functionality (text, dropdown, image)                    | Pass      |
-| Champion Create  | Clicking the create button sends the create request to the API                                                    | Pass      |
-| Champion Edit    | The champion edit page renders all the relevant input fields for a staff member to edit a champion                | Pass      |
-| Champion Edit    | All the champion edit input fields perform the correct functionality (text, dropdown, image)                      | Pass      |
-| Champion Edit    | Clicking the update button sends the edit request to the API                                                      | Pass      |
+| Page                 | Expected Result                                                                                                   | Pass/Fail |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------- | --------- |
+| Splash               | Loading the website renders the splash page                                                                       | Pass      |
+| Splash               | The navigation and the footer components don't load                                                               | Pass      |
+| Splash               | Hovering over the continue button turns the button gold                                                           | Pass      |
+| Splash               | Clicking the continue button navigates the user to the home page                                                  | Pass      |
+| Splash               | Clicking the coloured feature icon "Champions" loads the home page                                                | Pass      |
+| Splash               | Clicking the greyed out feature icon "Items, Events, News" does nothing                                           | Pass      |
+| Splash               | Hovering over the Champions icon shows a tooltip that says "Live"                                                 | Pass      |
+| Splash               | Hovering over the Items, Events and News icons shows a tooltip that says "Coming soon"                            | Pass      |
+| Home                 | The navigation bar is displayed to the user and all functionality works as per the navigation manual tests        | Pass      |
+| Home                 | The role icons are displayed to the user and all functionality works as per the role icon manual tests            | Pass      |
+| Home                 | The champion cards are displayed to the user and all functionality works as per the role icon manual tests        | Pass      |
+| Champion Page        | The correct champion image is displayed to the user                                                               | Pass      |
+| Champion Page        | The correct champion name is displayed to the user                                                                | Pass      |
+| Champion Page        | The correct champion alias is displayed to the user                                                               | Pass      |
+| Champion Page        | The edit champion icon is only displayed to staff members only                                                    | Pass      |
+| Champion Page        | Clicking the edit champion icon loads the ChampionEdit component with the correct data                            | Pass      |
+| Champion Page        | The delete champion icon is only displayed to staff members only                                                  | Pass      |
+| Champion Page        | Clicking the delete champion icon loads a modal to the user                                                       | Pass      |
+| Champion Page        | Clicking "delete" when the delete modal pops up deletes the champion and returns the user to the home page        | Pass      |
+| Champion Page        | Clicking "cancel" when the delete modal pops up cancels the modal and returns the user to the Champion page       | Pass      |
+| Champion Page        | The correct champion lore is displayed to the user                                                                | Pass      |
+| Champion Page        | The correct passive ability image is displayed to the user                                                        | Pass      |
+| Champion Page        | The correct passive ability name is displayed to the user                                                         | Pass      |
+| Champion Page        | The correct passive ability description is displayed to the user when they hover over the passive ability image   | Pass      |
+| Champion Page        | The correct ability 1 image is displayed to the user                                                              | Pass      |
+| Champion Page        | The correct ability 1 name is displayed to the user                                                               | Pass      |
+| Champion Page        | The correct ability 1 description is displayed to the user when they hover over the ability 1 image               | Pass      |
+| Champion Page        | The correct ability 2 image is displayed to the user                                                              | Pass      |
+| Champion Page        | The correct ability 2 name is displayed to the user                                                               | Pass      |
+| Champion Page        | The correct ability 2 description is displayed to the user when they hover over the ability 2 image               | Pass      |
+| Champion Page        | The correct ability 3 image is displayed to the user                                                              | Pass      |
+| Champion Page        | The correct ability 3 name is displayed to the user                                                               | Pass      |
+| Champion Page        | The correct ability 3 description is displayed to the user when they hover over the ability 3 image               | Pass      |
+| Champion Page        | The correct ultimate ability image is displayed to the user                                                       | Pass      |
+| Champion Page        | The correct ultimate ability name is displayed to the user                                                        | Pass      |
+| Champion Page        | The correct ultimate ability description is displayed to the user when they hover over the ultimate ability image | Pass      |
+| Champion Page        | The correct champion class image is displayed to the user                                                         | Pass      |
+| Champion Page        | The correct champion class text is displayed to the user                                                          | Pass      |
+| Champion Page        | The correct champion range image is displayed to the user                                                         | Pass      |
+| Champion Page        | The correct champion range text is displayed to the user                                                          | Pass      |
+| Champion Page        | The correct champion difficulty image is displayed to the user                                                    | Pass      |
+| Champion Page        | The correct champion difficulty text is displayed to the user                                                     | Pass      |
+| Champion Page        | The upvoting functionality works as per the upvoting manual tests                                                 | Pass      |
+| Champion Page        | The comments are displayed to the user and all functionality works as per the comments manual tests               | Pass      |
+| Sign In Page         | Clicking the username input box allows the user to input alphanumeric characters                                  | Pass      |
+| Sign In Page         | Clicking the password input box allows the user to input alphanumeric characters                                  | Pass      |
+| Sign In Page         | Clicking the sign in button will sign the user in if correct credentials have been entered                        | Pass      |
+| Sign In Page         | Clicking the sign in button will not sign the user in if incorrect credentials have been entered                  | Pass      |
+| Sign In Page         | Clicking the "sign up" text will navigate the user to the sign up page                                            | Pass      |
+| Sign Up Page         | Clicking the username input box allows the user to input alphanumeric characters                                  | Pass      |
+| Sign Up Page         | Clicking the password input box allows the user to input alphanumeric characters                                  | Pass      |
+| Sign Up Page         | Clicking the confirm password input box allows the user to input alphanumeric characters                          | Pass      |
+| Sign Up Page         | Clicking the sign up button will sign the user up if correct credentials have been entered                        | Pass      |
+| Sign Up Page         | Clicking the "sign in" text will navigate the user to the sign in page                                            | Pass      |
+| Profile Page         | Clicking the profile avatar image will allow the user to select a new image for their profile avatar              | Pass      |
+| Profile Page         | Selecting a new image for the profile avatar will render the save button                                          | Pass      |
+| Profile Page         | Clicking the save button on the profile avatar will deal with the image update request to the API                 | Pass      |
+| Profile Page         | Clicking the edit button will allow the user to edit the first name and last name input fields                    | Pass      |
+| Profile Page         | Changing the value of the first name or last name renders the save button                                         | Pass      |
+| Profile Page         | Clicking the save button will deal with the update request to the API                                             | Pass      |
+| Champion Leaderboard | The first 10 most upvoted champions are rendered to the user                                                      | Pass      |
+| Champion Leaderboard | Hovering over a champions avatar shows a tooltip saying "Click to view {champions name's} profile"                | Pass      |
+| Champion Leaderboard | Clicking a champions avatar loads the champion information page for that champion                                 | Pass      |
+| Champion Leaderboard | Clicking the pagination button renders the next correct 10 champions to the user                                  | Pass      |
+| Champion Create      | The champion create page renders all the relevant input fields for a staff member to create a champion            | Pass      |
+| Champion Create      | All the champion create input fields perform the correct functionality (text, dropdown, image)                    | Pass      |
+| Champion Create      | Clicking the create button sends the create request to the API                                                    | Pass      |
+| Champion Edit        | The champion edit page renders all the relevant input fields for a staff member to edit a champion                | Pass      |
+| Champion Edit        | All the champion edit input fields perform the correct functionality (text, dropdown, image)                      | Pass      |
+| Champion Edit        | Clicking the update button sends the edit request to the API                                                      | Pass      |
 
 - ## Manual Testing Features
 
@@ -715,6 +716,15 @@ I am happy with the lighthouse results for each page however in future updates I
 | Upvoting      | As a logged in user that has upvoted, hovering over the downvote icon shows a tooltip that says "Click to downvote this champion"                               | Pass      |
 | Upvoting      | As a logged in user that hasn't upvoted, the text to the left says "Do you like this champion? Make sure you up-vote it by clicking the arrow if you do!"       | Pass      |
 | Upvoting      | As a logged in user that has upvoted, the text to the left says "Great! You have successfully upvoted for {champ_name} Make sure to check out the leaderboard!" | Pass      |
+| Comments      | As a logged in user, clicking the submit button without entering a comment does nothing                                                                         | Pass      |
+| Comments      | As a logged in user, clicking the submit button after entering a comment submits the comment and it is displayed                                                | Pass      |
+| Comments      | If a logged in user has submitted a comment, they have the ability to edit their comment                                                                        | Pass      |
+| Comments      | If a logged in user has submitted a comment, they have the ability to delete their comment                                                                      | Pass      |
+| Comments      | As a staff member, clicking the delete button on a users comment deletes their comment                                                                          | Pass      |
+| Comments      | As a staff member, the edit comment button for other users comments should not be available                                                                     | Pass      |
+| Comments      | A logged out user can not create a comment                                                                                                                      | Pass      |
+| Comments      | A logged out user can not edit a comment                                                                                                                        | Pass      |
+| Comments      | A logged out user can not delete a comment                                                                                                                      | Pass      |
 
  <br />
 
