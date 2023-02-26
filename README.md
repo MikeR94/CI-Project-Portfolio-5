@@ -173,6 +173,7 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
   The navigation is one of the most important features for any website and as such, I’ve done my best to provide the user with a very intuitive and useful navigation bar
   The navigation bar has a clickable logo which will redirect the user back to the home page, a search bar to search for a champion in the middle, and the users logged in state on the top right. If the user is logged out, it will display a golden avatar and when clicked, will give the users the following drop-down menu
 
+  - About
   - Sign In
   - Sign Up
 
@@ -180,6 +181,7 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
   - Home
   - Profile
+  - About
   - Leaderboard
   - Log out
 
@@ -187,6 +189,7 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
   - Home
   - Profile
+  - About
   - Leaderboard
   - Create
   - Log out
