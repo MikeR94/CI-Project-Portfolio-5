@@ -30,6 +30,7 @@ function ChampionCreate() {
   const [champClassSelected, setChampClassSelected] = useState(false);
   const history = useHistory();
   const [errors, setErrors] = useState({});
+  const [disabled, setDisabled] = useState(false);
 
   /**
    * Initialize the champData object
@@ -211,6 +212,7 @@ function ChampionCreate() {
    */
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setDisabled(true);
     const formData = new FormData();
 
     formData.append("name", name);
@@ -261,6 +263,7 @@ function ChampionCreate() {
     } catch (error) {
       if (error.response?.status !== 401) {
         setErrors(error.response?.data);
+        setDisabled(false);
       }
       NotificationManager.error(
         "There wan issue creating this champion",
@@ -822,9 +825,16 @@ function ChampionCreate() {
       </Row>
 
       <Row className="d-flex justify-content-center">
-        <Button className={`mt-4 ${btnStyles.Button}`} type="submit">
-          Create
-        </Button>
+        {!disabled && (
+          <Button className={`mt-4 ${btnStyles.Button}`} type="submit">
+            Create
+          </Button>
+        )}
+        {disabled && (
+          <Button className={`mt-4 ${btnStyles.Button}`} disabled>
+            Creating...
+          </Button>
+        )}
       </Row>
     </Form>
   );

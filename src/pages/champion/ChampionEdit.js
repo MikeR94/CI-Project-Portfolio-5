@@ -27,6 +27,7 @@ function ChampionEdit() {
   const history = useHistory();
   const { id } = useParams();
   const [errors, setErrors] = useState({});
+  const [disabled, setDisabled] = useState(false);
 
   /**
    * Initialize the champData object
@@ -230,6 +231,7 @@ function ChampionEdit() {
    */
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setDisabled(true);
     const formData = new FormData();
     let champBlob = await fetch(champ_image).then((r) => r.blob());
     let passiveBlob = await fetch(passive_ability_image).then((r) => r.blob());
@@ -259,6 +261,7 @@ function ChampionEdit() {
     } catch (error) {
       if (error.response?.status !== 401) {
         setErrors(error.response?.data);
+        setDisabled(false);
       }
       NotificationManager.error(
         "There wan issue updating this champion",
@@ -793,9 +796,16 @@ function ChampionEdit() {
       </Row>
 
       <Row className="d-flex justify-content-center">
-        <Button className={`mt-4 ${btnStyles.Button}`} type="submit">
-          Update
-        </Button>
+        {!disabled && (
+          <Button className={`mt-4 ${btnStyles.Button}`} type="submit">
+            Update
+          </Button>
+        )}
+        {disabled && (
+          <Button className={`mt-4 ${btnStyles.Button}`} disabled>
+            Updating...
+          </Button>
+        )}
       </Row>
     </Form>
   );
