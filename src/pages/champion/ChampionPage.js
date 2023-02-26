@@ -411,7 +411,10 @@ const ChampionPage = () => {
                 <div className={styles.UpVoteText}>
                   Great! You have successfully upvoted for{" "}
                   <span className={styles.UpVoteName}>{name}</span> Make sure to
-                  check out the leaderboard!
+                  check out the{" "}
+                  <Link className={styles.UpVoteName} to="/leaderboard">
+                    leaderboard
+                  </Link>
                 </div>
               )}
               {!upvotes_id && is_owner && (

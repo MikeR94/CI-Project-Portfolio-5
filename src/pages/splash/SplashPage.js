@@ -21,7 +21,7 @@ const SplashPage = () => {
         <Row className={styles.WelcomeText}>Welcome to the League Hub!</Row>
         <Row className={styles.DescriptionText}>
           The League Hub is an online resource, focused on providing the latest
-          information about all things League of Legend and where the community
+          information about all things League of Legends and where the community
           can interact with each other by leaving comments and upvoting their
           favourite champions. Currently, we provide the latest and most up to
           date information about each champion and will have upcoming additional
