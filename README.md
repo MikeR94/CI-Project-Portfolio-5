@@ -682,14 +682,16 @@ I am happy with the lighthouse results for each page however in future updates I
 | Navigation    | When the user is logged out, the golden head and shoulders avatar is rendered                                                                                   | Pass      |
 | Navigation    | When the user is logged in, the users profile avatar is rendered                                                                                                | Pass      |
 | Navigation    | When the user is logged out, clicking the avatar opens a dropdown menu with "Sign In" and "Sign Up" options                                                     | Pass      |
+| Navigation    | If a logged out users clicks "About" it redirects the user to the / (splash) page                                                                               | Pass      |
 | Navigation    | If a logged out users clicks "Sign Up" it redirects the user to the /signup page                                                                                | Pass      |
 | Navigation    | If a logged out users clicks "Sign In" it redirects the user to the /signin page                                                                                | Pass      |
-| Navigation    | When the user is logged in, clicking the avatar opens a dropdown menu with "Home", "Profile", "Leaderboard" and "Log Out" options                               | Pass      |
+| Navigation    | When the user is logged in, clicking the avatar opens a dropdown menu with "Home", "Profile", "About", "Leaderboard" and "Log Out" options                      | Pass      |
 | Navigation    | If a logged in users clicks "Home" it redirects the user to the /home page                                                                                      | Pass      |
 | Navigation    | If a logged in users clicks "Profile" it redirects the user to the /profile/{profile_id} page                                                                   | Pass      |
+| Navigation    | If a logged in users clicks "About" it redirects the user to the / (splash) page                                                                                | Pass      |
 | Navigation    | If a logged in users clicks "Leaderboard" it redirects the user to the /leaderboard page                                                                        | Pass      |
 | Navigation    | If a logged in users clicks "Log Out" it redirects the user to the /home page and logs the user out                                                             | Pass      |
-| Navigation    | When a staff is logged in, clicking the avatar opens a dropdown menu with "Home", "Profile", "Leaderboard", "Create" and "Log Out" options                      | Pass      |
+| Navigation    | When a staff is logged in, clicking the avatar opens a dropdown menu with "Home", "Profile", "About", "Leaderboard", "Create" and "Log Out" options             | Pass      |
 | Navigation    | If a staff member clicks "Create", it redirects the staff member to the /create page                                                                            | Pass      |
 | Navigation    | If a non-staff member tries to visit the /create url, it will redirect them to the /home page                                                                   | Pass      |
 | Navigation    | As a non-staff member, the staff crown icon should not appear next to their name in the dropdown menu                                                           | Pass      |
@@ -710,6 +712,7 @@ I am happy with the lighthouse results for each page however in future updates I
 | Champion Card | The champion card contains the champion image                                                                                                                   | Pass      |
 | Champion Card | The champion card contains the champion name                                                                                                                    | Pass      |
 | Champion Card | Clicking the champion card will render the /champion/{id} page that contains all the data about that champion                                                   | Pass      |
+| Champion Card | Hovering over the champion card will move the champion card slightly up, further informing the user that card is currently being hovered                        | Pass      |
 | Upvoting      | As a logged out user, clicking the upvote icon does not upvote the champion                                                                                     | Pass      |
 | Upvoting      | As a logged out user, hovering over the upvote icon shows a tooltip that says "Log in to cast your vote!"                                                       | Pass      |
 | Upvoting      | As a logged out user, the upvote text to the left says "Do you like this champion? Make sure to log in so you can cast your vote!"                              | Pass      |
