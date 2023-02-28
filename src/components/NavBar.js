@@ -131,6 +131,9 @@ const NavBar = () => {
         title={<Avatar src={UserLoggedOutImage} height={60} />}
         id="nav-dropdown"
       >
+        <NavDropdown.Item className={styles.DropdownMenu} as={Link} to="/home">
+          Home
+        </NavDropdown.Item>
         <NavDropdown.Item className={styles.DropdownMenu} as={Link} to={`/`}>
           About
         </NavDropdown.Item>
