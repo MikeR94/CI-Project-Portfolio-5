@@ -19,11 +19,14 @@ You can view the back-end README.md here - <a href="https://github.com/MikeR94/d
   - [Project Goals](#project-goals)
   - [User Stories](#user-stories)
   - [Design Prototype](#design-prototype)
-  - [Site Structure](#site-structure)
   - [Design Choices](#design-choices)
   - [Typography](#typography)
   - [Colour Scheme](#colour-scheme)
   - [Project Management](#project-management)
+- [**Permissions**](#permissions)
+  - [Logged Out User](#logged-out-user)
+  - [Logged In User](#logged-in-user)
+  - [Staff User](#staff-user)
 - [**Existing Features**](#existing-features)
   - [Informative Splash Page](#informative-splash-page)
   - [Responsive Navigation Bar](#responsive-navigation-bar)
@@ -148,13 +151,85 @@ I've created a React Component Tree diagram for the League Hub so we can easily 
 
   To manage this project I utilised the GitHub project management features. I created a Kanban board so I could organise and manage my issues/tasks for the project and maintain a solid understanding of what is required to complete the project <br />
 
-  Furthermore, when adding my user stories, I decided to take advantage of the milestone feature and I added my EPICS there so I could manage the basic user stories required for release
-
   ![Project Board](/src/assets/readme_images/league-hub-project-board.png)
 
-  <br>
+  Furthermore, when adding my user stories, I decided to take advantage of the milestone feature and I added my EPICS there so I could manage the basic user stories required for release. I treated each EPIC as a sprint and would spend an allocated amount of time on each EPIC. I did this for the core functionality of the EPIC to focus on implementing the feature and I would then go back and do some polishing up if necessary.
 
   ![Milestones](/src/assets/readme_images/league-hub-milestones.png)
+
+## Permissions
+
+Because of the nature of this website, I decided that having different tiers of permissions/access would be more beneficial for the management of the website and for the users experience.
+
+### Logged Out User
+
+A logged out user will have access to the following
+
+- Home Page
+- About Page
+- Sign In Page
+- Sign Out Page
+- Champion Select Page
+- Champion Information Page
+- All search bar functionality
+- All role icon functionality
+
+### Logged In User
+
+A logged in user will have access to the following
+
+**_Text highlighted in bold indicates additional functionality over a logged out user_**
+
+- Home Page
+- About Page
+- Sign In Page
+- Sign Out Page
+- Champion Select Page
+- Champion Information Page
+- All search bar functionality
+- All role icon functionality
+- **Ability to sign out**
+- **Leaderboard Page**
+- **Ability to upvote a champion**
+- **Ability to remove their upvote on a champion**
+- **Ability to create a comment**
+- **Ability to edit their own comment**
+- **Ability to delete their own comment**
+- **Ability to view their profile page**
+- **Ability to update their profile information**
+- **Ability to view other peoples profiles via the comment avatars**
+
+### Staff User
+
+A staff user will have access to the following
+
+**_Text highlighted in bold indicates additional functionality over a logged out user and logged in user_**
+
+- Home Page
+- About Page
+- Sign In Page
+- Sign Out Page
+- Champion Select Page
+- Champion Information Page
+- All search bar functionality
+- All role icon functionality
+- Ability to sign out
+- Leaderboard Page
+- Ability to upvote a champion
+- Ability to remove their upvote on a champion
+- Ability to create a comment
+- Ability to edit their own comment
+- Ability to delete their own comment
+- Ability to view their profile page
+- Ability to update their profile information
+- Ability to view other peoples profiles via the comment avatars
+- **Ability to delete other users comments if necessary**
+- **Ability to create a new champion**
+- **Ability to edit an existing champion**
+- **Ability to delete an existing champion**
+- **A silver crown next to their name**
+
+**_A staff account has been provided to the Assessor in my Project 5 Submission so they have full access to test every feature_**
 
 ## Existing Features
 
@@ -670,6 +745,7 @@ I am happy with the lighthouse results for each page however in future updates I
 | Champion Edit        | The champion edit page renders all the relevant input fields for a staff member to edit a champion                | Pass      |
 | Champion Edit        | All the champion edit input fields perform the correct functionality (text, dropdown, image)                      | Pass      |
 | Champion Edit        | Clicking the update button sends the edit request to the API                                                      | Pass      |
+| Page Not Found       | Entering a URL that does not exist for the website redirects the user to a page not found page                    | Pass      |
 
 - ## Manual Testing Features
 
