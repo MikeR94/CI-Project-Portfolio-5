@@ -1086,7 +1086,7 @@ When testing the CRUD functionality of creating a new champion, I have provided 
 
 I have also provided a staff account which gives you full access to all the features and that has been sent in the submission form
 
-I've added a quick video which you can watch which shows creating, updating and deleting a champion which you can view - [Video](https://share.vidyard.com/watch/ZFLGtNmiRPVrdPt2oTEhSX?)
+I've added a quick video which you can watch which shows creating, updating and deleting a champion which you can view - [Video](https://share.vidyard.com/watch/oVHBmiSDp4x88YTxiQgkGY?)
 
 # Acknowledgments
 
