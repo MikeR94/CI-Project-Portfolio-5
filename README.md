@@ -1086,6 +1086,8 @@ When testing the CRUD functionality of creating a new champion, I have provided 
 
 I have also provided a staff account which gives you full access to all the features and that has been sent in the submission form
 
+I've added a quick video which you can watch which shows creating, updating and deleting a champion which you can view - [Video](https://share.vidyard.com/watch/ZFLGtNmiRPVrdPt2oTEhSX?)
+
 # Acknowledgments
 
 I have thoroughly enjoyed developing this project and although I found React to be challenging learning curve, after much perseverance I feel like I have a good baseline knowledge when it comes to developing applications that use an advanced front-end framework like React that talk to a back-end API developed using the Django REST Framework.
