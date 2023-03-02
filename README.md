@@ -57,6 +57,7 @@ You can view the back-end README.md here - <a href="https://github.com/MikeR94/d
 - [**Credits**](#credits)
   - [**Content**](#content)
   - [**Media**](#media)
+- [**Assessor Information**](#assessor-information)
 - [**Acknowledgments**](#acknowledgements)
 
 # Objective
@@ -1062,6 +1063,28 @@ The silver moderator crown came from [geneisscape](https://genesisscape.fandom.c
 The page not found image of Teemo is from [toppng](https://toppng.com/show_download/205781/ersonagens-de-lol-png-teemo-transparent/large)
 
 [Back to top](#contents)
+
+# Assessor Information
+
+Firstly, thank you Code Institute for such an incredible experience!
+
+For my final project, I have created a “League Hub” which I intend to continue working on after I have finished the course. It is an online resource for people who are a fan of the game “League of Legends” to glean information about certain aspects of the game.
+
+When testing the CRUD functionality of creating a new champion, I have provided a list of images that you can use to create a “proper” champion that a staff member would use when creating a new champion in the “real world”. Simply save these images and use them when creating a new champion. You can of course use your own images if you don't wish to use these
+
+**Background Image** - https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sion_0.jpg
+
+**Passive Image** - https://ddragon.leagueoflegends.com/cdn/13.4.1/img/passive/Sion_Passive1.png
+
+**Ability 1 Image** - https://ddragon.leagueoflegends.com/cdn/13.4.1/img/spell/SionQ.png
+
+**Ability 2 Image** - https://ddragon.leagueoflegends.com/cdn/13.4.1/img/spell/SionW.png
+
+**Ability 3 Image** - https://ddragon.leagueoflegends.com/cdn/13.4.1/img/spell/SionE.png
+
+**Ultimate Image** - https://ddragon.leagueoflegends.com/cdn/13.4.1/img/spell/SionR.png
+
+I have also provided a staff account which gives you full access to all the features and that has been sent in the submission form
 
 # Acknowledgments
 
